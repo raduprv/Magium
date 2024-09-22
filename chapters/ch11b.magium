@@ -874,16 +874,6 @@ As we all gather around to look at the pile of ashes that the necromancer has tu
 "Relax," Hadrik says. "If his all-powerful stillwater skeletons couldn't kill us, what do you expect him to do after he's already dead?"
 
 }
-#if(v_ch11_strategy == 1 || v_ch11_strategy == 2 || v_ch11_strategy == 3 || v_ch11_strategy == 4) {
- "That's some tough talk coming from someone who couldn't even identify an obvious weakness in their enemy's defenses," Arraka says. "You all would have been toast if it weren't for me. I'm the one who saved all of you losers. Where's my reward for that, huh?"
-
-"Oh, I've got your reward right here!" Hadrik says, as he grabs Arraka's amulet from Flower's neck, and he starts spinning it by the chain.
-
-"Wait," Flower says. "Don't do that! Didn't I tell you that she has motion sickness?"
-
-"Really?" Hadrik says, with a grin, as he continues to spin Arraka. "Huh. I guess it must have slipped my mind."
-
-}
 #if(v_ch11_strategy == 3 || v_ch11_strategy == 4) {
  "No!" Zack shouts, as the barrier around him begins to disappear. "I won't let it end like this!"
 
@@ -898,6 +888,16 @@ As we all gather around to look at the pile of ashes that the necromancer has tu
 "That wasn't just some empty threat," Illuna says, while she looks around frantically, as if she were expecting something to blow up. "That thing he just cast was a sacrificial spell. A kind of spell that requires the death of its caster as payment, in exchange for providing effects that would not be obtainable through normal means. The curse of death that the ogre shaman cast on me before we left the fort was also one of these spells. This isn't over yet..."
 
 "Relax," Hadrik says. "If his all-powerful stillwater skeletons couldn't kill us, what do you expect him to do after he's already dead?"
+
+}
+#if(v_ch11_strategy == 1 || v_ch11_strategy == 2 || v_ch11_strategy == 3 || v_ch11_strategy == 4) {
+ "That's some tough talk coming from someone who couldn't even identify an obvious weakness in their enemy's defenses," Arraka says. "You all would have been toast if it weren't for me. I'm the one who saved all of you losers. Where's my reward for that, huh?"
+
+"Oh, I've got your reward right here!" Hadrik says, as he grabs Arraka's amulet from Flower's neck, and he starts spinning it by the chain.
+
+"Wait," Flower says. "Don't do that! Didn't I tell you that she has motion sickness?"
+
+"Really?" Hadrik says, with a grin, as he continues to spin Arraka. "Huh. I guess it must have slipped my mind."
 
 }
 choice(""Put her down, Hadrik. It's not worth the bother."", Ch11b-Bother, v_current_scene = Ch11b-Bother) if (v_ch11_strategy == 1 || v_ch11_strategy == 2 || v_ch11_strategy == 3 || v_ch11_strategy == 4)
@@ -966,6 +966,20 @@ When he reaches her, Daren starts casting a healing spell, but Rose does not rea
 "Rose, stay with me!" Daren shouts, as he keeps desperately casting his spells.
 
 }
+#if(v_hearing == 4 && v_perception < 4) {
+ 
+
+While Hadrik and Arraka are talking, I hear the sound of stones starting to crumble somewhere on the opposite side of the market square. I turn around, in order to try and identify the source of the sound, but I don't see anyone in that direction except Rose.   
+
+Suddenly, the stones on the ground in front of Rose get sent flying into the air, as a skeleton emerges from underneath them and quickly uses a rusted knife to stab her in the heart. Rose had no time to react. At first, there was only shock in her eyes, but soon, her facial expression turned blank, while her arms hung beside her, motionless. As the light leaves Rose's eyes completely, her attacker presses the knife harder into her chest, making her fall on her back, while the skeleton crumbles into pieces.
+
+"Rose!" Daren shouts, as he rushes towards her.
+
+When he reaches her, Daren starts casting a healing spell, but Rose does not react to it in any way. We all gather around the two of them, and watch them without saying a word, as Daren continues to cast healing spell after healing spell, while Rose is staring blankly into the distance, without moving a muscle.
+
+"Rose, stay with me!" Daren shouts, as he keeps desperately casting his spells.
+
+}
 #if(v_hearing == 4 && v_perception < 4 || v_hearing < 4) {
  It's no use... I'm sure that Daren must have realized it as well. Rose is no longer breathing. She stopped breathing even before she hit the ground. She's dead. After all we've been through to bring her back home safely. After everything that's happened this past week. She died, just like that. And not even Daren can bring her back.
 
@@ -984,20 +998,6 @@ Kate stops for a few seconds, in order to rub her eyes with her hands, as she tr
  "Hey, now, hold on there!" Hadrik says. "You can't just go and blame this all on yourself. Rose knew very well what she was getting into when she decided to stick with us after what happened yesterday with the noble. She made her own choice and she stuck by it until the end. She died with honor, and we should all respect her for that."
 
 "What do you know about Rose?!" Daren shouts furiously, all of a sudden. "Do you think she wanted to live her last moments in a cesspool like this? Do you think she died happily, knowing that she left her little siblings behind to fend for themselves? Do you seriously think that everything in the world can be measured by your primitive values? What gives you the right to talk about Rose this way? Tell me!"
-
-}
-#if(v_hearing == 4 && v_perception < 4) {
- 
-
-While Hadrik and Arraka are talking, I hear the sound of stones starting to crumble somewhere on the opposite side of the market square. I turn around, in order to try and identify the source of the sound, but I don't see anyone in that direction except Rose.   
-
-Suddenly, the stones on the ground in front of Rose get sent flying into the air, as a skeleton emerges from underneath them and quickly uses a rusted knife to stab her in the heart. Rose had no time to react. At first, there was only shock in her eyes, but soon, her facial expression turned blank, while her arms hung beside her, motionless. As the light leaves Rose's eyes completely, her attacker presses the knife harder into her chest, making her fall on her back, while the skeleton crumbles into pieces.
-
-"Rose!" Daren shouts, as he rushes towards her.
-
-When he reaches her, Daren starts casting a healing spell, but Rose does not react to it in any way. We all gather around the two of them, and watch them without saying a word, as Daren continues to cast healing spell after healing spell, while Rose is staring blankly into the distance, without moving a muscle.
-
-"Rose, stay with me!" Daren shouts, as he keeps desperately casting his spells.
 
 }
 #if(v_hearing == 4 && v_perception == 4 && v_agility < 4) {

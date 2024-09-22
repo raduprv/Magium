@@ -265,7 +265,7 @@ class Scene:
         return text
 
     def merge_paragraphs(self):
-        grouped_paragraphs = groupby_unsorted(self.paragraphs,key=lambda r:(r.id,r.version))
+        grouped_paragraphs = groupby_unsorted(self.paragraphs[::-1],key=lambda r:(r.id,r.version))
         new_paragraphs = []
         for (id,version),group in grouped_paragraphs:
             group = list(group)
@@ -273,7 +273,7 @@ class Scene:
             new_paragraphs.append(Paragraph(id,version,new_conditions))
 
         paragraph_groups = {}
-        for paragraph in new_paragraphs:
+        for paragraph in new_paragraphs[::-1]:
             key = str(paragraph.conditions) 
             if key not in paragraph_groups:
                 paragraph_groups[key] = ParagraphGroup(conditions=paragraph.conditions)
@@ -341,10 +341,13 @@ class Parser:
                     var_name = transform_var_name(match.group("variable"))
                     event.results["set_variables"][var_name] = "+"+match.group("value")
                 elif match := re.search('Scene text : Display paragraph (?P<paragraph>.*)',current):
+                    event.type = "scene_load" if event.type is None else event.type
                     event.results["paragraphs"].append((int(match.group("paragraph")),1))
                 elif match := re.search('Scene text 2 : Display paragraph (?P<paragraph>.*)',current):
+                    event.type = "scene_load" if event.type is None else event.type
                     event.results["paragraphs"].append((int(match.group("paragraph")),2))
                 elif match := re.search('scene 3 : Display paragraph (?P<paragraph>.*)',current):
+                    event.type = "scene_load" if event.type is None else event.type
                     event.results["paragraphs"].append((int(match.group("paragraph")),3))
                 elif match := re.search('checks : Set alterable string to (?P<text>.*)',current):
                     if "Checkpoint reached" in match.group("text"):
@@ -404,7 +407,7 @@ for chapter in chapters:
             conditions=event.conditions["variables"],
             responses=[Response(button) for button in event.results["add_buttons"]],
             paragraphs=[Paragraph(paragraph[0],paragraph[1]) for paragraph in event.results["paragraphs"]],
-            set_variables=[SceneVariableSet(variable,int(value)) for variable, value in  event.results["set_variables"].items()],
+            set_variables=[SceneVariableSet(variable,int(value)) for variable, value in event.results["set_variables"].items()],
         ))
 
     for event in [e for e in events if e.type == "button"]:
