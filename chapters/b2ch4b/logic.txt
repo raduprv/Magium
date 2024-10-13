@@ -2111,6 +2111,7 @@
 * Mouse pointer is over Group.Buttons
 + current scene = "B2-Ch04b-Manticore"
 + Button ID of Group.Buttons = 1
++ is dead = 0
 + B2 CH4 Charge = 3
 + B2 Ch2 Threatened <> 0
 + Counter = 0
@@ -2124,6 +2125,7 @@
 * Mouse pointer is over Group.Buttons
 + current scene = "B2-Ch04b-Manticore"
 + Button ID of Group.Buttons = 1
++ is dead = 0
 + B2 CH4 Charge = 3
 + B2 Ch2 Threatened = 0
 + B2 Ch2 Cell <> 1
@@ -2233,6 +2235,7 @@
 * Mouse pointer is over Group.Buttons
 + current scene = "B2-Ch04b-Manticore"
 + Button ID of Group.Buttons = 1
++ is dead = 0
 + B2 CH4 Charge = 3
 + B2 Ch2 Threatened = 0
 + B2 Ch2 Cell = 1
