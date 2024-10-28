@@ -621,8 +621,44 @@ choice("Tell Leila to perform the technique on Gontrok while I keep him busy.", 
 ID: B3-Ch07a-Perform
 TEXT:
 
+set(v_is_dead,0) if (v_b3_ch7_massage == 0 || v_b3_ch7_massage == 1 || v_b3_ch7_massage == 2 || v_combat_technique >= 2)
 set(v_is_dead,1) if (v_combat_technique < 2)
-set(v_is_dead,0) if (v_combat_technique >= 2)
+#if(v_b3_ch7_massage == 0) {
+ 
+
+I continue to avoid Gontrok's attacks until Leila flanks him again from the side, and then in the few seconds during which he's not paying attention to me, I join the fingers of my right hand together and I use them to hit a few pressure points on the back of his neck. As I am doing this, I am also paying very close attention to the flow of his aura, so I can see if what I'm doing is working or not.
+
+Making improvisations to a technique that I never tried before is proving to be a little more difficult than I had hoped, but at least my actions seem to be having a noticeable effect. In the very short time that I have at my disposal, I manage to disrupt a little of Gontrok's aura's normal flow, but I do not get to finish what I was about to do before he turns around, trying to elbow me in the face, and thus forcing me to retreat once again.
+
+"What in the blazes were you trying to do just now? Prick me in the neck?" Gontrok asks me, as he uncomfortably massages the back of his neck with his hand. "You'd better take this fight seriously if you don't want to end up splattered on that wall."
+
+"Shouldn't you be saying things like that after you've managed to hit me at least once?..." I ask Gontrok. "Not to be rude or anything, but your threats are feeling kind of empty right now."
+
+}
+#if(v_b3_ch7_massage == 1) {
+ 
+
+I continue to avoid Gontrok's attacks until Leila flanks him again from the side, and then in the few seconds during which he's not paying attention to me, I join the fingers of my right hand together and I use them to hit a few pressure points on the back of his neck. As I am doing this, I am also paying very close attention to the flow of his aura, so I can see if what I'm doing is working or not.
+
+Making improvisations to a technique that I never successfully pulled off before is proving to be a little more difficult than I had hoped, but at least my actions seem to be having a noticeable effect. In the very short time that I have at my disposal, I manage to disrupt a little of Gontrok's aura's normal flow, but I do not get to finish what I was about to do before he turns around, trying to elbow me in the face, and thus forcing me to retreat once again.
+
+"What in the blazes were you trying to do just now? Prick me in the neck?" Gontrok asks me, as he uncomfortably massages the back of his neck with his hand. "You'd better take this fight seriously if you don't want to end up splattered on that wall."
+
+"Shouldn't you be saying things like that after you've managed to hit me at least once?..." I ask Gontrok. "Not to be rude or anything, but your threats are feeling kind of empty right now."
+
+}
+#if(v_b3_ch7_massage == 2) {
+ 
+
+I continue to avoid Gontrok's attacks until Leila flanks him again from the side, and then in the few seconds during which he's not paying attention to me, I join the fingers of my right hand together and I use them to hit a few pressure points on the back of his neck. As I am doing this, I am also paying very close attention to the flow of his aura, so I can see if what I'm doing is working or not.
+
+It's honestly rather hard to make improvisations to a technique that I'm not very familiar with, but at least I got to practice a little when I used it on Leila earlier, so I'm not going in completely blind here. In the very short time that I have at my disposal, I manage to disrupt some of Gontrok's aura's normal flow, but I do not get to finish what I was about to do before he turns around, trying to elbow me in the face, and thus forcing me to retreat once again.
+
+"What in the blazes were you trying to do just now? Prick me in the neck?" Gontrok asks me, as he uncomfortably massages the back of his neck with his hand. "You'd better take this fight seriously if you don't want to end up splattered on that wall."
+
+"Shouldn't you be saying things like that after you've managed to hit me at least once?..." I ask Gontrok. "Not to be rude or anything, but your threats are feeling kind of empty right now."
+
+}
 #if(v_combat_technique < 2) {
  "I will hit you as soon as you stop running around in circles like some chicken without a head," Gontrok says angrily. "How about you fight like a man instead of continuing to disgrace yourself by acting in such a cowardly way?"
 

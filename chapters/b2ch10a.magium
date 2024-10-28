@@ -777,6 +777,14 @@ TEXT:
 
 set(v_is_dead,1) if (v_combat_technique < 3)
 set(v_is_dead,0) if (v_combat_technique >= 3)
+ 
+
+I don't let the wyvern riders get too close, and I mimic a jump, in the direction in which I want to go, which sends me flying away from my enemies at great speed. I then rotate my body upwards and begin to move my legs in a circular motion, similarly to how I would move them if I were trying to keep myself afloat in a lake, while in a vertical position. This stops my momentum and it changes my direction, so that I can now face my enemies properly.
+
+It's a good thing that I can mostly control my direction and speed without my arms, because this allows me to use my crossbow in mid-flight. I also noticed that the skills I gained by flying aircrafts in the past are proving really useful when trying to control these types of flight spells. It would have probably taken me a lot longer to get accustomed to flying like this, if I never flew a plane before. 
+
+I aim my weapon at one of the orcs, and I start to shoot him, while I'm still busy trying to get out of the range of their spears.
+
 #if(v_combat_technique < 3) {
  Unfortunately, aiming at very rapidly moving targets, while I'm flying myself, is not as easy as it may sound. I somehow manage to waste every one of my shots, and I don't have the time to reload. I try to outmaneuver the wyverns, so I can get on top of them, in order to attack the riders, directly, but the flight spell provided to me by Melindra is neither fast nor responsive enough for me to be able to compare myself with these creatures that have been flying for as long as they can remember.
 
@@ -800,6 +808,16 @@ TEXT:
 
 set(v_is_dead,1) if (v_strength == 0)
 set(v_is_dead,0) if (v_strength >= 1)
+ 
+
+I don't let the wyvern riders get too close, and I mimic a jump, in the direction in which I want to go, which sends me flying away from my enemies at great speed. I then rotate my body upwards and begin to move my legs in a circular motion, similarly to how I would move them if I were trying to keep myself afloat in a lake, while in a vertical position. This stops my momentum and it changes my direction, so that I can now face my enemies properly.
+
+It's a good thing that I can mostly control my direction and speed without my arms, because this allows me to use my crossbow in mid-flight. I also noticed that the skills I gained by flying aircrafts in the past are proving really useful when trying to control these types of flight spells. It would have probably taken me a lot longer to get accustomed to flying like this, if I never flew a plane before.
+
+I aim my weapon at one of the wyverns, and I shoot all of the bolts in the crossbow's magazine at it. The monster screams, and it stops flapping its wings, which makes it crash to the ground along with its rider, killing them both. I try to reload my crossbow, while I fly away from the other wyvern, but the creature is faster than me, so it doesn't take long until it reaches my position.
+
+With my crossbow still in my left hand, I use my right hand to quickly take out my dagger from its sheath, and I stab the wyvern in its neck, just as it was about to bite me with its sharp teeth.
+
 #if(v_strength == 0) {
  Its neck muscles are a little tougher than they look, however, and my knife does not go all the way through. Before I can pull my weapon out, the creature bites my arm, and it does not let go, until the orc riding on its back drives his spear through my head, killing me on the spot.
 
@@ -930,8 +948,42 @@ choice("Continue", B2-Ch10a-Breed, v_current_scene = B2-Ch10a-Breed) if (v_refle
 ID: B2-Ch10a-Breed
 TEXT:
 
+set(v_is_dead,0) if (v_b2_ch10_weakpoint == 0 || v_b2_ch10_weakpoint == 1)
 set(v_is_dead,1) if (v_b2_ch10_weakpoint == 0 && v_strength < 4 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 && v_reflexes < 2)
-set(v_is_dead,0) if (v_b2_ch10_weakpoint == 0 && v_strength == 4 || v_b2_ch10_weakpoint == 1 && v_reflexes >= 2 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar != 0)
+#if(v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 || v_b2_ch10_weakpoint == 0) {
+ 
+
+"Alright, Barry!" Hadrik shouts. "Now try to make the mammoth swing its trunk over here!"
+
+Now I'm finally understanding what he was trying to do. The particular breed of giant snail that Hadrik turned into has a kind of slime that dries almost instantly, and becomes incredibly sticky, which is why it is often used as base material for many types of glues. Since Hadrik has his feet in the slime, he should now be able to grab onto the mammoth's trunk, without having to worry about being lifted into the air afterwards.
+
+"Nice thinking!" I tell Hadrik. "I'll be right over!"
+
+I then dive towards him, and I just float there, baiting the mammoth to attack me. The monster immediately takes the bait, and it swings its trunk with full force in our direction. I fly out of the way at the last second, and Hadrik quickly grabs onto the trunk, with both hands, without letting go.
+
+"Now's your chance, Barry!" Hadrik says. "Quick! I don't know how long this glue will hold."
+
+As the ground below the dwarf is already starting to crack, from the force of the mammoth trying to pull away its trunk, I quickly fly upwards, in order to attack the beast's weak spot.
+
+}
+#if(v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar != 0) {
+ "Alright, Barry!" Hadrik shouts. "Now try to make the mammoth swing its trunk over here!"
+
+Now I'm finally understanding what he was trying to do. The particular breed of giant snail that Hadrik turned into has a kind of slime that dries almost instantly, and becomes incredibly sticky, which is why it is often used as base material for many types of glues. Since Hadrik has his feet in the slime, he should now be able to grab onto the mammoth's trunk, without having to worry about being lifted into the air afterwards.
+
+"Nice thinking!" I tell Hadrik. "I'll be right over!"
+
+I then dive towards him, and I just float there, baiting the mammoth to attack me. The monster immediately takes the bait, and it swings its trunk with full force in our direction. I fly out of the way at the last second, and Hadrik quickly grabs onto the trunk, with both hands, without letting go.
+
+"Now's your chance, Barry!" Hadrik says. "Quick! I don't know how long this glue will hold."
+
+As the ground below the dwarf is already starting to crack, from the force of the mammoth trying to pull away its trunk, I quickly fly upwards, in order to attack the beast's weak spot.
+
+ I reach the area at the base of the trunk as fast as I can, and I try to identify the nostrils on its underside. As soon as I see them, I drive my scimitar into one of them, in an attempt to irreparably damage the creature's airways. As the mammoth screams, I drive my blade further inside, while twisting it continuously. Soon, the screams of the creature start to turn into gasps of air, as the damage that I did to its airways is finally starting to have a visible effect.
+
+I take my scimitar out of the monster and I fly away, while the mammoth is still desperately trying to breathe. After about ten seconds, the creature's gasps for air start to get faster and shorter, until they eventually stop, and the mammoth falls completely silent, as it slowly crashes to the ground, causing a small earth tremor due to the enormous size of its body.
+
+}
 #if(v_b2_ch10_weakpoint == 0 && v_b2_ch5_scimitar == 0 && v_strength < 4) {
  I reach the eyes as fast as I can, and I attempt to shoot at them with my crossbow, in the hopes that I can catch the monster by surprise, before it closes its eyes. Unfortunately, all that the mammoth needed to do was to instinctively blink, and the crossbow bolts simply bounced off its eyelid. I try to shoot a few more bolts, but the creature just closes its eyes, which makes my efforts completely pointless. It looks like I'll need to use my dagger for this to work. 
 
@@ -978,12 +1030,6 @@ I try to get out of its way, but I do not react in time, and the trunk simply cr
 The mammoth finally manages to pull itself away from Hadrik's grip, and it quickly arcs its trunk, making it reach its base with its own tip, in order to squash me like a bug.
 
 I pull my dagger out and I manage to get out of the trunk's way just in time. The mammoth tries to attack me again, but it stops, and it begins to make loud noises, trying to gasp for air, as the damage I did to its airways finally starts to have a visible effect. After about ten more seconds of the creature desperately trying to breathe, its gasps for air start to get faster and shorter, until they eventually stop, and the mammoth falls completely silent, as it slowly crashes to the ground, causing a small earth tremor due to the enormous size of its body.
-
-}
-#if(v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar != 0) {
- I reach the area at the base of the trunk as fast as I can, and I try to identify the nostrils on its underside. As soon as I see them, I drive my scimitar into one of them, in an attempt to irreparably damage the creature's airways. As the mammoth screams, I drive my blade further inside, while twisting it continuously. Soon, the screams of the creature start to turn into gasps of air, as the damage that I did to its airways is finally starting to have a visible effect.
-
-I take my scimitar out of the monster and I fly away, while the mammoth is still desperately trying to breathe. After about ten seconds, the creature's gasps for air start to get faster and shorter, until they eventually stop, and the mammoth falls completely silent, as it slowly crashes to the ground, causing a small earth tremor due to the enormous size of its body.
 
 }
 choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b2_ch10_weakpoint == 0 && v_strength < 4 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 && v_reflexes < 2)

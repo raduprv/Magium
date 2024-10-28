@@ -1219,6 +1219,18 @@ choice("Take both scimitars", B2-Ch05a-Troll-Aftermath, v_current_scene = B2-Ch0
 ID: B2-Ch05a-Troll-Aftermath
 TEXT:
 
+#if(v_b2_ch5_scimitar == 0) {
+ My dagger is more than enough. I wouldn't want an extra weapon weighing me down while I'm fighting.
+
+}
+#if(v_b2_ch5_scimitar == 1) {
+ It's always good to have an extra weapon. I take one of the scimitars from the ground, I put it in its sheath, and then I hook the sheath to my belt.
+
+}
+#if(v_b2_ch5_scimitar == 2) {
+ I decide to take both of the scimitars, because it would be a waste to just leave them there. I put both of the weapons in their sheaths, and then I hook the two sheaths to my belt.
+
+}
 #if(v_b2_ch5_negotiate == 1) {
  "Human," one of the ogres says, in their language. "We have fulfilled our end of the bargain. We are still waiting for you to fulfill yours."
 

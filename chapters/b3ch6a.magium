@@ -351,7 +351,7 @@ choice(""It doesn't matter if he used to be called slowpoke or not. Nobody is go
 ID: B3-Ch06a-Slowpoke
 TEXT:
 
-set(v_b3_ch6_concealed,0)
+set(v_b3_ch6_concealed,0) if (v_b3_ch6_slowpoke == 0 || v_b3_ch6_slowpoke == 1 || v_b3_ch6_slowpoke == 2 || v_bluff < 3)
 set(v_b3_ch6_concealed,1) if (v_bluff >= 3)
 #if(v_b3_ch6_slowpoke == 0) {
  
@@ -1220,7 +1220,7 @@ choice("Suggest calling Rose on the transceiver so she can freeze time for thirt
 ID: B3-Ch06a-Hadrik-Plan
 TEXT:
 
-set(v_is_dead,0)
+set(v_is_dead,0) if (v_b3_ch6_plan == 0 || v_b3_ch6_plan == 2 || v_is_dead == 1 || v_aura_hardening >= 2 || v_combat_technique >= 1)
 set(v_is_dead,1) if (v_aura_hardening < 2 && v_combat_technique < 1)
 #if(v_b3_ch6_plan == 0 && v_combat_technique >= 1) {
  
@@ -1300,7 +1300,7 @@ Luckily for me, when the drone tries to shock me with an electric attack, my aur
 The drone shocks me with an electrical current, but my partial resistance to electricity due to being a half-lessathi isn't enough to protect me from the damage. It only takes a few more seconds until I lose my consciousness and then my heart slowly stops beating for good.
 
 }
-choice("Continue", B3-Ch06a-Entrance, v_current_scene = B3-Ch06a-Entrance)
+choice("Continue", B3-Ch06a-Entrance, v_current_scene = B3-Ch06a-Entrance) if (v_b3_ch6_plan == 0 || v_b3_ch6_plan == 2 || v_is_dead == 0 || v_is_dead == 1 || v_aura_hardening >= 2 || v_combat_technique >= 1)
 choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_aura_hardening < 2 && v_combat_technique < 1)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_aura_hardening < 2 && v_combat_technique < 1)
 choice("Load game", , , special:saves) if (v_aura_hardening < 2 && v_combat_technique < 1)

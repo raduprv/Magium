@@ -1730,8 +1730,68 @@ choice("Continue", B3-Ch12b-Blinding, v_current_scene = B3-Ch12b-Blinding) if (v
 ID: B3-Ch12b-Steal
 TEXT:
 
+set(v_is_dead,0) if (v_aura_hardening == 4 && v_b3_ch11_red == 0 || v_b3_ch11_red == 0 && v_b3_ch12_hadrik == 0 || v_b3_ch11_red == 0 && v_b3_ch12_hadrik == 1 || v_b3_ch11_red == 1)
 set(v_is_dead,1) if (v_b3_ch11_red == 0 && v_aura_hardening < 4)
-set(v_is_dead,0) if (v_aura_hardening == 4 && v_b3_ch11_red == 0 || v_b3_ch11_red == 1)
+#if(v_b3_ch11_red == 0 && v_b3_ch12_hadrik == 0) {
+ 
+
+It's time for me to pull out the ace in my sleeve. Meridith told me that I have a one-time opportunity to steal Eiden's energy with my stat device for a few seconds before he catches on to what I'm doing. Now would be the best time to make use of it.
+
+I quickly pull out my stat device and press on one of the buttons three times, like Meridith showed me.
+
+"You're leveling up your stats now, of all times?" Eiden says, looking unimpressed. "You do realize that no matter what you do, it's not going to--"
+
+All of a sudden, Eiden realizes what I'm doing and he casts a very fast fire spell at me.
+
+}
+#if(v_b3_ch11_red == 0 && v_b3_ch12_hadrik == 1) {
+ 
+
+It's time for me to pull out the ace in my sleeve. Meridith told me that I have a one-time opportunity to steal Eiden's energy with my stat device for a few seconds before he catches on to what I'm doing. Now would be the best time to make use of it.
+
+"Hadrik, stand back!" I say. "I've got this!"
+
+"Well, if you say so," Hadrik says, as he now flies away to give us some space. "I hope you know what you're doing."
+
+"I like your confidence, Barry," Eiden says, as he is now approaching me. "Shall I take it that you finally came up with a plan?"
+
+"Oh yeah!" I say. "Watch this!"
+
+I then pull out my stat device and press on one of the buttons three times, like Meridith showed me.
+
+"You're leveling up your stats now, of all times?" Eiden says, looking unimpressed. "You do realize that no matter what you do, it's not going to--"
+
+All of a sudden, Eiden realizes what I'm doing and he casts a very fast fire spell at me.
+
+}
+#if(v_b3_ch11_red == 1 && v_b3_ch12_hadrik == 0) {
+ It's time for me to pull out the ace in my sleeve. Meridith told me that I have a one-time opportunity to steal Eiden's energy with my stat device for a few seconds before he catches on to what I'm doing. Now would be the best time to make use of it.
+
+I quickly pull out my stat device and press on one of the buttons three times, like Meridith showed me.
+
+"You're leveling up your stats now, of all times?" Eiden says, looking unimpressed. "You do realize that no matter what you do, it's not going to--"
+
+All of a sudden, Eiden realizes what I'm doing and he casts a very fast fire spell at me.
+
+}
+#if(v_b3_ch11_red == 1 && v_b3_ch12_hadrik == 1) {
+ It's time for me to pull out the ace in my sleeve. Meridith told me that I have a one-time opportunity to steal Eiden's energy with my stat device for a few seconds before he catches on to what I'm doing. Now would be the best time to make use of it.
+
+"Hadrik, stand back!" I say. "I've got this!"
+
+"Well, if you say so," Hadrik says, as he now flies away to give us some space. "I hope you know what you're doing."
+
+"I like your confidence, Barry," Eiden says, as he is now approaching me. "Shall I take it that you finally came up with a plan?"
+
+"Oh yeah!" I say. "Watch this!"
+
+I then pull out my stat device and press on one of the buttons three times, like Meridith showed me.
+
+"You're leveling up your stats now, of all times?" Eiden says, looking unimpressed. "You do realize that no matter what you do, it's not going to--"
+
+All of a sudden, Eiden realizes what I'm doing and he casts a very fast fire spell at me.
+
+}
 #if(v_b3_ch11_red == 0 && v_aura_hardening < 4) {
  Unfortunately, due to the imperfect nature of my air currents, I do not manage to fly out of the way fast enough, and the flames cover my entire body. Unable to withstand the heat, I quickly burn to a crisp and die in the next few moments.
 

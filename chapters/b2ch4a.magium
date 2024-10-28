@@ -556,6 +556,42 @@ choice("Continue", B2-Ch04a-Strategy, v_current_scene = B2-Ch04a-Strategy)
 ID: B2-Ch04a-Strategy
 TEXT:
 
+#if(v_b2_ch4_inform == 0) {
+ As Wilhelm stops talking, a blue writing appears in the middle of us, with large characters, so that we can all see it clearly.
+
+"Please excuse me," the text says, "but I would like to begin discussing our strategy for tomorrow, now, if you all don't mind."
+
+We all turn towards Leila, who is staring at us with an upset look on her face.
+
+"Oh, uh..." Bruce says. "Of course, of course... Maybe we should start doing that."
+
+"I could not agree more," Wilhelm says.
+
+"And just what are we supposed to talk about, exactly?" the mage says. "We still haven't been given any information in regards to tomorrow's events. The only thing we know so far is that we're likely going to be battling mythical creatures of some kind, in one of the rounds."  
+
+Leila gives me a look. 
+
+I wonder if she's having second thoughts about us not telling them of what we found out in the caverns. If I were to change my mind, then there would definitely not be a better moment than this.
+
+}
+#if(v_b2_ch4_inform == 1) {
+ As Wilhelm stops talking, a blue writing appears in the middle of us, with large characters, so that we can all see it clearly.
+
+"Please excuse me," the text says, "but I would like to begin discussing our strategy for tomorrow, now, if you all don't mind."
+
+We all turn towards Leila, who is staring at us with an upset look on her face.
+
+"Oh, uh..." Bruce says. "Of course, of course... Maybe we should start doing that."
+
+"I could not agree more," Wilhelm says.
+
+"And just what are we supposed to talk about, exactly?" the mage says. "We still haven't been given any information in regards to tomorrow's events. The only thing we know so far is that we're likely going to be battling mythical creatures of some kind, in one of the rounds."  
+
+Leila gives me a look. 
+
+I think she's trying to tell me that this would be the best moment for me to let everyone know about what we found out in the caverns. Then again, I suppose it's still not too late to change my mind, either.
+
+}
 choice("Ask Wilhelm if he overheard the guards say anything about the arena event", B2-Ch04a-Overheard, v_current_scene = B2-Ch04a-Overheard, v_b2_ch4_inform2 = 0) if (v_b2_ch2_threatened != 2)
 choice("Tell everyone about what we found out in the caverns", B2-Ch04a-Caverns, v_current_scene = B2-Ch04a-Caverns, v_b2_ch4_inform2 = 1, v_b2_ch4_inform3 = 0)
 choice("Ask if somebody overheard the guards say anything about the arena event", B2-Ch04a-Overheard, v_current_scene = B2-Ch04a-Overheard, v_b2_ch4_inform2 = 0) if (v_b2_ch2_threatened == 2)

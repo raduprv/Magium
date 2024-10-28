@@ -341,13 +341,13 @@ class Parser:
                     var_name = transform_var_name(match.group("variable"))
                     event.results["set_variables"][var_name] = "+"+match.group("value")
                 elif match := re.search('Scene text : Display paragraph (?P<paragraph>.*)',current):
-                    event.type = "scene_load" if event.type is None else event.type
+                    event.type = "scene_load" if event.type == "" or event.type is None else event.type
                     event.results["paragraphs"].append((int(match.group("paragraph")),1))
                 elif match := re.search('Scene text 2 : Display paragraph (?P<paragraph>.*)',current):
-                    event.type = "scene_load" if event.type is None else event.type
+                    event.type = "scene_load" if event.type == "" or event.type is None else event.type
                     event.results["paragraphs"].append((int(match.group("paragraph")),2))
                 elif match := re.search('scene 3 : Display paragraph (?P<paragraph>.*)',current):
-                    event.type = "scene_load" if event.type is None else event.type
+                    event.type = "scene_load" if event.type == "" or event.type is None else event.type
                     event.results["paragraphs"].append((int(match.group("paragraph")),3))
                 elif match := re.search('checks : Set alterable string to (?P<text>.*)',current):
                     if "Checkpoint reached" in match.group("text"):
@@ -379,7 +379,8 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
-verbose = False
+#chapters = ["b2ch10a"]
+verbose = True
 for chapter in chapters:
     filename = root_folder/chapter/"logic.txt"
 
@@ -422,14 +423,13 @@ for chapter in chapters:
             raise ValueError(f"The scene '{scene_id} was not found ! List of available scenes : {' '.join(scenes.keys())}'")
 
 
-        set_variable_names = []
+        set_variables = []
         for path in scenes[scene_id].paths:
-            for set_variable in path.set_variables:
-                set_variable_names.append(set_variable.name)
+            set_variables += [(set_variable,path.conditions) for set_variable in path.set_variables]
         for path in scenes[scene_id].paths:
-            for set_variable_name in set_variable_names:
-                if set_variable_name not in [v.name for v in path.set_variables]:
-                    path.set_variables.append(SceneVariableSet(set_variable_name,0))
+            for set_variable, conditions in set_variables:
+                if set_variable.name not in [v.name for v in path.set_variables] and not all_is_compatible(path.conditions,conditions):
+                    path.set_variables.append(SceneVariableSet(set_variable.name,0))
 
         event_conditions = event.conditions["variables"]
         for path in scenes[scene_id].paths:

@@ -451,6 +451,54 @@ TEXT:
 "No doubt," the man says, as he takes a quick glance towards Daren and Hadrik, who are full of bruises. "So tell me, outsiders... since you've already run into the royal guards, did you by any chance have the pleasure of meeting the Overseer and his 'drowns' too?" 
 
 }
+#if(v_b3_ch2_goblins == 3 || v_b3_ch2_goblins == 4 || v_b3_ch2_infiltration == 3) {
+ "The Overseer?" I say. "Oh, you mean that green-eyed metal ball that talks funny? Yeah, we met him."
+
+"You might think he's just some funny talking metal ball, but he's so much more than that," the man says. "That bastard has complete control over all those red-eyed metal balls you see flying around the city, and he can send them to attack you with dozens of elemental spells, or even use them to spy on you. Some people here may not agree with me, but from my point of view, that Overseer is even more dangerous than Billy Bob and the royal guards combined."
+
+"You keep calling it a 'he', but the Overseer is clearly an 'it'," Albert says. "It's just some artificial intelligence protocol that was invented by the ancients a long time ago, which Billy Bob managed to repair recently. Regardless of how 'intelligent' it is, that still doesn't make it a person."
+
+"You only say that because you've never met him!" the man with the scar says. "I'm telling you, that bastard is only putting on an act! You might think he's dumb, because of the way he talks, but one of these days I swear he's going to overthrow the king to crown himself the new ruler of Ollendor, and you people won't be able to say that I haven't told you so, when it happens!"
+
+"Yes, yes, Breynan," Albert says. "You've told us so. You've told us so a thousand times. So maybe now we could stop talking about this subject and focus on more important matters, don't you think?"
+
+ "Hold on, there..." Hadrik says. "You guys are telling me that the old scrap of metal with the green eye that talked to us is actually alive?"
+
+Albert sighs.
+
+"Not alive, in the real sense of the word," he says. "Just intelligent enough to make its own decisions."
+
+"But is that even possible?..." Hadrik says. "Making objects intelligent just by messing with their aura? Daren, you're an enchanter. Have you ever heard of something like this before?"
+
+"Hey, I didn't even know that objects had auras until Arraka told me about it a few days ago," Daren says. "I always thought that I was just casting magic on the air around the items, when I was doing the enchanting before. The aura of objects is just so different from that of living beings, that I honestly can't tell what is possible and what is not."
+
+"Of course it's possible, you idiots!" Arraka blurts out, all of a sudden. "It's just like when you're making golems. If golems can be smart enough to make decisions on their own, then why not also this 'Overseer', or whatever it's called? To me, this 'artificial intelligence' just sounds like a smarter version of those golems that you typically see guarding ruins and attacking everyone that gets within their range of sight. I don't really see why there's any need to treat it as something special."
+
+}
+#if(v_b3_ch2_goblins != 4 && v_b3_ch2_infiltration != 3) {
+ "I'm not sure who this Overseer is supposed to be, but if by 'drowns' you mean those flying metal balls, then yeah, we did meet them," I say. "Those pieces of junk nearly killed us."
+
+"Oh yeah," the man says. "Those 'drowns' are not to be underestimated, but the Overseer is even worse... He has complete control over those metal balls, and he can even use them to spy on you. Some people here may not agree with me, but I think that bastard is even more dangerous than Billy Bob and the royal guards combined."
+
+"You keep calling it a 'he', but the Overseer is clearly an 'it'," Albert says. "It's just some artificial intelligence protocol that was invented by the ancients a long time ago, which Billy Bob managed to repair recently. Regardless of how 'intelligent' it is, that still doesn't make it a person."
+
+"You only say that because you've never met him!" the man with the scar says. "I'm telling you, that bastard is only putting on an act! You might think he's dumb, because of the way he talks, but one of these days I swear he's going to overthrow the king to crown himself the new ruler of Ollendor, and you people won't be able to say that I haven't told you so, when it happens!"
+
+"Yes, yes, Breynan," Albert says. "You've told us so. You've told us so a thousand times. So maybe now we could stop talking about this subject and focus on more important matters, don't you think?"
+
+ "Hold on, there..." Hadrik says. "You guys are saying that the lessathi from a thousand years ago found a way to bring objects to life?"
+
+Albert sighs.
+
+"The Overseer is not alive, in the real sense of the word," he says. "Just intelligent enough to make its own decisions."
+
+"But is that even possible?..." Hadrik says. "Making objects intelligent just by messing with their aura? Daren, you're an enchanter. Have you ever heard of something like this before?"
+
+"Hey, I didn't even know that objects had auras until Arraka told me about it a few days ago," Daren says. "I always thought that I was just casting magic on the air around the items, when I was doing the enchanting before. The aura of objects is just so different from that of living beings, that I honestly can't tell what is possible and what is not."
+
+"Of course it's possible, you idiots!" Arraka blurts out, all of a sudden. "It's just like when you're making golems. If golems can be smart enough to make decisions on their own, then why not also this 'Overseer', or whatever it's called? To me, this 'artificial intelligence' just sounds like a smarter version of those golems that you typically see guarding ruins and attacking everyone that gets within their range of sight. I don't really see why there's any need to treat it as something special."
+
+}
 choice("Continue", B3-Ch02c-Alice, v_current_scene = B3-Ch02c-Alice) if (v_b3_ch2_madness == 0 || v_b3_ch2_madness == 1 || v_b3_ch2_madness == 2)
 
 
@@ -869,6 +917,82 @@ He pauses.
 "Of course," Daren says. "What is it?"
 
 "You wouldn't happen to have met a group of three goblins on your way here, would you?" Kelrim says. "They were supposed to return to this city any day now, and I made sure to leave them this week's password written on a rock by the side of a river not far from here, but I haven't heard from them yet."
+
+}
+#if(v_b3_ch2_goblins == 1) {
+ "Those goblins that you speak of..." Daren says, looking a bit shaken. "Would they have been wearing some really basic equipment? Like cheap leather armor and some really worn down weapons? Was one of them considerably older than the other two?"
+
+"Yes, that's them!" Kelrim says. "You've met them, then?"
+
+"Yes, but..." Daren says, struggling to find his words. "We... killed them. We killed them all. We thought that they were with Tyrath. Kelrim, I'm so sorry, we didn't think that... We just..."
+
+While Daren is still trying to find his words, Kelrim looks as if he is only now slowly beginning to fully grasp what has been said to him.
+
+"My friends are... dead?" Kelrim says, with great pain in his voice, as he is now looking straight ahead of him, almost as if he has forgotten that there is anyone else in the room now beside him.
+
+The goblin's knees then begin to tremble, and as he loses the strength to even stand up, he takes a step back and he drops into one of the chairs behind him, without uttering another word. In the meantime, Kate looks as if she's having a little crisis herself. She is sweating very hard, and she is staring straight at the ground, looking as if she were about to have a mental breakdown.
+
+ That's right... Kate killed one of Kelrim's friends herself. She must be behaving this way because of the guilt she's feeling after she saw the goblin react to his friends' deaths.
+
+"Kelrim..." Daren says. "I didn't know... I..."
+
+"No, it's alright," Kelrim says, as he tries hard to regain his composure, although if you were to judge from the look he now has in his eyes, you would think that he hasn't slept at all for three days straight. "I'm not blaming you. They were goblins, after all... You had no reason to think twice before killing them. Who knows? If they were different goblins, they might even have killed you, if you didn't attack them first... I know that this is how the world works, but still... I... just need a few moments to recollect myself, that's all..."
+
+Hearing the goblin's words seems to have pushed Kate even further over the edge. Her eyes are blinking rapidly, and she looks as if she is quickly panicking.
+
+"Kate, are you with me?" I ask her, as I place myself in front of her. "Kate!"
+
+Kate raises her eyes from the ground, but she doesn't answer, now looking at me with the same panicked expression that she was having before. 
+
+As I am still busy trying to get Kate to snap out of it, Breynan suddenly turns around and then he jumps back, out of shock, now looking at a man in his mid-fifties standing in front of him, who is wearing chainmail armor and a gray mantle around his shoulders.
+
+}
+#if(v_b3_ch1_password == 1 && v_b3_ch2_goblins == 0) {
+ "Did the writing on that rock say 'griffin beak' by any chance?" I say.
+
+"No," Kelrim says. "I mean, yes, that's what it technically says, but you are not meant to read the writing as it is. You are supposed to rearrange the symbols, using a secret code known only by me and my friends, and if you do that, the password it gives you is 'gargoyle wings'. But how do you know what was written on the rock?"
+
+"Well..." I say. "It turns out that our friend Melindra over here took that rock to add it to her collection."
+
+"What?..." Melindra says. "No, there was no writing on any of my rocks!"
+
+"As you can see, she didn't know about the writing," I say. "She only picked up the rock by accident."
+
+"Hey!" Melindra says. "I said there was nothing written on any of the rocks! Don't ignore me!"
+
+"But then... if they don't have the rock, it means that my friends are just stuck outside, unable to get into the city!" Kelrim says, as Melindra is pouting in the background.
+
+"Yeah, they're most definitely outside," I say. "Some goblins tried calling out to us before we got here, but we just ignored them and went on our way."
+
+"I see..." Kelrim says. "In that case, I will have to go out and look for them later."
+
+}
+#if(v_b3_ch1_password == 0 && v_b3_ch2_goblins == 0) {
+ "We did run into some goblins on our way here, actually," I say. "They wanted to discuss something with us about the password required to enter the city, but we just ignored them and went on our way."
+
+"I see..." Kelrim says. "Those must have been my friends. I don't see why any other goblins would be hanging out near the city. I will have to go out and look for them later."
+
+}
+#if(v_b3_ch2_goblins == 2) {
+ "We did run into some goblins on our way here, actually," I say. "We had a little chat with them about that very rock you were talking about. Apparently they didn't find it on the side of the river, and they thought that we were the ones who took it. Anyway, they're probably still waiting in the forest outside the village, since I doubt they could have gotten inside the city through any other means."
+
+"I see..." Kelrim says. "In that case, I will have to go out and look for them later."
+
+}
+#if(v_b3_ch2_goblins == 3) {
+ "We did run into some goblins on our way here, actually," I say. "We had a little chat with them about that very rock you were talking about. It turned out that we had taken it by accident, so we traded them the password written on it in exchange for them telling us that we needed to wink three times at the guard, for him to let us through. I'm sure that your friends must have already entered the city by now."
+
+"Oh my..." Kelrim says. "In that case, they must already be waiting for me at our meeting spot. I will have to go there as soon as possible."
+
+}
+#if(v_b3_ch2_goblins == 4) {
+ "We did run into some goblins on our way here, actually," I say. "We had a little chat with them about that very rock you were talking about. It turned out that we had taken it by accident, so we traded them the password written on it in exchange for them telling us that we needed to wink three times at the guard, for him to let us through. Your friends entered the city shortly before us, so they should be hanging around somewhere on the surface right now."
+
+"Oh my..." Kelrim says. "In that case, they must already be waiting for me at our meeting spot. I will have to go there as soon as possible."
+
+}
+#if(v_b3_ch1_password == 0 && v_b3_ch2_goblins == 0 || v_b3_ch1_password == 1 && v_b3_ch2_goblins == 0 || v_b3_ch2_goblins == 2 || v_b3_ch2_goblins == 3 || v_b3_ch2_goblins == 4) {
+ All of a sudden, Breynan turns around and then he jumps back, out of shock, now looking at a man in his mid-fifties standing in front of him, who is wearing chainmail armor and a gray mantle around his shoulders.
 
 }
 choice("Continue", B3-Ch02c-Ending, v_current_scene = B3-Ch02c-Ending) if (v_b3_ch2_question == 0 || v_b3_ch2_question == 1 || v_b3_ch2_question == 2)
