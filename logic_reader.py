@@ -58,7 +58,7 @@ def groupby_unsorted(input, key=lambda x:x):
   for i, wantedKey in enumerate(keys):
     if wantedKey not in yielded:
       yield (wantedKey,
-          (input[j] for j in range(i, len(input)) if keys[j] == wantedKey))
+          [input[j] for j in range(i, len(input)) if keys[j] == wantedKey])
     yielded.add(wantedKey)
 
 @dataclass
@@ -265,7 +265,7 @@ class Scene:
         return text
 
     def merge_paragraphs(self):
-        grouped_paragraphs = groupby_unsorted(self.paragraphs,key=lambda r:(r.id,r.version))
+        grouped_paragraphs = groupby_unsorted(self.paragraphs[::-1],key=lambda r:(r.id,r.version))
         new_paragraphs = []
         for (id,version),group in grouped_paragraphs:
             group = list(group)
@@ -273,7 +273,7 @@ class Scene:
             new_paragraphs.append(Paragraph(id,version,new_conditions))
 
         paragraph_groups = {}
-        for paragraph in new_paragraphs:
+        for paragraph in new_paragraphs[::-1]:
             key = str(paragraph.conditions) 
             if key not in paragraph_groups:
                 paragraph_groups[key] = ParagraphGroup(conditions=paragraph.conditions)
@@ -341,10 +341,13 @@ class Parser:
                     var_name = transform_var_name(match.group("variable"))
                     event.results["set_variables"][var_name] = "+"+match.group("value")
                 elif match := re.search('Scene text : Display paragraph (?P<paragraph>.*)',current):
+                    event.type = "scene_load" if event.type == "" or event.type is None else event.type
                     event.results["paragraphs"].append((int(match.group("paragraph")),1))
                 elif match := re.search('Scene text 2 : Display paragraph (?P<paragraph>.*)',current):
+                    event.type = "scene_load" if event.type == "" or event.type is None else event.type
                     event.results["paragraphs"].append((int(match.group("paragraph")),2))
                 elif match := re.search('scene 3 : Display paragraph (?P<paragraph>.*)',current):
+                    event.type = "scene_load" if event.type == "" or event.type is None else event.type
                     event.results["paragraphs"].append((int(match.group("paragraph")),3))
                 elif match := re.search('checks : Set alterable string to (?P<text>.*)',current):
                     if "Checkpoint reached" in match.group("text"):
@@ -376,6 +379,7 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
+#chapters = ["b2ch10a"]
 verbose = False
 for chapter in chapters:
     filename = root_folder/chapter/"logic.txt"
@@ -404,7 +408,7 @@ for chapter in chapters:
             conditions=event.conditions["variables"],
             responses=[Response(button) for button in event.results["add_buttons"]],
             paragraphs=[Paragraph(paragraph[0],paragraph[1]) for paragraph in event.results["paragraphs"]],
-            set_variables=[SceneVariableSet(variable,int(value)) for variable, value in  event.results["set_variables"].items()],
+            set_variables=[SceneVariableSet(variable,int(value)) for variable, value in event.results["set_variables"].items()],
         ))
 
     for event in [e for e in events if e.type == "button"]:
@@ -419,14 +423,17 @@ for chapter in chapters:
             raise ValueError(f"The scene '{scene_id} was not found ! List of available scenes : {' '.join(scenes.keys())}'")
 
 
-        set_variable_names = []
+        set_variables = []
         for path in scenes[scene_id].paths:
-            for set_variable in path.set_variables:
-                set_variable_names.append(set_variable.name)
+            set_variables += [(set_variable,path.conditions) for set_variable in path.set_variables]
+
+        grouped_set_variables = list(groupby_unsorted(set_variables,key=lambda r:(r[0].name)))
+        grouped_set_variables = [(group[0],[condition[1] for condition in group[1]]) for group in grouped_set_variables]
+
         for path in scenes[scene_id].paths:
-            for set_variable_name in set_variable_names:
-                if set_variable_name not in [v.name for v in path.set_variables]:
-                    path.set_variables.append(SceneVariableSet(set_variable_name,0))
+            for set_variable, conditions_list in grouped_set_variables:
+                if set_variable not in [v.name for v in path.set_variables] and not any([all_is_compatible(path.conditions,conditions) for conditions in conditions_list]):
+                    path.set_variables.append(SceneVariableSet(set_variable,0))
 
         event_conditions = event.conditions["variables"]
         for path in scenes[scene_id].paths:
