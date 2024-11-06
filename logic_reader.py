@@ -58,7 +58,7 @@ def groupby_unsorted(input, key=lambda x:x):
   for i, wantedKey in enumerate(keys):
     if wantedKey not in yielded:
       yield (wantedKey,
-          (input[j] for j in range(i, len(input)) if keys[j] == wantedKey))
+          [input[j] for j in range(i, len(input)) if keys[j] == wantedKey])
     yielded.add(wantedKey)
 
 @dataclass
@@ -380,7 +380,7 @@ chapters = (
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
 #chapters = ["b2ch10a"]
-verbose = True
+verbose = False
 for chapter in chapters:
     filename = root_folder/chapter/"logic.txt"
 
@@ -426,10 +426,14 @@ for chapter in chapters:
         set_variables = []
         for path in scenes[scene_id].paths:
             set_variables += [(set_variable,path.conditions) for set_variable in path.set_variables]
+
+        grouped_set_variables = list(groupby_unsorted(set_variables,key=lambda r:(r[0].name)))
+        grouped_set_variables = [(group[0],[condition[1] for condition in group[1]]) for group in grouped_set_variables]
+
         for path in scenes[scene_id].paths:
-            for set_variable, conditions in set_variables:
-                if set_variable.name not in [v.name for v in path.set_variables] and not all_is_compatible(path.conditions,conditions):
-                    path.set_variables.append(SceneVariableSet(set_variable.name,0))
+            for set_variable, conditions_list in grouped_set_variables:
+                if set_variable not in [v.name for v in path.set_variables] and not any([all_is_compatible(path.conditions,conditions) for conditions in conditions_list]):
+                    path.set_variables.append(SceneVariableSet(set_variable,0))
 
         event_conditions = event.conditions["variables"]
         for path in scenes[scene_id].paths:

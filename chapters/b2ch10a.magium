@@ -948,7 +948,7 @@ choice("Continue", B2-Ch10a-Breed, v_current_scene = B2-Ch10a-Breed) if (v_refle
 ID: B2-Ch10a-Breed
 TEXT:
 
-set(v_is_dead,0) if (v_b2_ch10_weakpoint == 0 || v_b2_ch10_weakpoint == 1)
+set(v_is_dead,0) if (v_b2_ch10_weakpoint == 0 && v_strength == 4 || v_b2_ch10_weakpoint == 1 && v_reflexes >= 2 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar != 0)
 set(v_is_dead,1) if (v_b2_ch10_weakpoint == 0 && v_strength < 4 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 && v_reflexes < 2)
 #if(v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 || v_b2_ch10_weakpoint == 0) {
  
