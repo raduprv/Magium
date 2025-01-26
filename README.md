@@ -6,4 +6,6 @@ I am his brother, and with my mother's permission I am releasign the source code
 You can download the file from here:
 https://drive.google.com/file/d/14zEkJ0c5D0-C5wxeyZgOX-fboEye5mOR/view?usp=sharing
 
+All the data (text and such) is released under CC BY 4.0 license.
+
 The telegram group for development is here: https://t.me/+xZaRFbK1P7wxYjI8 Please only join if you want to participate in the further development of Magium.
