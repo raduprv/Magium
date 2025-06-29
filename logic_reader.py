@@ -131,6 +131,10 @@ def is_total_pattern(conditions: list):
     simplified_condition = sp.simplify(combined_condition)
     return simplified_condition
 
+@dataclass(frozen=True)
+class AchievementEarned:
+    text: str
+    variable: str
 
 @dataclass
 class Paragraph:
@@ -149,6 +153,7 @@ class Response:
     new_scene: str = field(default_factory=str)
     set_variables: dict = field(default_factory=dict)
     conditions: dict = field(default_factory=dict)
+    achievements: list[AchievementEarned] = field(default_factory=list)
     special: str = ""
 
 @dataclass
@@ -186,6 +191,7 @@ class Scene:
     paragraphs: list[Paragraph] = field(default_factory=list) 
     responses: list[Response] = field(default_factory=list) 
     set_variables: list[SceneVariableSet] = field(default_factory=list)
+    achievements: list[AchievementEarned] = field(default_factory=list)
 
     def to_json(self,paragraphs):
         text = ""
@@ -239,6 +245,10 @@ class Scene:
         if self.id == "Ch6-Lose-fight":
             text += "set(v_maximized_stats_used,1)\n"
 
+
+        for achievement in set(self.achievements):
+            text += f'achievement("{achievement.text}",{achievement.variable})\n'
+
         paragraph_groups = self.merge_paragraphs()
         for par_group in paragraph_groups:
             if par_group.conditions != True:
@@ -254,7 +264,9 @@ class Scene:
 
         responses = self.merge_responses()
         for response in responses:
-            text += f'choice("{response.text}", {response.new_scene}, {", ".join([f"{name} = {value}" for name,value in response.set_variables.items()])}'
+            # Filter values with aux to avoid a bug (https://github.com/thuiop/magium-dev/issues/89)
+            set_variables_string = ", ".join([f"{name} = {value}" for name,value in response.set_variables.items() if "aux" not in str(value)])
+            text += f'choice("{response.text}", {response.new_scene}, {set_variables_string}'
             if response.special != "":
                  text += f", special:{response.special}"
             text += ")"
@@ -359,7 +371,8 @@ class Parser:
                         event.results["special"] = "saves"
                 elif match := re.search('Achievement title : Set alterable string to "(?P<achievement>.*)"',current):
                     achievement_var = [var for var in event.conditions["variables"] if "_ac_" in var][0]
-                    event.results["special"] = f"achievement-{match.group('achievement')}-{achievement_var}"
+                    if event.type == "": event.type = "achievement"
+                    event.results["achievement"] = AchievementEarned( match.group('achievement'),achievement_var)
                     event.conditions["variables"] = {var:condition for var, condition in event.conditions["variables"].items() if "_ac_" not in var}
                     
 
@@ -379,7 +392,7 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
-#chapters = ["b2ch10a"]
+#chapters = ["ch1"]
 verbose = False
 for chapter in chapters:
     filename = root_folder/chapter/"logic.txt"
@@ -482,15 +495,21 @@ for chapter in chapters:
             if verbose:
                 print("Chosen response:",response)
 
+            if "new_scene" in event.results: 
+                response.new_scene = event.results["new_scene"]
+
             for var,value in event.results["set_variables"].items():
                 response.set_variables[var] = value 
+            if "achievement" in event.results:
+                achievement: AchievementEarned = event.results["achievement"]
+                response.set_variables[achievement.variable] = 1
+                # We do not know yet the following scene, so we store the achievements in the response for now
+                response.achievements.append(achievement)
+                
             if scene_id == "Ch11b-Ending":
                 response.set_variables["v_first_book_purchased"] = "1"
             if scene_id == "B2-Ch11c-Ending":
                 response.set_variables["v_second_book_purchased"] = "1"
-                
-            if "new_scene" in event.results: 
-                response.new_scene = event.results["new_scene"]
 
             if "special" in event.results and response.special == "":
                 response.special = event.results["special"]
@@ -501,6 +520,23 @@ for chapter in chapters:
                 print("New response:",response)
                 print()
 
+    # Only achievements earned at the beginning of a scene
+    for event in [e for e in events if e.type == "achievement"]:
+        if verbose:
+            print(event)
+        if "scene" not in event.conditions:
+            print("No scene specified...")
+            continue
+        scene_id = event.conditions["scene"]
+        if scene_id not in scenes:
+            raise ValueError(f"The scene '{scene_id} was not found ! List of available scenes : {' '.join(scenes.keys())}'")
+
+        scenes[scene_id].set_variables += [
+            SceneVariableSet(set_variable_name,set_variable_value,event.conditions["variables"])
+            for set_variable_name, set_variable_value in event.results["set_variables"].items()
+        ]
+        scenes[scene_id].achievements.append(event.results["achievement"])
+
     for scene in scenes.values():
         for path in scene.paths:
             for element_type in ["paragraphs","responses","set_variables"]:
@@ -508,6 +544,10 @@ for chapter in chapters:
                     element.conditions = path.conditions
                     getattr(scene,element_type).append(element)
             scene.responses = [response for response in scene.responses if response.new_scene != "" or response.special != ""]
+        
+        for response in scene.responses:
+            for achievement in response.achievements:
+                scenes[response.new_scene].achievements.append(achievement)
 
 
     paragraphs = {1:{},2:{},3:{}}
