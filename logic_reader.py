@@ -284,12 +284,16 @@ class Scene:
             new_conditions = sp.simplify_logic(sp.Or(*[sp.And(*paragraph.conditions.values()) for paragraph in group]),form="dnf")
             new_paragraphs.append(Paragraph(id,version,new_conditions))
 
+        # Necessary to ensure paragraphs remain in the correct order
+        new_paragraphs = sorted(new_paragraphs[::-1],key=lambda x:x.version)
+
         paragraph_groups = {}
-        for paragraph in new_paragraphs[::-1]:
+        for paragraph in new_paragraphs:
             key = str(paragraph.conditions) 
             if key not in paragraph_groups:
                 paragraph_groups[key] = ParagraphGroup(conditions=paragraph.conditions)
             paragraph_groups[key].paragraphs.append((paragraph.id,paragraph.version))
+
         return paragraph_groups.values()
 
 
@@ -376,6 +380,8 @@ class Parser:
                     event.conditions["variables"] = {var:condition for var, condition in event.conditions["variables"].items() if "_ac_" not in var}
                     
 
+        # Paragraph from "Scene text 2" or "scene 3" should always be 2nd and third, but sometimes are out of order in the logic file
+        event.results["paragraphs"] = sorted(event.results["paragraphs"],key=lambda x:x[1])
         return event
 
     def parse(self):
@@ -392,7 +398,7 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
-#chapters = ["ch1"]
+#chapters = ["b2ch11b"]
 verbose = False
 for chapter in chapters:
     filename = root_folder/chapter/"logic.txt"
