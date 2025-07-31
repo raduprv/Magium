@@ -1,6 +1,15 @@
 ID: B3-Ch04a-Intro
 TEXT:
 
+set(v_aura_hardening,0)
+set(v_aura_hardening_aux,0)
+set(v_b3_ch4_average_joe,0)
+set(v_b3_ch4_average_joe,1) if (v_agility == 0 && v_ancient_languages == 0 && v_combat_technique == 0 && v_hearing == 0 && v_perception == 0 && v_premonition == 0 && v_reflexes == 0 && v_strength == 0 && v_toughness == 0)
+set(v_b3_ch4_demolisher,0)
+set(v_bluff,0)
+set(v_bluff_aux,0)
+set(v_magical_sense,0)
+set(v_magical_sense_aux,0)
 #if(v_ch11_saved_rose == 1) {
  
 

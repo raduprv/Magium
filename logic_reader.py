@@ -159,7 +159,7 @@ class Response:
 @dataclass
 class SceneVariableSet:
     name: str
-    value: int
+    value: str
     conditions: dict = field(default_factory=dict)
 
 @dataclass
@@ -382,6 +382,12 @@ class Parser:
 
         # Paragraph from "Scene text 2" or "scene 3" should always be 2nd and third, but sometimes are out of order in the logic file
         event.results["paragraphs"] = sorted(event.results["paragraphs"],key=lambda x:x[1])
+
+        # Sometimes occur
+        if event.type == "" and len(event.results["set_variables"]) and "scene" in event.conditions:
+            event.type = "extra_set"
+
+
         return event
 
     def parse(self):
@@ -398,7 +404,7 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
-#chapters = ["b2ch11b"]
+#chapters = ["b2ch10b"]
 verbose = False
 for chapter in chapters:
     filename = root_folder/chapter/"logic.txt"
@@ -582,6 +588,9 @@ for chapter in chapters:
     #json_vals = {id:scene.to_json(paragraphs) for id,scene in scenes.items()}
     #with open(root_folder/f"{chapter}.json","w") as f:
     #    json.dump(json_vals,f,indent=4)
+
+    for event in [e for e in events if e.type == "extra_set"]:
+        scenes[event.conditions["scene"]].set_variables += [SceneVariableSet(set_variable_name,set_variable_value,event.conditions["variables"]) for set_variable_name, set_variable_value in event.results["set_variables"].items()]
 
     magium_vals = "\n\n".join(scene.to_magium(paragraphs) for scene in scenes.values())
     with open(root_folder/f"{chapter}.magium","w") as f:
