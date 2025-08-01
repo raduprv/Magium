@@ -337,6 +337,8 @@ class Parser:
                 elif match := re.search('(?P<variable>.*) (?P<comparison>=|<|>|<>|>=|<=) (?P<value>.*)',current[2:]):
                     if "counter" not in match.group("variable").lower():
                         var_name = transform_var_name(match.group("variable"))
+                        # Do not use the aux variables in conditions
+                        var_name = var_name.removesuffix("_aux")
                         event.conditions["variables"][var_name] = apply_condition_to_sympy(sp.symbols(var_name),match.group("comparison"),int(match.group("value")))
 
             else:
