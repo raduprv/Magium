@@ -13,6 +13,24 @@ import sympy as sp
 root_folder = pathlib.Path("./chapters")
 pp = pprint.PrettyPrinter(2)
 
+STATS_VARIABLE_NAMES = [
+    "v_aura_hardening",
+    "v_magical_sense",
+    "v_bluff",
+    "v_combat_technique",
+    "v_ancient_languages",
+    "v_perception",
+    "v_premonition",
+    "v_hearing",
+    "v_reflexes",
+    "v_speed",
+    "v_toughness",
+    "v_strength",
+    "v_available_points",
+    "v_magical_knowledge",
+    "v_magical_power",
+]
+STATS_VARIABLE_NAMES += [f"{v}_aux" for v in STATS_VARIABLE_NAMES]
 
 class Lexer:
     def __init__(self,data):
@@ -358,6 +376,9 @@ class Parser:
                 elif match := re.search('Special : Add (?P<value>.*) to (?P<variable>.*)',current):
                     var_name = transform_var_name(match.group("variable"))
                     event.results["set_variables"][var_name] = "+"+match.group("value")
+                elif match := re.search('Special : Subtract (?P<value>.*) from  (?P<variable>.*)',current):
+                    var_name = transform_var_name(match.group("variable"))
+                    event.results["set_variables"][var_name] = "-"+match.group("value")
                 elif match := re.search('Scene text : Display paragraph (?P<paragraph>.*)',current):
                     event.type = "scene_load" if event.type == "" or event.type is None else event.type
                     event.results["paragraphs"].append((int(match.group("paragraph")),1))
@@ -406,7 +427,7 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
-#chapters = ["b2ch10b"]
+#chapters = ["b2ch11c"]
 verbose = False
 for chapter in chapters:
     filename = root_folder/chapter/"logic.txt"
@@ -459,7 +480,11 @@ for chapter in chapters:
 
         for path in scenes[scene_id].paths:
             for set_variable, conditions_list in grouped_set_variables:
-                if set_variable not in [v.name for v in path.set_variables] and not any([all_is_compatible(path.conditions,conditions) for conditions in conditions_list]):
+                if (
+                    set_variable not in [v.name for v in path.set_variables]
+                    and not any([all_is_compatible(path.conditions,conditions) for conditions in conditions_list])
+                    and set_variable not in STATS_VARIABLE_NAMES
+                ):
                     path.set_variables.append(SceneVariableSet(set_variable,0))
 
         event_conditions = event.conditions["variables"]
