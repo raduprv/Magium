@@ -13,6 +13,24 @@ import sympy as sp
 root_folder = pathlib.Path("./chapters")
 pp = pprint.PrettyPrinter(2)
 
+STATS_VARIABLE_NAMES = [
+    "v_aura_hardening",
+    "v_magical_sense",
+    "v_bluff",
+    "v_combat_technique",
+    "v_ancient_languages",
+    "v_perception",
+    "v_premonition",
+    "v_hearing",
+    "v_reflexes",
+    "v_speed",
+    "v_toughness",
+    "v_strength",
+    "v_available_points",
+    "v_magical_knowledge",
+    "v_magical_power",
+]
+STATS_VARIABLE_NAMES += [f"{v}_aux" for v in STATS_VARIABLE_NAMES]
 
 class Lexer:
     def __init__(self,data):
@@ -159,7 +177,7 @@ class Response:
 @dataclass
 class SceneVariableSet:
     name: str
-    value: int
+    value: str
     conditions: dict = field(default_factory=dict)
 
 @dataclass
@@ -284,12 +302,16 @@ class Scene:
             new_conditions = sp.simplify_logic(sp.Or(*[sp.And(*paragraph.conditions.values()) for paragraph in group]),form="dnf")
             new_paragraphs.append(Paragraph(id,version,new_conditions))
 
+        # Necessary to ensure paragraphs remain in the correct order
+        new_paragraphs = sorted(new_paragraphs[::-1],key=lambda x:x.version)
+
         paragraph_groups = {}
-        for paragraph in new_paragraphs[::-1]:
+        for paragraph in new_paragraphs:
             key = str(paragraph.conditions) 
             if key not in paragraph_groups:
                 paragraph_groups[key] = ParagraphGroup(conditions=paragraph.conditions)
             paragraph_groups[key].paragraphs.append((paragraph.id,paragraph.version))
+
         return paragraph_groups.values()
 
 
@@ -333,6 +355,8 @@ class Parser:
                 elif match := re.search('(?P<variable>.*) (?P<comparison>=|<|>|<>|>=|<=) (?P<value>.*)',current[2:]):
                     if "counter" not in match.group("variable").lower():
                         var_name = transform_var_name(match.group("variable"))
+                        # Do not use the aux variables in conditions
+                        var_name = var_name.removesuffix("_aux")
                         event.conditions["variables"][var_name] = apply_condition_to_sympy(sp.symbols(var_name),match.group("comparison"),int(match.group("value")))
 
             else:
@@ -352,6 +376,9 @@ class Parser:
                 elif match := re.search('Special : Add (?P<value>.*) to (?P<variable>.*)',current):
                     var_name = transform_var_name(match.group("variable"))
                     event.results["set_variables"][var_name] = "+"+match.group("value")
+                elif match := re.search('Special : Subtract (?P<value>.*) from  (?P<variable>.*)',current):
+                    var_name = transform_var_name(match.group("variable"))
+                    event.results["set_variables"][var_name] = "-"+match.group("value")
                 elif match := re.search('Scene text : Display paragraph (?P<paragraph>.*)',current):
                     event.type = "scene_load" if event.type == "" or event.type is None else event.type
                     event.results["paragraphs"].append((int(match.group("paragraph")),1))
@@ -376,6 +403,14 @@ class Parser:
                     event.conditions["variables"] = {var:condition for var, condition in event.conditions["variables"].items() if "_ac_" not in var}
                     
 
+        # Paragraph from "Scene text 2" or "scene 3" should always be 2nd and third, but sometimes are out of order in the logic file
+        event.results["paragraphs"] = sorted(event.results["paragraphs"],key=lambda x:x[1])
+
+        # Sometimes occur
+        if event.type == "" and len(event.results["set_variables"]) and "scene" in event.conditions:
+            event.type = "extra_set"
+
+
         return event
 
     def parse(self):
@@ -392,7 +427,7 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
-#chapters = ["ch1"]
+#chapters = ["b2ch11c"]
 verbose = False
 for chapter in chapters:
     filename = root_folder/chapter/"logic.txt"
@@ -445,7 +480,11 @@ for chapter in chapters:
 
         for path in scenes[scene_id].paths:
             for set_variable, conditions_list in grouped_set_variables:
-                if set_variable not in [v.name for v in path.set_variables] and not any([all_is_compatible(path.conditions,conditions) for conditions in conditions_list]):
+                if (
+                    set_variable not in [v.name for v in path.set_variables]
+                    and not any([all_is_compatible(path.conditions,conditions) for conditions in conditions_list])
+                    and set_variable not in STATS_VARIABLE_NAMES
+                ):
                     path.set_variables.append(SceneVariableSet(set_variable,0))
 
         event_conditions = event.conditions["variables"]
@@ -576,6 +615,9 @@ for chapter in chapters:
     #json_vals = {id:scene.to_json(paragraphs) for id,scene in scenes.items()}
     #with open(root_folder/f"{chapter}.json","w") as f:
     #    json.dump(json_vals,f,indent=4)
+
+    for event in [e for e in events if e.type == "extra_set"]:
+        scenes[event.conditions["scene"]].set_variables += [SceneVariableSet(set_variable_name,set_variable_value,event.conditions["variables"]) for set_variable_name, set_variable_value in event.results["set_variables"].items()]
 
     magium_vals = "\n\n".join(scene.to_magium(paragraphs) for scene in scenes.values())
     with open(root_folder/f"{chapter}.magium","w") as f:
