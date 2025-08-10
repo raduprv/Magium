@@ -142,8 +142,8 @@ Seeing that I don't say anything, Daren replies in my stead.
 "Oh? Then you must be the healer in armor I've been hearing so much about! And it seems that you also have a third member in your party. A survivor of the Beacon of Hope, no less. I did not know any of them were still alive."
 
 }
-choice(""What's the Beacon of Hope?"", Ch4-Beacon, v_current_scene = Ch4-Beacon) if (v_ch4_objectives == 1 || v_ch4_objectives == 2 || v_ch4_objectives == 3)
-choice(""Why is she a survivor? Did the Beacon of Hope burn down?"", Ch4-Survivor, v_current_scene = Ch4-Survivor) if (v_ch4_objectives == 1 || v_ch4_objectives == 2 || v_ch4_objectives == 3)
+choice(""What's the Beacon of Hope?"", Ch4-Beacon, v_current_scene = Ch4-Beacon)
+choice(""Why is she a survivor? Did the Beacon of Hope burn down?"", Ch4-Survivor, v_current_scene = Ch4-Survivor)
 
 
 ID: Ch4-Beacon
@@ -271,7 +271,7 @@ I did it. He's still alive.
 
 The last thing I see is Daren's desperate expression as he tries in vain to resuscitate me. 
 
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart)
+choice("Restart game", Ch1-Intro1, , special:restart)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load)
 choice("Load game", , , special:saves)
 
@@ -440,7 +440,7 @@ Eiden smiles. With one gesture of his hands, he paralyzes my body as I stand and
 
 Before giving me a chance to reply, he gestures with his hand once more, and my neck snaps, killing me instantly.
 
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart)
+choice("Restart game", Ch1-Intro1, , special:restart)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load)
 choice("Load game", , , special:saves)
 
@@ -772,8 +772,8 @@ Daren shakes his head in disapproval and hands me a dagger from his belt.
 "Really, Barry. There were dozens of daggers on the ground you could have picked on our way here. Try to take this more seriously."
 
 }
-choice("Try to keep Cutthroat Dave busy while Daren defeats the others", Ch4-Busy, v_current_scene = Ch4-Busy) if (v_ch3_tactics == 1 || v_ch3_tactics == 2 || v_ch3_tactics == 3)
-choice("Try to defeat Cutthroat Dave", Ch4-Defeat, v_current_scene = Ch4-Defeat) if (v_ch3_tactics == 1 || v_ch3_tactics == 2 || v_ch3_tactics == 3)
+choice("Try to keep Cutthroat Dave busy while Daren defeats the others", Ch4-Busy, v_current_scene = Ch4-Busy)
+choice("Try to defeat Cutthroat Dave", Ch4-Defeat, v_current_scene = Ch4-Defeat)
 
 
 ID: Ch4-Busy

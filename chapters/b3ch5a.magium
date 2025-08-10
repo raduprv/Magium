@@ -1034,9 +1034,9 @@ She then walks past us and goes through a tunnel to the left, giving us one last
 "And what if I am?" Illuna says, as she frowns at me.
 
 }
-choice(""Well, then stop feeling guilty!"", B3-Ch05a-Oblivious, v_current_scene = B3-Ch05a-Oblivious, v_b3_ch5_guilty = 0) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
-choice(""It doesn't seem to me like Flower is blaming you for what happened."", B3-Ch05a-Oblivious, v_current_scene = B3-Ch05a-Oblivious, v_b3_ch5_guilty = 1) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
-choice(""Well, to me it kind of feels like you are letting your guilt cloud your judgment."", B3-Ch05a-Oblivious, v_current_scene = B3-Ch05a-Oblivious, v_b3_ch5_guilty = 2) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
+choice(""Well, then stop feeling guilty!"", B3-Ch05a-Oblivious, v_current_scene = B3-Ch05a-Oblivious, v_b3_ch5_guilty = 0)
+choice(""It doesn't seem to me like Flower is blaming you for what happened."", B3-Ch05a-Oblivious, v_current_scene = B3-Ch05a-Oblivious, v_b3_ch5_guilty = 1)
+choice(""Well, to me it kind of feels like you are letting your guilt cloud your judgment."", B3-Ch05a-Oblivious, v_current_scene = B3-Ch05a-Oblivious, v_b3_ch5_guilty = 2)
 
 
 ID: B3-Ch05a-Oblivious
@@ -1120,7 +1120,7 @@ I then hear her footsteps as she heads towards Suzie's room, and a few seconds l
 "Hey, wait!" I call out to her, as the blue light in her eyes fades away. "I was thinking that maybe all three of us could have a talk and-- damn it, you're not listening anymore, are you?"
 
 }
-choice("Continue", B3-Ch05a-Sleeve, v_current_scene = B3-Ch05a-Sleeve) if (v_b3_ch5_guilty == 0 || v_b3_ch5_guilty == 1 || v_b3_ch5_guilty == 2 || v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
+choice("Continue", B3-Ch05a-Sleeve, v_current_scene = B3-Ch05a-Sleeve)
 
 
 ID: B3-Ch05a-Sleeve
@@ -1328,9 +1328,9 @@ TEXT:
 "She does sleep from time to time, but she usually only needs a few hours a week or less to be well-rested," Flower says. "It's just another one of the perks she gained after she absorbed all those thousands of souls in the magical plane. You know, aside from her overwhelming magical power and her near-immortality."
 
 }
-choice(""What do you mean by near-immortality?"", B3-Ch05a-Magnificence, v_current_scene = B3-Ch05a-Magnificence, v_b3_ch5_moustache = 0) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
-choice(""So, how do you wake her up if you need her while she's asleep? Do you spin her amulet?"", B3-Ch05a-Magnificence, v_current_scene = B3-Ch05a-Magnificence, v_b3_ch5_moustache = 1) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
-choice(""Does this mean that we can draw a fake moustache on her amulet and she won’t notice?"", B3-Ch05a-Magnificence, v_current_scene = B3-Ch05a-Magnificence, v_b3_ch5_moustache = 2) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
+choice(""What do you mean by near-immortality?"", B3-Ch05a-Magnificence, v_current_scene = B3-Ch05a-Magnificence, v_b3_ch5_moustache = 0)
+choice(""So, how do you wake her up if you need her while she's asleep? Do you spin her amulet?"", B3-Ch05a-Magnificence, v_current_scene = B3-Ch05a-Magnificence, v_b3_ch5_moustache = 1)
+choice(""Does this mean that we can draw a fake moustache on her amulet and she won’t notice?"", B3-Ch05a-Magnificence, v_current_scene = B3-Ch05a-Magnificence, v_b3_ch5_moustache = 2)
 
 
 ID: B3-Ch05a-Magnificence
@@ -1396,4 +1396,4 @@ For the next three hours or so, Melindra and Flower made sure to give me a compl
 Obviously, even at the end of the night shift my original opinion remained largely unchanged, but at the very least I could now say that I understood what made the difference between an ordinary rock and a collectable rock in their eyes, so their hobby would no longer seem as incomprehensible and illogical as before. 
 
 }
-choice("Continue", B3-Ch05b-Refreshed, v_current_scene = B3-Ch05b-Refreshed) if (v_b3_ch5_moustache == 0 || v_b3_ch5_moustache == 1 || v_b3_ch5_moustache == 2)
+choice("Continue", B3-Ch05b-Refreshed, v_current_scene = B3-Ch05b-Refreshed)

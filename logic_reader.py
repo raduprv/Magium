@@ -2,6 +2,7 @@ from collections import defaultdict
 from copy import deepcopy
 from dataclasses import dataclass, field
 from itertools import groupby
+import itertools
 import json
 import pathlib
 import pprint
@@ -249,7 +250,7 @@ class Scene:
         }
         return val
 
-    def to_magium(self,paragraphs):
+    def to_magium(self,paragraphs,var_possible_values: dict[str,set]):
         text = f"ID: {self.id}\nTEXT:\n\n"
 
         set_variables = self.merge_set_variables()
@@ -280,7 +281,7 @@ class Scene:
                 text += "}\n" #}
         text = re.sub(r"(\n){2,}", r"\n\n", text)
 
-        responses = self.merge_responses()
+        responses = self.merge_responses(var_possible_values)
         for response in responses:
             # Filter values with aux to avoid a bug (https://github.com/thuiop/magium-dev/issues/89)
             set_variables_string = ", ".join([f"{name} = {value}" for name,value in response.set_variables.items() if "aux" not in str(value)])
@@ -315,13 +316,20 @@ class Scene:
         return paragraph_groups.values()
 
 
-    def merge_responses(self):
+    def merge_responses(self, var_possible_values: dict[str,set]):
         grouped_responses = groupby_unsorted(self.responses,key=lambda r:(r.text,str(r.set_variables),r.special))
         new_responses = []
         for test,group in grouped_responses:
             group = list(group)
             new_response = deepcopy(group[0])
+            cond_vars = set(itertools.chain.from_iterable([response.conditions.keys() for response in group]))
             new_response.conditions = sp.simplify_logic(sp.Or(*[sp.And(*response.conditions.values()) for response in group]),form="dnf")
+            for var in cond_vars:
+                try:
+                    new_response.conditions = new_response.conditions.subs(sp.Or(*[sp.Eq(sp.symbols(var),int(possible_value)) for possible_value in var_possible_values[var]]),True)
+                except:
+                    print(var,var_possible_values[var])
+                    continue
             new_responses.append(new_response)
         return new_responses
 
@@ -427,8 +435,9 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
-#chapters = ["b2ch11c"]
+# chapters = ["ch1"]
 verbose = False
+var_possible_values = defaultdict(set)
 for chapter in chapters:
     filename = root_folder/chapter/"logic.txt"
 
@@ -554,6 +563,7 @@ for chapter in chapters:
                 response.special = event.results["special"]
             elif response.text == "Restart game":
                 response.special = "restart" 
+                response.set_variables = {}
 
             if verbose:
                 print("New response:",response)
@@ -612,14 +622,20 @@ for chapter in chapters:
                 current_par += line
         paragraphs[i][current_par_index] = current_par
 
-    #json_vals = {id:scene.to_json(paragraphs) for id,scene in scenes.items()}
-    #with open(root_folder/f"{chapter}.json","w") as f:
-    #    json.dump(json_vals,f,indent=4)
 
     for event in [e for e in events if e.type == "extra_set"]:
         scenes[event.conditions["scene"]].set_variables += [SceneVariableSet(set_variable_name,set_variable_value,event.conditions["variables"]) for set_variable_name, set_variable_value in event.results["set_variables"].items()]
 
-    magium_vals = "\n\n".join(scene.to_magium(paragraphs) for scene in scenes.values())
+    # For simplifying tautological conditions
+    for scene in scenes.values():
+        for response in scene.responses:
+            for set_variable_name,value in response.set_variables.items():
+                var_possible_values[set_variable_name].add(value)
+            
+        for set_variable in scene.set_variables:
+            var_possible_values[set_variable.name].add(set_variable.value)
+
+    magium_vals = "\n\n".join(scene.to_magium(paragraphs, var_possible_values) for scene in scenes.values())
     with open(root_folder/f"{chapter}.magium","w") as f:
         f.write(magium_vals) 
 

@@ -401,7 +401,7 @@ She then starts heading towards her own tent, as Daren and I head towards his, i
 "You can sleep as much as you want in your own tent, but not here," I say.
 
 }
-choice("Continue", B2-Ch09a-Dismantling, v_current_scene = B2-Ch09a-Dismantling) if (v_b2_ch9_defeat == 0 || v_b2_ch9_defeat == 1)
+choice("Continue", B2-Ch09a-Dismantling, v_current_scene = B2-Ch09a-Dismantling)
 
 
 ID: B2-Ch09a-Dismantling
@@ -598,7 +598,7 @@ TEXT:
 "I'll go get Flower, then," Melindra says, as she moves away from me. "This discussion has made me even hungrier than before. I really hope that those delicacies that she was bragging about yesterday are as good as she said they'd be."
 
 }
-choice("Continue", B2-Ch09a-Panicked, v_current_scene = B2-Ch09a-Panicked) if (v_b2_ch9_amused == 0 || v_b2_ch9_amused == 1)
+choice("Continue", B2-Ch09a-Panicked, v_current_scene = B2-Ch09a-Panicked)
 
 
 ID: B2-Ch09a-Panicked
@@ -701,7 +701,7 @@ Not long after we start walking, Hadrik pulls me over to the back of the group, 
 With these last words, he goes to catch up with the rest of the group, and I soon follow him as well.
 
 }
-choice("Continue", B2-Ch09a-Pinecones, v_current_scene = B2-Ch09a-Pinecones) if (v_b2_ch9_cast1 == 0 || v_b2_ch9_cast1 == 1)
+choice("Continue", B2-Ch09a-Pinecones, v_current_scene = B2-Ch09a-Pinecones)
 
 
 ID: B2-Ch09a-Sleep2
@@ -1260,8 +1260,8 @@ She then quickly utters an incantation and she waves her hands around, as she ca
 "I do," Daren says, "but I'm not going to risk casting any kind of healing spell on you right now, unless we're talking about a life-threatening emergency. Casting healing spells on someone who's recently had his heart weakened by an energizer spell is asking for all kinds of trouble. Honestly, you'd be better off just letting Melindra cast that second energizer spell on you. It would still strain your heart, but at least it would do it more gradually, and the risk of heart failure when you've only used this spell once before in your entire life is almost non-existent."
 
 }
-choice("Let Melindra cast the spell", B2-Ch09a-Energizer-path3, v_current_scene = B2-Ch09a-Energizer-path3, v_b2_ch9_cast2 = 1) if (v_b2_ch9_cast1 == 0 || v_b2_ch9_cast1 == 1)
-choice("Don't let Melindra cast the spell", B2-Ch09a-Energizer-stat, v_current_scene = B2-Ch09a-Energizer-stat, v_b2_ch9_cast2 = 0) if (v_b2_ch9_cast1 == 0 || v_b2_ch9_cast1 == 1)
+choice("Let Melindra cast the spell", B2-Ch09a-Energizer-path3, v_current_scene = B2-Ch09a-Energizer-path3, v_b2_ch9_cast2 = 1)
+choice("Don't let Melindra cast the spell", B2-Ch09a-Energizer-stat, v_current_scene = B2-Ch09a-Energizer-stat, v_b2_ch9_cast2 = 0)
 
 
 ID: B2-Ch09a-Energizer-path3
@@ -1353,7 +1353,7 @@ Upon hearing the tone of Daren's voice, I quickly realize that I have no time to
 As I look at the large trunk of the fallen tree in front of me, I realize, with shock, that if I reacted only a fraction of a second later, I would have been done for.
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_reflexes < 4)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_reflexes < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_reflexes < 4)
 choice("Load game", , , special:saves) if (v_reflexes < 4)
 choice("Continue", B2-Ch09a-Furiously, v_current_scene = B2-Ch09a-Furiously, v_b2_ch7_rock = 1) if (v_reflexes == 4)
@@ -1584,8 +1584,8 @@ I sigh.
 "Of course!" Melindra says. "As soon as you apologize for what you've done, I'd be more than happy to call a truce."
 
 }
-choice("Apologize", B2-Ch09a-Biscuits2, v_current_scene = B2-Ch09a-Biscuits2, v_b2_ch9_apologize = 1) if (v_ch6_secure == 0 || v_ch6_secure == 1)
-choice("Don't apologize", B2-Ch09a-Biscuits2, v_current_scene = B2-Ch09a-Biscuits2, v_b2_ch9_apologize = 0) if (v_ch6_secure == 0 || v_ch6_secure == 1)
+choice("Apologize", B2-Ch09a-Biscuits2, v_current_scene = B2-Ch09a-Biscuits2, v_b2_ch9_apologize = 1)
+choice("Don't apologize", B2-Ch09a-Biscuits2, v_current_scene = B2-Ch09a-Biscuits2, v_b2_ch9_apologize = 0)
 
 
 ID: B2-Ch09a-Biscuits2
@@ -1784,7 +1784,7 @@ I shrug.
 "Fair enough," Hadrik says. "So, what if we tried to uncover stuff about his past, instead? Or his motivations. Maybe that could help us fight him somehow. Like, for example, maybe we could find out the reason why he's filling the whole continent with those weird invisible spells."
 
 }
-choice("Continue", B2-Ch09a-Downhill, v_current_scene = B2-Ch09a-Downhill) if (v_b2_ch9_oath == 0 || v_b2_ch9_oath == 1)
+choice("Continue", B2-Ch09a-Downhill, v_current_scene = B2-Ch09a-Downhill)
 
 
 ID: B2-Ch09a-Downhill

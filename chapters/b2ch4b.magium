@@ -267,9 +267,9 @@ The cobras are now trying to get on our right side, while the marauders are comi
 The cobras are now trying to get on our right side, while the marauders are coming from our left. Three tramplers are now also making their way into the fighting area, and they are pawing the ground with their hooves, getting ready to charge. The manticores are still circling the skies, biding their time.
 
 }
-choice("Charge at the creatures all by myself", B2-Ch04b-Charge, v_current_scene = B2-Ch04b-Charge, v_b2_ch4_charge = 1) if (v_b2_ch4_argument == 1 || v_b2_ch4_argument == 2 || v_b2_ch4_argument == 3)
-choice("Charge at the creatures and ask Leila to join me", B2-Ch04b-Charge, v_current_scene = B2-Ch04b-Charge, v_b2_ch4_charge = 2) if (v_b2_ch4_argument == 1 || v_b2_ch4_argument == 2 || v_b2_ch4_argument == 3)
-choice("Wait for the creatures to get further away from each other before attacking", B2-Ch04b-Further, v_current_scene = B2-Ch04b-Further, v_b2_ch4_charge = 3) if (v_b2_ch4_argument == 1 || v_b2_ch4_argument == 2 || v_b2_ch4_argument == 3)
+choice("Charge at the creatures all by myself", B2-Ch04b-Charge, v_current_scene = B2-Ch04b-Charge, v_b2_ch4_charge = 1)
+choice("Charge at the creatures and ask Leila to join me", B2-Ch04b-Charge, v_current_scene = B2-Ch04b-Charge, v_b2_ch4_charge = 2)
+choice("Wait for the creatures to get further away from each other before attacking", B2-Ch04b-Further, v_current_scene = B2-Ch04b-Further, v_b2_ch4_charge = 3)
 
 
 ID: B2-Ch04b-Charge
@@ -370,7 +370,7 @@ There was no time for me to react. The tail impaled me straight through my head,
 
 }
 choice("Continue", B2-Ch04b-Manticore, v_current_scene = B2-Ch04b-Manticore) if (v_reflexes >= 3 || v_strength >= 3)
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_reflexes < 3 && v_strength < 3)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_reflexes < 3 && v_strength < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_reflexes < 3 && v_strength < 3)
 choice("Load game", , , special:saves) if (v_reflexes < 3 && v_strength < 3)
 
@@ -420,7 +420,7 @@ I suddenly hear the sound of something flying through the air very fast, above m
  I try to jump out of the way, but I'm not fast enough. The manticore buries its claws deep into my chest, and then it sinks its fangs into my neck. I die almost instantly.
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b2_ch4_backpack == 2 && v_hearing < 2 && v_premonition < 1 || v_b2_ch4_backpack == 2 && v_premonition < 1 && v_reflexes < 2)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_b2_ch4_backpack == 2 && v_hearing < 2 && v_premonition < 1 || v_b2_ch4_backpack == 2 && v_premonition < 1 && v_reflexes < 2)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b2_ch4_backpack == 2 && v_hearing < 2 && v_premonition < 1 || v_b2_ch4_backpack == 2 && v_premonition < 1 && v_reflexes < 2)
 choice("Load game", , , special:saves) if (v_b2_ch4_backpack == 2 && v_hearing < 2 && v_premonition < 1 || v_b2_ch4_backpack == 2 && v_premonition < 1 && v_reflexes < 2)
 choice("Continue", B2-Ch04b-Wilhelm-charge, v_current_scene = B2-Ch04b-Wilhelm-charge) if (v_b2_ch4_backpack == 1 && v_b2_ch4_charge == 1 && v_is_dead == 0 || v_b2_ch4_backpack == 1 && v_b2_ch4_charge == 2 && v_is_dead == 0 || v_b2_ch4_backpack == 3 && v_b2_ch4_charge == 1 && v_is_dead == 0 || v_b2_ch4_backpack == 3 && v_b2_ch4_charge == 2 && v_is_dead == 0 || v_b2_ch4_backpack == 2 && v_b2_ch4_charge == 1 && v_is_dead == 0 && v_premonition >= 1 || v_b2_ch4_backpack == 2 && v_b2_ch4_charge == 2 && v_is_dead == 0 && v_premonition >= 1 || v_b2_ch4_backpack == 2 && v_b2_ch4_charge == 1 && v_is_dead == 0 && v_hearing >= 2 && v_reflexes >= 2 && v_premonition < 1 || v_b2_ch4_backpack == 2 && v_b2_ch4_charge == 2 && v_is_dead == 0 && v_hearing >= 2 && v_reflexes >= 2 && v_premonition < 1)
@@ -1196,7 +1196,7 @@ I do not manage to get out of the way fast enough, and the creature's tail impal
 
 }
 choice("Continue", B2-Ch04b-Manticore, v_current_scene = B2-Ch04b-Manticore) if (v_reflexes >= 3 || v_strength >= 3)
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_reflexes < 3 && v_strength < 3)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_reflexes < 3 && v_strength < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_reflexes < 3 && v_strength < 3)
 choice("Load game", , , special:saves) if (v_reflexes < 3 && v_strength < 3)
 
@@ -1335,7 +1335,7 @@ The dagger goes straight through my heart, and it kills me instantly. I never ev
 
 }
 choice("Continue", B2-Ch04b-Smiley, v_current_scene = B2-Ch04b-Smiley) if (v_hearing >= 1 && v_reflexes >= 1 || v_perception >= 1 && v_reflexes >= 1)
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_hearing < 1 && v_perception < 1 || v_reflexes < 1)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_hearing < 1 && v_perception < 1 || v_reflexes < 1)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_hearing < 1 && v_perception < 1 || v_reflexes < 1)
 choice("Load game", , , special:saves) if (v_hearing < 1 && v_perception < 1 || v_reflexes < 1)
 
@@ -1426,7 +1426,7 @@ As soon as she gets away from the dying creature, the last remaining manticore m
 "See?" I say to Bruce. "I told you we didn't have anything to worry about. Now let's hurry up and kill those cobras before she gets here!"
 
 }
-choice("Continue", B2-Ch04b-Counting, v_current_scene = B2-Ch04b-Counting) if (v_b2_ch4_backup == 0 || v_b2_ch4_backup == 1)
+choice("Continue", B2-Ch04b-Counting, v_current_scene = B2-Ch04b-Counting)
 
 
 ID: B2-Ch04b-Counting
@@ -1528,7 +1528,7 @@ This is it. It's over. The round is finally over. The crowds are going wild. The
 After a while, the announcer finally asks us to clear the fighting area, and we prepare to go back to our division room.
 
 }
-choice("Continue", B2-Ch04b-Wilhelm-final, v_current_scene = B2-Ch04b-Wilhelm-final) if (v_b2_ch4_backup == 0 || v_b2_ch4_backup == 1)
+choice("Continue", B2-Ch04b-Wilhelm-final, v_current_scene = B2-Ch04b-Wilhelm-final)
 
 
 ID: B2-Ch04b-Wilhelm-final
@@ -1781,7 +1781,7 @@ Kate manages to make her way out of the wolf encirclement, and she tries to retr
 Now that Kate's teammates have finally joined the battle, and that the wolves and lions have scattered, it doesn't take the gladiators long until they hunt down their remaining enemies, and finish them all off.
 
 }
-choice("Continue", B2-Ch04b-Killed3, v_current_scene = B2-Ch04b-Killed3) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
+choice("Continue", B2-Ch04b-Killed3, v_current_scene = B2-Ch04b-Killed3)
 
 
 ID: B2-Ch04b-Killed3
@@ -1819,7 +1819,7 @@ As the owner turns to leave, Kate and the others also head towards their divisio
 "Very intriguing..." the owner says. "So your way of avoiding detection in fact required the use of a highly inefficient technique and of a ridiculously low amount of magical energy in order to succeed. That means I don't have to worry about anyone abusing this loophole in any serious way, anytime soon. Alright, then. In that case, as promised, you are free to return to your division area. However, it should go without saying that the next time you try to abuse our system like this, the consequences will be much more severe."
 
 }
-choice("Continue", B2-Ch04b-Ending, v_current_scene = B2-Ch04b-Ending) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
+choice("Continue", B2-Ch04b-Ending, v_current_scene = B2-Ch04b-Ending)
 
 
 ID: B2-Ch04b-Spared1
@@ -1935,7 +1935,7 @@ He then jumps off the creature, and he heads towards Kate.
 "Are you alright, milady?" Hadrik says, with a bow.
 
 }
-choice("Continue", B2-Ch04b-Bonus, v_ac_b2_ch4_hadrik = 1, v_current_scene = B2-Ch04b-Bonus) if (v_b2_ch4_forsake == 1 || v_b2_ch4_forsake == 2 || v_b2_ch4_forsake == 3)
+choice("Continue", B2-Ch04b-Bonus, v_ac_b2_ch4_hadrik = 1, v_current_scene = B2-Ch04b-Bonus)
 
 
 ID: B2-Ch04b-Bonus

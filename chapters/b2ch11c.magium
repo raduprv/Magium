@@ -117,7 +117,7 @@ She then closes her eyes and tries to concentrate, as the rest of us fall comple
 "Yes," Melindra says. "You are only the first group to be visited by the time weaver. Once the God of Time is done with his ritual, you will be frozen in time once more, and then the prophecy and the ritual will be repeated for other groups of people as well. Not only that, but this same prophecy will be delivered to you and the others at least two more times, before the events prophesized will come to pass, in order to announce you if any progress has been made, towards your goal of averting the disaster. The reason why Arraka said that you were the most likely ones to influence the prophecy is because the time weavers always visit their targets in order of priority, which means that your group may have the most decisive role in the events to come, depending on your choices."
 
 }
-choice("Continue", B2-Ch11c-Practice, v_current_scene = B2-Ch11c-Practice) if (v_b2_ch11_encourage == 0 || v_b2_ch11_encourage == 1 || v_b2_ch11_encourage == 2)
+choice("Continue", B2-Ch11c-Practice, v_current_scene = B2-Ch11c-Practice)
 
 
 ID: B2-Ch11c-Practice
@@ -309,7 +309,7 @@ She then disappears again, but this time, she reappears right behind Daren, hold
 "Do you surrender, healer, or do we need to continue?" the revenant says.
 
 }
-choice("Continue", B2-Ch11c-Asleep, v_current_scene = B2-Ch11c-Asleep) if (v_b2_ch11_defend == 0 || v_b2_ch11_defend == 1)
+choice("Continue", B2-Ch11c-Asleep, v_current_scene = B2-Ch11c-Asleep)
 
 
 ID: B2-Ch11c-Asleep
@@ -698,7 +698,7 @@ Since Leila didn't really feel like talking at the moment, I decided to give her
 "No, we didn't need to do that," Kate says. "We left them with Enrique. He offered to move in with the children, after he found out about Rose's death, so he will be taking care of them, from now on."
 
 }
-choice("Continue", B2-Ch11c-Anxiousness, v_current_scene = B2-Ch11c-Anxiousness) if (v_b2_ch11_explain == 0 || v_b2_ch11_explain == 1)
+choice("Continue", B2-Ch11c-Anxiousness, v_current_scene = B2-Ch11c-Anxiousness)
 
 
 ID: B2-Ch11c-Anxiousness
@@ -856,7 +856,7 @@ The cutthroat's words only serve to piss Kate off even more, and now she's prepa
 Kate ignores the cutthroat's request, and she is now preparing some extra ice cones, to make sure that he can't deflect them anymore.
 
 }
-choice("Continue", B2-Ch11c-Unleashes, v_current_scene = B2-Ch11c-Unleashes) if (v_b2_ch11_items == 0 || v_b2_ch11_items == 1 || v_ch3_kate_badly_hurt == 0 || v_ch3_kate_badly_hurt == 1)
+choice("Continue", B2-Ch11c-Unleashes, v_current_scene = B2-Ch11c-Unleashes)
 
 
 ID: B2-Ch11c-Unleashes
@@ -906,7 +906,7 @@ Just as the cutthroat was finishing his sentence, a bright white light covers ou
 Leaving these strange, tall buildings aside, what is even more peculiar is what's happening directly above us. Currently, there are hundreds of metal, horseless carriages, flying through the air, with people inside them. While these carriages are flying around, there are large holographic screens floating above us, picturing a man that is relaying the same message, over and over, in the Common language. The holographic screens look just like the ones that were created by Golmyck's illusion-casting device, when he announced our first objectives. The message that keeps getting repeated is: 'All non-lessathi citizens are to present themselves to the military reserve area immediately. We are under attack. I repeat, we are under attack!'.
 
 }
-choice("Continue", B2-Ch11c-Frenzy, v_current_scene = B2-Ch11c-Frenzy) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
+choice("Continue", B2-Ch11c-Frenzy, v_current_scene = B2-Ch11c-Frenzy)
 
 
 ID: B2-Ch11c-Frenzy
@@ -958,9 +958,9 @@ I'm not really sure what kind of an attacker could make a whole city panic like 
  "I can't believe this..." Melindra says, as she looks at the black towers in the distance. "Those towers coated in seredium dust look exactly like the kind of buildings the lessathi empire used to have thousands of years ago. I've only read about them in books. Even six hundred years ago, before the lessathi empire fell, you would not see something like this in their cities. The closest I've ever come to seeing anything resembling these towers was in Ollendor, where they are still preserving old relics from the lessathi empire's days of glory, but still, those were only ruins. For these towers to be in such good condition, we would need to have been sent back to when the lessathi empire was at its very peak. Four thousand, or even five thousand years ago! What is the God of Time thinking?"
 
 }
-choice(""Never mind the history lesson. Any idea who might be attacking the city?"", B2-Ch11c-History, v_current_scene = B2-Ch11c-History, v_b2_ch11_towers = 0) if (v_ancient_languages == 0 || v_ancient_languages == 1 || v_ancient_languages == 2 || v_ancient_languages == 3 || v_ancient_languages == 4 || v_b2_ch11_added_hearing == 0 || v_b2_ch11_added_hearing == 1 || v_b2_ch11_added_hearing == 2)
-choice(""Should I take it that we are still in Varathia, then?"", B2-Ch11c-History, v_current_scene = B2-Ch11c-History, v_b2_ch11_towers = 1) if (v_ancient_languages == 0 || v_ancient_languages == 1 || v_ancient_languages == 2 || v_ancient_languages == 3 || v_ancient_languages == 4 || v_b2_ch11_added_hearing == 0 || v_b2_ch11_added_hearing == 1 || v_b2_ch11_added_hearing == 2)
-choice(""How do these towers work, exactly?"", B2-Ch11c-History, v_current_scene = B2-Ch11c-History, v_b2_ch11_towers = 2) if (v_ancient_languages == 0 || v_ancient_languages == 1 || v_ancient_languages == 2 || v_ancient_languages == 3 || v_ancient_languages == 4 || v_b2_ch11_added_hearing == 0 || v_b2_ch11_added_hearing == 1 || v_b2_ch11_added_hearing == 2)
+choice(""Never mind the history lesson. Any idea who might be attacking the city?"", B2-Ch11c-History, v_current_scene = B2-Ch11c-History, v_b2_ch11_towers = 0)
+choice(""Should I take it that we are still in Varathia, then?"", B2-Ch11c-History, v_current_scene = B2-Ch11c-History, v_b2_ch11_towers = 1)
+choice(""How do these towers work, exactly?"", B2-Ch11c-History, v_current_scene = B2-Ch11c-History, v_b2_ch11_towers = 2)
 
 
 ID: B2-Ch11c-History
@@ -1028,7 +1028,7 @@ Not long after Arraka is done talking, the whole sky gradually darkens, as a pow
 "Well, well, well..." the woman says, as she looks towards Arraka's amulet. "It looks like Selkram sent me a little present. You're all coming from the future, I presume? Let me check my future self's aura, for a second. Wow... So, you're five thousand years older than me, huh? I guess I must have gotten really senile with old age, if I managed to get myself captured in an amulet by a glorified circus troupe. Seriously, what even are you people? A little girl dressed like a clown? A giant masquerading as a dwarf?  A woman dressed in pajamas? It's like you're trying to compete for the most ridiculously dressed wizard group of the century."
 
 }
-choice("Continue", B2-Ch11c-Mountain, v_current_scene = B2-Ch11c-Mountain) if (v_ch11_saved_rose == 0 && v_ch4_spared_dave == 1 || v_b2_ch11_towers == 0 || v_b2_ch11_towers == 1 || v_b2_ch11_towers == 2 || v_ch11_saved_rose == 1 || v_ch4_spared_dave == 0)
+choice("Continue", B2-Ch11c-Mountain, v_current_scene = B2-Ch11c-Mountain)
 
 
 ID: B2-Ch11c-Mountain
@@ -1154,7 +1154,7 @@ The last thing I get to see is Arraka waving her hand towards the others as well
 
 }
 choice("Continue", B2-Ch11c-Avalanche, v_current_scene = B2-Ch11c-Avalanche) if (v_b2_ch11_dagger == 0 && v_b2_ch11_echoes == 0 || v_b2_ch11_echoes == 1)
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b2_ch11_dagger == 1 && v_b2_ch11_echoes == 0)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_b2_ch11_dagger == 1 && v_b2_ch11_echoes == 0)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b2_ch11_dagger == 1 && v_b2_ch11_echoes == 0)
 choice("Load game", , , special:saves) if (v_b2_ch11_dagger == 1 && v_b2_ch11_echoes == 0)
 
@@ -1433,7 +1433,7 @@ While we were still being pressed against the ground, Rose's eyes suddenly becam
 As everyone goes to find a place where they can be alone, for a while, Daren goes to sit on a tree stump, and begins to sharpen his blade, in order to make himself look busy.
 
 }
-choice("Continue", B2-Ch11c-Ending, v_current_scene = B2-Ch11c-Ending) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
+choice("Continue", B2-Ch11c-Ending, v_current_scene = B2-Ch11c-Ending)
 
 
 ID: B2-Ch11c-Ending
@@ -1508,7 +1508,7 @@ Thank you for playing!
 
 P.S. If you enjoyed the game, don't forget to recommend it to your friends. 
 
-choice("Proceed to book 3", B3-Ch01a-Intro, v_b2_saved_stats = 1, v_current_scene = B3-Ch01a-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, special:checkpoint_save) if (v_second_book_purchased == 0 && v_nb_of_unlocked_achievements >= 25 || v_second_book_purchased == 1)
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_second_book_purchased == 0 && v_nb_of_unlocked_achievements < 25)
+choice("Proceed to book 3", B3-Ch01a-Intro, v_b2_saved_stats = 1, v_current_scene = B3-Ch01a-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, special:checkpoint_save)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_second_book_purchased == 0 && v_nb_of_unlocked_achievements < 25)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_second_book_purchased == 0 && v_nb_of_unlocked_achievements < 25)
 choice("Load game", , , special:saves) if (v_second_book_purchased == 0 && v_nb_of_unlocked_achievements < 25)

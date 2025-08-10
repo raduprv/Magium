@@ -409,7 +409,7 @@ As Arraka finishes her taunt, both her and Hadrik start laughing in unison, and 
  "Then let us get right to it," the king of the underground says. "First of all, I'd like to get you all up to speed with a few recent developments that have happened on the surface since you've returned from your trip to the seredium tower. According to our scouts, the Overseer has been very busy these past few hours. One of the first things he did after the king's death was apparently to begin assassinating every single high-ranked person in the city who knew about the existence of his core. Daren, I think you should already be familiar with what the Overseer's core is from Peter. Have you told your friends about it yet?"
 
 }
-choice("Continue", B3-Ch08b-Resistance, v_current_scene = B3-Ch08b-Resistance) if (v_b3_ch8_defeat == 0 || v_b3_ch8_defeat == 1 || v_b3_ch8_defeat == 2)
+choice("Continue", B3-Ch08b-Resistance, v_current_scene = B3-Ch08b-Resistance)
 
 
 ID: B3-Ch08b-Resistance
@@ -459,8 +459,8 @@ TEXT:
  "Oh, and another thing..." the king of the underground says. "You should be careful to not talk about our plans to eliminate the Overseer when you are close to any of the blue crystals. It may be hard to believe, but Albert told me while we were in the throne room that he could feel someone watching us through the crystals. When I asked him to give me more details, he said he couldn't, because it was more of an instinct than anything else, and that he couldn't feel any foreign auras coming from the crystals by using his magical sense. Since I have come to trust Albert's assassin instincts throughout the years, my conclusion was that the most likely culprit would be the Overseer, because to my knowledge, his metal balls also have blue crystals within them, so he must have somehow found a way to resonate with the crystals in the caves. That might also explain why the crystals have started behaving so erratically all of a sudden, although their strange behavior could also have been caused by the recent explosions that affected them."
 
 }
-choice(""You're right about the Overseer. We detected him through one of the crystals, earlier."", B3-Ch08b-Populated, v_current_scene = B3-Ch08b-Populated, v_b3_ch8_detected = 1) if (v_b3_ch8_watching == 0 || v_b3_ch8_watching == 1)
-choice(""That's good to know. We'll try to be more careful around these crystals from now on."", B3-Ch08b-Populated, v_current_scene = B3-Ch08b-Populated, v_b3_ch8_detected = 0) if (v_b3_ch8_watching == 0 || v_b3_ch8_watching == 1)
+choice(""You're right about the Overseer. We detected him through one of the crystals, earlier."", B3-Ch08b-Populated, v_current_scene = B3-Ch08b-Populated, v_b3_ch8_detected = 1)
+choice(""That's good to know. We'll try to be more careful around these crystals from now on."", B3-Ch08b-Populated, v_current_scene = B3-Ch08b-Populated, v_b3_ch8_detected = 0)
 
 
 ID: B3-Ch08b-Populated
@@ -542,7 +542,7 @@ The king of the underground nods, and then we all follow Daren outside of the wa
 "Yeah, reading that guy's true intentions is a pain," Arraka says. "I wouldn't recommend it. I've checked his aura a few times, and he seems to have made a habit of adding a little tremble to it almost every time when he speaks about an easily verifiable truth, in order to throw off any potential aura readers like myself. If he makes it seem like he's lying all the time, even when it's obvious that he's telling the truth, it gets too annoying when you try to differentiate between the actual lies and the fake lies, considering how good he is at aura manipulation. Maybe I could figure it out if I were to try hard enough, but I'm not going to waste my time for something as stupid as this."
 
 }
-choice("Continue", B3-Ch08b-Workshop, v_current_scene = B3-Ch08b-Workshop) if (v_b3_ch8_detected == 0 || v_b3_ch8_detected == 1 || v_b3_ch8_king == 0 || v_b3_ch8_king == 1 || v_b3_ch8_king == 2 || v_b3_ch8_king == 3 || v_b3_ch8_king == 4 || v_b3_ch8_king == 5)
+choice("Continue", B3-Ch08b-Workshop, v_current_scene = B3-Ch08b-Workshop)
 
 
 ID: B3-Ch08b-Workshop
@@ -850,7 +850,7 @@ While I am still busy trying to solve this most intriguing conundrum, Leila sudd
 "I suppose you're right!" Leila writes, with a smile, as she now seems to have finally managed to contain her laughter from before.
 
 }
-choice("Continue", B3-Ch08b-Leila4, v_current_scene = B3-Ch08b-Leila4) if (v_b3_ch8_voice == 0 || v_b3_ch8_voice == 1)
+choice("Continue", B3-Ch08b-Leila4, v_current_scene = B3-Ch08b-Leila4)
 
 
 ID: B3-Ch08b-Leila4
@@ -1237,4 +1237,4 @@ Barry and his team have decided to accept the Overseer's offer, and to pretend t
 Whichever side wins this battle will get to decide who will be the next king of Ollendor.
 
 }
-choice("Proceed to next chapter", B3-Ch09a-Intro, v_current_scene = B3-Ch09a-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, special:checkpoint_save) if (v_b3_ch8_overseer2 == 0 || v_b3_ch8_overseer2 == 1)
+choice("Proceed to next chapter", B3-Ch09a-Intro, v_current_scene = B3-Ch09a-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, special:checkpoint_save)

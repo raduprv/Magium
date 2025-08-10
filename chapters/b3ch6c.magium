@@ -285,7 +285,7 @@ Albert switches the transceiver's frequency and taps it again, but once more he 
 "Sure," says Peter, who seems to have just entered the waiting room and is now getting closer to us. "What is it?"
 
 }
-choice("Continue", B3-Ch06c-Herbs, v_current_scene = B3-Ch06c-Herbs) if (v_b3_ch6_shift == 0 || v_b3_ch6_shift == 1)
+choice("Continue", B3-Ch06c-Herbs, v_current_scene = B3-Ch06c-Herbs)
 
 
 ID: B3-Ch06c-Herbs

@@ -263,7 +263,7 @@ As promised, it does not take Rose longer than three minutes to come back to the
 "What do you think, Kelrim?" Daren says. "Is there any shop in Ollendor that would have all the ingredients we are looking for?"
 
 }
-choice("Continue", B3-Ch06a-Merchandise, v_current_scene = B3-Ch06a-Merchandise) if (v_b3_ch6_sleep == 0 || v_b3_ch6_sleep == 1)
+choice("Continue", B3-Ch06a-Merchandise, v_current_scene = B3-Ch06a-Merchandise)
 
 
 ID: B3-Ch06a-Merchandise
@@ -315,7 +315,7 @@ We walk for a few more minutes, until we finally reach the entrance to the telep
  "Well, there were three of us Barrys in the same neighborhood when we were growing up," the teleporter guy says. "It was getting a bit difficult to tell who we were talking about when we were playing outside, so we decided to give each other nicknames. Unfortunately, being the brats that we were, we ended up giving each other the most insulting nicknames that we could possibly think of, and so our newly chosen designations quickly became useless, because none of us were stupid enough to respond when we were being called names like slowpoke, monobrow or fat face. That was when... when my little brother stepped in. He told us to stop fighting, and that he would make up some better nicknames for us which we would have no reason to refuse. He always was the voice of reason in our group. Even when we were little..."
 
 }
-choice("Continue", B3-Ch06a-Merchandise2, v_current_scene = B3-Ch06a-Merchandise2) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
+choice("Continue", B3-Ch06a-Merchandise2, v_current_scene = B3-Ch06a-Merchandise2)
 
 
 ID: B3-Ch06a-Merchandise2
@@ -603,7 +603,7 @@ We walk through the door one by one, making sure to close it once we're all in. 
 The shopkeeper standing behind the counter does not seem to be scared of us or be apprehensive in any way, as opposed to the other store owners we've seen through the windows on our way here. In fact, he seems to be quite excited that he finally gets the chance to sell some of his merchandise, considering how empty the streets are right now. As Daren is getting ready to address the store owner, Hadrik beats him to the punch and starts talking in a loud tone as well, to match that of the shopkeeper.
 
 }
-choice("Continue", B3-Ch06a-Pete, v_current_scene = B3-Ch06a-Pete) if (v_b3_ch6_betrayed == 0 || v_b3_ch6_betrayed == 1 || v_b3_ch6_betrayed == 2 || v_b3_ch6_betrayed == 3)
+choice("Continue", B3-Ch06a-Pete, v_current_scene = B3-Ch06a-Pete)
 
 
 ID: B3-Ch06a-Helpful
@@ -863,7 +863,7 @@ As Hadrik walks over the rubble and we move to follow him, we see that the room 
 "There's no use trying to mask your aura, royal guard," Melindra says. "I can sense you hiding in that room behind the counter. How about you come out slowly, with your hands where we can see them, and nobody will have to get hurt?"
 
 }
-choice("Continue", B3-Ch06a-Secret3, v_current_scene = B3-Ch06a-Secret3) if (v_b3_ch6_password == 0 || v_b3_ch6_password == 1 || v_b3_ch6_password == 2 || v_b3_ch6_password == 3)
+choice("Continue", B3-Ch06a-Secret3, v_current_scene = B3-Ch06a-Secret3)
 
 
 ID: B3-Ch06a-Secret3
@@ -1316,8 +1316,8 @@ Luckily for me, when the drone tries to shock me with an electric attack, my aur
 The drone shocks me with an electrical current, but my partial resistance to electricity due to being a half-lessathi isn't enough to protect me from the damage. It only takes a few more seconds until I lose my consciousness and then my heart slowly stops beating for good.
 
 }
-choice("Continue", B3-Ch06a-Entrance, v_current_scene = B3-Ch06a-Entrance) if (v_b3_ch6_plan == 0 || v_b3_ch6_plan == 2 || v_is_dead == 0 || v_is_dead == 1 || v_aura_hardening >= 2 || v_combat_technique >= 1)
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_aura_hardening < 2 && v_combat_technique < 1)
+choice("Continue", B3-Ch06a-Entrance, v_current_scene = B3-Ch06a-Entrance)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_aura_hardening < 2 && v_combat_technique < 1)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_aura_hardening < 2 && v_combat_technique < 1)
 choice("Load game", , , special:saves) if (v_aura_hardening < 2 && v_combat_technique < 1)
 
@@ -1472,7 +1472,7 @@ The drone shoots an ice beam at me, which freezes me completely. From what I can
 
 }
 choice("Continue", B3-Ch06a-Entrance, v_current_scene = B3-Ch06a-Entrance) if (v_aura_hardening >= 3 || v_combat_technique >= 2)
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_aura_hardening < 3 && v_combat_technique < 2)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_aura_hardening < 3 && v_combat_technique < 2)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_aura_hardening < 3 && v_combat_technique < 2)
 choice("Load game", , , special:saves) if (v_aura_hardening < 3 && v_combat_technique < 2)
 
@@ -1707,7 +1707,7 @@ Not long after I finish my conversation with the Overseer, Daren and the others 
 "Hey, Barry, can you hear us?" Daren says into the transceiver after he taps it once.
 
 }
-choice("Continue", B3-Ch06a-Silent, v_current_scene = B3-Ch06a-Silent) if (v_b3_ch6_selected == 0 || v_b3_ch6_selected == 1 || v_b3_ch6_selected == 2 || v_b3_ch6_selected == 3 || v_b3_ch6_sleep == 0 || v_b3_ch6_sleep == 1)
+choice("Continue", B3-Ch06a-Silent, v_current_scene = B3-Ch06a-Silent)
 
 
 ID: B3-Ch06a-Pete
@@ -1978,7 +1978,7 @@ TEXT:
 "Hey, Barry, can you hear us?" Daren says into the transceiver after he taps it once.
 
 }
-choice("Continue", B3-Ch06a-Silent, v_current_scene = B3-Ch06a-Silent) if (v_b3_ch6_sleep == 0 || v_b3_ch6_sleep == 1)
+choice("Continue", B3-Ch06a-Silent, v_current_scene = B3-Ch06a-Silent)
 
 
 ID: B3-Ch06a-Silent
@@ -2239,7 +2239,7 @@ TEXT:
 "Well, at least this gives us the advantage of having enough time to position ourselves on the battlefield," Hadrik says. "This street is really wide and long, so it’s pretty much perfect for an all-out brawl!"
 
 }
-choice("Continue", B3-Ch06a-Confession, v_current_scene = B3-Ch06a-Confession) if (v_b3_ch6_secret == 0 || v_b3_ch6_tie == 0 || v_b3_ch6_tie == 1)
+choice("Continue", B3-Ch06a-Confession, v_current_scene = B3-Ch06a-Confession)
 
 
 ID: B3-Ch06a-Confession

@@ -85,7 +85,7 @@ Instead of the scenery changing, this time, we remain in the same room, but Dian
 "Well that was, uh... interesting," Arraka says. "Anyway, let's get back to the stuff that's actually somewhat relevant to this ritual."
 
 }
-choice("Continue", B2-Ch11b-Olivia, v_current_scene = B2-Ch11b-Olivia) if (v_b2_ch11_skip1 == 0 || v_b2_ch11_skip1 == 1 || v_b2_ch11_skip1 == 2)
+choice("Continue", B2-Ch11b-Olivia, v_current_scene = B2-Ch11b-Olivia)
 
 
 ID: B2-Ch11b-Olivia
@@ -332,7 +332,7 @@ As the whole room stays silent, I can see that Kate's whole body is now shiverin
 "I was hoping that it would not come to this..." the lessathi says. "Very well, then. If you insist on disobeying us even now, then I have no choice but to call your names myself. First of all, I would like to introduce to you the person who has played the most crucial role in allowing us to find all of the culprits. Olivia, will you please step forward?"
 
 }
-choice("Continue", B2-Ch11b-Secretly, v_current_scene = B2-Ch11b-Secretly) if (v_b2_ch11_skip2 == 0 || v_b2_ch11_skip2 == 1)
+choice("Continue", B2-Ch11b-Secretly, v_current_scene = B2-Ch11b-Secretly)
 
 
 ID: B2-Ch11b-Secretly

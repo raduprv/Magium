@@ -232,7 +232,7 @@ He then stops suppressing his magical power, and for a moment, it feels like the
 "These two fools have already sealed their fate!" Talmak shouts, as he faces the other members of our team. "But the rest of you do not need to die together with them. If you join my side now, you will be allowed to live."
 
 }
-choice("Continue", B2-Ch10b-Denied, v_current_scene = B2-Ch10b-Denied) if (v_b2_ch10_advisor == 0 || v_b2_ch10_advisor == 1 || v_b2_ch10_advisor == 2)
+choice("Continue", B2-Ch10b-Denied, v_current_scene = B2-Ch10b-Denied)
 
 
 ID: B2-Ch10b-Denied
@@ -594,7 +594,7 @@ I begin to fly upwards, while Hadrik turns himself into a giant eagle, soaring i
 As I find myself stuck between the two large stone slates, I push one of them away from me with both my hands, and then I quickly use my right fist to smash right through the platform in front of me, allowing me to escape. Afterwards, I resume my flight towards Talmak, who is apparently trying to use the same tactic against Hadrik as well.
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_toughness == 4 && v_strength < 4 || v_toughness < 4)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_toughness == 4 && v_strength < 4 || v_toughness < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_toughness == 4 && v_strength < 4 || v_toughness < 4)
 choice("Load game", , , special:saves) if (v_toughness == 4 && v_strength < 4 || v_toughness < 4)
 choice("Continue", B2-Ch10b-Trouble, v_current_scene = B2-Ch10b-Trouble) if (v_strength == 4 && v_toughness == 4)
@@ -653,7 +653,7 @@ He doesn't get to fall for long, though, because he almost immediately makes ano
 The sage begins to create even more rocks than before, and he keeps throwing them at me, one after the other. However, his aim seems a little worse than before. It would appear that he isn't able to concentrate as well as he'd want to, when he is this angry.
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_combat_technique < 4)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_combat_technique < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_combat_technique < 4)
 choice("Load game", , , special:saves) if (v_combat_technique < 4)
 choice("Continue", B2-Ch10b-Mosquito, v_ac_b2_ch10_demolition = 1, v_current_scene = B2-Ch10b-Mosquito) if (v_combat_technique == 4)
@@ -694,7 +694,7 @@ Normally, that kind of punch should have smashed his head in, but thanks to all 
 The sage begins to create even more rocks than before, and he keeps throwing them at me, one after the other. However, his aim seems a little worse than before. It would appear that he isn't able to concentrate as well as he'd want to, when he is this angry.
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_reflexes < 4)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_reflexes < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_reflexes < 4)
 choice("Load game", , , special:saves) if (v_reflexes < 4)
 choice("Continue", B2-Ch10b-Mosquito, v_current_scene = B2-Ch10b-Mosquito) if (v_reflexes == 4)
@@ -735,7 +735,7 @@ Normally, that kind of punch should have smashed his head in, but thanks to all 
 The sage begins to create even more rocks than before, and he keeps throwing them at me, one after the other. However, his aim seems a little worse than before. It would appear that he isn't able to concentrate as well as he'd want to, when he is this angry.
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_perception < 4)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_perception < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_perception < 4)
 choice("Load game", , , special:saves) if (v_perception < 4)
 choice("Continue", B2-Ch10b-Mosquito, v_current_scene = B2-Ch10b-Mosquito) if (v_perception == 4)
@@ -980,7 +980,7 @@ While we're dealing with the elf, I can't help but notice that the sky above us 
 Somewhere below, at a much lower altitude, Illuna and Flower are still busy fighting the black-haired banshee, in mid-flight, although they seem to be very evenly matched, and neither of them has managed to do any significant damage to the other. Flower and Illuna may have the upper hand, in terms of raw power, because there are two of them, but the banshee working for the sage is making good use of the multitude of spells she has at her disposal to compensate for her disadvantage.
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_agility < 3 || v_reflexes < 3)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_agility < 3 || v_reflexes < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_agility < 3 || v_reflexes < 3)
 choice("Load game", , , special:saves) if (v_agility < 3 || v_reflexes < 3)
 choice("Continue", B2-Ch10b-Specialty, v_current_scene = B2-Ch10b-Specialty) if (v_agility >= 3 && v_reflexes >= 3)
@@ -1035,7 +1035,7 @@ While we're dealing with the elf, I can't help but notice that the sky above us 
 Somewhere below, at a much lower altitude, Illuna and Flower are still busy fighting the black-haired banshee, in mid-flight, although they seem to be very evenly matched, and neither of them has managed to do any significant damage to the other. Flower and Illuna may have the upper hand, in terms of raw power, because there are two of them, but the banshee working for the sage is making good use of the multitude of spells she has at her disposal to compensate for her disadvantage.
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_reflexes < 3)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_reflexes < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_reflexes < 3)
 choice("Load game", , , special:saves) if (v_reflexes < 3)
 choice("Continue", B2-Ch10b-Specialty, v_current_scene = B2-Ch10b-Specialty) if (v_reflexes >= 3)
@@ -1096,7 +1096,7 @@ This allows Leila and me to finally reach him, and to attack him with many rapid
 Somewhere below, at a much lower altitude, Illuna and Flower are still busy fighting the black-haired banshee, in mid-flight, although they seem to be very evenly matched, and neither of them has managed to do any significant damage to the other. Flower and Illuna may have the upper hand, in terms of raw power, because there are two of them, but the banshee working for the sage is making good use of the multitude of spells she has at her disposal to compensate for her disadvantage.
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_agility < 3)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_agility < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_agility < 3)
 choice("Load game", , , special:saves) if (v_agility < 3)
 choice("Continue", B2-Ch10b-Specialty, v_current_scene = B2-Ch10b-Specialty) if (v_agility >= 3)
@@ -1351,8 +1351,8 @@ All of a sudden, Melindra loses control of one of her wind blades, which flies a
 "Damn..." Daren says, as he looks at the hole in the ground left by the blade from earlier. "I really hope that my barrier is strong enough to protect us from one of these, if it hits us..."
 
 }
-choice(""Would your barrier work more effectively if we huddled closer together?"", B2-Ch10b-Huddled, v_current_scene = B2-Ch10b-Huddled) if (v_b2_ch10_target == 0 || v_b2_ch10_target == 1)
-choice(""Maybe you could try to use your sword to absorb the wind blades."", B2-Ch10b-Absorb, v_current_scene = B2-Ch10b-Absorb) if (v_b2_ch10_target == 0 || v_b2_ch10_target == 1)
+choice(""Would your barrier work more effectively if we huddled closer together?"", B2-Ch10b-Huddled, v_current_scene = B2-Ch10b-Huddled)
+choice(""Maybe you could try to use your sword to absorb the wind blades."", B2-Ch10b-Absorb, v_current_scene = B2-Ch10b-Absorb)
 
 
 ID: B2-Ch10b-Huddled
@@ -1480,7 +1480,7 @@ Before she gets to finish what she had to say, the banshee gets teleported out o
 "They're just trying to be nice, Melindra," I say. "There's no need to act so shocked about it. Also, could we maybe move away from this camp? I have a feeling that we're going to start getting attacked by a hundred pinecone-collecting underlings if we stay in this place much longer..."
 
 }
-choice("Continue", B2-Ch10b-Empty, v_current_scene = B2-Ch10b-Empty, v_b2_ch11_added_hearing = 0) if (v_b2_ch10_target == 0 || v_b2_ch10_target == 1)
+choice("Continue", B2-Ch10b-Empty, v_current_scene = B2-Ch10b-Empty, v_b2_ch11_added_hearing = 0)
 
 
 ID: B2-Ch10b-Empty
@@ -1624,7 +1624,7 @@ Before I get to finish my train of thought, Hadrik is the one to hit the nail on
 "So, I've been wondering about something for a while... maybe you guys can clear it up for me," Hadrik says. "Does the time look frozen to anyone else? Or is it just me?..."
 
 }
-choice("Next chapter", B2-Ch11a-Intro, v_next_chapter_crash = 1, v_current_scene = B2-Ch11a-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, special:checkpoint_save) if (v_b2_ch10_activate == 0 || v_b2_ch10_activate == 1 || v_ch4_spared_dave == 0 || v_ch4_spared_dave == 1)
+choice("Next chapter", B2-Ch11a-Intro, v_next_chapter_crash = 1, v_current_scene = B2-Ch11a-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, special:checkpoint_save)
 
 
 ID: B2-Ch10b-Details

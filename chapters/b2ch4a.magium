@@ -642,7 +642,7 @@ I'll definitely look into it," I say. "Thanks for letting me know."
  For once, everyone agreed with Wilhelm, even if some did so more begrudgingly than others, and we decided to spend the rest of the recreation period discussing various strategies that could work against the monsters that we knew about, but also against other monsters that I've read about in my notes. We even agreed to have a second meeting later, after we'd spend some time alone in our rooms, mulling over the information that we had at our disposal.
 
 }
-choice("Continue", B2-Ch04a-Leaving, v_current_scene = B2-Ch04a-Leaving) if (v_b2_ch2_heard == 0 || v_b2_ch2_heard == 1)
+choice("Continue", B2-Ch04a-Leaving, v_current_scene = B2-Ch04a-Leaving)
 
 
 ID: B2-Ch04a-Overheard
@@ -710,8 +710,8 @@ Realizing that I'm not planning to tell them about the creatures anymore, Leila 
 "Forget the troll," the mage says. "We need to focus on the creatures. Does anyone know of any weaknesses we can use against them?"
 
 }
-choice("Tell them the creatures' weaknesses", B2-Ch04a-Weaknesses, v_current_scene = B2-Ch04a-Weaknesses, v_b2_ch4_inform3 = 1) if (v_b2_ch4_inform == 0 || v_b2_ch4_inform == 1)
-choice("Tell them nothing", B2-Ch04a-Weaknesses, v_current_scene = B2-Ch04a-Weaknesses, v_b2_ch4_inform3 = 0) if (v_b2_ch4_inform == 0 || v_b2_ch4_inform == 1)
+choice("Tell them the creatures' weaknesses", B2-Ch04a-Weaknesses, v_current_scene = B2-Ch04a-Weaknesses, v_b2_ch4_inform3 = 1)
+choice("Tell them nothing", B2-Ch04a-Weaknesses, v_current_scene = B2-Ch04a-Weaknesses, v_b2_ch4_inform3 = 0)
 
 
 ID: B2-Ch04a-Weaknesses
@@ -741,7 +741,7 @@ I ended up telling them a lot more than I was originally planning. I gave them m
 The rest of the recreation period was spent discussing about the creatures described by the thug, and also about various strategies that we could employ to defeat them. I didn't really get involved much in their discussion, since I can't say that I'd trust any of them to have my back during a fight. A few hours after the recreation period, I went to Leila's room so we could have our own separate strategy meeting, discussing about all the possible creatures that we may encounter, and about how we could deal with them. 
 
 }
-choice("Continue", B2-Ch04a-Leaving, v_current_scene = B2-Ch04a-Leaving) if (v_b2_ch4_inform3 == 0 || v_b2_ch4_inform3 == 1)
+choice("Continue", B2-Ch04a-Leaving, v_current_scene = B2-Ch04a-Leaving)
 
 
 ID: B2-Ch04a-Leaving
@@ -829,7 +829,7 @@ Leila turns around, at the sound of Kate's voice, but when she sees her face, sh
 "Kate, I..." Leila starts to write, but she gets interrupted by Kate rushing towards her, and hugging her as tightly as she can.
 
 }
-choice("Continue", B2-Ch04a-Safe, v_current_scene = B2-Ch04a-Safe) if (v_b2_ch2_kate == 0 || v_b2_ch2_kate == 1)
+choice("Continue", B2-Ch04a-Safe, v_current_scene = B2-Ch04a-Safe)
 
 
 ID: B2-Ch04a-Safe
@@ -984,8 +984,8 @@ As we all wait for the events to begin, I suddenly hear a familiar beeping noise
 Finally. I've been waiting for this for a while.
 
 }
-choice("Invest points now", B2-Ch04a-Stats-spent, v_current_scene = B2-Ch04a-Stats-spent, special:stats) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
-choice("Invest points later(by pressing the stats button on the top of the screen)", B2-Ch04a-Private, v_current_scene = B2-Ch04a-Private) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
+choice("Invest points now", B2-Ch04a-Stats-spent, v_current_scene = B2-Ch04a-Stats-spent, special:stats)
+choice("Invest points later(by pressing the stats button on the top of the screen)", B2-Ch04a-Private, v_current_scene = B2-Ch04a-Private)
 
 
 ID: B2-Ch04a-Stats-spent
@@ -1007,7 +1007,7 @@ As we all wait for the events to begin, I suddenly hear a familiar beeping noise
 Finally. I've been waiting for this for a while.
 
 }
-choice("Continue", B2-Ch04a-Private, v_current_scene = B2-Ch04a-Private) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
+choice("Continue", B2-Ch04a-Private, v_current_scene = B2-Ch04a-Private)
 
 
 ID: B2-Ch04a-Private
@@ -1101,8 +1101,8 @@ Damn it! If only I hadn't told Daren to secure my backpack, I could have sent Le
 Hold on, I also have another choice! I could send Leila to go read my notebook, and rip the pages I need out of it, so she can bring them back to me. But would she be able to find the pages? I did make a page index at the beginning, but people have had trouble understanding my ugly handwriting in the past. I can't just tell her to bring me the notebook, because then she might not have the time to return it to my backpack before our round begins. Either way, I don't have much time. I'm going to need to decide what I want to do.
 
 }
-choice("Stay here and watch the fights.", B2-Ch04a-Remain, v_current_scene = B2-Ch04a-Remain, v_b2_ch4_backpack = 1) if (v_ch6_secure == 0 || v_ch6_secure == 1)
-choice("Go read the notebook.", B2-Ch04a-Read, v_current_scene = B2-Ch04a-Read, v_b2_ch4_backpack = 2) if (v_ch6_secure == 0 || v_ch6_secure == 1)
+choice("Stay here and watch the fights.", B2-Ch04a-Remain, v_current_scene = B2-Ch04a-Remain, v_b2_ch4_backpack = 1)
+choice("Go read the notebook.", B2-Ch04a-Read, v_current_scene = B2-Ch04a-Read, v_b2_ch4_backpack = 2)
 choice("Send Leila to bring me the notebook pages.", B2-Ch04a-Remain, v_current_scene = B2-Ch04a-Remain, v_b2_ch4_backpack = 3) if (v_ch6_secure == 0)
 choice("Stay here and watch the fights.", B2-Ch04a-Remain, v_ac_b2_ch4_risk = 1, v_current_scene = B2-Ch04a-Remain, v_b2_ch4_backpack = 1) if (v_b2_ch2_heard == 1 && v_ch6_secure == 0 || v_b2_ch2_heard == 1 && v_ch6_secure == 1)
 
@@ -1164,7 +1164,7 @@ The guard goes to climb a flight of stairs, and then he disappears from my sight
 When I finally reach my locker, I open it with my key, and then I get the notebook out of my backpack. I quickly rip out the pages I need, then I place my notebook back in my backpack and I close the locker.
 
 }
-choice("Continue", B2-Ch04a-Himself, v_current_scene = B2-Ch04a-Himself) if (v_ch6_secure == 0 || v_ch6_secure == 1)
+choice("Continue", B2-Ch04a-Himself, v_current_scene = B2-Ch04a-Himself)
 
 
 ID: B2-Ch04a-Himself
@@ -1208,7 +1208,7 @@ She then points towards several dead gladiators that are hidden behind some mara
 It takes about another minute for the cheering to finally die down, and for Hadrik and the others to step off the stage, so that the next division can enter the fighting area.
 
 }
-choice("Continue", B2-Ch04a-Daft, v_current_scene = B2-Ch04a-Daft) if (v_b2_ch2_heard == 0 || v_b2_ch2_heard == 1)
+choice("Continue", B2-Ch04a-Daft, v_current_scene = B2-Ch04a-Daft)
 
 
 ID: B2-Ch04a-Remain
@@ -1402,7 +1402,7 @@ Following the sound of Arraka's voice, I manage to identify Flower in the crowd 
  Now that Arraka mentions it, I see that there are indeed spears and various other weapons mounted on the walls of the arena. They must have been placed there to give people who didn't have any weapons when they got captured an equal chance in the fighting event. Hadrik mumbles something under his breath, and he goes to get one of the spears. He then tosses it at one of the manticores, and the spear lodges itself into its chest, causing blood to spray out while the creature falls towards the ground. Before the creature reaches the soil, the dwarf grabs two more spears, and he throws them in quick succession towards two of the other manticores, killing them as well.
 
 }
-choice("Continue", B2-Ch04a-Chanting, v_current_scene = B2-Ch04a-Chanting) if (v_b2_ch4_beer == 0 || v_b2_ch4_beer == 1)
+choice("Continue", B2-Ch04a-Chanting, v_current_scene = B2-Ch04a-Chanting)
 
 
 ID: B2-Ch04a-Chanting
@@ -1499,7 +1499,7 @@ I take the notes from her hands and I study them closely.
 The information written here is definitely useful. I'll make sure to put it to good use if the need arises.
 
 }
-choice("Continue", B2-Ch04a-Daft, v_current_scene = B2-Ch04a-Daft) if (v_b2_ch2_heard == 0 || v_b2_ch2_heard == 1)
+choice("Continue", B2-Ch04a-Daft, v_current_scene = B2-Ch04a-Daft)
 
 
 ID: B2-Ch04a-Daft
@@ -1722,4 +1722,4 @@ We all make our way towards the center of the arena, like all the divisions befo
 The crowd watches us in complete silence, as we make our way past all the animal carcasses, in order to reach our destination. It's clear that they do not recognize anyone from our division. They're probably already thinking that we're going to get butchered, like that first division from earlier. I hope we won't end up proving them right.
 
 }
-choice("Continue", B2-Ch04b-Bastard, v_current_scene = B2-Ch04b-Bastard) if (v_b2_ch2_deal == 1 || v_b2_ch2_deal == 2 || v_b2_ch2_deal == 3 || v_b2_ch2_deal == 4)
+choice("Continue", B2-Ch04b-Bastard, v_current_scene = B2-Ch04b-Bastard)

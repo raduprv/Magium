@@ -695,9 +695,9 @@ As I turn around, the girl takes a bow, and then she introduces herself.
 "My name is Ella," she says, "but most of my masters simply called me 'slave girl'. I know I may not look like much, but if you will have me, I vow to serve you to the best of my ability, until the day I die. Just give me my first order, and our contract will be complete."
 
 }
-choice(""Sure thing! I guess you can start by shining my boots! They're a little dirty."", Ch11a-Boots, v_current_scene = Ch11a-Boots) if (v_ch11_difference == 1 || v_ch11_difference == 2 || v_ch11_difference == 3)
-choice(""Wait, I didn't mean to become your new master. I only meant to set you free!"", Ch11a-Free, v_current_scene = Ch11a-Free) if (v_ch11_difference == 1 || v_ch11_difference == 2 || v_ch11_difference == 3)
-choice(""Uh, okay. How about coming with us to Rose's house, for the time being?"", Ch11a-House, v_current_scene = Ch11a-House) if (v_ch11_difference == 1 || v_ch11_difference == 2 || v_ch11_difference == 3)
+choice(""Sure thing! I guess you can start by shining my boots! They're a little dirty."", Ch11a-Boots, v_current_scene = Ch11a-Boots)
+choice(""Wait, I didn't mean to become your new master. I only meant to set you free!"", Ch11a-Free, v_current_scene = Ch11a-Free)
+choice(""Uh, okay. How about coming with us to Rose's house, for the time being?"", Ch11a-House, v_current_scene = Ch11a-House)
 
 
 ID: Ch11a-Boots

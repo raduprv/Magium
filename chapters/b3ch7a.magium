@@ -106,7 +106,7 @@ I get up from the ground and I begin to look around me, trying to figure out whi
 "Well, you sure are handling this a lot better than I am, then," I say. "At the moment, I'm having a difficult time even holding this conversation with you without collapsing."
 
 }
-choice("Continue", B3-Ch07a-Intro3, v_current_scene = B3-Ch07a-Intro3) if (v_b3_ch7_force == 0 || v_b3_ch7_force == 1 || v_b3_ch7_force == 2)
+choice("Continue", B3-Ch07a-Intro3, v_current_scene = B3-Ch07a-Intro3)
 
 
 ID: B3-Ch07a-Intro3
@@ -588,7 +588,7 @@ As I am getting this brief moment of respite, I cannot help but notice that ther
 As I am getting this brief moment of respite, I cannot help but notice that there is something strange going on with Gontrok's aura, although I can't tell exactly what's wrong with it from a simple glance. If I want to figure out what's going on, I would need to focus on his aura for at least a few seconds, leaving myself completely vulnerable in the process. Could this be worth the risk?
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_agility < 4 || v_reflexes < 4)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_agility < 4 || v_reflexes < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_agility < 4 || v_reflexes < 4)
 choice("Load game", , , special:saves) if (v_agility < 4 || v_reflexes < 4)
 choice("Focus on Gontrok's aura.", B3-Ch07a-Studied, v_current_scene = B3-Ch07a-Studied, v_b3_ch7_bet = 4) if (v_b3_ch7_bet == 0 && v_is_dead == 0 || v_b3_ch7_bet == 1 && v_is_dead == 0 || v_b3_ch7_bet == 3 && v_is_dead == 0 || v_agility >= 4 && v_reflexes >= 4)
@@ -618,7 +618,7 @@ As I am standing there, thinking, Gontrok attacks me again with an extremely qui
 Both options have their ups and downs, so I guess I'm going to have to go with my instincts, on this one.
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_magical_sense < 4)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_magical_sense < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_magical_sense < 4)
 choice("Load game", , , special:saves) if (v_magical_sense < 4)
 choice("Perform the technique on Gontrok myself.", B3-Ch07a-Perform, v_current_scene = B3-Ch07a-Perform, v_b3_ch7_bet = 6) if (v_magical_sense >= 4)
@@ -690,7 +690,7 @@ He then jumps at me and he begins to attack me with an elaborate series of feint
 After successfully predicting his first few feints, I suddenly realize that this isn't just a random set of movements that he invented on the spot but a tactic that already exists and that I know about thanks to my combat technique stat. If the information I have is true, then it should be easy enough to distinguish the fake attacks from the real ones, because whenever he actually wants to hit me, he will get a little closer to me so that his punches can have more of an impact. If I don't see him trying to close the gap between us too much, then he's probably just going for a feint. With this info, I should be able to hold out against him long enough for Leila to give me another opening. Let's see if it works.
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_combat_technique < 2)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_combat_technique < 2)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_combat_technique < 2)
 choice("Load game", , , special:saves) if (v_combat_technique < 2)
 choice("Continue", B3-Ch07a-Perform2, v_current_scene = B3-Ch07a-Perform2) if (v_combat_technique >= 2)
@@ -746,7 +746,7 @@ Just like the last time, the royal guard's voice appears to be coming from all a
 
 }
 choice("Continue", B3-Ch07a-Loyrang, v_ac_b3_ch7_honorable = 1, v_current_scene = B3-Ch07a-Loyrang) if (v_b3_ch7_massage == 2 || v_combat_technique >= 4)
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_combat_technique < 4 && v_b3_ch7_massage != 2)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_combat_technique < 4 && v_b3_ch7_massage != 2)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_combat_technique < 4 && v_b3_ch7_massage != 2)
 choice("Load game", , , special:saves) if (v_combat_technique < 4 && v_b3_ch7_massage != 2)
 
@@ -826,7 +826,7 @@ After successfully predicting his first few feints, I suddenly realize that this
  Surely enough, after several more strikes coming from Gontrok, my suspicions get confirmed and I can now say without a shadow of a doubt that he is indeed using the technique I was thinking of.  I avoid his attacks for a while longer until Leila finally goes for his eyes, forcing him to jump back and to take his focus off me momentarily.
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_combat_technique < 2)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_combat_technique < 2)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_combat_technique < 2)
 choice("Load game", , , special:saves) if (v_combat_technique < 2)
 choice("Continue", B3-Ch07a-Ignore2, v_current_scene = B3-Ch07a-Ignore2) if (v_combat_technique >= 2)
@@ -861,7 +861,7 @@ It is only thanks to my very advanced knowledge of martial arts that I somehow m
 "Sorry to interrupt," Loyrang says, in his usual casual tone, while his hands are positioned near the hilts of his two blades, ready to unsheathe them if the need arises. "I was going to let you finish your fight but it was taking a little too long so I got bored of waiting until the end."
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_combat_technique < 4)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_combat_technique < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_combat_technique < 4)
 choice("Load game", , , special:saves) if (v_combat_technique < 4)
 choice("Continue", B3-Ch07a-Loyrang, v_current_scene = B3-Ch07a-Loyrang) if (v_combat_technique >= 4)
@@ -1208,7 +1208,7 @@ He then picks up a rock from the ground with his right hand and he shows it to L
 Gontrok does not get to finish his swing, however, because his arm freezes in place and so does the rest of his body, as if it were being immobilized by an invisible force. While the giant struggles to break himself free of the aura technique, we see Eiden coming out of invisibility somewhere not too far behind him with his eyes closed, as always.
 
 }
-choice("Continue", B3-Ch07a-Barbarian, v_current_scene = B3-Ch07a-Barbarian) if (v_b3_ch7_fingers == 1 && v_bluff == 0 || v_b3_ch7_fingers == 1 && v_bluff >= 1 || v_b3_ch7_fingers == 0)
+choice("Continue", B3-Ch07a-Barbarian, v_current_scene = B3-Ch07a-Barbarian)
 
 
 ID: B3-Ch07a-Barbarian
@@ -1475,7 +1475,7 @@ I nod to her, and then we begin to climb up the stairs leading to the basement b
 "Punishment?" the king asks, suddenly scared. "Creator, please, I can explain!"
 
 }
-choice("Continue", B3-Ch07a-Nullified, v_current_scene = B3-Ch07a-Nullified) if (v_b3_ch7_door == 0 || v_b3_ch7_door == 1)
+choice("Continue", B3-Ch07a-Nullified, v_current_scene = B3-Ch07a-Nullified)
 
 
 ID: B3-Ch07a-Nullified
@@ -1594,7 +1594,7 @@ The beam envelops my whole body in flames, but thanks to my hardened aura I only
 "Upon further analysis, it seems that the device which the king uses to call the royal guards to his location is also malfunctioning, possibly due to someone having tampered with it beforehand," the Overseer says. "If you want to kill the king, now would be the perfect time, as he will not be able to call his allies to help him."
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b3_ch7_tyrant == 1 && v_aura_hardening < 3)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_b3_ch7_tyrant == 1 && v_aura_hardening < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch7_tyrant == 1 && v_aura_hardening < 3)
 choice("Load game", , , special:saves) if (v_b3_ch7_tyrant == 1 && v_aura_hardening < 3)
 choice("Shoot the king above his left knee and then shoot him in the head.", B3-Ch07a-Assassinate, v_current_scene = B3-Ch07a-Assassinate, v_b3_ch7_assassinate = 1) if (v_b3_ch7_tyrant == 1 && v_aura_hardening >= 3 || v_b3_ch7_tyrant == 0)
@@ -1724,7 +1724,7 @@ Having finished their job, the red-eyed drones now retreat out of the room in an
 "Now, is there anything else I can help you with?" the Overseer says.
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b3_ch7_assassinate == 1 && v_b3_ch7_door == 0 && v_perception < 2)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_b3_ch7_assassinate == 1 && v_b3_ch7_door == 0 && v_perception < 2)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch7_assassinate == 1 && v_b3_ch7_door == 0 && v_perception < 2)
 choice("Load game", , , special:saves) if (v_b3_ch7_assassinate == 1 && v_b3_ch7_door == 0 && v_perception < 2)
 choice("Continue", B3-Ch07a-Golems, v_current_scene = B3-Ch07a-Golems) if (v_b3_ch4_billy == 0 && v_is_dead == 0 || v_b3_ch4_billy == 7 && v_is_dead == 0 || v_b3_ch4_billy == 8 && v_is_dead == 0 || v_b3_ch4_billy == 9 && v_is_dead == 0 || v_b3_ch7_assassinate == 0 && v_b3_ch7_door == 0 || v_b3_ch7_assassinate == 0 && v_b3_ch7_door == 1 || v_b3_ch7_assassinate == 1 && v_b3_ch7_door == 1 || v_is_dead == 0 && v_b3_ch4_billy != 0 || v_b3_ch7_assassinate == 1 && v_b3_ch7_door == 0 && v_perception >= 2)
@@ -1810,7 +1810,7 @@ achievement("Paranoid",v_ac_b3_ch7_paranoid)
 
 I don't listen to the illusion and I put my hands on my ears so that I will no longer hear her, even though it doesn't seem to be having much of an effect. As Leila is still calling out to me, the air currents get much stronger and I get carried further and further away from her, until I can't hear her or anything else anymore. All is now silent, and the world around me is gone. There is only emptiness. As the memory of who I once was becomes more and more blurred, I close my eyes and my consciousness slowly fades away, never to be awoken again.
 
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart)
+choice("Restart game", Ch1-Intro1, , special:restart)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load)
 choice("Load game", , , special:saves)
 

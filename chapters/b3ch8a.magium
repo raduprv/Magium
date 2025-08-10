@@ -160,7 +160,7 @@ TEXT:
  "I think you are all forgetting one important detail," Kate says, as the rest of us now turn to look at her. "We already know that there are multiple versions of Arraka that exist simultaneously across various universes, but from what I could tell, there appears to be only one Magium. Arraka told us that she had to enter the Magium's realm in order to be able to travel to the different other worlds during the God of Time's ritual, which means that the Magium must act like some kind of bridge that connects all the universes together. We also know that the Magium came here by mistake, looking for a different Arraka than the one in our universe, which strongly suggests that there is only one entity overseeing all of the parallel worlds, instead of there being a different Magium assigned for each universe. If a powerful being from one of the many primordial planes across the various universes were to have survived the split, like you say, then it would have also needed to ascend beyond the concepts of time and space, creating its very own world between worlds, full of the contradictions and impossibilities that Barry and Leila told us about when they described--"
 
 }
-choice("Continue", B3-Ch08a-Boundaries, v_current_scene = B3-Ch08a-Boundaries) if (v_b3_ch8_theory == 0 || v_b3_ch8_theory == 1 || v_b3_ch8_theory == 2 || v_b3_ch8_theory == 3)
+choice("Continue", B3-Ch08a-Boundaries, v_current_scene = B3-Ch08a-Boundaries)
 
 
 ID: B3-Ch08a-Boundaries
@@ -268,7 +268,7 @@ TEXT:
 "Being watched through the crystals, you mean?" Daren says. "I guess we can't really ignore the possibility, but I don't see a reason why someone or something as powerful as the Magium would not simply reveal itself to us directly instead of hiding."
 
 }
-choice("Continue", B3-Ch08a-Observing, v_current_scene = B3-Ch08a-Observing) if (v_bluff == 0 || v_bluff >= 1)
+choice("Continue", B3-Ch08a-Observing, v_current_scene = B3-Ch08a-Observing)
 
 
 ID: B3-Ch08a-Puke
@@ -715,9 +715,9 @@ TEXT:
 "Precisely," the Overseer says. "My prediction is that when the king of the underground will launch his all-out attack against me, he will likely enlist your aid for this operation, since you are theoretically his allies. By my calculations, the most opportune moment for the king to betray you would be either during your battle against me, or shortly before that. However, if you were to ally yourselves with me instead, we could set up an ambush for the king of the underground's forces and attack him together, before his attempt to stab you in the back."
 
 }
-choice(""I'm fine with anything, as long as we get away from these crystals."", B3-Ch08a-Flaming, v_current_scene = B3-Ch08a-Flaming, v_b3_ch8_next = 0) if (v_b3_ch8_watching == 0 || v_b3_ch8_watching == 1)
-choice(""We should have a discussion with the rebels about who should be the next king."", B3-Ch08a-Flaming, v_current_scene = B3-Ch08a-Flaming, v_b3_ch8_next = 1) if (v_b3_ch8_watching == 0 || v_b3_ch8_watching == 1)
-choice(""We should ask the king what he is planning to do about the seredium tower prisoners."", B3-Ch08a-Flaming, v_current_scene = B3-Ch08a-Flaming, v_b3_ch8_next = 2) if (v_b3_ch8_watching == 0 || v_b3_ch8_watching == 1)
+choice(""I'm fine with anything, as long as we get away from these crystals."", B3-Ch08a-Flaming, v_current_scene = B3-Ch08a-Flaming, v_b3_ch8_next = 0)
+choice(""We should have a discussion with the rebels about who should be the next king."", B3-Ch08a-Flaming, v_current_scene = B3-Ch08a-Flaming, v_b3_ch8_next = 1)
+choice(""We should ask the king what he is planning to do about the seredium tower prisoners."", B3-Ch08a-Flaming, v_current_scene = B3-Ch08a-Flaming, v_b3_ch8_next = 2)
 
 
 ID: B3-Ch08a-Flaming
