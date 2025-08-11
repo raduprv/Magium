@@ -1079,7 +1079,7 @@ All of a sudden, four icicles penetrate the remaining metal balls, which get sen
 Seeing that he is no longer trying to evade its attacks, the manticore suddenly flaps its wings and it soars right back into the sky, as it begins to circle around aimlessly just like the manticore that was fighting the man with the trident before.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_b2_ch7_dizziness == 1)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b2_ch7_dizziness == 1)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b2_ch7_dizziness == 1)
 choice("Load game", , , special:saves) if (v_b2_ch7_dizziness == 1)
 choice("Continue", B3-Ch03b-Nonsense, v_current_scene = B3-Ch03b-Nonsense) if (v_b2_ch7_dizziness == 0)

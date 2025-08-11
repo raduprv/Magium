@@ -564,7 +564,7 @@ for chapter in chapters:
                 response.special = event.results["special"]
             elif response.text == "Restart game":
                 response.special = "restart" 
-                response.set_variables = {}
+                response.set_variables = {k:val for k,val in response.set_variables.items() if k == "v_current_scene"}
 
             if verbose:
                 print("New response:",response)

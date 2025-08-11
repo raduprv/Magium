@@ -1919,7 +1919,7 @@ I did not expect it to move so fast without using its wings. I was careless. The
 
 }
 choice("Continue", B2-Ch02a-Griffins, v_current_scene = B2-Ch02a-Griffins) if (v_combat_technique >= 3 || v_reflexes >= 3 || v_strength >= 2)
-choice("Restart game", B2-Ch02a-Griffins, , special:restart) if (v_combat_technique < 3 && v_reflexes < 3 && v_strength < 2)
+choice("Restart game", B2-Ch02a-Griffins, v_current_scene = B2-Ch02a-Griffins, special:restart) if (v_combat_technique < 3 && v_reflexes < 3 && v_strength < 2)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_combat_technique < 3 && v_reflexes < 3 && v_strength < 2)
 choice("Load game", , , special:saves) if (v_combat_technique < 3 && v_reflexes < 3 && v_strength < 2)
 
@@ -1978,7 +1978,7 @@ The creature's beak passes through my flesh as through paper, and I feel an inte
 
 }
 choice("Continue", B2-Ch02a-Acrobatic, v_current_scene = B2-Ch02a-Acrobatic) if (v_toughness >= 3)
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_toughness < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_toughness < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_toughness < 3)
 choice("Load game", , , special:saves) if (v_toughness < 3)
 
@@ -2017,7 +2017,7 @@ I don't wait for them to make the first move, and I rush towards the griffin tha
 
 }
 choice("Continue", B2-Ch02a-Acrobatic, v_current_scene = B2-Ch02a-Acrobatic) if (v_agility >= 3 || v_strength >= 3)
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_agility < 3 && v_strength < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_agility < 3 && v_strength < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_agility < 3 && v_strength < 3)
 choice("Load game", , , special:saves) if (v_agility < 3 && v_strength < 3)
 
@@ -2079,7 +2079,7 @@ As I try to get back up, the griffin brings down its hind legs upon me, impaling
 
 }
 choice("Continue", B2-Ch02a-Acrobatic, v_current_scene = B2-Ch02a-Acrobatic) if (v_toughness >= 3)
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_toughness < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_toughness < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_toughness < 3)
 choice("Load game", , , special:saves) if (v_toughness < 3)
 

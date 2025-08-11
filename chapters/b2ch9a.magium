@@ -1353,7 +1353,7 @@ Upon hearing the tone of Daren's voice, I quickly realize that I have no time to
 As I look at the large trunk of the fallen tree in front of me, I realize, with shock, that if I reacted only a fraction of a second later, I would have been done for.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_reflexes < 4)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_reflexes < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_reflexes < 4)
 choice("Load game", , , special:saves) if (v_reflexes < 4)
 choice("Continue", B2-Ch09a-Furiously, v_current_scene = B2-Ch09a-Furiously, v_b2_ch7_rock = 1) if (v_reflexes == 4)

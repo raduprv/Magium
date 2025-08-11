@@ -434,7 +434,7 @@ I therefore decide to buy some time, by shooting down some of the metal balls as
 "Out of sight, out of mind," Daren says. "Frankly, I'm more worried about the guards that are trying to set up an ambush ahead of us. From what I'm sensing, it seems that they're trying to block off our other escape routes as well. Shaking them off is going to be a little tricky."
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_reflexes == 4 && v_combat_technique < 3 || v_reflexes < 4)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_reflexes == 4 && v_combat_technique < 3 || v_reflexes < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_reflexes == 4 && v_combat_technique < 3 || v_reflexes < 4)
 choice("Load game", , , special:saves) if (v_reflexes == 4 && v_combat_technique < 3 || v_reflexes < 4)
 choice("Continue", B3-Ch02b-Ambush, v_current_scene = B3-Ch02b-Ambush) if (v_reflexes == 4 && v_combat_technique >= 3)
@@ -491,7 +491,7 @@ Fortunately, with the aid of my high reflexes I manage to avoid their attacks lo
 "Out of sight, out of mind," Daren says. "Frankly, I'm more worried about the guards that are trying to set up an ambush ahead of us. From what I'm sensing, it seems that they're trying to block off our other escape routes as well. Shaking them off is going to be a little tricky."
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_reflexes < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_reflexes < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_reflexes < 3)
 choice("Load game", , , special:saves) if (v_reflexes < 3)
 choice("Continue", B3-Ch02b-Ambush, v_current_scene = B3-Ch02b-Ambush) if (v_reflexes >= 3)
@@ -532,7 +532,7 @@ Fortunately, with the aid of my high reflexes, I manage to avoid their attacks l
 "Out of sight, out of mind," Daren says. "Frankly, I'm more worried about the guards that are trying to set up an ambush ahead of us. From what I'm sensing, it seems that they're trying to block off our other escape routes as well. Shaking them off is going to be a little tricky."
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_reflexes < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_reflexes < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_reflexes < 3)
 choice("Load game", , , special:saves) if (v_reflexes < 3)
 choice("Continue", B3-Ch02b-Ambush, v_current_scene = B3-Ch02b-Ambush) if (v_reflexes >= 3)
@@ -1028,7 +1028,7 @@ As I finally manage to distance myself a little more from him, I suddenly feel a
 "Just what exactly do you think you're doing, captain?..." Gontrok asks, as he gets closer to me.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_agility == 4 && v_reflexes < 4 || v_b3_ch1_unlock == 2 || v_agility < 4)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_agility == 4 && v_reflexes < 4 || v_b3_ch1_unlock == 2 || v_agility < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_agility == 4 && v_reflexes < 4 || v_b3_ch1_unlock == 2 || v_agility < 4)
 choice("Load game", , , special:saves) if (v_agility == 4 && v_reflexes < 4 || v_b3_ch1_unlock == 2 || v_agility < 4)
 choice("Continue", B3-Ch02b-Concept, v_current_scene = B3-Ch02b-Concept) if (v_agility == 4 && v_reflexes == 4 && v_b3_ch1_unlock != 2)
@@ -1099,7 +1099,7 @@ I manage to get out of his way several times, but the delay with which the air c
 I move my head a little so I can take a better look at my surroundings and I realize that while I've been fighting the giant, Leila had also been subdued and now everyone who was fighting the captain earlier is being pushed against the ground, unable to get back up.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_reflexes == 4 && v_combat_technique < 4 || v_b3_ch1_unlock == 2 || v_reflexes < 4)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_reflexes == 4 && v_combat_technique < 4 || v_b3_ch1_unlock == 2 || v_reflexes < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_reflexes == 4 && v_combat_technique < 4 || v_b3_ch1_unlock == 2 || v_reflexes < 4)
 choice("Load game", , , special:saves) if (v_reflexes == 4 && v_combat_technique < 4 || v_b3_ch1_unlock == 2 || v_reflexes < 4)
 choice("Continue", B3-Ch02b-Concept, v_current_scene = B3-Ch02b-Concept) if (v_combat_technique == 4 && v_reflexes == 4 && v_b3_ch1_unlock != 2)

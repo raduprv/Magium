@@ -1029,7 +1029,7 @@ Unfortunately, while we were busy dealing with the few golems that were near eno
 "Over here!" Daren shouts to us. "Leave the golems and come here! Quick, before the other ones reach us!"
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_b3_ch1_unlock == 2 || v_perception < 4)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b3_ch1_unlock == 2 || v_perception < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch1_unlock == 2 || v_perception < 4)
 choice("Load game", , , special:saves) if (v_b3_ch1_unlock == 2 || v_perception < 4)
 choice("Continue", B3-Ch02a-Rubble, v_current_scene = B3-Ch02a-Rubble) if (v_perception == 4 && v_b3_ch1_unlock != 2)
@@ -1072,7 +1072,7 @@ Unfortunately, while we were busy dealing with the few golems that were near eno
 "Over here!" Daren shouts to us. "Leave the golems and come here! Quick, before the other ones reach us!"
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_b3_ch1_unlock == 2 || v_reflexes < 4)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b3_ch1_unlock == 2 || v_reflexes < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch1_unlock == 2 || v_reflexes < 4)
 choice("Load game", , , special:saves) if (v_b3_ch1_unlock == 2 || v_reflexes < 4)
 choice("Continue", B3-Ch02a-Rubble, v_current_scene = B3-Ch02a-Rubble) if (v_reflexes == 4 && v_b3_ch1_unlock != 2)
@@ -1115,7 +1115,7 @@ Unfortunately, while we were busy dealing with the few golems that were near eno
 "Over here!" Daren shouts to us. "Leave the golems and come here! Quick, before the other ones reach us!"
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_b3_ch1_unlock == 2 || v_agility < 4)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b3_ch1_unlock == 2 || v_agility < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch1_unlock == 2 || v_agility < 4)
 choice("Load game", , , special:saves) if (v_b3_ch1_unlock == 2 || v_agility < 4)
 choice("Continue", B3-Ch02a-Rubble, v_current_scene = B3-Ch02a-Rubble) if (v_agility == 4 && v_b3_ch1_unlock != 2)
@@ -1178,7 +1178,7 @@ Unfortunately, it seems that while we were busy dealing with the few golems that
 "Over here!" Daren shouts to us, as soon as he and the others reach the gates. "Leave the golems and come here! Quick, before the other ones reach us!"
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_toughness == 4 && v_strength < 4 || v_b3_ch1_unlock == 2 || v_toughness < 4)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_toughness == 4 && v_strength < 4 || v_b3_ch1_unlock == 2 || v_toughness < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_toughness == 4 && v_strength < 4 || v_b3_ch1_unlock == 2 || v_toughness < 4)
 choice("Load game", , , special:saves) if (v_toughness == 4 && v_strength < 4 || v_b3_ch1_unlock == 2 || v_toughness < 4)
 choice("Continue", B3-Ch02a-Rubble, v_current_scene = B3-Ch02a-Rubble) if (v_strength == 4 && v_toughness == 4 && v_b3_ch1_unlock != 2)

@@ -527,7 +527,7 @@ He's lying. At most, he's got half a minute before that beam breaks under his we
 
 }
 choice("Continue", Ch10-Teleport, v_current_scene = Ch10-Teleport) if (v_perception >= 2 || v_premonition >= 2)
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_perception < 2 && v_premonition < 2)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_perception < 2 && v_premonition < 2)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_perception < 2 && v_premonition < 2)
 choice("Load game", , , special:saves) if (v_perception < 2 && v_premonition < 2)
 
@@ -795,7 +795,7 @@ He then starts slicing through the air in a triangular motion, a few times in a 
 "Enough!" we hear the shaman's voice, and soon he materializes out of thin air, along with the five ogre mages accompanying him. "I don't know how you were able to see through my trap and through my invisibility spell, but now I know why you've been able to avoid all of the patrols on your way to the treasure room."
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_premonition < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_premonition < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_premonition < 3)
 choice("Load game", , , special:saves) if (v_premonition < 3)
 choice("Continue", Ch10-Ritual, v_current_scene = Ch10-Ritual) if (v_premonition >= 3)
@@ -995,7 +995,7 @@ I had no time to get out of its way, and the projectile went straight through my
 
 }
 choice("Continue", Ch10-Volunteer2, v_current_scene = Ch10-Volunteer2) if (v_perception >= 3 || v_reflexes >= 3)
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_perception < 3 && v_reflexes < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_perception < 3 && v_reflexes < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_perception < 3 && v_reflexes < 3)
 choice("Load game", , , special:saves) if (v_perception < 3 && v_reflexes < 3)
 
@@ -1074,7 +1074,7 @@ I raise my arm and I put as much force behind my blow as I possibly can. When my
 
 }
 choice("Continue", Ch10-Curse, v_current_scene = Ch10-Curse) if (v_agility >= 2 || v_strength >= 3)
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_agility < 2 && v_strength < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_agility < 2 && v_strength < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_agility < 2 && v_strength < 3)
 choice("Load game", , , special:saves) if (v_agility < 2 && v_strength < 3)
 
@@ -1269,7 +1269,7 @@ One of the other wolves seizes the opportunity and bites my right leg from behin
 
 }
 choice("Continue", Ch10-Curse, v_current_scene = Ch10-Curse) if (v_agility >= 3 || v_reflexes >= 4)
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_agility < 3 && v_reflexes < 4)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_agility < 3 && v_reflexes < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_agility < 3 && v_reflexes < 4)
 choice("Load game", , , special:saves) if (v_agility < 3 && v_reflexes < 4)
 

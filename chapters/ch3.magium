@@ -1385,7 +1385,7 @@ As she finishes her sentence, she lets go of her sword and falls face first on t
 "This kind of damage isn't going to just disappear with a simple healing spell," Daren says. "She'll need quite some time to fully recover. At least she's no longer in any mortal danger. Would you mind telling me how the two of you got the bright idea to wander so far away from our camp without waking me up?" 
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_ch3_daren_worry != 1)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_ch3_daren_worry != 1)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_ch3_daren_worry != 1)
 choice("Load game", , , special:saves) if (v_ch3_daren_worry != 1)
 choice(""She wanted to ask me in private why we didn't try to purify her."", Ch3-Private, v_current_scene = Ch3-Private) if (v_ch3_daren_worry == 1)
@@ -1833,7 +1833,7 @@ While the men are arguing amongst themselves, I'm trying to find the right momen
 
 The last thing I see is the man's knife descending towards me, as he lands the finishing blow.
 
-choice("Restart game", Ch1-Intro1, , special:restart)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load)
 choice("Load game", , , special:saves)
 
@@ -1900,7 +1900,7 @@ I notice too late that one of the men lying on the ground managed to grab back h
 There was no time for me to react.  His crossbow bolt hit me right in the face, and I died almost instantly.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_combat_technique < 2 && v_reflexes < 2)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_combat_technique < 2 && v_reflexes < 2)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_combat_technique < 2 && v_reflexes < 2)
 choice("Load game", , , special:saves) if (v_combat_technique < 2 && v_reflexes < 2)
 choice("Continue", Ch3-Glance, v_current_scene = Ch3-Glance) if (v_ch3_saved_from_dart == 1 && v_is_dead == 0 && v_combat_technique >= 2 || v_ch3_saved_from_dart == 1 && v_is_dead == 0 && v_reflexes >= 2)
@@ -2041,7 +2041,7 @@ I miss the shot. And that was my last one. I don't have the time to reload, so I
 Unfortunately I wasn't fast enough. The man saw me coming and he shot me right in the face, avenging his fallen comrades. The shot killed me instantly.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_reflexes == 0 && v_toughness < 3 || v_agility == 0 && v_combat_technique == 0 && v_reflexes >= 1 || v_agility == 0 && v_combat_technique == 0 && v_reflexes == 0 && v_toughness == 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_reflexes == 0 && v_toughness < 3 || v_agility == 0 && v_combat_technique == 0 && v_reflexes >= 1 || v_agility == 0 && v_combat_technique == 0 && v_reflexes == 0 && v_toughness == 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_reflexes == 0 && v_toughness < 3 || v_agility == 0 && v_combat_technique == 0 && v_reflexes >= 1 || v_agility == 0 && v_combat_technique == 0 && v_reflexes == 0 && v_toughness == 3)
 choice("Load game", , , special:saves) if (v_reflexes == 0 && v_toughness < 3 || v_agility == 0 && v_combat_technique == 0 && v_reflexes >= 1 || v_agility == 0 && v_combat_technique == 0 && v_reflexes == 0 && v_toughness == 3)
 choice("Continue", Ch3-Second-Feeling, v_current_scene = Ch3-Second-Feeling) if (v_ch3_first_killed == 0 && v_is_dead == 0 && v_combat_technique >= 1 && v_reflexes >= 1 || v_ch3_first_killed == 0 && v_combat_technique == 0 && v_is_dead == 0 && v_agility >= 1 && v_reflexes >= 1 || v_ch3_first_killed == 0 && v_is_dead == 0 && v_reflexes == 0 && v_toughness == 3 && v_combat_technique >= 1 || v_ch3_first_killed == 0 && v_combat_technique == 0 && v_is_dead == 0 && v_reflexes == 0 && v_toughness == 3 && v_agility >= 1)
@@ -2511,7 +2511,7 @@ I use my superior agility to quickly distance myself from them, and make sure th
 These are not trained soldiers. At best, they could be some lowly personal guards. There's no way an organized group would ever break their formation because of a cheap trick like this.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_agility < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_agility < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_agility < 3)
 choice("Load game", , , special:saves) if (v_agility < 3)
 choice("Continue", Ch3-Speed2, v_current_scene = Ch3-Speed2) if (v_agility == 3)
@@ -2592,7 +2592,7 @@ There are ten of them and one of me. I am not foolish enough to think that simpl
 By doing that, I make sure none of them manage to circle around me while others distract me. Knowing all of my enemies' location also helps me find their collective blind spots. If only two or three of them see me at a time, it makes it easier for me to dodge their shots. 
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_combat_technique < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_combat_technique < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_combat_technique < 3)
 choice("Load game", , , special:saves) if (v_combat_technique < 3)
 choice("Continue", Ch3-Move2, v_current_scene = Ch3-Move2) if (v_combat_technique == 3)
@@ -2619,7 +2619,7 @@ I back away as much as I can and I try to take advantage of the distance I've ju
 I only now realize how amazing my eyesight has become. Even through this darkness, I can almost see my attackers' faces clearly. Aiming for them with my crossbow is a piece of cake. 
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_perception < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_perception < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_perception < 3)
 choice("Load game", , , special:saves) if (v_perception < 3)
 choice("Continue", Ch3-Snipe2, v_current_scene = Ch3-Snipe2) if (v_perception == 3)
@@ -2849,7 +2849,7 @@ Two of the other men saw what happened, and are rushing towards their fallen com
 He might be fast, but he cannot escape my sight. I aim my crossbow for him, and shoot him in the back of the head, killing him instantly. 
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_ch3_prioritize == 1)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_ch3_prioritize == 1)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_ch3_prioritize == 1)
 choice("Load game", , , special:saves) if (v_ch3_prioritize == 1)
 choice("Continue", Ch3-Speed-crossbowmen, v_current_scene = Ch3-Speed-crossbowmen) if (v_ch3_final_decision == 2 && v_ch3_prioritize == 2 && v_is_dead == 0 || v_ch3_final_decision == 2 && v_ch3_prioritize == 3 && v_is_dead == 0 || v_ch3_final_decision == 2 && v_ch3_prioritize == 4 && v_is_dead == 0)

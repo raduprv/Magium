@@ -639,7 +639,7 @@ set(v_is_dead,1)
 
 As I keep struggling to inhale and exhale, I can feel my mind gradually blanking out until my consciousness eventually fades away completely.
 
-choice("Restart game", Ch1-Intro1, , special:restart)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load)
 choice("Load game", , , special:saves)
 

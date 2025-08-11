@@ -866,7 +866,7 @@ That being said, the amount of concentration required for the actual dispelling 
 Once all their preparations are complete, Illuna and Breynan finally begin their synchronous dispelling technique, as the rest of us watch them with bated breath.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_ch11_saved_rose == 0)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_ch11_saved_rose == 0)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_ch11_saved_rose == 0)
 choice("Load game", , , special:saves) if (v_ch11_saved_rose == 0)
 choice("Continue", B3-Ch04a-Cooperate2, v_current_scene = B3-Ch04a-Cooperate2) if (v_ch11_saved_rose == 1)
@@ -907,7 +907,7 @@ All of a sudden, I notice a very subtle trembling in the aura of the magical tra
 Breynan and Illuna begin dispelling the trap once more, at a much slower pace. I make sure to study the trap's aura very closely while they're doing the casting, but I'm not seeing any trembling this time around. Eventually, they manage to reach the very last spell without any problems and the magical energy radiating from the trap slowly disappears, indicating that the trap has been successfully disarmed.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_magical_sense < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_magical_sense < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_magical_sense < 3)
 choice("Load game", , , special:saves) if (v_magical_sense < 3)
 choice("Continue", B3-Ch04a-Glimpse, v_current_scene = B3-Ch04a-Glimpse) if (v_magical_sense >= 3)

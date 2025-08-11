@@ -366,7 +366,7 @@ All of a sudden, a powerful burst of fire erupts from beneath the floor tile I j
 
 }
 choice("Continue", B3-Ch04b-Sneaky, v_current_scene = B3-Ch04b-Sneaky) if (v_aura_hardening >= 3 || v_premonition >= 3)
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_aura_hardening < 3 && v_premonition < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_aura_hardening < 3 && v_premonition < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_aura_hardening < 3 && v_premonition < 3)
 choice("Load game", , , special:saves) if (v_aura_hardening < 3 && v_premonition < 3)
 
@@ -485,7 +485,7 @@ That was a close one. I hadn't even considered the idea that there could be a le
 
 }
 choice(""Yes, but if we kill him, we'll be just as bad as he is!"", B3-Ch04b-Bad, v_current_scene = B3-Ch04b-Bad) if (v_aura_hardening >= 3 || v_premonition >= 3)
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_aura_hardening < 3 && v_premonition < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_aura_hardening < 3 && v_premonition < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_aura_hardening < 3 && v_premonition < 3)
 choice("Load game", , , special:saves) if (v_aura_hardening < 3 && v_premonition < 3)
 choice(""I do have a reason, actually. You'll see why I did it if you wait a few more seconds."", B3-Ch04b-Undetected, v_current_scene = B3-Ch04b-Undetected) if (v_b3_ch4_control == 0 && v_is_dead == 0 && v_aura_hardening >= 3 || v_b3_ch4_control == 0 && v_is_dead == 0 && v_premonition >= 3)
@@ -986,7 +986,7 @@ We all listen to Flower and we head over to her side. Just like she said, the tr
 When we turn around, we see that there are three men dressed in uniforms with swords in their hands, all looking at us suspiciously. I should be very careful what I say, here. One wrong word and they could easily sound the alarm before we get to take them out.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_ch11_saved_rose == 0)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_ch11_saved_rose == 0)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_ch11_saved_rose == 0)
 choice("Load game", , , special:saves) if (v_ch11_saved_rose == 0)
 choice("Try to convince them that we are the new guards tasked to defend this corridor.", B3-Ch04b-Tasked, v_current_scene = B3-Ch04b-Tasked) if (v_ch11_saved_rose == 1)
@@ -1258,7 +1258,7 @@ We all stop right before the end of the staircase, where we are getting a perfec
 "I was afraid that you might say something like that," I say.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_hearing < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_hearing < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_hearing < 3)
 choice("Load game", , , special:saves) if (v_hearing < 3)
 choice("Continue", B3-Ch04b-Blades, v_current_scene = B3-Ch04b-Blades) if (v_hearing >= 3)
@@ -1320,7 +1320,7 @@ She then puts her hands in front of her and a powerful ray of ice shoots out of 
 
 We try to move as fast as we can, but there is no easy route to avoid all of the obstacles. As we are struggling to fit into the narrow space between the multitude of sharp, frozen blades, we suddenly hear several cracks in Kate's ice and before we even have the time to figure out what's going on, all of the blades start spinning again at the same time, cutting us all into hundreds of pieces.
 
-choice("Restart game", Ch1-Intro1, , special:restart)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load)
 choice("Load game", , , special:saves)
 
@@ -1476,7 +1476,7 @@ The others look at each other for a second, but then they turn their heads back 
 I keep raising my hand in the air at the perfect timing, and my friends keep following my instructions. When I raise my hand for the eight time, the pressure around us disappears completely all of a sudden, and it seems like the spell that the drones were casting has been permanently cancelled. The drones are currently not moving at all, looking as if they were stunned.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_magical_sense < 4)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_magical_sense < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_magical_sense < 4)
 choice("Load game", , , special:saves) if (v_magical_sense < 4)
 choice("Tell Melindra to cast her air currents spell on me, so I can fly and stab the drones.", B3-Ch04b-Drones1, v_current_scene = B3-Ch04b-Drones1, v_b3_ch4_drones = 1) if (v_magical_sense >= 4)
@@ -1528,7 +1528,7 @@ I fly towards another one of the drones, I feint an attack with my dagger, and t
 I then take out my crossbow, as Kate and Illuna both ready up their spells. Before the other two drones get the chance to defend themselves, the three of us shoot them simultaneously with crossbow bolts, water lances and icicles, which destroy the metal balls in a matter of seconds.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_aura_hardening < 4)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_aura_hardening < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_aura_hardening < 4)
 choice("Load game", , , special:saves) if (v_aura_hardening < 4)
 choice("Continue", B3-Ch04b-Stuck, v_current_scene = B3-Ch04b-Stuck) if (v_aura_hardening >= 4)
@@ -1596,7 +1596,7 @@ I then take out my crossbow, as Kate and Illuna both ready up their spells. Befo
 
 }
 choice("Continue", B3-Ch04b-Stuck, v_current_scene = B3-Ch04b-Stuck) if (v_aura_hardening >= 4 || v_strength >= 3)
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_aura_hardening < 4 && v_strength < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_aura_hardening < 4 && v_strength < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_aura_hardening < 4 && v_strength < 3)
 choice("Load game", , , special:saves) if (v_aura_hardening < 4 && v_strength < 3)
 
@@ -1644,7 +1644,7 @@ Just like I suspected, as soon as I shoot three consecutive crossbow bolts into 
 I then aim my crossbow at the next drone, as Kate and Illuna both ready up their spells. Before the other two drones get the time to defend themselves, the three of us shoot them simultaneously with crossbow bolts, water lances and icicles, which destroy the metal balls in a matter of seconds.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_perception < 2)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_perception < 2)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_perception < 2)
 choice("Load game", , , special:saves) if (v_perception < 2)
 choice("Continue", B3-Ch04b-Stuck, v_current_scene = B3-Ch04b-Stuck) if (v_perception >= 2)
@@ -1665,7 +1665,7 @@ She then begins to attack the drones, together with Flower, Illuna and Breynan. 
 
 Breynan does not get to finish his sentence, because all of the drones explode at the same time, blowing up the whole corridor in the process and killing us on the spot.
 
-choice("Restart game", Ch1-Intro1, , special:restart)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load)
 choice("Load game", , , special:saves)
 

@@ -980,7 +980,7 @@ As I focus on carefully removing the arrow, I notice, with the tail of my eye, t
 
 Before I can react, the whole area around me explodes, and I barely get to understand what happened, before I lose my consciousness for good.
 
-choice("Restart game", Ch1-Intro1, , special:restart)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load)
 choice("Load game", , , special:saves)
 

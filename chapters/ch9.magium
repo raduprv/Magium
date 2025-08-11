@@ -1708,7 +1708,7 @@ As I get a closer look at my attacker, I see that the monster is about eight fee
 The rest of the ogres are now also slowly appearing out of thin air, and it turns out that there are at least a hundred of them, and they have us all surrounded. Two of the ogres stand out from the crowd, one because of the excessive amount of tattoos on his body, and the other because of his heavy armor. They must be the shaman and the fort captain that we've heard so much about. All of the other ogres are wearing nothing but loincloths and are holding big clubs in their hands, so it's a bit difficult to distinguish their mages from their warriors.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_reflexes < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_reflexes < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_reflexes < 3)
 choice("Load game", , , special:saves) if (v_reflexes < 3)
 choice("Continue", Ch9-Brave, v_current_scene = Ch9-Brave) if (v_reflexes >= 3)
@@ -1815,7 +1815,7 @@ He rushes towards the two ogres, but their captain steps in front of them, and h
 
 As these thoughts race through my head, I notice too late that an ogre had managed to sneak behind me, and was now swinging his club towards my head. There was no time for me to react, and the force of the impact cracked my skull right open, sending my lifeless body tumbling to the ground. 
 
-choice("Restart game", Ch1-Intro1, , special:restart)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load)
 choice("Load game", , , special:saves)
 

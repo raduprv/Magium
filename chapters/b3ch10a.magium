@@ -1580,7 +1580,7 @@ TEXT:
 
 As Kate and Melindra are talking, I am finding it harder and harder to concentrate on what they are saying. Not only that, but I feel like everything is getting darker, both on the earthen plane and on the ethereal plane. While the lights are fading before my eyes, a sudden sensation of weakness takes over me, and soon I don't even have the strength to open my mouth anymore. A few seconds later, the only thing I can see before me is pure darkness, and then I lose my consciousness for good.
 
-choice("Restart game", Ch1-Intro1, , special:restart)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load)
 choice("Load game", , , special:saves)
 
@@ -1697,7 +1697,7 @@ TEXT:
 
 There is nobody there. The only thing I see before me is darkness. I can immediately feel myself getting weaker and weaker, and I barely have the strength to even talk anymore. In only a few seconds, I get so tired that I cannot even stay awake, and then I lose my consciousness for good.
 
-choice("Restart game", Ch1-Intro1, , special:restart)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load)
 choice("Load game", , , special:saves)
 
@@ -1974,7 +1974,7 @@ Almost immediately after she pulls the lever, several arrows fly from the walls 
 
 }
 choice("Continue", B3-Ch10a-Interesting, v_current_scene = B3-Ch10a-Interesting) if (v_b3_ch10_puzzle == 0 || v_b3_ch10_spin == 0 || v_perception >= 2 || v_reflexes >= 3)
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_b3_ch10_puzzle == 1 && v_b3_ch10_spin == 1 && v_perception < 2 && v_reflexes < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b3_ch10_puzzle == 1 && v_b3_ch10_spin == 1 && v_perception < 2 && v_reflexes < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch10_puzzle == 1 && v_b3_ch10_spin == 1 && v_perception < 2 && v_reflexes < 3)
 choice("Load game", , , special:saves) if (v_b3_ch10_puzzle == 1 && v_b3_ch10_spin == 1 && v_perception < 2 && v_reflexes < 3)
 

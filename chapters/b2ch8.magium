@@ -682,7 +682,7 @@ Just as she is about to take the shot, the girl suddenly loses her balance, and 
 }
 choice("Fight the orcs and send Flower to look for the goblins.", B2-Ch08a-Assess, v_current_scene = B2-Ch08a-Assess, v_b2_ch8_goblins = 0) if (v_b2_ch6_crossbow == 1 && v_combat_technique == 0 || v_b2_ch8_tornado == 0 && v_combat_technique == 0 || v_combat_technique == 0 && v_reflexes >= 2 || v_combat_technique >= 1)
 choice("Go look for the goblin mages, along with Flower and Illuna.", B2-Ch08a-Assess, v_current_scene = B2-Ch08a-Assess, v_b2_ch8_goblins = 1) if (v_b2_ch6_crossbow == 1 && v_combat_technique == 0 || v_b2_ch8_tornado == 0 && v_combat_technique == 0 || v_combat_technique == 0 && v_reflexes >= 2 || v_combat_technique >= 1)
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_b2_ch6_crossbow == 0 && v_b2_ch8_tornado == 1 && v_combat_technique == 0 && v_reflexes < 2)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b2_ch6_crossbow == 0 && v_b2_ch8_tornado == 1 && v_combat_technique == 0 && v_reflexes < 2)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b2_ch6_crossbow == 0 && v_b2_ch8_tornado == 1 && v_combat_technique == 0 && v_reflexes < 2)
 choice("Load game", , , special:saves) if (v_b2_ch6_crossbow == 0 && v_b2_ch8_tornado == 1 && v_combat_technique == 0 && v_reflexes < 2)
 
@@ -941,7 +941,7 @@ I try to jump out of its way, but I am not able to react fast enough, and his we
 
 }
 choice("Continue", B2-Ch08a-Fight2, v_current_scene = B2-Ch08a-Fight2) if (v_agility >= 3 || v_reflexes >= 2)
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_agility < 3 && v_reflexes < 2)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_agility < 3 && v_reflexes < 2)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_agility < 3 && v_reflexes < 2)
 choice("Load game", , , special:saves) if (v_agility < 3 && v_reflexes < 2)
 
@@ -982,7 +982,7 @@ As the orc hits me hard in the head with his shield, I can feel my skull crack u
 
 }
 choice("Continue", B2-Ch08a-Retreat, v_current_scene = B2-Ch08a-Retreat) if (v_combat_technique >= 2 || v_toughness >= 3)
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_combat_technique < 2 && v_toughness < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_combat_technique < 2 && v_toughness < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_combat_technique < 2 && v_toughness < 3)
 choice("Load game", , , special:saves) if (v_combat_technique < 2 && v_toughness < 3)
 

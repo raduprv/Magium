@@ -477,7 +477,7 @@ When I extend one of my arms forward, I realize that the air in front of me is a
 Just as I am done talking, the elf launches a wind blade towards me, which I somehow manage to dodge in time thanks to my fast reflexes. Seeing that I wasn't hit, the elf continues to send wind blades at me, hoping that I will eventually get overwhelmed and fail to avoid them.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_perception < 3 || v_reflexes < 3)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_perception < 3 || v_reflexes < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_perception < 3 || v_reflexes < 3)
 choice("Load game", , , special:saves) if (v_perception < 3 || v_reflexes < 3)
 choice("Continue", B3-Ch06b-Rating, v_current_scene = B3-Ch06b-Rating) if (v_b3_ch6_selected == 3 && v_is_dead == 0 && v_perception >= 3 && v_reflexes >= 3)
@@ -704,7 +704,7 @@ As I keep dodging rocks in mid-air, I attempt to hide my aura, using the techniq
 It's working! He doesn't know where I am anymore, but I still know where he is. Now, the question is... should I use this opportunity to go back down and see what the others are doing? Or should I keep going after the earth elementalist?
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_bluff < 3 || v_magical_sense < 2)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_bluff < 3 || v_magical_sense < 2)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_bluff < 3 || v_magical_sense < 2)
 choice("Load game", , , special:saves) if (v_bluff < 3 || v_magical_sense < 2)
 choice("Go back down.", B3-Ch06b-Visibility, v_current_scene = B3-Ch06b-Visibility, v_b3_ch6_earth = 0) if (v_bluff >= 3 && v_magical_sense >= 2)
@@ -780,7 +780,7 @@ My superhuman strength allows me to cut through the rock's surface in a single m
 When I see him, I quickly fly behind him and then I put my blade at his throat just as he is getting back up.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_b2_ch5_scimitar == 0 && v_strength < 4 || v_strength < 3 && v_b2_ch5_scimitar != 0)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b2_ch5_scimitar == 0 && v_strength < 4 || v_strength < 3 && v_b2_ch5_scimitar != 0)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b2_ch5_scimitar == 0 && v_strength < 4 || v_strength < 3 && v_b2_ch5_scimitar != 0)
 choice("Load game", , , special:saves) if (v_b2_ch5_scimitar == 0 && v_strength < 4 || v_strength < 3 && v_b2_ch5_scimitar != 0)
 choice("Kill him.", B3-Ch06b-Retaliate, v_current_scene = B3-Ch06b-Retaliate) if (v_b2_ch5_scimitar == 0 && v_strength >= 4 || v_strength >= 3 && v_b2_ch5_scimitar != 0)
@@ -794,7 +794,7 @@ TEXT:
 
 All of a sudden, a highly sharpened spike made out of the rock below us quickly flies into my right hand and it makes me drop my weapon. Before I get the chance to retrieve it, the earth elementalist escapes my grasp, throwing himself off his floating rock and onto a newly created floating stone platform below him, as hundreds of boulders are now flying at me from all directions. Given that there is no room for me to escape, I inevitably end up getting crushed by the multitude of rocks and I die soon afterwards.
 
-choice("Restart game", Ch1-Intro1, , special:restart)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load)
 choice("Load game", , , special:saves)
 
@@ -859,7 +859,7 @@ I shoot a few bolts at him and one of them actually gets through the barrier, hi
 
 I barely get to finish what I was saying before I feel an immensely powerful pressure pushing me down, making me fall with my back against the captain's semi-transparent barrier and completely restricting all of my movements. As I am trying to break myself free from the aura manipulation technique, the captain pulls out a heavily enchanted dagger and he uses it to stab me in the back of the head from below. His magically sharpened weapon passes through my skull with ease, killing me on the spot.
 
-choice("Restart game", Ch1-Intro1, , special:restart)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load)
 choice("Load game", , , special:saves)
 
@@ -1061,7 +1061,7 @@ As soon as Kate, Flower, Kelrim and I get within five feet of Melindra, she begi
 }
 choice(""I say it's still worth it. We're going to need every possible defense against that many rocks."", B3-Ch06b-Dome, v_current_scene = B3-Ch06b-Dome, v_b3_ch6_defense = 1) if (v_b3_ch6_preparing == 1 || v_aura_hardening >= 3 || v_b3_ch5_fight >= 4)
 choice(""Alright. Let's keep the ice dome as a last alternative, then."", B3-Ch06b-Dome, v_current_scene = B3-Ch06b-Dome, v_b3_ch6_defense = 0) if (v_b3_ch6_preparing == 1 || v_aura_hardening >= 3 || v_b3_ch5_fight >= 4)
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_b3_ch6_preparing == 0 && v_aura_hardening < 3 && v_b3_ch5_fight < 4)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b3_ch6_preparing == 0 && v_aura_hardening < 3 && v_b3_ch5_fight < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch6_preparing == 0 && v_aura_hardening < 3 && v_b3_ch5_fight < 4)
 choice("Load game", , , special:saves) if (v_b3_ch6_preparing == 0 && v_aura_hardening < 3 && v_b3_ch5_fight < 4)
 
@@ -1176,7 +1176,7 @@ She then begins to pour as much magical energy into her ice dome as she can, mak
 Just as we are about to relax a little, the ice dome above us gets destroyed completely and then we feel the captain's aura pushing us into the ground with a greater force than ever before.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_toughness < 4)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_toughness < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_toughness < 4)
 choice("Load game", , , special:saves) if (v_toughness < 4)
 choice("Continue", B3-Ch06b-Conditions, v_current_scene = B3-Ch06b-Conditions) if (v_toughness >= 4)
@@ -1619,7 +1619,7 @@ Instead of answering the captain's question, Kate sends several icicles his way,
  As our elementalists are firing their projectiles and I am shooting my crossbow, Daren makes a rush towards the captain, stretching his left arm in front of him while making his sword fly away from the royal guard leader and into his hand. When Daren gets closer, the captain puts both his arms in front of him and he pushes his enemy back with his invisible force, not letting him advance any further.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_b3_ch6_manipulators != 2)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b3_ch6_manipulators != 2)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch6_manipulators != 2)
 choice("Load game", , , special:saves) if (v_b3_ch6_manipulators != 2)
 choice("Continue", B3-Ch06b-Wyvern, v_current_scene = B3-Ch06b-Wyvern) if (v_b3_ch6_manipulators == 2)
@@ -2067,7 +2067,7 @@ achievement("Curiosity killed the cat",v_ac_b3_ch6_curiosity)
 
 I then approach the fallen drone and I begin to study it from all the angles, in the hopes that I will uncover some useful information. As I am slowly circling around it, I suddenly hear three short beeps coming from the metal ball, and then it immediately self-destructs, generating an explosion so powerful that it obliterates me and everyone in the area in an instant.
 
-choice("Restart game", Ch1-Intro1, , special:restart)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load)
 choice("Load game", , , special:saves)
 

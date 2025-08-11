@@ -665,7 +665,7 @@ I don't get to finish my sentence, because the banshee has just completed her aw
 
 I then try to dash towards the banshee with my pitchfork, but she was waiting for me. All she needed to do was conjure a sharp lance made of stone, out of thin air, and she sent it flying straight through my skull, killing me before I even had the chance to reach her.
 
-choice("Restart game", Ch1-Intro1, , special:restart)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load)
 choice("Load game", , , special:saves)
 
