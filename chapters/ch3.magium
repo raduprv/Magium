@@ -2182,7 +2182,7 @@ I could also try to snipe them from a distance, but I'd need to be pretty far fo
 My eyes wander towards one of the many fallen trees around me, and suddenly a crazy thought comes to my mind. I bend my knees and try to lift the tree from the ground.
 
 }
-choice("Continue", Ch3-Lift, v_current_scene = Ch3-Lift) if (v_strength == 0 || v_strength >= 1)
+choice("Continue", Ch3-Lift, v_current_scene = Ch3-Lift)
 
 
 ID: Ch3-Viable
@@ -2214,7 +2214,7 @@ I could also try to snipe them from a distance, but I'd need to be pretty far fo
 My eyes wander towards one of the many fallen trees around me, and suddenly a crazy thought comes to my mind. I bend my knees and try to lift the tree from the ground.
 
 }
-choice("Continue", Ch3-Lift, v_current_scene = Ch3-Lift) if (v_strength == 0 || v_strength >= 1)
+choice("Continue", Ch3-Lift, v_current_scene = Ch3-Lift)
 
 
 ID: Ch3-Prioritize
@@ -2246,7 +2246,7 @@ This means that I could try to take them all out by very quickly moving from one
 I could also try to snipe them from a distance, but I'd need to be pretty far for them to not be able to tell where the shots are coming from, and that kind of stunt would take significantly more time to pull off than any of my other viable strategies.
 
 }
-choice("Continue", Ch3-Lift, v_current_scene = Ch3-Lift) if (v_strength == 0 || v_strength >= 1)
+choice("Continue", Ch3-Lift, v_current_scene = Ch3-Lift)
 
 
 ID: Ch3-Every
@@ -2402,7 +2402,7 @@ I could also try to snipe them from a distance, but I'd need to be pretty far fo
 My eyes wander towards one of the many fallen trees around me, and suddenly a crazy thought comes to my mind. I bend my knees and try to lift the tree from the ground.
 
 }
-choice("Continue", Ch3-Lift, v_current_scene = Ch3-Lift) if (v_strength == 0 || v_strength >= 1)
+choice("Continue", Ch3-Lift, v_current_scene = Ch3-Lift)
 
 
 ID: Ch3-Lift
@@ -2883,7 +2883,7 @@ As I take out more and more of them, the crossbowmen are starting to gradually l
 Taking out every single crossbowman that attempted to flee the battlefield has proven to be a bit time consuming, however. By the time I've finished all one hundred of them, Kate had sustained quite a few injuries. She looks pretty bloodied up, but at least she's still standing.   
 
 }
-choice("Continue", Ch3-Crossbowmen-finish, v_current_scene = Ch3-Crossbowmen-finish) if (v_ch3_final_decision == 2 && v_ch3_prioritize == 4 || v_ch3_final_decision == 2 && v_ch3_prioritize < 4)
+choice("Continue", Ch3-Crossbowmen-finish, v_current_scene = Ch3-Crossbowmen-finish)
 
 
 ID: Ch3-Snipe-crossbowmen
@@ -2913,7 +2913,7 @@ As I take out more and more of them, the crossbowmen are starting to gradually l
 Taking out every single crossbowman that attempted to flee the battlefield has proven to be a bit time consuming, however. By the time I've finished all one hundred of them, Kate had sustained quite a few injuries. She looks pretty bloodied up, but at least she's still standing.   
 
 }
-choice("Continue", Ch3-Crossbowmen-finish, v_current_scene = Ch3-Crossbowmen-finish) if (v_ch3_final_decision == 2 && v_ch3_prioritize == 4 || v_ch3_final_decision == 2 && v_ch3_prioritize < 4)
+choice("Continue", Ch3-Crossbowmen-finish, v_current_scene = Ch3-Crossbowmen-finish)
 
 
 ID: Ch3-Speed-crossbowmen
@@ -2941,7 +2941,7 @@ As I take out more and more of them, the crossbowmen are starting to gradually l
 Taking out every single crossbowman that attempted to flee the battlefield has proven to be a bit time consuming, however. It's a good thing I managed to compensate by moving very fast from one place to the other. Kate didn't sustain any serious injuries while I was busy cleaning up. 
 
 }
-choice("Continue", Ch3-Crossbowmen-finish, v_current_scene = Ch3-Crossbowmen-finish) if (v_ch3_final_decision == 2 && v_ch3_prioritize == 4 || v_ch3_final_decision == 2 && v_ch3_prioritize < 4)
+choice("Continue", Ch3-Crossbowmen-finish, v_current_scene = Ch3-Crossbowmen-finish)
 
 
 ID: Ch3-Crossbowmen-finish
@@ -3202,7 +3202,7 @@ As I approach the battlefield, I am shocked to see that all of the men that came
 We spent the rest of our trip back in silence. But I didn't really find it awkward anymore. After all we've been through this morning, a bit of quiet is more than welcome.
 
 }
-choice("Next chapter", Ch4-Intro, v_next_chapter_crash = 1, v_current_scene = Ch4-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, v_ch3_kate_badly_hurt = 0, special:checkpoint_save) if (v_ch3_prioritize == 4 || v_ch3_prioritize < 4)
+choice("Next chapter", Ch4-Intro, v_next_chapter_crash = 1, v_current_scene = Ch4-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, v_ch3_kate_badly_hurt = 0, special:checkpoint_save)
 
 
 ID: Ch3-Alone-Crossbowmen-Return

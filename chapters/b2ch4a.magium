@@ -1253,7 +1253,7 @@ The scorpion-like creatures are at least five times bigger than the gladiators, 
 The most agile of the three jumps on the creature's back and he stabs it fiercely in the back of its head. The marauder screams in pain and it tries to attack the warrior with its tail, but the gladiator jumps off, while the other two make a rush for it and stab the monster in both its eyes with their swords, at the same time. 
 
 }
-choice("Continue", B2-Ch04a-Mercy, v_current_scene = B2-Ch04a-Mercy) if (v_b2_ch4_backpack == 1 || v_b2_ch4_backpack == 3)
+choice("Continue", B2-Ch04a-Mercy, v_current_scene = B2-Ch04a-Mercy)
 
 
 ID: B2-Ch04a-Mercy

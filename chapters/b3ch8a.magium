@@ -489,7 +489,7 @@ TEXT:
 "There is still the unresolved matter of the outsiders, however," Albert says. "We do not know yet if they will support your ascension to the throne, even if we sell it to them as being only a temporary measure until we decide whether we want to assemble a council or not."
 
 }
-choice("Continue", B3-Ch08a-Antagonizing, v_current_scene = B3-Ch08a-Antagonizing) if (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8 || v_b3_ch4_billy == 9 || v_b3_ch4_billy <= 6)
+choice("Continue", B3-Ch08a-Antagonizing, v_current_scene = B3-Ch08a-Antagonizing)
 
 
 ID: B3-Ch08a-Beginning
@@ -547,7 +547,7 @@ TEXT:
 "There is still the unresolved matter of the outsiders, however," Albert says. "We do not know yet if they will support your ascension to the throne, even if we sell it to them as being only a temporary measure until we decide whether we want to assemble a council or not."
 
 }
-choice("Continue", B3-Ch08a-Antagonizing, v_current_scene = B3-Ch08a-Antagonizing) if (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8 || v_b3_ch4_billy == 9 || v_b3_ch4_billy <= 6)
+choice("Continue", B3-Ch08a-Antagonizing, v_current_scene = B3-Ch08a-Antagonizing)
 
 
 ID: B3-Ch08a-Rescue
@@ -599,7 +599,7 @@ TEXT:
 "There is still the unresolved matter of the outsiders, however," Albert says. "We do not know yet if they will support your ascension to the throne, even if we sell it to them as being only a temporary measure until we decide whether we want to assemble a council or not."
 
 }
-choice("Continue", B3-Ch08a-Antagonizing, v_current_scene = B3-Ch08a-Antagonizing) if (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8 || v_b3_ch4_billy == 9 || v_b3_ch4_billy <= 6)
+choice("Continue", B3-Ch08a-Antagonizing, v_current_scene = B3-Ch08a-Antagonizing)
 
 
 ID: B3-Ch08a-Involved
@@ -667,7 +667,7 @@ TEXT:
 "There is still the unresolved matter of the outsiders, however," Albert says. "We do not know yet if they will support your ascension to the throne, even if we sell it to them as being only a temporary measure until we decide whether we want to assemble a council or not."
 
 }
-choice("Continue", B3-Ch08a-Antagonizing, v_current_scene = B3-Ch08a-Antagonizing) if (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8 || v_b3_ch4_billy == 9 || v_b3_ch4_billy <= 6)
+choice("Continue", B3-Ch08a-Antagonizing, v_current_scene = B3-Ch08a-Antagonizing)
 
 
 ID: B3-Ch08a-Antagonizing

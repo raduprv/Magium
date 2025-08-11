@@ -2493,9 +2493,9 @@ Just before I reach the ground, I suddenly stop in mid-air and then I fall flat 
 "How disappointing," I hear Eiden's voice from high above in the sky. "How very disappointing. Barry, I was expecting a lot more from you. I didn't give you all of that magical energy just so you could waste it by activating your device's temporary maximized mode."
 
 }
-choice(""I don't know what that means."", Ch6-Eiden-vs-dragon, v_current_scene = Ch6-Eiden-vs-dragon, v_ch6_big_plans = 1) if (v_ch6_improvise == 1 || v_ch6_offense == 1 || v_ch6_offense == 2)
-choice(""I didn't activate anything."", Ch6-Eiden-vs-dragon, v_current_scene = Ch6-Eiden-vs-dragon, v_ch6_big_plans = 2) if (v_ch6_improvise == 1 || v_ch6_offense == 1 || v_ch6_offense == 2)
-choice(""Why do you keep saving me?"", Ch6-Eiden-vs-dragon, v_current_scene = Ch6-Eiden-vs-dragon, v_ch6_big_plans = 3) if (v_ch6_improvise == 1 || v_ch6_offense == 1 || v_ch6_offense == 2)
+choice(""I don't know what that means."", Ch6-Eiden-vs-dragon, v_current_scene = Ch6-Eiden-vs-dragon, v_ch6_big_plans = 1)
+choice(""I didn't activate anything."", Ch6-Eiden-vs-dragon, v_current_scene = Ch6-Eiden-vs-dragon, v_ch6_big_plans = 2)
+choice(""Why do you keep saving me?"", Ch6-Eiden-vs-dragon, v_current_scene = Ch6-Eiden-vs-dragon, v_ch6_big_plans = 3)
 
 
 ID: Ch6-Eiden-vs-dragon
@@ -2710,8 +2710,8 @@ Eiden turns back to me.
 "Well done, Barry! I'll be honest with you, I was hoping you'd be using more spectacular spells in this skirmish, but I cannot blame you for wanting to be efficient!"
 
 }
-choice(""What just happened?"", Ch6-Win-fight2, v_current_scene = Ch6-Win-fight2, v_ch6_lessathi = 1) if (v_ch6_won_dragon == 1 || v_ch6_won_dragon == 2 || v_ch6_offense != 2)
-choice(""Who are the lessathi?"", Ch6-Win-fight2, v_current_scene = Ch6-Win-fight2, v_ch6_lessathi = 2) if (v_ch6_won_dragon == 1 || v_ch6_won_dragon == 2 || v_ch6_offense != 2)
+choice(""What just happened?"", Ch6-Win-fight2, v_current_scene = Ch6-Win-fight2, v_ch6_lessathi = 1)
+choice(""Who are the lessathi?"", Ch6-Win-fight2, v_current_scene = Ch6-Win-fight2, v_ch6_lessathi = 2)
 
 
 ID: Ch6-Win-fight2

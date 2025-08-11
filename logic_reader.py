@@ -332,6 +332,11 @@ class Scene:
                     continue
             new_response.conditions = sp.simplify_logic(new_response.conditions,form="dnf")
             new_responses.append(new_response)
+            
+        # We can remove the conditions if all the responses have the same conditions
+        if all([new_response.conditions == new_responses[0].conditions for new_response in new_responses]):
+            for new_response in new_responses:
+                new_response.conditions = True
         return new_responses
 
 

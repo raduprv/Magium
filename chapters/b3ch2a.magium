@@ -397,7 +397,7 @@ As Daren and the others are coming out of the woods one by one, I put the lid on
 Once our friends reach us, we all begin heading for the city gates together, in the hopes that this time around we will be more successful. However, just as we are making our first steps, we hear an unfamiliar voice calling to us from inside the woods.
 
 }
-choice("Continue", B3-Ch02a-Information, v_current_scene = B3-Ch02a-Information) if (v_b3_ch2_infiltration == 0 || v_b3_ch2_infiltration == 3)
+choice("Continue", B3-Ch02a-Information, v_current_scene = B3-Ch02a-Information)
 
 
 ID: B3-Ch02a-Smash
@@ -842,7 +842,7 @@ He then gives a signal to the two metal golems behind him, who immediately open 
 We all move past the guard and enter the city, and as soon as we're inside, the gates behind us slam shut.
 
 }
-choice("Continue", B3-Ch02a-Communicating, v_current_scene = B3-Ch02a-Communicating) if (v_b3_ch2_goblins == 3 || v_b3_ch2_goblins == 4)
+choice("Continue", B3-Ch02a-Communicating, v_current_scene = B3-Ch02a-Communicating)
 
 
 ID: B3-Ch02a-Communicating
@@ -956,7 +956,7 @@ He then raises his shield, and a semi-transparent magical barrier appears all ar
 "Brace yourselves," Daren says. "It's going to get hot."
 
 }
-choice("Continue", B3-Ch02a-Insane2, v_current_scene = B3-Ch02a-Insane2) if (v_b3_ch2_infiltration == 0 || v_b3_ch2_infiltration == 1 || v_b3_ch2_infiltration == 2)
+choice("Continue", B3-Ch02a-Insane2, v_current_scene = B3-Ch02a-Insane2)
 
 
 ID: B3-Ch02a-Insane2

@@ -674,7 +674,7 @@ Before the Overseer gets to say another word, Kate sends dozens of icicles into 
 "Farewell," the Overseer says, as we are being teleported out of the room. "I'm sure we'll be seeing each other again quite soon."
 
 }
-choice("Continue", B3-Ch04b-Ending, v_current_scene = B3-Ch04b-Ending) if (v_b3_ch4_billy == 6 || v_b3_ch4_billy == 9)
+choice("Continue", B3-Ch04b-Ending, v_current_scene = B3-Ch04b-Ending)
 
 
 ID: B3-Ch04b-Voluntarily
@@ -872,7 +872,7 @@ Before the Overseer gets to say another word, Kate sends dozens of icicles into 
 "Bye-bye, Overseer," I say, as I wave to the green-eyed drone while being teleported. "I don't think we'll be seeing you again anytime soon."
 
 }
-choice("Continue", B3-Ch04b-Ending, v_current_scene = B3-Ch04b-Ending) if (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8 || v_b3_ch4_billy == 9)
+choice("Continue", B3-Ch04b-Ending, v_current_scene = B3-Ch04b-Ending)
 
 
 ID: B3-Ch04b-Guarantee

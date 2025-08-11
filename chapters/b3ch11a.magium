@@ -1069,7 +1069,7 @@ TEXT:
 "Good," Meridith says. "Follow me."
 
 }
-choice("Continue", B3-Ch11a-Analysis, v_current_scene = B3-Ch11a-Analysis) if (v_b3_ch11_path == 0 && v_b3_ch11_reverse == 0 || v_b3_ch11_weakness == 1 && v_b3_ch8_overseer2 == 0 || v_b3_ch11_weakness == 1 && v_b3_ch8_overseer2 == 1 || v_b3_ch11_weakness == 2 && v_b3_ch4_billy == 9 || v_b3_ch11_weakness == 2 && v_b3_ch4_billy != 9 || v_b3_ch11_path == 1 || v_b3_ch11_reverse == 1 || v_b3_ch11_weakness == 0)
+choice("Continue", B3-Ch11a-Analysis, v_current_scene = B3-Ch11a-Analysis)
 
 
 ID: B3-Ch11a-Analysis
@@ -1951,7 +1951,7 @@ When she saw Eiden, Diane was already beginning to charge up her electric powers
 "Oh," Eiden says, in a very disappointed tone. "I see..."
 
 }
-choice("Continue", B3-Ch11a-Continent, v_current_scene = B3-Ch11a-Continent) if (v_b2_ch8_energizer == 0 || v_b2_ch8_energizer == 1 || v_b3_ch10_benefits == 0)
+choice("Continue", B3-Ch11a-Continent, v_current_scene = B3-Ch11a-Continent)
 
 
 ID: B3-Ch11a-Continent

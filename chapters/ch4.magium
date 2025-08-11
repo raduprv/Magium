@@ -1326,7 +1326,7 @@ He smiles.
 With these last words he turns his back to me, and he disappears into the darkness of the forest.
 
 }
-choice("Next chapter", Ch5-Intro, v_next_chapter_crash = 1, v_current_scene = Ch5-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, v_ch4_ending = 5, v_ch4_spared_dave = 0, special:checkpoint_save) if (v_ch4_dave_defeat == 1 || v_ch4_dave_defeat == 2 || v_ch4_dave_defeat == 3)
+choice("Next chapter", Ch5-Intro, v_next_chapter_crash = 1, v_current_scene = Ch5-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, v_ch4_ending = 5, v_ch4_spared_dave = 0, special:checkpoint_save)
 
 
 ID: Ch4-Defeat-spare
@@ -1452,4 +1452,4 @@ He smiles.
 With these last words he turns his back to me, and he disappears into the darkness of the forest.
 
 }
-choice("Next chapter", Ch5-Intro, v_next_chapter_crash = 1, v_current_scene = Ch5-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, v_ch4_spared_dave = 1, v_ch4_ending = 5, special:checkpoint_save) if (v_ch4_dave_defeat == 1 || v_ch4_dave_defeat == 2 || v_ch4_dave_defeat == 3)
+choice("Next chapter", Ch5-Intro, v_next_chapter_crash = 1, v_current_scene = Ch5-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, v_ch4_spared_dave = 1, v_ch4_ending = 5, special:checkpoint_save)

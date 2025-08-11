@@ -446,7 +446,7 @@ He pauses.
 "Yes," the Overseer says. "That is my intention."
 
 }
-choice("Continue", B3-Ch10a-Towers, v_current_scene = B3-Ch10a-Towers) if (v_b3_ch9_enemies == 0 || v_b3_ch9_enemies == 2 || v_b3_ch9_enemies == 3)
+choice("Continue", B3-Ch10a-Towers, v_current_scene = B3-Ch10a-Towers)
 
 
 ID: B3-Ch10a-Towers

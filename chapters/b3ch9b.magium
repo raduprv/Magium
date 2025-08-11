@@ -331,7 +331,7 @@ Okay, so the way I see it, this technique has one major weakness, which is the f
 Oh, boy... I really hope I didn't think all that out loud, or I'll be making a complete fool of myself.
 
 }
-choice("Continue", B3-Ch09b-Invent, v_current_scene = B3-Ch09b-Invent) if (v_b3_ch9_teleport == 0 || v_b3_ch9_teleport == 2)
+choice("Continue", B3-Ch09b-Invent, v_current_scene = B3-Ch09b-Invent)
 
 
 ID: B3-Ch09b-Invent

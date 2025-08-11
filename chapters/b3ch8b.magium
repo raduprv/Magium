@@ -136,7 +136,7 @@ TEXT:
 "Umm, no... of course not!" Daren says. "It's your choice whether you want to be king or not. I was only making a suggestion, that's all..."
 
 }
-choice("Continue", B3-Ch08b-King2, v_current_scene = B3-Ch08b-King2) if (v_b3_ch8_king == 0 || v_b3_ch8_king == 1 || v_b3_ch8_king == 2 || v_b3_ch8_king == 3 || v_b3_ch8_king == 4)
+choice("Continue", B3-Ch08b-King2, v_current_scene = B3-Ch08b-King2)
 
 
 ID: B3-Ch08b-Kelrim
@@ -926,7 +926,7 @@ As we are finishing our conversation, we can hear the voices of a few of our fri
 When we reach our friends, we find out that everyone was already awake and that they were just about to call out to us. As soon as they see us, they all get up from their beds, they grab their backpacks and they assemble in front of the door, so that we can leave together.
 
 }
-choice("Continue", B3-Ch08b-Ending, v_current_scene = B3-Ch08b-Ending) if (v_b3_ch8_heartfelt == 0 || v_b3_ch8_heartfelt == 1)
+choice("Continue", B3-Ch08b-Ending, v_current_scene = B3-Ch08b-Ending)
 
 
 ID: B3-Ch08b-Oblivious
@@ -1025,7 +1025,7 @@ Neither of us says anything else until we reach the room in which the others wer
 As soon as they notice us, our friends grab their backpacks and they walk out the door, so that we can all assemble in front of our room. 
 
 }
-choice("Continue", B3-Ch08b-Ending, v_current_scene = B3-Ch08b-Ending) if (v_b3_ch8_heartfelt == 2 || v_b3_ch8_heartfelt == 3)
+choice("Continue", B3-Ch08b-Ending, v_current_scene = B3-Ch08b-Ending)
 
 
 ID: B3-Ch08b-Hadrik2

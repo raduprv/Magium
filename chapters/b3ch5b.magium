@@ -645,7 +645,7 @@ While I'm still being shocked, Albert tries to free himself again but I hold ont
 As Daren was talking, Peter changed his mind and decided to target him instead of me, casting a lightning spell on Daren as soon as he exposed his back to him.
 
 }
-choice("Continue", B3-Ch05b-Obscure, v_current_scene = B3-Ch05b-Obscure) if (v_toughness == 0 || v_premonition >= 2 || v_toughness > 0)
+choice("Continue", B3-Ch05b-Obscure, v_current_scene = B3-Ch05b-Obscure)
 
 
 ID: B3-Ch05b-Obscure

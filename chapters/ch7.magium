@@ -1661,8 +1661,8 @@ His laugh is just as crazy as the look in his eyes. Daren does not say anything,
  "You're all just playing into his hands," says a mage in white robes and with long blond hair who appears to be some sort of a healer. "Stillwater or no, the fact remains that he hasn't cast any sort of spell since we laid eyes on him. Do you think that's a coincidence? No one can possibly fully replenish their magical energy in just over two hours after a fight with a dragon. He must be in a vulnerable state. Now is the best time to strike!"
 
 }
-choice(""Are you willing to bet your life on that, white mage?"", Ch7-Bet-your-life, v_current_scene = Ch7-Bet-your-life, v_ch7_intimidate = 0) if (v_ch7_call_rose == 0 || v_ch7_watch_fight == 1)
-choice("Walk up to him casually and attempt to intimidate him", Ch7-Intimidate, v_current_scene = Ch7-Intimidate, v_ch7_intimidate = 1) if (v_ch7_call_rose == 0 || v_ch7_watch_fight == 1)
+choice(""Are you willing to bet your life on that, white mage?"", Ch7-Bet-your-life, v_current_scene = Ch7-Bet-your-life, v_ch7_intimidate = 0)
+choice("Walk up to him casually and attempt to intimidate him", Ch7-Intimidate, v_current_scene = Ch7-Intimidate, v_ch7_intimidate = 1)
 
 
 ID: Ch7-Bet-your-life

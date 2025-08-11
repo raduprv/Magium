@@ -434,7 +434,7 @@ As Daren was finishing his sentence, a very large blue circle appeared on the gr
 
 "Get out of the summoning circle!" Daren shouts. "Get out, now!"
 
-choice("Continue", B2-Ch10a-Mammoth, v_current_scene = B2-Ch10a-Mammoth) if (v_b2_ch10_toast == 0 && v_is_dead == 0 || v_b2_ch9_drink == 0 && v_is_dead == 0 || v_combat_technique == 0 && v_is_dead == 0 || v_is_dead == 0 && v_combat_technique >= 2 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_is_dead == 0 || v_b2_ch6_crossbow == 0 && v_combat_technique == 1 && v_is_dead == 0 || v_b2_ch6_crossbow == 1 && v_combat_technique == 1 && v_is_dead == 0 || v_is_dead == 0)
+choice("Continue", B2-Ch10a-Mammoth, v_current_scene = B2-Ch10a-Mammoth)
 
 
 ID: B2-Ch10a-Dagger

@@ -685,7 +685,7 @@ His eyes are a lot colder than usual.
 Kate is smiling at me faintly, but Daren is looking more serious than I've ever seen him before. I decide to give him some time to think about what I've said, and I head back towards the cave's entrance.
 
 }
-choice("Continue", Ch5-Scream, v_current_scene = Ch5-Scream) if (v_ch2_human_reason == 2 || v_ch2_human_reason == 3)
+choice("Continue", Ch5-Scream, v_current_scene = Ch5-Scream)
 
 
 ID: Ch5-No-admit
@@ -985,7 +985,7 @@ She eats one of the dark blue berries she is holding in order to demonstrate she
 "Here, I'm sure you will make much better use of these berries than I will. I only just ate. And please, don't attack defenseless people anymore."
 
 }
-choice("Continue", Ch5-Goblins3, v_current_scene = Ch5-Goblins3) if (v_ch5_goblins == 1 || v_ch5_goblins == 2)
+choice("Continue", Ch5-Goblins3, v_current_scene = Ch5-Goblins3)
 
 
 ID: Ch5-Goblins3
@@ -1045,9 +1045,9 @@ The woman laughs softly.
 "I'm sorry," she says. "I realize his whole situation might have seemed really strange if you didn't understand what we were saying. In short, they've been exiled from their clan two days ago due to lack of money and they had to resort to petty theft in order to not die of hunger, so I helped them as much as I could! But, where are my manners? My name is Rose. Thank you all so much for your help. I don't know what I would have done without you!"
 
 }
-choice(""All in the day's work!"", Ch5-Work, v_current_scene = Ch5-Work) if (v_ch5_goblins == 1 || v_ch5_goblins == 2)
-choice(""You were lucky that we managed to make it in time."", Ch5-Lucky, v_current_scene = Ch5-Lucky) if (v_ch5_goblins == 1 || v_ch5_goblins == 2)
-choice(""No problem. We love helping people. But we also accept donations!"", Ch5-Donations, v_current_scene = Ch5-Donations) if (v_ch5_goblins == 1 || v_ch5_goblins == 2)
+choice(""All in the day's work!"", Ch5-Work, v_current_scene = Ch5-Work)
+choice(""You were lucky that we managed to make it in time."", Ch5-Lucky, v_current_scene = Ch5-Lucky)
+choice(""No problem. We love helping people. But we also accept donations!"", Ch5-Donations, v_current_scene = Ch5-Donations)
 
 
 ID: Ch5-Work

@@ -1319,8 +1319,8 @@ He waits for a few seconds, but he gets no answer.
 "Duly noted," the captain says, as the ambassador is now heading into the street we are in, so he can reach his shelter.
 
 }
-choice("Ask Arraka if she can help Kate cancel the captain's aura technique like yesterday.", B3-Ch06b-Surrounded, v_current_scene = B3-Ch06b-Surrounded, v_b3_ch6_uninjured = 0) if (v_b3_ch6_air == 0 || v_b3_ch6_air >= 1)
-choice("Ask Daren if he can try summoning the sword with his uninjured hand instead.", B3-Ch06b-Surrounded, v_current_scene = B3-Ch06b-Surrounded, v_b3_ch6_uninjured = 1) if (v_b3_ch6_air == 0 || v_b3_ch6_air >= 1)
+choice("Ask Arraka if she can help Kate cancel the captain's aura technique like yesterday.", B3-Ch06b-Surrounded, v_current_scene = B3-Ch06b-Surrounded, v_b3_ch6_uninjured = 0)
+choice("Ask Daren if he can try summoning the sword with his uninjured hand instead.", B3-Ch06b-Surrounded, v_current_scene = B3-Ch06b-Surrounded, v_b3_ch6_uninjured = 1)
 
 
 ID: B3-Ch06b-Surrounded
@@ -1554,7 +1554,7 @@ As he runs away, the tornado keeps following him, and now the captain who was fo
 Sadly for him, he does not have enough energy left in him to make his weapon anywhere near as powerful as before, and Daren cuts through it in a flash, beheading the captain in the same movement. As the captain's headless body falls into a puddle of his own blood, Daren calmly sheathes his sword and he turns to look at us.
 
 }
-choice("Continue", B3-Ch06b-Tactical, v_current_scene = B3-Ch06b-Tactical) if (v_b3_ch6_air == 0 || v_b3_ch6_air >= 1)
+choice("Continue", B3-Ch06b-Tactical, v_current_scene = B3-Ch06b-Tactical)
 
 
 ID: B3-Ch06b-Nausea
@@ -1656,7 +1656,7 @@ As the wyvern is preparing to dive back down, the air elementalist elf fires thr
 While I am watching him fly, I quickly realize that this guy barely has any control over his air currents, unlike Melindra or me, because he is moving through the air in a completely chaotic way, as if he were being carried away by a strong wind or something. He must have been really desperate if he still decided to try flying even under these conditions.
 
 }
-choice("Continue", B3-Ch06b-Tactical, v_current_scene = B3-Ch06b-Tactical) if (v_b3_ch6_air == 0 || v_b3_ch6_air >= 1)
+choice("Continue", B3-Ch06b-Tactical, v_current_scene = B3-Ch06b-Tactical)
 
 
 ID: B3-Ch06b-Panic
@@ -1736,7 +1736,7 @@ As the wyvern is preparing to dive back down, the air elementalist elf fires thr
 While I am watching him fly, I quickly realize that this guy barely has any control over his air currents, unlike Melindra or me, because he is moving through the air in a completely chaotic way, as if he were being carried away by a strong wind or something. He must have been really desperate if he still decided to try flying even under these conditions.
 
 }
-choice("Continue", B3-Ch06b-Tactical, v_current_scene = B3-Ch06b-Tactical) if (v_b3_ch6_air == 0 || v_b3_ch6_air >= 1)
+choice("Continue", B3-Ch06b-Tactical, v_current_scene = B3-Ch06b-Tactical)
 
 
 ID: B3-Ch06b-Tactical
@@ -1918,7 +1918,7 @@ As soon as his healing spell is done and Hadrik also gets close enough to us, Da
 After we all assemble in the same spot, including Hadrik, who is back in his dwarf form, Daren takes out his transceiver to call the teleporter guy.
 
 }
-choice("Continue", B3-Ch06b-Utterly, v_current_scene = B3-Ch06b-Utterly) if (v_b3_ch6_betrayed == 3 || v_b3_ch4_billy != 9)
+choice("Continue", B3-Ch06b-Utterly, v_current_scene = B3-Ch06b-Utterly)
 
 
 ID: B3-Ch06b-Mention

@@ -384,7 +384,7 @@ This must have been it... Her explanation makes perfect sense. I was just trying
 As we all move ahead one by one, I notice that Illuna is still staring at me with that serious expression that she always has and with her blue eyes shining brightly. When I look back at her, she does not turn her gaze from me at all and she just keeps looking me right in the eye, in complete silence. As I walk past her to go after the others, her gaze follows me for a few more seconds, but then she finally joins us as well, without saying a word.
 
 }
-choice("Continue", B3-Ch04a-Disarm, v_current_scene = B3-Ch04a-Disarm) if (v_b3_ch4_demolisher == 1 || v_b3_ch4_demolisher == 2 || v_b3_ch4_demolisher == 3)
+choice("Continue", B3-Ch04a-Disarm, v_current_scene = B3-Ch04a-Disarm)
 
 
 ID: B3-Ch04a-Avg-Joe-Invested

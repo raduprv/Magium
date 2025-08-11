@@ -229,7 +229,7 @@ Still, that went much better than I thought it would. After only a few adjustmen
 "Then shut up and do it," Arraka says. "As long as you do exactly the same thing that you did on the ethereal plane, it will work."
 
 }
-choice("Continue", B3-Ch12a-Hermit, v_current_scene = B3-Ch12a-Hermit) if (v_magical_sense == 4 && v_perception == 4 || v_magical_sense == 4 && v_perception < 4 || v_magical_sense < 4)
+choice("Continue", B3-Ch12a-Hermit, v_current_scene = B3-Ch12a-Hermit)
 
 
 ID: B3-Ch12a-Brute
@@ -317,7 +317,7 @@ Instead of dashing away again, Hadrik just stands there for a few moments and pl
 "Then shut up and do it," Arraka says. "As long as you do exactly the same thing that you did on the ethereal plane, it will work."
 
 }
-choice("Continue", B3-Ch12a-Hermit, v_current_scene = B3-Ch12a-Hermit) if (v_agility == 4 && v_reflexes == 4 || v_agility == 4 && v_reflexes < 4 || v_agility < 4)
+choice("Continue", B3-Ch12a-Hermit, v_current_scene = B3-Ch12a-Hermit)
 
 
 ID: B3-Ch12a-Bluff
@@ -393,7 +393,7 @@ Realizing that I won't get any more help from him, I decide to pull out my noteb
 "Then shut up and do it," Arraka says. "As long as you do exactly the same thing that you did on the ethereal plane, it will work."
 
 }
-choice("Continue", B3-Ch12a-Hermit, v_current_scene = B3-Ch12a-Hermit) if (v_bluff == 4 || v_bluff < 4)
+choice("Continue", B3-Ch12a-Hermit, v_current_scene = B3-Ch12a-Hermit)
 
 
 ID: B3-Ch12a-Hermit

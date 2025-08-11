@@ -1046,7 +1046,7 @@ Mere seconds after the white light appears, the orc and the ogres get teleported
 "Hey, thanks!" I say. "You weren't half-bad yourself!"
 
 }
-choice("Continue", B2-Ch08a-Dispatches, v_current_scene = B2-Ch08a-Dispatches) if (v_b2_ch8_goblins == 0 || v_b2_ch8_goblins == 2)
+choice("Continue", B2-Ch08a-Dispatches, v_current_scene = B2-Ch08a-Dispatches)
 
 
 ID: B2-Ch08a-Dispatches
@@ -2042,4 +2042,4 @@ Tap the button below to proceed.
 Tap the button below to proceed.
 
 }
-choice("Go to next chapter", B2-Ch09a-Intro, v_next_chapter_crash = 1, v_current_scene = B2-Ch09a-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, special:checkpoint_save) if (v_second_book_purchased == 0 || v_second_book_purchased == 1)
+choice("Go to next chapter", B2-Ch09a-Intro, v_next_chapter_crash = 1, v_current_scene = B2-Ch09a-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, special:checkpoint_save)

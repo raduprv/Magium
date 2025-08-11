@@ -351,7 +351,7 @@ TEXT:
 "They would be forced to believe me if I gave them enough proof," Arraka says. "And since I'm the one who invented the technique, I obviously know exactly what they need to test for, in order to convince themselves that the voices are indeed coming from badly absorbed spirits. Once they find this out, it's going to be complete chaos! All of the gods and powerful spirits in the magical realm will start fearing for their own existence, and they will try to rid themselves of both Selkram and Ulruk. This would also force the God of Fate to pick a side in this conflict, and while Memphir may not care much about the God of Time, he most certainly couldn't just turn against the God of Death right in the middle of their alliance. Thus, the three gods would have no choice but to form a new alliance, while making enemies out of every single spirit in the magical plane. The God of Storms and the God of the Seas would most definitely be leading the charge against them, and there are some strong animal and monster spirits too, that could pose quite a challenge for our godly trio."
 
 }
-choice("Continue", B3-Ch01a-Sharpen, v_current_scene = B3-Ch01a-Sharpen) if (v_b3_ch1_unlock == 0 || v_b3_ch1_unlock == 1)
+choice("Continue", B3-Ch01a-Sharpen, v_current_scene = B3-Ch01a-Sharpen)
 
 
 ID: B3-Ch01a-Sharpen
@@ -858,7 +858,7 @@ As soon as he does this, the screen of my device turns red, and all it says is '
 "Alright," I say. "Let me just get my crossbow from my tent, and I'll be right with you."
 
 }
-choice("Continue", B3-Ch01a-Oversee, v_current_scene = B3-Ch01a-Oversee) if (v_b3_ch1_unlock == 1 || v_b3_ch1_unlock == 2)
+choice("Continue", B3-Ch01a-Oversee, v_current_scene = B3-Ch01a-Oversee)
 
 
 ID: B3-Ch01a-Complicated
@@ -1226,7 +1226,7 @@ While Melindra was busy showing Flower her rocks, Daren decided to do one final 
 "Because it would be more difficult for me to explain, than to simply show it to you," Melindra says. "You'll understand once we get there."
 
 }
-choice("Continue", B3-Ch01a-Ending, v_current_scene = B3-Ch01a-Ending) if (v_ancient_languages == 4 && v_perception == 4 || v_perception == 4 && v_ancient_languages < 4 || v_b3_ch1_unlock == 2 || v_perception < 4)
+choice("Continue", B3-Ch01a-Ending, v_current_scene = B3-Ch01a-Ending)
 
 
 ID: B3-Ch01a-Ending

@@ -201,7 +201,7 @@ I then pull out my transceiver, set the frequency to Daren's number and tap it o
 "Alright," I say, as I take my hands away from Leila's head. "Follow me. I'm pretty sure I remember which way we went last time."
 
 }
-choice("Continue", B3-Ch07a-Massage2, v_current_scene = B3-Ch07a-Massage2) if (v_b3_ch7_massage == 0 || v_b3_ch7_massage == 1 || v_magical_sense >= 2)
+choice("Continue", B3-Ch07a-Massage2, v_current_scene = B3-Ch07a-Massage2)
 
 
 ID: B3-Ch07a-Massage2
@@ -991,9 +991,9 @@ Just like the last time, the royal guard's voice appears to be coming from all a
 "You're not... no, you can't be serious!" Gontrok says. "Why would you do something like this?"
 
 }
-choice(""If you want to kill the king, then you'd better wait in line! We were here first!"", B3-Ch07a-Line, v_current_scene = B3-Ch07a-Line) if (v_b3_ch7_bet == 1 || v_b3_ch7_bet == 2 || v_b3_ch7_bet == 5 || v_b3_ch7_bet == 6 || v_b3_ch7_bet == 7)
-choice(""What a coincidence! We want to kill the king too! Why don't we join forces?"", B3-Ch07a-Join, v_current_scene = B3-Ch07a-Join) if (v_b3_ch7_bet == 1 || v_b3_ch7_bet == 2 || v_b3_ch7_bet == 5 || v_b3_ch7_bet == 6 || v_b3_ch7_bet == 7)
-choice(""You're going to kill the king? Perfect! Less work for us, then!"", B3-Ch07a-Work, v_current_scene = B3-Ch07a-Work) if (v_b3_ch7_bet == 1 || v_b3_ch7_bet == 2 || v_b3_ch7_bet == 5 || v_b3_ch7_bet == 6 || v_b3_ch7_bet == 7)
+choice(""If you want to kill the king, then you'd better wait in line! We were here first!"", B3-Ch07a-Line, v_current_scene = B3-Ch07a-Line)
+choice(""What a coincidence! We want to kill the king too! Why don't we join forces?"", B3-Ch07a-Join, v_current_scene = B3-Ch07a-Join)
+choice(""You're going to kill the king? Perfect! Less work for us, then!"", B3-Ch07a-Work, v_current_scene = B3-Ch07a-Work)
 
 
 ID: B3-Ch07a-Line

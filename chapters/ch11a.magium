@@ -560,8 +560,8 @@ I waste no time and I run towards the noble, while I ready up my right fist. As 
 "Do you think you can afford to act cocky just because you somehow managed to break through the tournament's protection spell?" the noble says. "You have no idea who you're dealing with here, boy. Being eliminated from the mage tournament will be the least of your worries when I'm done with you."
 
 }
-choice("Kill the noble and be done with it.", Ch11a-Thousands, v_current_scene = Ch11a-Thousands, v_ch11_kill_noble = 1) if (v_ch11_saved_slave == 1 || v_ch11_saved_slave == 2)
-choice("Tell him to get out of here and to leave the slave with us.", Ch11a-Thousands, v_current_scene = Ch11a-Thousands, v_ch11_kill_noble = 0) if (v_ch11_saved_slave == 1 || v_ch11_saved_slave == 2)
+choice("Kill the noble and be done with it.", Ch11a-Thousands, v_current_scene = Ch11a-Thousands, v_ch11_kill_noble = 1)
+choice("Tell him to get out of here and to leave the slave with us.", Ch11a-Thousands, v_current_scene = Ch11a-Thousands, v_ch11_kill_noble = 0)
 
 
 ID: Ch11a-Thousands
@@ -641,9 +641,9 @@ Eiden smiles widely.
 "Unless of course, you only plan on saving the ones that cross your path, so you can pat yourself on the back, and pretend that you made a difference."
 
 }
-choice(""Yes, I'm going to save them all."", Ch11a-Difference, v_current_scene = Ch11a-Difference, v_ch11_difference = 1) if (v_ch11_kill_noble == 1 || v_ch11_saved_slave == 1 || v_ch11_saved_slave == 2)
-choice(""Do I look like a mage to you? Why don't you save them all if you care so much?"", Ch11a-Difference, v_current_scene = Ch11a-Difference, v_ch11_difference = 2) if (v_ch11_kill_noble == 1 || v_ch11_saved_slave == 1 || v_ch11_saved_slave == 2)
-choice(""Should I just ignore everyone who needs help because I can't save the whole world?"", Ch11a-Difference, v_current_scene = Ch11a-Difference, v_ch11_difference = 3) if (v_ch11_kill_noble == 1 || v_ch11_saved_slave == 1 || v_ch11_saved_slave == 2)
+choice(""Yes, I'm going to save them all."", Ch11a-Difference, v_current_scene = Ch11a-Difference, v_ch11_difference = 1)
+choice(""Do I look like a mage to you? Why don't you save them all if you care so much?"", Ch11a-Difference, v_current_scene = Ch11a-Difference, v_ch11_difference = 2)
+choice(""Should I just ignore everyone who needs help because I can't save the whole world?"", Ch11a-Difference, v_current_scene = Ch11a-Difference, v_ch11_difference = 3)
 
 
 ID: Ch11a-Difference

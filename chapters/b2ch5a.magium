@@ -713,9 +713,9 @@ Instead, the troll regrew his head again from his neck, although this time aroun
 As I prepare to join my friends in battle, I take one long look at Velgos, and I try to make a plan of attack.
 
 }
-choice("Observe the battle between Leila and Velgos, in order to find his weaknesses", B2-Ch05a-Contrary-Ogres, v_current_scene = B2-Ch05a-Contrary-Ogres, v_b2_ch5_strategy = 1) if (v_b2_ch5_negotiate == 1 || v_b2_ch5_negotiate == 2)
-choice("Lie to the mage, in order to convince him to act as a decoy", B2-Ch05a-Contrary-Ogres, v_current_scene = B2-Ch05a-Contrary-Ogres, v_b2_ch5_strategy = 2) if (v_b2_ch5_negotiate == 1 || v_b2_ch5_negotiate == 2)
-choice("Cut the troll's head off, while he's busy fighting Leila", B2-Ch05a-Contrary-Ogres, v_current_scene = B2-Ch05a-Contrary-Ogres, v_b2_ch5_strategy = 3) if (v_b2_ch5_negotiate == 1 || v_b2_ch5_negotiate == 2)
+choice("Observe the battle between Leila and Velgos, in order to find his weaknesses", B2-Ch05a-Contrary-Ogres, v_current_scene = B2-Ch05a-Contrary-Ogres, v_b2_ch5_strategy = 1)
+choice("Lie to the mage, in order to convince him to act as a decoy", B2-Ch05a-Contrary-Ogres, v_current_scene = B2-Ch05a-Contrary-Ogres, v_b2_ch5_strategy = 2)
+choice("Cut the troll's head off, while he's busy fighting Leila", B2-Ch05a-Contrary-Ogres, v_current_scene = B2-Ch05a-Contrary-Ogres, v_b2_ch5_strategy = 3)
 
 
 ID: B2-Ch05a-Contrary-Ogres
@@ -761,7 +761,7 @@ I take another quick look towards the battlefield, and it looks like Velgos is n
 The ogres are now rushing towards the troll, with their clubs at the ready, preparing to strike. As he sees his former companions turning on him, Velgos' eyes fill with rage.
 
 }
-choice("Continue", B2-Ch05a-Climactic-Ogres, v_current_scene = B2-Ch05a-Climactic-Ogres) if (v_b2_ch5_negotiate == 1 || v_b2_ch5_negotiate == 2)
+choice("Continue", B2-Ch05a-Climactic-Ogres, v_current_scene = B2-Ch05a-Climactic-Ogres)
 
 
 ID: B2-Ch05a-Climactic-Ogres
