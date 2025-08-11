@@ -15,6 +15,7 @@ root_folder = pathlib.Path("./chapters")
 pp = pprint.PrettyPrinter(2)
 
 STATS_VARIABLE_NAMES = [
+    "v_agility",
     "v_aura_hardening",
     "v_magical_sense",
     "v_bluff",
@@ -24,12 +25,12 @@ STATS_VARIABLE_NAMES = [
     "v_premonition",
     "v_hearing",
     "v_reflexes",
-    "v_speed",
     "v_toughness",
     "v_strength",
     "v_available_points",
     "v_magical_knowledge",
     "v_magical_power",
+    "v_max_stat",
 ]
 STATS_VARIABLE_NAMES += [f"{v}_aux" for v in STATS_VARIABLE_NAMES]
 
@@ -322,11 +323,14 @@ class Scene:
         for test,group in grouped_responses:
             group = list(group)
             new_response = deepcopy(group[0])
-            cond_vars = set(itertools.chain.from_iterable([response.conditions.keys() for response in group]))
             new_response.conditions = sp.simplify_logic(sp.Or(*[sp.And(*response.conditions.values()) for response in group]),form="cnf")
+
+            cond_vars = set(itertools.chain.from_iterable([response.conditions.keys() for response in group]))
+            cond_vars = {var for var in cond_vars if var not in STATS_VARIABLE_NAMES}
             for var in cond_vars:
+                tautological_cond = sp.Or(*[sp.Eq(sp.symbols(var),int(possible_value)) for possible_value in var_possible_values[var]])
                 try:
-                    new_response.conditions = new_response.conditions.subs(sp.Or(*[sp.Eq(sp.symbols(var),int(possible_value)) for possible_value in var_possible_values[var]]),True)
+                    new_response.conditions = new_response.conditions.subs(tautological_cond,True)
                 except:
                     print(var,var_possible_values[var])
                     continue
@@ -441,7 +445,7 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
-# chapters = ["ch1"]
+# chapters = ["ch1","ch2"]
 verbose = False
 var_possible_values = defaultdict(set)
 for chapter in chapters:
@@ -636,10 +640,14 @@ for chapter in chapters:
     for scene in scenes.values():
         for response in scene.responses:
             for set_variable_name,value in response.set_variables.items():
-                var_possible_values[set_variable_name].add(value)
+                if (isinstance(value,str) and value.isnumeric()) or isinstance(value,int):
+                    var_possible_values[set_variable_name].add(int(value))
+            for set_variable_name,value in response.conditions.items():
+                var_possible_values[set_variable_name].add(value.rhs)
             
         for set_variable in scene.set_variables:
-            var_possible_values[set_variable.name].add(set_variable.value)
+            if (isinstance(set_variable.value,str) and set_variable.value.isnumeric()) or isinstance(set_variable.value,int):
+                var_possible_values[set_variable.name].add(int(set_variable.value))
 
     magium_vals = "\n\n".join(scene.to_magium(paragraphs, var_possible_values) for scene in scenes.values())
     with open(root_folder/f"{chapter}.magium","w") as f:

@@ -1408,8 +1408,8 @@ set(v_b3_ch12_sincere,2) if (v_b3_ch12_sincere == 1 && v_bluff == 0)
 "Hmm..." Arraka says. "Not bad. There are a few tiny adjustments that I'd make, but other than that, it doesn't look bad at all. Here, let me mark some of the inadequacies I've noticed, so that you can work on them."
 
 }
-choice("Continue", B3-Ch12a-Sober, v_current_scene = B3-Ch12a-Sober) if (v_b3_ch12_hadrik == 1)
-choice("Continue", B3-Ch12a-Rock, v_current_scene = B3-Ch12a-Rock) if (v_b3_ch12_hadrik == 0)
+choice("Continue", B3-Ch12a-Sober, v_current_scene = B3-Ch12a-Sober) if (v_b3_ch12_hadrik == 1 && v_b3_ch12_sincere == 0 || v_b3_ch12_hadrik == 1 && v_b3_ch12_sincere == 2 || v_b3_ch12_hadrik == 1 && v_bluff == 0 || v_b3_ch12_hadrik == 1 && v_bluff > 0)
+choice("Continue", B3-Ch12a-Rock, v_current_scene = B3-Ch12a-Rock) if (v_b3_ch12_hadrik == 0 && v_b3_ch12_sincere == 0 || v_b3_ch12_hadrik == 0 && v_b3_ch12_sincere == 2 || v_b3_ch12_hadrik == 0 && v_bluff == 0 || v_b3_ch12_hadrik == 0 && v_bluff > 0)
 
 
 ID: B3-Ch12a-Sober

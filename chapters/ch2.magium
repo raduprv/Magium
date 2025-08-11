@@ -914,9 +914,9 @@ I start to follow him, but Kate stops me in my tracks. She has that very serious
 }
 choice(""Crystal."", Ch2-Crystal, v_current_scene = Ch2-Crystal) if (v_ch2_kate_debt == 0)
 choice(""Not really, could you elaborate some more?"", Ch2-Elaborate, v_current_scene = Ch2-Elaborate) if (v_ch2_kate_debt == 0)
-choice(""Don't worry, I always pay my debts."", Ch2-Always, v_current_scene = Ch2-Always)
-choice(""Yes, we're clear."", Ch2-Clear, v_current_scene = Ch2-Clear)
-choice(""I don't owe you anything."", Ch2-No-debt, v_current_scene = Ch2-No-debt, v_ch2_not_owe_debt = 1)
+choice(""Don't worry, I always pay my debts."", Ch2-Always, v_current_scene = Ch2-Always) if (v_ch2_kate_debt == 1)
+choice(""Yes, we're clear."", Ch2-Clear, v_current_scene = Ch2-Clear) if (v_ch2_kate_debt == 1)
+choice(""I don't owe you anything."", Ch2-No-debt, v_current_scene = Ch2-No-debt, v_ch2_not_owe_debt = 1) if (v_ch2_kate_debt == 1)
 
 
 ID: Ch2-Crystal
