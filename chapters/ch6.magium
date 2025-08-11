@@ -603,7 +603,7 @@ As I struggle to find my words, Daren finally starts to understand what's going 
 "When were you planning on telling me this?"
 
 }
-choice("Continue", Ch6-Travel, v_current_scene = Ch6-Travel) if (v_ch2_human_reason == 1 && v_ch3_kate_badly_hurt == 0 || v_ch2_human_reason == 1 && v_ch3_kate_badly_hurt == 1 || v_ch3_kate_badly_hurt == 0 && v_ch5_admit_lie == 1 || v_ch3_kate_badly_hurt == 1 && v_ch5_admit_lie == 1)
+choice("Continue", Ch6-Travel, v_current_scene = Ch6-Travel) if (v_ch2_human_reason == 1 || v_ch5_admit_lie == 1)
 choice(""I wasn't going to."", Ch6-Wasnt, v_current_scene = Ch6-Wasnt) if (v_ch2_human_reason == 2 && v_ch5_admit_lie == 0 || v_ch2_human_reason == 3 && v_ch5_admit_lie == 0)
 choice(""I'm sorry, I meant to tell you sooner, but I was afraid you'd get upset."", Ch6-Upset, v_current_scene = Ch6-Upset) if (v_ch2_human_reason == 2 && v_ch5_admit_lie == 0 || v_ch2_human_reason == 3 && v_ch5_admit_lie == 0)
 choice(""I'm sorry, I should have told you the truth from the beginning."", Ch6-Beginning, v_current_scene = Ch6-Beginning) if (v_ch2_human_reason == 2 && v_ch5_admit_lie == 0 || v_ch2_human_reason == 3 && v_ch5_admit_lie == 0)
@@ -757,7 +757,7 @@ As I struggle to find my words, Daren finally starts to understand what's going 
 "When were you planning on telling me this?"
 
 }
-choice("Continue", Ch6-Travel, v_current_scene = Ch6-Travel) if (v_ch2_human_reason == 1 && v_ch3_kate_badly_hurt == 0 || v_ch2_human_reason == 1 && v_ch3_kate_badly_hurt == 1 || v_ch3_kate_badly_hurt == 0 && v_ch5_admit_lie == 1 || v_ch3_kate_badly_hurt == 1 && v_ch5_admit_lie == 1)
+choice("Continue", Ch6-Travel, v_current_scene = Ch6-Travel) if (v_ch2_human_reason == 1 || v_ch5_admit_lie == 1)
 choice(""I wasn't going to."", Ch6-Wasnt, v_current_scene = Ch6-Wasnt) if (v_ch2_human_reason == 2 && v_ch5_admit_lie == 0 || v_ch2_human_reason == 3 && v_ch5_admit_lie == 0)
 choice(""I'm sorry, I meant to tell you sooner, but I was afraid you'd get upset."", Ch6-Upset, v_current_scene = Ch6-Upset) if (v_ch2_human_reason == 2 && v_ch5_admit_lie == 0 || v_ch2_human_reason == 3 && v_ch5_admit_lie == 0)
 choice(""I'm sorry, I should have told you the truth from the beginning."", Ch6-Beginning, v_current_scene = Ch6-Beginning) if (v_ch2_human_reason == 2 && v_ch5_admit_lie == 0 || v_ch2_human_reason == 3 && v_ch5_admit_lie == 0)
@@ -936,12 +936,12 @@ We've been keeping a steady pace so far, and there's been no breaks except for o
 "Barry, I've been meaning to ask, did we actually interrupt an important discussion between you and Kate this morning? Kate's been acting evasive every time I brought up the subject. I'd feel terrible if you two lost the chance to confess your feelings for each other because Daren and I couldn't read the mood."
 
 }
-choice(""Don't worry, that wasn't what our discussion was about."", Ch6-Flirt, v_current_scene = Ch6-Flirt, v_ch6_flirt = 1) if (v_ch5_admit_lie == 1 && v_ch5_ignore_scream == 0 || v_ch5_admit_lie == 1 && v_ch5_ignore_scream == 1 || v_ch2_human_reason == 1 || v_ch5_admit_lie == 0)
-choice(""Actually, I prefer women with larger breasts like yourself."", Ch6-Flirt, v_current_scene = Ch6-Flirt, v_ch6_flirt = 2) if (v_ch5_admit_lie == 1 && v_ch5_ignore_scream == 0 || v_ch5_admit_lie == 1 && v_ch5_ignore_scream == 1 || v_ch2_human_reason == 1 || v_ch5_admit_lie == 0)
-choice(""I'm still available, if that's what you're asking."", Ch6-Flirt, v_current_scene = Ch6-Flirt, v_ch6_flirt = 3) if (v_ch5_admit_lie == 1 && v_ch5_ignore_scream == 0 || v_ch5_admit_lie == 1 && v_ch5_ignore_scream == 1 || v_ch2_human_reason == 1 || v_ch5_admit_lie == 0)
-choice(""You've got it all wrong! My only feelings are for you."", Ch6-Flirt, v_current_scene = Ch6-Flirt, v_ch6_flirt = 4) if (v_ch5_admit_lie == 1 && v_ch5_ignore_scream == 0 || v_ch5_admit_lie == 1 && v_ch5_ignore_scream == 1 || v_ch2_human_reason == 1 || v_ch5_admit_lie == 0)
-choice(""Don't worry, we got to say all we needed before you interrupted."", Ch6-Flirt, v_current_scene = Ch6-Flirt, v_ch6_flirt = 5) if (v_ch5_admit_lie == 1 && v_ch5_ignore_scream == 0 || v_ch5_admit_lie == 1 && v_ch5_ignore_scream == 1 || v_ch2_human_reason == 1 || v_ch5_admit_lie == 0)
-choice(""Actually, you're the one that stunned me with your beauty when I first saw you."", Ch6-Flirt, v_current_scene = Ch6-Flirt, v_ch6_flirt = 6) if (v_ch5_admit_lie == 1 && v_ch5_ignore_scream == 0 || v_ch5_admit_lie == 1 && v_ch5_ignore_scream == 1 || v_ch2_human_reason == 1 || v_ch5_admit_lie == 0)
+choice(""Don't worry, that wasn't what our discussion was about."", Ch6-Flirt, v_current_scene = Ch6-Flirt, v_ch6_flirt = 1)
+choice(""Actually, I prefer women with larger breasts like yourself."", Ch6-Flirt, v_current_scene = Ch6-Flirt, v_ch6_flirt = 2)
+choice(""I'm still available, if that's what you're asking."", Ch6-Flirt, v_current_scene = Ch6-Flirt, v_ch6_flirt = 3)
+choice(""You've got it all wrong! My only feelings are for you."", Ch6-Flirt, v_current_scene = Ch6-Flirt, v_ch6_flirt = 4)
+choice(""Don't worry, we got to say all we needed before you interrupted."", Ch6-Flirt, v_current_scene = Ch6-Flirt, v_ch6_flirt = 5)
+choice(""Actually, you're the one that stunned me with your beauty when I first saw you."", Ch6-Flirt, v_current_scene = Ch6-Flirt, v_ch6_flirt = 6)
 
 
 ID: Ch6-Flirt
@@ -2493,9 +2493,9 @@ Just before I reach the ground, I suddenly stop in mid-air and then I fall flat 
 "How disappointing," I hear Eiden's voice from high above in the sky. "How very disappointing. Barry, I was expecting a lot more from you. I didn't give you all of that magical energy just so you could waste it by activating your device's temporary maximized mode."
 
 }
-choice(""I don't know what that means."", Ch6-Eiden-vs-dragon, v_current_scene = Ch6-Eiden-vs-dragon, v_ch6_big_plans = 1) if (v_ch6_improvise == 2 && v_ch6_offense == 1 || v_ch6_improvise == 2 && v_ch6_offense == 2 || v_ch6_improvise == 1)
-choice(""I didn't activate anything."", Ch6-Eiden-vs-dragon, v_current_scene = Ch6-Eiden-vs-dragon, v_ch6_big_plans = 2) if (v_ch6_improvise == 2 && v_ch6_offense == 1 || v_ch6_improvise == 2 && v_ch6_offense == 2 || v_ch6_improvise == 1)
-choice(""Why do you keep saving me?"", Ch6-Eiden-vs-dragon, v_current_scene = Ch6-Eiden-vs-dragon, v_ch6_big_plans = 3) if (v_ch6_improvise == 2 && v_ch6_offense == 1 || v_ch6_improvise == 2 && v_ch6_offense == 2 || v_ch6_improvise == 1)
+choice(""I don't know what that means."", Ch6-Eiden-vs-dragon, v_current_scene = Ch6-Eiden-vs-dragon, v_ch6_big_plans = 1) if (v_ch6_improvise == 1 || v_ch6_offense == 1 || v_ch6_offense == 2)
+choice(""I didn't activate anything."", Ch6-Eiden-vs-dragon, v_current_scene = Ch6-Eiden-vs-dragon, v_ch6_big_plans = 2) if (v_ch6_improvise == 1 || v_ch6_offense == 1 || v_ch6_offense == 2)
+choice(""Why do you keep saving me?"", Ch6-Eiden-vs-dragon, v_current_scene = Ch6-Eiden-vs-dragon, v_ch6_big_plans = 3) if (v_ch6_improvise == 1 || v_ch6_offense == 1 || v_ch6_offense == 2)
 
 
 ID: Ch6-Eiden-vs-dragon

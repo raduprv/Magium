@@ -580,8 +580,8 @@ TEXT:
 "Music to my ears!" Arraka tells him.
 
 }
-choice("Continue", B3-Ch12b-Digging, v_current_scene = B3-Ch12b-Digging) if (v_b3_ch12_punches == 0 && v_b3_ch12_scout == 3 || v_b3_ch12_punches == 1 && v_b3_ch12_scout == 3 || v_b3_ch12_punches == 2 && v_b3_ch12_scout == 3)
-choice("Continue", B3-Ch12b-Detector, v_current_scene = B3-Ch12b-Detector) if (v_b3_ch12_punches == 0 && v_b3_ch12_scout != 3 || v_b3_ch12_punches == 1 && v_b3_ch12_scout != 3 || v_b3_ch12_punches == 2 && v_b3_ch12_scout != 3)
+choice("Continue", B3-Ch12b-Digging, v_current_scene = B3-Ch12b-Digging) if (v_b3_ch12_scout == 3)
+choice("Continue", B3-Ch12b-Detector, v_current_scene = B3-Ch12b-Detector) if (v_b3_ch12_scout != 3)
 
 
 ID: B3-Ch12b-Digging
@@ -781,8 +781,8 @@ She then laughs very nervously for about two seconds.
 "Huh..." says Hadrik, after Eleya teleports away from us. "I guess the fox really does have a soft spot for Flower. Who would have thought, eh?"
 
 }
-choice("Continue", B3-Ch12b-Wolf, v_current_scene = B3-Ch12b-Wolf) if (v_b2_ch9_animals == 2 && v_b3_ch12_hideous == 0 || v_b2_ch9_animals == 2 && v_b3_ch12_hideous == 1 || v_b2_ch9_animals == 2 && v_b3_ch12_hideous == 2)
-choice("Continue", B3-Ch12b-Dwellers, v_current_scene = B3-Ch12b-Dwellers) if (v_b3_ch12_hideous == 0 && v_b2_ch9_animals != 2 || v_b3_ch12_hideous == 1 && v_b2_ch9_animals != 2 || v_b3_ch12_hideous == 2 && v_b2_ch9_animals != 2)
+choice("Continue", B3-Ch12b-Wolf, v_current_scene = B3-Ch12b-Wolf) if (v_b2_ch9_animals == 2)
+choice("Continue", B3-Ch12b-Dwellers, v_current_scene = B3-Ch12b-Dwellers) if (v_b2_ch9_animals != 2)
 
 
 ID: B3-Ch12b-Wolf
@@ -1443,10 +1443,10 @@ This isn't going to work. If I keep letting him control the entire flow of the b
 choice("Restart game", Ch1-Intro1, , special:restart) if (v_b3_ch10_eiden == 0 && v_b3_ch12_hadrik == 0)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch10_eiden == 0 && v_b3_ch12_hadrik == 0)
 choice("Load game", , , special:saves) if (v_b3_ch10_eiden == 0 && v_b3_ch12_hadrik == 0)
-choice("Tell Eiden that there is a drunken flying orangutan wearing a party hat behind him.", B3-Ch12b-Orangutan, v_current_scene = B3-Ch12b-Orangutan, v_b3_ch12_eiden = 0) if (v_b3_ch11_transferred == 0 && v_b3_ch12_hadrik == 1 || v_b3_ch11_transferred == 1 && v_b3_ch12_hadrik == 1 || v_b3_ch11_transferred == 0 && v_b3_ch12_hadrik == 0 && v_b3_ch10_eiden != 0 || v_b3_ch11_transferred == 1 && v_b3_ch12_hadrik == 0 && v_b3_ch10_eiden != 0)
-choice("Attack Eiden with my dagger.", B3-Ch12b-Dagger, v_current_scene = B3-Ch12b-Dagger, v_b3_ch12_eiden = 1) if (v_b3_ch11_transferred == 0 && v_b3_ch12_hadrik == 1 || v_b3_ch11_transferred == 1 && v_b3_ch12_hadrik == 1 || v_b3_ch11_transferred == 0 && v_b3_ch12_hadrik == 0 && v_b3_ch10_eiden != 0 || v_b3_ch11_transferred == 1 && v_b3_ch12_hadrik == 0 && v_b3_ch10_eiden != 0)
-choice("Tell Illuna to cast her dish washing spell on Eiden.", B3-Ch12b-Washing, v_current_scene = B3-Ch12b-Washing, v_b3_ch12_eiden = 2) if (v_b3_ch11_transferred == 0 && v_b3_ch12_hadrik == 1 || v_b3_ch11_transferred == 1 && v_b3_ch12_hadrik == 1 || v_b3_ch11_transferred == 0 && v_b3_ch12_hadrik == 0 && v_b3_ch10_eiden != 0 || v_b3_ch11_transferred == 1 && v_b3_ch12_hadrik == 0 && v_b3_ch10_eiden != 0)
-choice("Temporarily steal Eiden's energy with my stat device.", B3-Ch12b-Steal, v_current_scene = B3-Ch12b-Steal, v_b3_ch12_eiden = 3) if (v_b3_ch11_transferred == 1 && v_b3_ch12_hadrik == 1 || v_b3_ch11_transferred == 1 && v_b3_ch12_hadrik == 0 && v_b3_ch10_eiden != 0)
+choice("Tell Eiden that there is a drunken flying orangutan wearing a party hat behind him.", B3-Ch12b-Orangutan, v_current_scene = B3-Ch12b-Orangutan, v_b3_ch12_eiden = 0) if (v_b3_ch12_hadrik == 1 || v_b3_ch10_eiden != 0)
+choice("Attack Eiden with my dagger.", B3-Ch12b-Dagger, v_current_scene = B3-Ch12b-Dagger, v_b3_ch12_eiden = 1) if (v_b3_ch12_hadrik == 1 || v_b3_ch10_eiden != 0)
+choice("Tell Illuna to cast her dish washing spell on Eiden.", B3-Ch12b-Washing, v_current_scene = B3-Ch12b-Washing, v_b3_ch12_eiden = 2) if (v_b3_ch12_hadrik == 1 || v_b3_ch10_eiden != 0)
+choice("Temporarily steal Eiden's energy with my stat device.", B3-Ch12b-Steal, v_current_scene = B3-Ch12b-Steal, v_b3_ch12_eiden = 3) if (v_b3_ch11_transferred == 1 && v_b3_ch12_hadrik == 1 || v_b3_ch11_transferred == 1 && v_b3_ch10_eiden != 0)
 
 
 ID: B3-Ch12b-Orangutan
@@ -1520,9 +1520,9 @@ As Eiden cancels the tornado, he falls to the ground again and then puts his han
 The orangutan in front of me suddenly reaches his right arm for me, and before I have the time to realize that it's not in fact an illusion, he closes his fist around my head and squashes it like a watermelon.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_b3_ch12_hadrik == 0 && v_bluff == 4 || v_b3_ch12_hadrik == 0 && v_bluff < 4 || v_b3_ch12_hadrik == 1 && v_bluff < 4)
-choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch12_hadrik == 0 && v_bluff == 4 || v_b3_ch12_hadrik == 0 && v_bluff < 4 || v_b3_ch12_hadrik == 1 && v_bluff < 4)
-choice("Load game", , , special:saves) if (v_b3_ch12_hadrik == 0 && v_bluff == 4 || v_b3_ch12_hadrik == 0 && v_bluff < 4 || v_b3_ch12_hadrik == 1 && v_bluff < 4)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_b3_ch12_hadrik == 0 && v_bluff == 4 || v_bluff < 4)
+choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch12_hadrik == 0 && v_bluff == 4 || v_bluff < 4)
+choice("Load game", , , special:saves) if (v_b3_ch12_hadrik == 0 && v_bluff == 4 || v_bluff < 4)
 choice("Continue", B3-Ch12b-Blinding, v_current_scene = B3-Ch12b-Blinding) if (v_b3_ch12_hadrik == 1 && v_bluff == 4)
 
 
@@ -1721,9 +1721,9 @@ I fire a lightning spell towards Eiden without thinking, but he already disappea
 Just as I thought I was safe, I can feel Eiden's invisible hand grabbing my head from above and exploding it into a thousand pieces, killing me in an instant.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_b3_ch12_hadrik == 0 && v_b3_ch12_scout != 3 || v_b3_ch12_hadrik == 1)
-choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch12_hadrik == 0 && v_b3_ch12_scout != 3 || v_b3_ch12_hadrik == 1)
-choice("Load game", , , special:saves) if (v_b3_ch12_hadrik == 0 && v_b3_ch12_scout != 3 || v_b3_ch12_hadrik == 1)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_b3_ch12_hadrik == 1 || v_b3_ch12_scout != 3)
+choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch12_hadrik == 1 || v_b3_ch12_scout != 3)
+choice("Load game", , , special:saves) if (v_b3_ch12_hadrik == 1 || v_b3_ch12_scout != 3)
 choice("Continue", B3-Ch12b-Blinding, v_current_scene = B3-Ch12b-Blinding) if (v_b3_ch12_hadrik == 0 && v_b3_ch12_scout == 3)
 
 
@@ -1831,7 +1831,7 @@ As Eiden cancels the tornado, he falls to the ground again and then puts his han
 choice("Restart game", Ch1-Intro1, , special:restart) if (v_b3_ch11_red == 0 && v_aura_hardening < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch11_red == 0 && v_aura_hardening < 4)
 choice("Load game", , , special:saves) if (v_b3_ch11_red == 0 && v_aura_hardening < 4)
-choice("Continue", B3-Ch12b-Blinding, v_current_scene = B3-Ch12b-Blinding) if (v_aura_hardening == 4 && v_b3_ch11_red == 0 || v_b3_ch11_red == 1)
+choice("Continue", B3-Ch12b-Blinding, v_current_scene = B3-Ch12b-Blinding) if (v_aura_hardening == 4 || v_b3_ch11_red == 1)
 
 
 ID: B3-Ch12b-Blinding
@@ -1841,8 +1841,8 @@ set(v_ac_b3_ch12_dagger,1) if (v_b3_ch12_eiden == 1)
 set(v_ac_b3_ch12_delegator,1) if (v_b3_ch12_eiden == 2)
 set(v_ac_b3_ch12_hugger,1) if (v_b3_ch12_eiden == 4)
 set(v_ac_b3_ch12_liar,1) if (v_b3_ch12_approach == 2 && v_b3_ch12_eiden == 0 && v_b3_ch12_hadrik == 1)
-achievement("Serial liar",v_ac_b3_ch12_liar)
 achievement("Delegator",v_ac_b3_ch12_delegator)
+achievement("Serial liar",v_ac_b3_ch12_liar)
 achievement("Tree-hugger",v_ac_b3_ch12_hugger)
 achievement("One Dagger Man",v_ac_b3_ch12_dagger)
  I waste no time and I cast my dizziness spell on Eiden. If this is the same as when I tested the spell on Diane, he should normally be hearing a ringing in his ears right now... the exact same kind of ringing noise that you would hear if Wolford's daze had been cast on you.

@@ -201,7 +201,7 @@ I then pull out my transceiver, set the frequency to Daren's number and tap it o
 "Alright," I say, as I take my hands away from Leila's head. "Follow me. I'm pretty sure I remember which way we went last time."
 
 }
-choice("Continue", B3-Ch07a-Massage2, v_current_scene = B3-Ch07a-Massage2) if (v_b3_ch7_massage == 2 && v_magical_sense >= 2 || v_b3_ch7_massage == 0 || v_b3_ch7_massage == 1)
+choice("Continue", B3-Ch07a-Massage2, v_current_scene = B3-Ch07a-Massage2) if (v_b3_ch7_massage == 0 || v_b3_ch7_massage == 1 || v_magical_sense >= 2)
 
 
 ID: B3-Ch07a-Massage2
@@ -1597,8 +1597,8 @@ The beam envelops my whole body in flames, but thanks to my hardened aura I only
 choice("Restart game", Ch1-Intro1, , special:restart) if (v_b3_ch7_tyrant == 1 && v_aura_hardening < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch7_tyrant == 1 && v_aura_hardening < 3)
 choice("Load game", , , special:saves) if (v_b3_ch7_tyrant == 1 && v_aura_hardening < 3)
-choice("Shoot the king above his left knee and then shoot him in the head.", B3-Ch07a-Assassinate, v_current_scene = B3-Ch07a-Assassinate, v_b3_ch7_assassinate = 1) if (v_b3_ch7_tyrant == 1 && v_aura_hardening >= 3 || v_b3_ch7_tyrant == 0)
-choice("Tell the Overseer that he should kill the king himself.", B3-Ch07a-Assassinate, v_current_scene = B3-Ch07a-Assassinate, v_b3_ch7_assassinate = 0) if (v_b3_ch7_tyrant == 1 && v_aura_hardening >= 3 || v_b3_ch7_tyrant == 0)
+choice("Shoot the king above his left knee and then shoot him in the head.", B3-Ch07a-Assassinate, v_current_scene = B3-Ch07a-Assassinate, v_b3_ch7_assassinate = 1) if (v_b3_ch7_tyrant == 0 || v_aura_hardening >= 3)
+choice("Tell the Overseer that he should kill the king himself.", B3-Ch07a-Assassinate, v_current_scene = B3-Ch07a-Assassinate, v_b3_ch7_assassinate = 0) if (v_b3_ch7_tyrant == 0 || v_aura_hardening >= 3)
 
 
 ID: B3-Ch07a-Assassinate

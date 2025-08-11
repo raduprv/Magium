@@ -298,7 +298,7 @@ I don't say anything and I keep walking forward.
 "Damn it!" the announcer says. "Open the gates. Open them now!"
 
 }
-choice("Continue", B2-Ch05a-Flammable, v_current_scene = B2-Ch05a-Flammable) if (v_b2_ch2_creatures == 0 && v_b2_ch4_beer == 0 || v_b2_ch2_creatures == 0 && v_b2_ch4_beer == 1 || v_b2_ch2_creatures == 1 && v_b2_ch4_beer == 0 || v_b2_ch2_creatures == 1 && v_b2_ch4_beer == 1)
+choice("Continue", B2-Ch05a-Flammable, v_current_scene = B2-Ch05a-Flammable)
 
 
 ID: B2-Ch05a-Flammable
@@ -713,9 +713,9 @@ Instead, the troll regrew his head again from his neck, although this time aroun
 As I prepare to join my friends in battle, I take one long look at Velgos, and I try to make a plan of attack.
 
 }
-choice("Observe the battle between Leila and Velgos, in order to find his weaknesses", B2-Ch05a-Contrary-Ogres, v_current_scene = B2-Ch05a-Contrary-Ogres, v_b2_ch5_strategy = 1) if (v_b2_ch5_first_cut == 0 && v_b2_ch5_negotiate == 1 || v_b2_ch5_first_cut == 0 && v_b2_ch5_negotiate == 2 || v_b2_ch5_first_cut == 1 && v_b2_ch5_negotiate == 1 || v_b2_ch5_first_cut == 1 && v_b2_ch5_negotiate == 2)
-choice("Lie to the mage, in order to convince him to act as a decoy", B2-Ch05a-Contrary-Ogres, v_current_scene = B2-Ch05a-Contrary-Ogres, v_b2_ch5_strategy = 2) if (v_b2_ch5_first_cut == 0 && v_b2_ch5_negotiate == 1 || v_b2_ch5_first_cut == 0 && v_b2_ch5_negotiate == 2 || v_b2_ch5_first_cut == 1 && v_b2_ch5_negotiate == 1 || v_b2_ch5_first_cut == 1 && v_b2_ch5_negotiate == 2)
-choice("Cut the troll's head off, while he's busy fighting Leila", B2-Ch05a-Contrary-Ogres, v_current_scene = B2-Ch05a-Contrary-Ogres, v_b2_ch5_strategy = 3) if (v_b2_ch5_first_cut == 0 && v_b2_ch5_negotiate == 1 || v_b2_ch5_first_cut == 0 && v_b2_ch5_negotiate == 2 || v_b2_ch5_first_cut == 1 && v_b2_ch5_negotiate == 1 || v_b2_ch5_first_cut == 1 && v_b2_ch5_negotiate == 2)
+choice("Observe the battle between Leila and Velgos, in order to find his weaknesses", B2-Ch05a-Contrary-Ogres, v_current_scene = B2-Ch05a-Contrary-Ogres, v_b2_ch5_strategy = 1) if (v_b2_ch5_negotiate == 1 || v_b2_ch5_negotiate == 2)
+choice("Lie to the mage, in order to convince him to act as a decoy", B2-Ch05a-Contrary-Ogres, v_current_scene = B2-Ch05a-Contrary-Ogres, v_b2_ch5_strategy = 2) if (v_b2_ch5_negotiate == 1 || v_b2_ch5_negotiate == 2)
+choice("Cut the troll's head off, while he's busy fighting Leila", B2-Ch05a-Contrary-Ogres, v_current_scene = B2-Ch05a-Contrary-Ogres, v_b2_ch5_strategy = 3) if (v_b2_ch5_negotiate == 1 || v_b2_ch5_negotiate == 2)
 
 
 ID: B2-Ch05a-Contrary-Ogres
@@ -761,7 +761,7 @@ I take another quick look towards the battlefield, and it looks like Velgos is n
 The ogres are now rushing towards the troll, with their clubs at the ready, preparing to strike. As he sees his former companions turning on him, Velgos' eyes fill with rage.
 
 }
-choice("Continue", B2-Ch05a-Climactic-Ogres, v_current_scene = B2-Ch05a-Climactic-Ogres) if (v_b2_ch5_first_cut == 0 && v_b2_ch5_negotiate == 1 || v_b2_ch5_first_cut == 0 && v_b2_ch5_negotiate == 2 || v_b2_ch5_first_cut == 1 && v_b2_ch5_negotiate == 1 || v_b2_ch5_first_cut == 1 && v_b2_ch5_negotiate == 2)
+choice("Continue", B2-Ch05a-Climactic-Ogres, v_current_scene = B2-Ch05a-Climactic-Ogres) if (v_b2_ch5_negotiate == 1 || v_b2_ch5_negotiate == 2)
 
 
 ID: B2-Ch05a-Climactic-Ogres
@@ -835,7 +835,7 @@ The troll is now desperately trying to gasp for air, while looking at me and Lei
 "Well, that was anti-climactic..." I say.
 
 }
-choice("Continue", B2-Ch05a-Troll-dead, v_current_scene = B2-Ch05a-Troll-dead) if (v_b2_ch5_first_cut == 0 && v_b2_ch5_strategy == 1 || v_b2_ch5_first_cut == 0 && v_b2_ch5_strategy == 2 || v_b2_ch5_first_cut == 0 && v_b2_ch5_strategy == 3 || v_b2_ch5_first_cut == 1 && v_b2_ch5_strategy == 1 || v_b2_ch5_first_cut == 1 && v_b2_ch5_strategy == 2 || v_b2_ch5_first_cut == 1 && v_b2_ch5_strategy == 3)
+choice("Continue", B2-Ch05a-Troll-dead, v_current_scene = B2-Ch05a-Troll-dead)
 
 
 ID: B2-Ch05a-Contrary-Wilhelm
@@ -1013,7 +1013,7 @@ The troll is now desperately trying to gasp for air, while looking at me and Lei
 The troll is now desperately trying to gasp for air, while looking at me and Leila with pure hatred in his eyes. He tries to speak, but he has no air left in his lungs. He only manages to make some unintelligible guttural sounds, while taking a few steps forward and stretching one of his arms towards us, in a futile attempt to reach us. Once he runs out of breath completely, he drops to his knees, and he starts clawing at his throat with his hands, as if he were trying to create a new pathway for the air to reach his lungs. Eventually, he stops moving altogether, and he drops face-first to the ground, lifeless.
 
 }
-choice("Continue", B2-Ch05a-Troll-dead, v_current_scene = B2-Ch05a-Troll-dead) if (v_b2_ch5_first_cut == 0 && v_b2_ch5_wilhelm == 0 || v_b2_ch5_first_cut == 1 || v_b2_ch5_strategy == 2 || v_b2_ch5_wilhelm == 1)
+choice("Continue", B2-Ch05a-Troll-dead, v_current_scene = B2-Ch05a-Troll-dead)
 
 
 ID: B2-Ch05a-Easily-Without

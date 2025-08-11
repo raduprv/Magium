@@ -45,7 +45,7 @@ After hearing Daren's words, we all turn our heads to look at him, while Hadrik 
 "What do you mean?" Hadrik says.
 
 }
-choice("Continue", B3-Ch10b-Eavesdropping, v_current_scene = B3-Ch10b-Eavesdropping) if (v_ch11_romance_rose == 0 && v_ch11_saved_rose == 1 || v_ch11_romance_rose == 1 || v_ch11_saved_rose == 0)
+choice("Continue", B3-Ch10b-Eavesdropping, v_current_scene = B3-Ch10b-Eavesdropping)
 
 
 ID: B3-Ch10b-Eavesdropping
@@ -107,7 +107,7 @@ TEXT:
 "Exactly," Arraka says. "See? You can do it if you try. Yes, the main difference is the focus, but can you tell what the focus of this spell is? What is its true purpose?"
 
 }
-choice("Continue", B3-Ch10b-Banshees, v_current_scene = B3-Ch10b-Banshees) if (v_ch11_romance_rose == 0 && v_ch11_saved_rose == 1 || v_ch11_romance_rose == 1 || v_ch11_saved_rose == 0)
+choice("Continue", B3-Ch10b-Banshees, v_current_scene = B3-Ch10b-Banshees)
 
 
 ID: B3-Ch10b-Banshees

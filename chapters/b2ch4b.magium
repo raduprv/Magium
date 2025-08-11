@@ -191,7 +191,7 @@ Wilhelm is sweating hard. He stands there, looking at me for another few seconds
 What was that all about?
 
 }
-choice("Continue", B2-Ch04b-Associates, v_current_scene = B2-Ch04b-Associates) if (v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 || v_b2_ch2_threatened == 0 || v_b2_ch2_threatened == 1)
+choice("Continue", B2-Ch04b-Associates, v_current_scene = B2-Ch04b-Associates) if (v_b2_ch2_lessathi == 1 || v_b2_ch2_threatened == 0 || v_b2_ch2_threatened == 1)
 
 
 ID: B2-Ch04b-Associates
@@ -1056,7 +1056,7 @@ I signal Leila and Bruce, and we head towards the last marauder, in order to fin
 After a while, the announcer asks us to clear the fighting area, so we leave the dead thugs behind, and we prepare to go back to our division room.
 
 }
-choice("Continue", B2-Ch04b-Wilhelm-final, v_current_scene = B2-Ch04b-Wilhelm-final) if (v_b2_ch2_heard == 1 && v_b2_ch4_inform2 == 1 || v_b2_ch2_heard == 1 && v_b2_ch4_inform3 == 1 || v_b2_ch4_inform2 == 0 && v_b2_ch4_inform3 == 0 || v_b2_ch2_heard == 0)
+choice("Continue", B2-Ch04b-Wilhelm-final, v_current_scene = B2-Ch04b-Wilhelm-final)
 
 
 ID: B2-Ch04b-Further
@@ -1276,7 +1276,7 @@ There's no time to think about that now. I'll figure this out after the battle. 
 "I don't know," I say. "But I don't want to waste time figuring that out now, in the middle of the battle. We're done here. Let's go help the others." 
 
 }
-choice("Continue", B2-Ch04b-Insane, v_current_scene = B2-Ch04b-Insane) if (v_b2_ch2_lessathi == 0 && v_b2_ch2_threatened == 2 || v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 || v_b2_ch2_threatened == 0 && v_b2_ch2_cell != 1 || v_b2_ch2_threatened == 1)
+choice("Continue", B2-Ch04b-Insane, v_current_scene = B2-Ch04b-Insane) if (v_b2_ch2_threatened == 1 || v_b2_ch2_threatened == 2 || v_b2_ch2_cell != 1)
 
 
 ID: B2-Ch04b-Wilhelm-checks
@@ -1656,7 +1656,7 @@ Oh, right. I forgot that I never told Bruce about my trip to the underground cav
 "Maybe you're right," I tell him. "One type of winged creatures is more than enough for an open arena like this."
 
 }
-choice("Continue", B2-Ch04b-Hearing2, v_current_scene = B2-Ch04b-Hearing2) if (v_b2_ch2_creatures == 0 && v_b2_ch4_inform2 == 1 || v_b2_ch2_creatures == 1 && v_b2_ch4_inform2 == 1 || v_b2_ch4_inform2 == 0)
+choice("Continue", B2-Ch04b-Hearing2, v_current_scene = B2-Ch04b-Hearing2)
 
 
 ID: B2-Ch04b-Hearing2

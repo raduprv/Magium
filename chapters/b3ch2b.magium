@@ -121,8 +121,8 @@ As the metal ball keeps pestering us, more and more of the citizens we are passi
 "Possibly," Melindra says. "I have no idea how these golem heads have evolved over the years. It doesn't really matter either way. Let's proceed, shall we?"
 
 }
-choice("Continue", B3-Ch02b-Esteemed, v_current_scene = B3-Ch02b-Esteemed) if (v_b3_ch2_goblins == 3 && v_b3_ch2_name == 0 || v_b3_ch2_goblins == 3 && v_b3_ch2_name == 1 || v_b3_ch2_goblins == 3 && v_b3_ch2_name == 2 || v_b3_ch2_goblins == 3 && v_b3_ch2_name == 3 || v_b3_ch2_goblins == 3 && v_b3_ch2_name == 4 || v_b3_ch2_goblins == 4 && v_b3_ch2_name == 0 || v_b3_ch2_goblins == 4 && v_b3_ch2_name == 1 || v_b3_ch2_goblins == 4 && v_b3_ch2_name == 2 || v_b3_ch2_goblins == 4 && v_b3_ch2_name == 3 || v_b3_ch2_goblins == 4 && v_b3_ch2_name == 4 || v_b3_ch2_infiltration == 3 && v_b3_ch2_name == 0 || v_b3_ch2_infiltration == 3 && v_b3_ch2_name == 1 || v_b3_ch2_infiltration == 3 && v_b3_ch2_name == 2 || v_b3_ch2_infiltration == 3 && v_b3_ch2_name == 3 || v_b3_ch2_infiltration == 3 && v_b3_ch2_name == 4)
-choice("Continue", B3-Ch02b-Premonition, v_current_scene = B3-Ch02b-Premonition) if (v_b3_ch2_name == 0 && v_b3_ch2_goblins != 4 && v_b3_ch2_infiltration != 3 || v_b3_ch2_name == 1 && v_b3_ch2_goblins != 4 && v_b3_ch2_infiltration != 3 || v_b3_ch2_name == 2 && v_b3_ch2_goblins != 4 && v_b3_ch2_infiltration != 3 || v_b3_ch2_name == 3 && v_b3_ch2_goblins != 4 && v_b3_ch2_infiltration != 3 || v_b3_ch2_name == 4 && v_b3_ch2_goblins != 4 && v_b3_ch2_infiltration != 3)
+choice("Continue", B3-Ch02b-Esteemed, v_current_scene = B3-Ch02b-Esteemed) if (v_b3_ch2_goblins == 3 || v_b3_ch2_goblins == 4 || v_b3_ch2_infiltration == 3)
+choice("Continue", B3-Ch02b-Premonition, v_current_scene = B3-Ch02b-Premonition) if (v_b3_ch2_goblins != 4 && v_b3_ch2_infiltration != 3)
 
 
 ID: B3-Ch02b-Esteemed

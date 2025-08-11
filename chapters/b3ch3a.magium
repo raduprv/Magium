@@ -612,9 +612,9 @@ choice(""Melindra and I are not in a relationship."", B3-Ch03a-Plans, v_current_
 choice(""Uh, yes... of course! A relationship is exactly what we are in, Melindra and I!"", B3-Ch03a-Plans, v_current_scene = B3-Ch03a-Plans, v_b3_ch3_plans = 1) if (v_b2_ch8_energizer == 1)
 choice(""It's no problem!"", B3-Ch03a-Plans, v_current_scene = B3-Ch03a-Plans, v_b3_ch3_plans = 2) if (v_ch11_romance_rose == 1 && v_ch11_saved_rose == 1 && v_b2_ch8_energizer != 1)
 choice(""Well, technically it's just a vague promise. Anything could still happen!"", B3-Ch03a-Plans, v_current_scene = B3-Ch03a-Plans, v_b3_ch3_plans = 3) if (v_ch11_romance_rose == 1 && v_ch11_saved_rose == 1 && v_b2_ch8_energizer != 1)
-choice(""It's no problem!"", B3-Ch03a-Plans, v_current_scene = B3-Ch03a-Plans, v_b3_ch3_plans = 4) if (v_ch11_saved_rose == 0 && v_b2_ch8_energizer != 1 || v_ch11_romance_rose == 0 && v_ch11_saved_rose == 1 && v_b2_ch8_energizer != 1)
-choice(""Actually, Kate and I are just friends."", B3-Ch03a-Plans, v_current_scene = B3-Ch03a-Plans, v_b3_ch3_plans = 5) if (v_ch11_saved_rose == 0 && v_b2_ch8_energizer != 1 || v_ch11_romance_rose == 0 && v_ch11_saved_rose == 1 && v_b2_ch8_energizer != 1)
-choice(""Actually, I'd prefer to focus on winning the Magium, without any distractions."", B3-Ch03a-Plans, v_current_scene = B3-Ch03a-Plans, v_b3_ch3_plans = 6) if (v_ch11_saved_rose == 0 && v_b2_ch8_energizer != 1 || v_ch11_romance_rose == 0 && v_ch11_saved_rose == 1 && v_b2_ch8_energizer != 1)
+choice(""It's no problem!"", B3-Ch03a-Plans, v_current_scene = B3-Ch03a-Plans, v_b3_ch3_plans = 4) if (v_ch11_romance_rose == 0 && v_b2_ch8_energizer != 1 || v_ch11_saved_rose == 0 && v_b2_ch8_energizer != 1)
+choice(""Actually, Kate and I are just friends."", B3-Ch03a-Plans, v_current_scene = B3-Ch03a-Plans, v_b3_ch3_plans = 5) if (v_ch11_romance_rose == 0 && v_b2_ch8_energizer != 1 || v_ch11_saved_rose == 0 && v_b2_ch8_energizer != 1)
+choice(""Actually, I'd prefer to focus on winning the Magium, without any distractions."", B3-Ch03a-Plans, v_current_scene = B3-Ch03a-Plans, v_b3_ch3_plans = 6) if (v_ch11_romance_rose == 0 && v_b2_ch8_energizer != 1 || v_ch11_saved_rose == 0 && v_b2_ch8_energizer != 1)
 
 
 ID: B3-Ch03a-Plans

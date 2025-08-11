@@ -705,8 +705,8 @@ As soon as we were all on the same page regarding tomorrow's events and what nee
  "So, does anyone feel like volunteering for a night shift?" Daren asks us, once we are all done making our beds.
 
 }
-choice("Continue", B3-Ch08b-Hadrik, v_current_scene = B3-Ch08b-Hadrik) if (v_b3_ch6_shift == 0 && v_b3_ch8_overseer2 == 0 || v_b3_ch4_billy == 7 && v_b3_ch6_shift == 0 && v_b3_ch8_overseer2 == 1 || v_b3_ch4_billy == 8 && v_b3_ch6_shift == 0 && v_b3_ch8_overseer2 == 1 || v_b3_ch4_billy == 9 && v_b3_ch6_shift == 0 && v_b3_ch8_overseer2 == 1 || v_b3_ch6_shift == 0 && v_b3_ch8_overseer2 == 1 && v_b3_ch4_billy <= 6)
-choice("Continue", B3-Ch08b-Leila, v_current_scene = B3-Ch08b-Leila) if (v_b3_ch6_shift == 1 && v_b3_ch8_overseer2 == 0 || v_b3_ch4_billy == 7 && v_b3_ch6_shift == 1 && v_b3_ch8_overseer2 == 1 || v_b3_ch4_billy == 8 && v_b3_ch6_shift == 1 && v_b3_ch8_overseer2 == 1 || v_b3_ch4_billy == 9 && v_b3_ch6_shift == 1 && v_b3_ch8_overseer2 == 1 || v_b3_ch6_shift == 1 && v_b3_ch8_overseer2 == 1 && v_b3_ch4_billy <= 6)
+choice("Continue", B3-Ch08b-Hadrik, v_current_scene = B3-Ch08b-Hadrik) if (v_b3_ch4_billy == 7 && v_b3_ch6_shift == 0 || v_b3_ch4_billy == 8 && v_b3_ch6_shift == 0 || v_b3_ch4_billy == 9 && v_b3_ch6_shift == 0 || v_b3_ch6_shift == 0 && v_b3_ch8_overseer2 == 0 || v_b3_ch6_shift == 0 && v_b3_ch4_billy <= 6)
+choice("Continue", B3-Ch08b-Leila, v_current_scene = B3-Ch08b-Leila) if (v_b3_ch4_billy == 7 && v_b3_ch6_shift == 1 || v_b3_ch4_billy == 8 && v_b3_ch6_shift == 1 || v_b3_ch4_billy == 9 && v_b3_ch6_shift == 1 || v_b3_ch6_shift == 1 && v_b3_ch8_overseer2 == 0 || v_b3_ch6_shift == 1 && v_b3_ch4_billy <= 6)
 
 
 ID: B3-Ch08b-Hadrik

@@ -961,9 +961,9 @@ As we make our way further into the tunnel, I suddenly get a vision of our group
 "Yeah, but to risk blowing up this whole corridor based on a simple hunch..." Hadrik says. "I don't know, I'm finding it a bit hard to believe. Barry, are you sure that your thingamajig isn't malfunctioning somehow? I mean, you don't have any guarantee that those premonitions will always come true, do you?"
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_b2_ch7_tunnel == 0 && v_premonition < 4 || v_b2_ch7_tunnel == 1 && v_premonition < 4)
-choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b2_ch7_tunnel == 0 && v_premonition < 4 || v_b2_ch7_tunnel == 1 && v_premonition < 4)
-choice("Load game", , , special:saves) if (v_b2_ch7_tunnel == 0 && v_premonition < 4 || v_b2_ch7_tunnel == 1 && v_premonition < 4)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_premonition < 4)
+choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_premonition < 4)
+choice("Load game", , , special:saves) if (v_premonition < 4)
 choice(""Well, why don't you throw a rock, and see for yourself if it explodes, then?"", B2-Ch07a-Secret, v_current_scene = B2-Ch07a-Secret, v_b2_ch7_rock = 1) if (v_premonition == 4)
 choice(""It's certainly reliable enough to not want to risk my life by ignoring it."", B2-Ch07a-Secret, v_current_scene = B2-Ch07a-Secret, v_b2_ch7_rock = 0) if (v_premonition == 4)
 
@@ -1063,7 +1063,7 @@ Before Daren gets to finish his sentence, Hadrik reaches the wall, and he punche
 "Fine, let's keep going," Daren says. "We'll see what happens, when it happens."
 
 }
-choice("Continue", B2-Ch07a-Hearing, v_current_scene = B2-Ch07a-Hearing) if (v_b2_ch7_rock == 0 && v_b2_ch7_tunnel == 0 || v_b2_ch7_rock == 0 && v_b2_ch7_tunnel == 1 || v_b2_ch7_rock == 1 && v_b2_ch7_tunnel == 0 || v_b2_ch7_rock == 1 && v_b2_ch7_tunnel == 1)
+choice("Continue", B2-Ch07a-Hearing, v_current_scene = B2-Ch07a-Hearing)
 
 
 ID: B2-Ch07a-Relax
@@ -1396,7 +1396,7 @@ While I am still unable to move, Kate manages to free herself from the paralysis
 choice("Restart game", Ch1-Intro1, , special:restart) if (v_toughness < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_toughness < 4)
 choice("Load game", , , special:saves) if (v_toughness < 4)
-choice("Continue", B2-Ch07a-Blinded, v_current_scene = B2-Ch07a-Blinded) if (v_b2_ch7_wait == 0 && v_toughness == 4 || v_b2_ch7_wait == 1 && v_toughness == 4)
+choice("Continue", B2-Ch07a-Blinded, v_current_scene = B2-Ch07a-Blinded) if (v_toughness == 4)
 
 
 ID: B2-Ch07a-Winter
@@ -1680,7 +1680,7 @@ achievement("Just an average assassin",v_ac_b2_ch7_average)
 "Good luck on your travels," Golmyck says. "And remember that you will always be welcome to Thilias, should you choose to visit this city again!"
 
 }
-choice("Continue", B2-Ch07a-Mansion, v_current_scene = B2-Ch07a-Mansion) if (v_b2_ch7_overheard == 0 && v_b2_ch7_reward == 0 || v_b2_ch7_overheard == 0 && v_b2_ch7_reward == 1 || v_b2_ch7_overheard == 1 && v_b2_ch7_reward == 0 || v_b2_ch7_overheard == 1 && v_b2_ch7_reward == 1)
+choice("Continue", B2-Ch07a-Mansion, v_current_scene = B2-Ch07a-Mansion)
 
 
 ID: B2-Ch07a-Mansion
@@ -1846,7 +1846,7 @@ Hadrik laughs.
 As she waves at us, to make sure that we've spotted her, we quicken our pace, and we get ready to finally take our first step towards our original goal. After so much sidetracking, and so many delays, at long last, we can get back to what we came here to do. Participating in the Magium Tournament.
 
 }
-choice("Next chapter", B2-Ch08a-Intro, v_next_chapter_crash = 1, v_current_scene = B2-Ch08a-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, special:checkpoint_save) if (v_ch11_romance_rose == 0 && v_ch11_saved_rose == 1 || v_ch11_romance_rose == 1 && v_ch11_saved_rose == 1 || v_ch11_saved_rose == 0)
+choice("Next chapter", B2-Ch08a-Intro, v_next_chapter_crash = 1, v_current_scene = B2-Ch08a-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, special:checkpoint_save)
 
 
 ID: B2-Ch07a-Credits

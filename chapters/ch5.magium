@@ -307,8 +307,8 @@ She's hiding something again. I just know it.
 "They're being backed by the kings?" Daren asks. "What would Eiden want with these hotshots? You simply have to tell them to remember the still winter, right? I wonder what that's supposed to mean?"
 
 }
-choice(""It sounds like a threat."", Ch5-Threat, v_current_scene = Ch5-Threat) if (v_ch3_bloodied == 0 && v_ch3_kate_badly_hurt == 0 || v_ch3_bloodied == 1 && v_ch3_kate_badly_hurt == 0 || v_ch3_kate_badly_hurt == 1)
-choice(""It sounds like a coded message."", Ch5-Coded, v_current_scene = Ch5-Coded) if (v_ch3_bloodied == 0 && v_ch3_kate_badly_hurt == 0 || v_ch3_bloodied == 1 && v_ch3_kate_badly_hurt == 0 || v_ch3_kate_badly_hurt == 1)
+choice(""It sounds like a threat."", Ch5-Threat, v_current_scene = Ch5-Threat)
+choice(""It sounds like a coded message."", Ch5-Coded, v_current_scene = Ch5-Coded)
 
 
 ID: Ch5-Threat

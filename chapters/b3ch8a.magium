@@ -761,8 +761,8 @@ TEXT:
  "I see," Melindra says. "Well, good luck with that, I suppose."
 
 }
-choice("Continue", B3-Ch08a-Weakling, v_current_scene = B3-Ch08a-Weakling) if (v_b3_ch8_next == 0 && v_b3_ch8_watching == 1 || v_b3_ch8_next == 1 && v_b3_ch8_watching == 1 || v_b3_ch8_next == 2 && v_b3_ch8_watching == 1)
-choice("Continue", B3-Ch08a-Break, v_current_scene = B3-Ch08a-Break) if (v_b3_ch8_next == 0 && v_b3_ch8_watching == 0 || v_b3_ch8_next == 1 && v_b3_ch8_watching == 0 || v_b3_ch8_next == 2 && v_b3_ch8_watching == 0)
+choice("Continue", B3-Ch08a-Weakling, v_current_scene = B3-Ch08a-Weakling) if (v_b3_ch8_watching == 1)
+choice("Continue", B3-Ch08a-Break, v_current_scene = B3-Ch08a-Break) if (v_b3_ch8_watching == 0)
 
 
 ID: B3-Ch08a-Weakling

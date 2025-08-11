@@ -1549,7 +1549,7 @@ Eiden looks at me, with his closed eyes and smiles. I only now realize that I mi
 "What's the matter, ambassador?" Eiden asks, with a smirk. "Aren't you going to bow before your Creator?"
 
 }
-choice("Continue", B2-Ch01a-Creator, v_current_scene = B2-Ch01a-Creator) if (v_b2_ch1_spin == 0 && v_ch11_kill_noble == 0 || v_b2_ch1_spin == 0 && v_ch11_kill_noble == 1 || v_b2_ch1_spin == 0 && v_ch11_saved_slave == 3 || v_b2_ch1_spin == 1 && v_ch11_kill_noble == 0 || v_b2_ch1_spin == 1 && v_ch11_kill_noble == 1 || v_b2_ch1_spin == 1 && v_ch11_saved_slave == 3)
+choice("Continue", B2-Ch01a-Creator, v_current_scene = B2-Ch01a-Creator)
 
 
 ID: B2-Ch01a-Creator

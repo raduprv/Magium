@@ -791,7 +791,7 @@ The next day, I get woken up in the morning by one of the guards, telling me to 
 The guards lead us through the gladiator entrance of the arena, and they show us to our locker rooms, where we get to store our belongings for the duration of the show. After we're done putting our backpacks in the lockers, the guards tell us that we're allowed to roam freely through the area designated for the gladiators until the events begin, but that we will need to gather up in the waiting area of our division after the sound of the first horn.  
 
 }
-choice("Continue", B2-Ch04a-Trace, v_current_scene = B2-Ch04a-Trace) if (v_b2_ch2_lessathi == 0 && v_b2_ch2_threatened == 2 || v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 || v_b2_ch2_threatened == 0 || v_b2_ch2_threatened == 1)
+choice("Continue", B2-Ch04a-Trace, v_current_scene = B2-Ch04a-Trace)
 
 
 ID: B2-Ch04a-Trace
@@ -962,7 +962,7 @@ Leila smiles, faintly.
 "Yes..." she writes. "Yes, I am glad. Thank you..."
 
 }
-choice("Continue", B2-Ch04a-Stats, v_current_scene = B2-Ch04a-Stats, v_available_points = +3, v_available_points_aux = +3) if (v_b2_ch2_kate == 0 && v_b2_ch4_called_kate == 0 || v_b2_ch2_kate == 0 && v_b2_ch4_called_kate == 1 || v_b2_ch2_kate == 1 && v_b2_ch4_called_kate == 0 || v_b2_ch2_kate == 1 && v_b2_ch4_called_kate == 1)
+choice("Continue", B2-Ch04a-Stats, v_current_scene = B2-Ch04a-Stats, v_available_points = +3, v_available_points_aux = +3)
 
 
 ID: B2-Ch04a-Stats
@@ -1083,7 +1083,7 @@ Okay... Calm down! Desert marauders are pretty much just giant scorpions with sm
  No, wait... Those aren't scorpions, they're desert marauders. They look almost the same as scorpions, but their heads are smaller. I remember reading about desert marauders in my notebook, and I know that their weakness was behind one of the scales on their back, but I can't remember which one. If only I had my notebook with me now...
 
 }
-choice("Continue", B2-Ch04a-Backpack, v_current_scene = B2-Ch04a-Backpack) if (v_b2_ch2_heard == 1 && v_b2_ch4_inform2 == 1 || v_b2_ch2_heard == 1 && v_b2_ch4_inform3 == 1 || v_b2_ch2_heard == 1 && v_b2_ch4_inform2 == 0 && v_b2_ch4_inform3 == 0 || v_b2_ch2_heard == 0)
+choice("Continue", B2-Ch04a-Backpack, v_current_scene = B2-Ch04a-Backpack)
 
 
 ID: B2-Ch04a-Backpack
@@ -1104,7 +1104,7 @@ Hold on, I also have another choice! I could send Leila to go read my notebook, 
 choice("Stay here and watch the fights.", B2-Ch04a-Remain, v_current_scene = B2-Ch04a-Remain, v_b2_ch4_backpack = 1)
 choice("Go read the notebook.", B2-Ch04a-Read, v_current_scene = B2-Ch04a-Read, v_b2_ch4_backpack = 2)
 choice("Send Leila to bring me the notebook pages.", B2-Ch04a-Remain, v_current_scene = B2-Ch04a-Remain, v_b2_ch4_backpack = 3) if (v_ch6_secure == 0)
-choice("Stay here and watch the fights.", B2-Ch04a-Remain, v_ac_b2_ch4_risk = 1, v_current_scene = B2-Ch04a-Remain, v_b2_ch4_backpack = 1) if (v_b2_ch2_heard == 1 && v_ch6_secure == 0 || v_b2_ch2_heard == 1 && v_ch6_secure == 1)
+choice("Stay here and watch the fights.", B2-Ch04a-Remain, v_ac_b2_ch4_risk = 1, v_current_scene = B2-Ch04a-Remain, v_b2_ch4_backpack = 1) if (v_b2_ch2_heard == 1)
 
 
 ID: B2-Ch04a-Read
@@ -1634,7 +1634,7 @@ While Daren was busy with the cobras, the other gladiators had somehow managed t
 Great. Our fight didn't even start yet, and our team is already falling apart. I should have known from the beginning that these people couldn't be trusted.
 
 }
-choice("Continue", B2-Ch04a-Silence, v_current_scene = B2-Ch04a-Silence) if (v_b2_ch4_inform2 == 0 && v_b2_ch4_inform3 == 0 || v_b2_ch4_inform2 == 1 || v_b2_ch4_inform3 == 1)
+choice("Continue", B2-Ch04a-Silence, v_current_scene = B2-Ch04a-Silence)
 
 
 ID: B2-Ch04a-Silence

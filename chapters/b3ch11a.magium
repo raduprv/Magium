@@ -1115,7 +1115,7 @@ When we reached the entrance of the tunnel, we came upon Daren, Melindra, Flower
 As soon as Meridith figures out what happened, she explains the situation to the guard, and he lets them go, so that they can come with us towards the Magium node again.
 
 }
-choice("Continue", B3-Ch11a-Entrusted, v_current_scene = B3-Ch11a-Entrusted) if (v_b3_ch11_path == 0 && v_b3_ch11_reverse == 0 || v_b3_ch11_path == 1 || v_b3_ch11_reverse == 1)
+choice("Continue", B3-Ch11a-Entrusted, v_current_scene = B3-Ch11a-Entrusted)
 
 
 ID: B3-Ch11a-Entrusted
@@ -1951,7 +1951,7 @@ When she saw Eiden, Diane was already beginning to charge up her electric powers
 "Oh," Eiden says, in a very disappointed tone. "I see..."
 
 }
-choice("Continue", B3-Ch11a-Continent, v_current_scene = B3-Ch11a-Continent) if (v_b2_ch8_energizer == 1 && v_b3_ch10_benefits == 1 || v_b2_ch8_energizer == 0 || v_b3_ch10_benefits == 0)
+choice("Continue", B3-Ch11a-Continent, v_current_scene = B3-Ch11a-Continent) if (v_b2_ch8_energizer == 0 || v_b2_ch8_energizer == 1 || v_b3_ch10_benefits == 0)
 
 
 ID: B3-Ch11a-Continent

@@ -160,7 +160,7 @@ As I put down the bottle, I suddenly realize that I may have went a little overb
 "After I lost my sage title, you mean?" Nolderan says. "You can say it out loud, boy. It's not like I'm going to sulk. It's been fourteen years since then. I've moved on by now. Sure, I haven't really been competing as much, since then, but this time it's different. This Magium tournament has given me an opportunity of a lifetime, so I couldn't just ignore it."
 
 }
-choice("Continue", B2-Ch10a-Undefeated, v_current_scene = B2-Ch10a-Undefeated) if (v_b2_ch10_toast == 1 && v_b2_ch9_drink == 0 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 || v_b2_ch10_toast == 0)
+choice("Continue", B2-Ch10a-Undefeated, v_current_scene = B2-Ch10a-Undefeated)
 
 
 ID: B2-Ch10a-Undefeated
@@ -520,10 +520,10 @@ As Daren was finishing his sentence, a very large blue circle appeared on the gr
 "Get out of the summoning circle!" Daren shouts. "Get out, now!"
 
 }
-choice("Continue", B2-Ch10a-Mammoth, v_current_scene = B2-Ch10a-Mammoth) if (v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 || v_b2_ch10_toast == 0 || v_b2_ch9_drink == 0 || v_is_dead == 0)
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_b2_ch10_toast == 0 && v_reflexes < 1 || v_b2_ch9_drink == 0 && v_reflexes < 1 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_reflexes < 2)
-choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b2_ch10_toast == 0 && v_reflexes < 1 || v_b2_ch9_drink == 0 && v_reflexes < 1 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_reflexes < 2)
-choice("Load game", , , special:saves) if (v_b2_ch10_toast == 0 && v_reflexes < 1 || v_b2_ch9_drink == 0 && v_reflexes < 1 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_reflexes < 2)
+choice("Continue", B2-Ch10a-Mammoth, v_current_scene = B2-Ch10a-Mammoth)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_b2_ch10_toast == 0 && v_reflexes < 1 || v_b2_ch9_drink == 0 && v_reflexes < 1 || v_reflexes < 1 && v_reflexes < 2 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_reflexes < 2)
+choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b2_ch10_toast == 0 && v_reflexes < 1 || v_b2_ch9_drink == 0 && v_reflexes < 1 || v_reflexes < 1 && v_reflexes < 2 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_reflexes < 2)
+choice("Load game", , , special:saves) if (v_b2_ch10_toast == 0 && v_reflexes < 1 || v_b2_ch9_drink == 0 && v_reflexes < 1 || v_reflexes < 1 && v_reflexes < 2 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_reflexes < 2)
 
 
 ID: B2-Ch10a-Mammoth
@@ -678,9 +678,9 @@ I try to do as many moves as possible, so I can properly understand what causes 
 As I look up, I suddenly notice that two of the wyvern riders are currently diving down towards me, with their spears at the ready, while Kate and Flower are too busy fighting their own wyverns to be able to help me in any way.
 
 }
-choice("Try to attack the wyverns", B2-Ch10a-Wyverns, v_current_scene = B2-Ch10a-Wyverns, v_b2_ch10_bribe = 0) if (v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 || v_b2_ch10_toast == 0 || v_b2_ch9_drink == 0)
-choice("Aim to kill the orc riders first", B2-Ch10a-Riders, v_current_scene = B2-Ch10a-Riders, v_b2_ch10_bribe = 1) if (v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 || v_b2_ch10_toast == 0 || v_b2_ch9_drink == 0)
-choice("Try to bribe the orcs into joining my side", B2-Ch10a-Bribe, v_current_scene = B2-Ch10a-Bribe, v_b2_ch10_bribe = 2) if (v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 || v_b2_ch10_toast == 0 || v_b2_ch9_drink == 0)
+choice("Try to attack the wyverns", B2-Ch10a-Wyverns, v_current_scene = B2-Ch10a-Wyverns, v_b2_ch10_bribe = 0)
+choice("Aim to kill the orc riders first", B2-Ch10a-Riders, v_current_scene = B2-Ch10a-Riders, v_b2_ch10_bribe = 1)
+choice("Try to bribe the orcs into joining my side", B2-Ch10a-Bribe, v_current_scene = B2-Ch10a-Bribe, v_b2_ch10_bribe = 2)
 
 
 ID: B2-Ch10a-Bribe
@@ -915,7 +915,7 @@ Apparently, Hadrik has turned himself into a giant snail... And he's just crawli
 
 }
 choice("Continue", B2-Ch10a-Breed, v_current_scene = B2-Ch10a-Breed) if (v_b2_ch10_toast == 0 || v_b2_ch9_drink == 0)
-choice("Continue", B2-Ch10a-Drunk, v_current_scene = B2-Ch10a-Drunk) if (v_b2_ch10_toast == 1 && v_b2_ch10_weakpoint == 0 && v_b2_ch9_drink == 1 || v_b2_ch10_toast == 1 && v_b2_ch10_weakpoint == 1 && v_b2_ch9_drink == 1)
+choice("Continue", B2-Ch10a-Drunk, v_current_scene = B2-Ch10a-Drunk) if (v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1)
 
 
 ID: B2-Ch10a-Drunk
@@ -1034,10 +1034,10 @@ The mammoth finally manages to pull itself away from Hadrik's grip, and it quick
 I pull my dagger out and I manage to get out of the trunk's way just in time. The mammoth tries to attack me again, but it stops, and it begins to make loud noises, trying to gasp for air, as the damage I did to its airways finally starts to have a visible effect. After about ten more seconds of the creature desperately trying to breathe, its gasps for air start to get faster and shorter, until they eventually stop, and the mammoth falls completely silent, as it slowly crashes to the ground, causing a small earth tremor due to the enormous size of its body.
 
 }
-choice("Restart game", Ch1-Intro1, , special:restart) if (v_b2_ch10_weakpoint == 0 && v_strength < 4 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 && v_reflexes < 2)
-choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b2_ch10_weakpoint == 0 && v_strength < 4 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 && v_reflexes < 2)
-choice("Load game", , , special:saves) if (v_b2_ch10_weakpoint == 0 && v_strength < 4 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 && v_reflexes < 2)
-choice("Continue", B2-Ch10a-Arena, v_current_scene = B2-Ch10a-Arena) if (v_b2_ch10_weakpoint == 0 && v_strength == 4 || v_b2_ch10_weakpoint == 1 && v_reflexes >= 2 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar != 0)
+choice("Restart game", Ch1-Intro1, , special:restart) if (v_b2_ch10_weakpoint == 0 && v_strength < 4 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 && v_reflexes < 2 || v_b2_ch5_scimitar == 0 && v_reflexes < 2 && v_strength < 4)
+choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b2_ch10_weakpoint == 0 && v_strength < 4 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 && v_reflexes < 2 || v_b2_ch5_scimitar == 0 && v_reflexes < 2 && v_strength < 4)
+choice("Load game", , , special:saves) if (v_b2_ch10_weakpoint == 0 && v_strength < 4 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 && v_reflexes < 2 || v_b2_ch5_scimitar == 0 && v_reflexes < 2 && v_strength < 4)
+choice("Continue", B2-Ch10a-Arena, v_current_scene = B2-Ch10a-Arena) if (v_b2_ch10_weakpoint == 0 && v_strength == 4 || v_b2_ch10_weakpoint == 1 && v_reflexes >= 2 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar != 0 || v_strength == 4 && v_reflexes >= 2 || v_strength == 4 && v_b2_ch5_scimitar != 0)
 
 
 ID: B2-Ch10a-Arena

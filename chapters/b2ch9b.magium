@@ -713,7 +713,7 @@ After I finish my sentence, there is a long pause, during which none of us says 
 "So, uh..." Hadrik says, trying to change the subject. "How are things going in Thilias?"
 
 }
-choice("Continue", B2-Ch09b-Thilias, v_current_scene = B2-Ch09b-Thilias) if (v_b2_ch9_weavers == 0 && v_ch11_romance_rose == 0 || v_b2_ch9_weavers == 0 && v_ch11_romance_rose == 1 || v_b2_ch9_weavers == 1 && v_ch11_romance_rose == 0 || v_b2_ch9_weavers == 1 && v_ch11_romance_rose == 1)
+choice("Continue", B2-Ch09b-Thilias, v_current_scene = B2-Ch09b-Thilias)
 
 
 ID: B2-Ch09b-Weaver
@@ -956,8 +956,8 @@ So, the question here is... Did he place down a good card? Or a bad card?
 So, the question here is... Did he place down a good card? Or a bad card?
 
 }
-choice("Tell him to turn his card face up", B2-Ch09b-Conversation, v_current_scene = B2-Ch09b-Conversation, v_b2_ch9_flip = 1) if (v_b2_ch8_energizer == 1 && v_b2_ch9_amused == 0 || v_b2_ch8_energizer == 0 || v_b2_ch8_energizer == 2 || v_b2_ch8_energizer == 3 || v_b2_ch9_amused == 1)
-choice("Let the round continue normally", B2-Ch09b-Conversation, v_current_scene = B2-Ch09b-Conversation, v_b2_ch9_flip = 0) if (v_b2_ch8_energizer == 1 && v_b2_ch9_amused == 0 || v_b2_ch8_energizer == 0 || v_b2_ch8_energizer == 2 || v_b2_ch8_energizer == 3 || v_b2_ch9_amused == 1)
+choice("Tell him to turn his card face up", B2-Ch09b-Conversation, v_current_scene = B2-Ch09b-Conversation, v_b2_ch9_flip = 1)
+choice("Let the round continue normally", B2-Ch09b-Conversation, v_current_scene = B2-Ch09b-Conversation, v_b2_ch9_flip = 0)
 
 
 ID: B2-Ch09b-Conversation
@@ -1037,7 +1037,7 @@ As I finish talking, I take a look towards the cards that I have on the ground, 
 "Congratulations on winning the round, Barry!" Hadrik says, as I can see the sun slowly rising behind him. "Now, I think we should be taking a bit of a break, in order to greet our new guest properly. He will be reaching us shortly."
 
 }
-choice("Continue", B2-Ch09b-Ending, v_current_scene = B2-Ch09b-Ending) if (v_b2_ch9_drink == 0 && v_b2_ch9_flip == 0 || v_b2_ch9_drink == 0 && v_b2_ch9_flip == 1 || v_b2_ch9_drink == 1 && v_b2_ch9_flip == 0 || v_b2_ch9_drink == 1 && v_b2_ch9_flip == 1)
+choice("Continue", B2-Ch09b-Ending, v_current_scene = B2-Ch09b-Ending)
 
 
 ID: B2-Ch09b-Ending

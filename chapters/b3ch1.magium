@@ -800,8 +800,8 @@ Leila nods.
 "I was surprised that more people didn't feel the need to talk about it," Leila writes. "I would have thought that most people would want to discuss these things with friends, instead of trying to pretend that nothing happened..."
 
 }
-choice("Continue", B3-Ch01a-Mechanisms, v_current_scene = B3-Ch01a-Mechanisms) if (v_b3_ch1_kate3 == 0 && v_b3_ch1_unlock == 1 || v_b3_ch1_kate3 == 0 && v_b3_ch1_unlock == 2 || v_b3_ch1_kate3 == 1 && v_b3_ch1_unlock == 1 || v_b3_ch1_kate3 == 1 && v_b3_ch1_unlock == 2)
-choice("Continue", B3-Ch01a-Complicated, v_current_scene = B3-Ch01a-Complicated) if (v_b3_ch1_kate3 == 0 && v_b3_ch1_unlock == 0 || v_b3_ch1_kate3 == 1 && v_b3_ch1_unlock == 0)
+choice("Continue", B3-Ch01a-Mechanisms, v_current_scene = B3-Ch01a-Mechanisms) if (v_b3_ch1_unlock == 1 || v_b3_ch1_unlock == 2)
+choice("Continue", B3-Ch01a-Complicated, v_current_scene = B3-Ch01a-Complicated) if (v_b3_ch1_unlock == 0)
 
 
 ID: B3-Ch01a-Mechanisms

@@ -153,8 +153,8 @@ As Daren shakes his arm up and down, trying to make the sword fall off his hand,
 "Umm... don't you guys think we should get moving?" Flower says. "We're not that far from the teleporter, and we've just been standing around ever since Daren began to test his new techniques..."
 
 }
-choice("Continue", B3-Ch06a-Medicinal, v_current_scene = B3-Ch06a-Medicinal) if (v_b3_ch6_manipulators == 0 && v_ch11_saved_rose == 1 || v_b3_ch6_manipulators == 1 && v_ch11_saved_rose == 1 || v_b3_ch6_manipulators == 2 && v_ch11_saved_rose == 1)
-choice("Continue", B3-Ch06a-Merchandise, v_current_scene = B3-Ch06a-Merchandise) if (v_b3_ch6_manipulators == 0 && v_ch11_saved_rose == 0 || v_b3_ch6_manipulators == 1 && v_ch11_saved_rose == 0 || v_b3_ch6_manipulators == 2 && v_ch11_saved_rose == 0)
+choice("Continue", B3-Ch06a-Medicinal, v_current_scene = B3-Ch06a-Medicinal) if (v_ch11_saved_rose == 1)
+choice("Continue", B3-Ch06a-Merchandise, v_current_scene = B3-Ch06a-Merchandise) if (v_ch11_saved_rose == 0)
 
 
 ID: B3-Ch06a-Medicinal
@@ -1032,8 +1032,8 @@ Once he starts climbing towards the surface, he bids us farewell and then he kee
 "Great," Daren says. "Well, now that everything is settled with Loyrang, we'd like to purchase a few herbs, if you don't mind."
 
 }
-choice("Continue", B3-Ch06a-Destroyed, v_current_scene = B3-Ch06a-Destroyed) if (v_b3_ch6_tie == 0 && v_b3_ch6_password != 3 || v_b3_ch6_tie == 1 && v_b3_ch6_password != 3)
-choice("Continue", B3-Ch06a-Bluffed, v_current_scene = B3-Ch06a-Bluffed) if (v_b3_ch6_password == 3 && v_b3_ch6_tie == 0 || v_b3_ch6_password == 3 && v_b3_ch6_tie == 1)
+choice("Continue", B3-Ch06a-Destroyed, v_current_scene = B3-Ch06a-Destroyed) if (v_b3_ch6_password != 3)
+choice("Continue", B3-Ch06a-Bluffed, v_current_scene = B3-Ch06a-Bluffed) if (v_b3_ch6_password == 3)
 
 
 ID: B3-Ch06a-Destroyed

@@ -97,8 +97,8 @@ TEXT:
 "It depends on the nature of the item," the servant says. "Without knowing what item in particular you are referring to, I cannot give you a definitive answer to your question."
 
 }
-choice("Tell him about the stat device.", B2-Ch02a-Tell-servant, v_current_scene = B2-Ch02a-Tell-servant, v_b2_ch2_tell_servant = 1) if (v_ch11_romance_rose == 0 && v_ch11_saved_rose == 1 || v_ch11_romance_rose == 1 && v_ch11_saved_rose == 1 || v_ch11_saved_rose == 0)
-choice("Don't tell him about the stat device.", B2-Ch02a-Tell-servant, v_current_scene = B2-Ch02a-Tell-servant, v_b2_ch2_tell_servant = 0) if (v_ch11_romance_rose == 0 && v_ch11_saved_rose == 1 || v_ch11_romance_rose == 1 && v_ch11_saved_rose == 1 || v_ch11_saved_rose == 0)
+choice("Tell him about the stat device.", B2-Ch02a-Tell-servant, v_current_scene = B2-Ch02a-Tell-servant, v_b2_ch2_tell_servant = 1)
+choice("Don't tell him about the stat device.", B2-Ch02a-Tell-servant, v_current_scene = B2-Ch02a-Tell-servant, v_b2_ch2_tell_servant = 0)
 
 
 ID: B2-Ch02a-Tell-servant
@@ -194,7 +194,7 @@ Once he found the shop, Daren went in, and he didn't come out until exactly half
  During this time, I used my transceiver to contact Rose, and to tell her that we wouldn't make it home in time for dinner tonight. She was shocked at first, but after she heard the whole story, she was relieved that we were at least given a chance to free ourselves. She then promised me that she will be there, in the audience, to cheer for us when the time comes.
 
 }
-choice("Continue", B2-Ch02a-Gems, v_current_scene = B2-Ch02a-Gems) if (v_b2_ch2_tell_servant == 0 && v_ch11_saved_rose == 0 || v_b2_ch2_tell_servant == 0 && v_ch11_saved_rose == 1 || v_b2_ch2_tell_servant == 1 && v_ch11_saved_rose == 0 || v_b2_ch2_tell_servant == 1 && v_ch11_saved_rose == 1)
+choice("Continue", B2-Ch02a-Gems, v_current_scene = B2-Ch02a-Gems)
 
 
 ID: B2-Ch02a-Gems
@@ -808,7 +808,7 @@ He then turns to leave.
 "Of course," I say.
 
 }
-choice("Continue", B2-Ch02a-Princess, v_current_scene = B2-Ch02a-Princess) if (v_b2_ch2_fist == 1 && v_b2_ch2_threatened == 0 || v_b2_ch2_fist == 1 && v_b2_ch2_threatened == 1 || v_b2_ch2_fist == 1 && v_b2_ch2_threatened == 2 || v_b2_ch2_fist == 2 && v_b2_ch2_threatened == 0 || v_b2_ch2_fist == 2 && v_b2_ch2_threatened == 1 || v_b2_ch2_fist == 2 && v_b2_ch2_threatened == 2 || v_b2_ch2_fist == 3 || v_b2_ch2_fist == 4 || v_b2_ch2_fist == 5)
+choice("Continue", B2-Ch02a-Princess, v_current_scene = B2-Ch02a-Princess)
 
 
 ID: B2-Ch02a-Princess
@@ -1264,8 +1264,8 @@ There's no way I could agree to take this deal after I already convinced everyon
 }
 choice("Lie to the lessathi about accepting the deal and betray them later.", B2-Ch02a-Deal-conclusion, v_current_scene = B2-Ch02a-Deal-conclusion, v_b2_ch2_deal = 1)
 choice("Accept the lessathi's offer", B2-Ch02a-Deal-conclusion, v_ac_b2_ch2_easy = 1, v_current_scene = B2-Ch02a-Deal-conclusion, v_b2_ch2_deal = 3) if (v_b2_ch1_interfere == 0)
-choice("Refuse the lessathi's offer", B2-Ch02a-Deal-conclusion, v_current_scene = B2-Ch02a-Deal-conclusion, v_b2_ch2_deal = 1) if (v_b2_ch1_interfere == 0 && v_b2_ch2_tell_servant == 1 || v_b2_ch1_interfere == 1 && v_b2_ch2_tell_servant == 1)
-choice("Refuse the lessathi's offer", B2-Ch02a-Deal-conclusion, v_current_scene = B2-Ch02a-Deal-conclusion, v_b2_ch2_deal = 2) if (v_b2_ch1_interfere == 0 && v_b2_ch2_tell_servant == 0 || v_b2_ch1_interfere == 1 && v_b2_ch2_tell_servant == 0)
+choice("Refuse the lessathi's offer", B2-Ch02a-Deal-conclusion, v_current_scene = B2-Ch02a-Deal-conclusion, v_b2_ch2_deal = 1) if (v_b2_ch2_tell_servant == 1)
+choice("Refuse the lessathi's offer", B2-Ch02a-Deal-conclusion, v_current_scene = B2-Ch02a-Deal-conclusion, v_b2_ch2_deal = 2) if (v_b2_ch2_tell_servant == 0)
 
 
 ID: B2-Ch02a-Refuse-threat

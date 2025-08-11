@@ -50,9 +50,9 @@ As we stand guard, we start discussing about the tournament, and its organizatio
 "But even so, if their goal is to get their hands on a powerful mage, why have they still not announced the objectives? Wouldn't it be in their best interest to get this tournament finished as quickly as possible?"
 
 }
-choice(""Maybe there are no objectives."", Ch4-Intro2, v_current_scene = Ch4-Intro2, v_checkpoint_rich = 0, v_ch4_objectives = 1) if (v_ch3_bloodied == 0 && v_ch3_kate_badly_hurt == 0 || v_ch3_bloodied == 1 && v_ch3_kate_badly_hurt == 0 || v_ch3_kate_badly_hurt == 1)
-choice(""Maybe they encountered some unexpected technical difficulties."", Ch4-Intro2, v_current_scene = Ch4-Intro2, v_checkpoint_rich = 0, v_ch4_objectives = 2) if (v_ch3_bloodied == 0 && v_ch3_kate_badly_hurt == 0 || v_ch3_bloodied == 1 && v_ch3_kate_badly_hurt == 0 || v_ch3_kate_badly_hurt == 1)
-choice(""Maybe they're waiting for our numbers to decrease."", Ch4-Intro2, v_current_scene = Ch4-Intro2, v_checkpoint_rich = 0, v_ch4_objectives = 3) if (v_ch3_bloodied == 0 && v_ch3_kate_badly_hurt == 0 || v_ch3_bloodied == 1 && v_ch3_kate_badly_hurt == 0 || v_ch3_kate_badly_hurt == 1)
+choice(""Maybe there are no objectives."", Ch4-Intro2, v_current_scene = Ch4-Intro2, v_checkpoint_rich = 0, v_ch4_objectives = 1)
+choice(""Maybe they encountered some unexpected technical difficulties."", Ch4-Intro2, v_current_scene = Ch4-Intro2, v_checkpoint_rich = 0, v_ch4_objectives = 2)
+choice(""Maybe they're waiting for our numbers to decrease."", Ch4-Intro2, v_current_scene = Ch4-Intro2, v_checkpoint_rich = 0, v_ch4_objectives = 3)
 
 
 ID: Ch4-Intro2
@@ -584,7 +584,7 @@ I can't risk calling for Kate to help given her current condition. It's going to
 }
 choice("Try to persuade Daren to agree with Kate", Ch4-Persuade, v_current_scene = Ch4-Persuade) if (v_ch3_bloodied == 0 && v_ch3_kate_badly_hurt == 0)
 choice("Agree with Daren", Ch4-Agree, v_current_scene = Ch4-Agree) if (v_ch3_bloodied == 0 && v_ch3_kate_badly_hurt == 0)
-choice("Continue", Ch4-Strategy, v_current_scene = Ch4-Strategy) if (v_ch3_bloodied == 1 && v_ch3_kate_badly_hurt == 0 || v_ch3_kate_badly_hurt == 1)
+choice("Continue", Ch4-Strategy, v_current_scene = Ch4-Strategy) if (v_ch3_bloodied == 1 || v_ch3_kate_badly_hurt == 1)
 
 
 ID: Ch4-Persuade

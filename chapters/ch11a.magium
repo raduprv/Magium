@@ -641,9 +641,9 @@ Eiden smiles widely.
 "Unless of course, you only plan on saving the ones that cross your path, so you can pat yourself on the back, and pretend that you made a difference."
 
 }
-choice(""Yes, I'm going to save them all."", Ch11a-Difference, v_current_scene = Ch11a-Difference, v_ch11_difference = 1) if (v_ch11_kill_noble == 0 && v_ch11_saved_slave == 1 || v_ch11_kill_noble == 0 && v_ch11_saved_slave == 2 || v_ch11_kill_noble == 1)
-choice(""Do I look like a mage to you? Why don't you save them all if you care so much?"", Ch11a-Difference, v_current_scene = Ch11a-Difference, v_ch11_difference = 2) if (v_ch11_kill_noble == 0 && v_ch11_saved_slave == 1 || v_ch11_kill_noble == 0 && v_ch11_saved_slave == 2 || v_ch11_kill_noble == 1)
-choice(""Should I just ignore everyone who needs help because I can't save the whole world?"", Ch11a-Difference, v_current_scene = Ch11a-Difference, v_ch11_difference = 3) if (v_ch11_kill_noble == 0 && v_ch11_saved_slave == 1 || v_ch11_kill_noble == 0 && v_ch11_saved_slave == 2 || v_ch11_kill_noble == 1)
+choice(""Yes, I'm going to save them all."", Ch11a-Difference, v_current_scene = Ch11a-Difference, v_ch11_difference = 1) if (v_ch11_kill_noble == 1 || v_ch11_saved_slave == 1 || v_ch11_saved_slave == 2)
+choice(""Do I look like a mage to you? Why don't you save them all if you care so much?"", Ch11a-Difference, v_current_scene = Ch11a-Difference, v_ch11_difference = 2) if (v_ch11_kill_noble == 1 || v_ch11_saved_slave == 1 || v_ch11_saved_slave == 2)
+choice(""Should I just ignore everyone who needs help because I can't save the whole world?"", Ch11a-Difference, v_current_scene = Ch11a-Difference, v_ch11_difference = 3) if (v_ch11_kill_noble == 1 || v_ch11_saved_slave == 1 || v_ch11_saved_slave == 2)
 
 
 ID: Ch11a-Difference
@@ -986,8 +986,8 @@ She then turns to us.
 "I'll be right back!" Rose says, and then she goes with Daren and her siblings inside the mansion.
 
 }
-choice("Continue", Ch11a-Prevented, v_current_scene = Ch11a-Prevented) if (v_ch11_saved_slave == 3 && v_ch11_toy == 0 || v_ch11_saved_slave == 3 && v_ch11_toy == 1)
-choice("Continue", Ch11a-Task, v_current_scene = Ch11a-Task) if (v_ch11_toy == 0 && v_ch11_saved_slave != 3 || v_ch11_toy == 1 && v_ch11_saved_slave != 3)
+choice("Continue", Ch11a-Prevented, v_current_scene = Ch11a-Prevented) if (v_ch11_saved_slave == 3)
+choice("Continue", Ch11a-Task, v_current_scene = Ch11a-Task) if (v_ch11_saved_slave != 3)
 
 
 ID: Ch11a-Prevented

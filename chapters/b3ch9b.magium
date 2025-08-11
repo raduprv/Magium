@@ -270,7 +270,7 @@ Shortly after their talk, I hear the sound of their bodies vibrating loudly as t
 Shortly after their talk, I hear the sound of their bodies vibrating loudly as they are teleporting away, and then there is only silence for a while. The silence doesn't last for long, however, because it soon gets replaced with the sound of Flower shouting in my ear, while she is shaking me violently. 
 
 }
-choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1) if (v_b3_ch9_assassinate == 0 && v_b3_ch9_backup == 0 || v_b3_ch9_assassinate == 1 && v_b3_ch9_backup == 0)
+choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1) if (v_b3_ch9_backup == 0)
 choice("Continue", B3-Ch09b-Invent, v_current_scene = B3-Ch09b-Invent) if (v_b3_ch9_backup == 1)
 
 
@@ -1237,7 +1237,7 @@ Shortly after their talk, I hear the sound of their bodies vibrating loudly as t
 Shortly after their talk, I hear the sound of their bodies vibrating loudly as they are teleporting away, and then there is only silence for a while. The silence doesn't last for long, however, because it soon gets replaced with the sound of Flower shouting in my ear, while she is shaking me violently. 
 
 }
-choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1) if (v_b3_ch9_assassinate == 0 && v_aura_hardening < 4 || v_b3_ch9_assassinate == 1 && v_aura_hardening < 4)
+choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1) if (v_aura_hardening < 4)
 choice("Continue", B3-Ch09b-Illusory, v_current_scene = B3-Ch09b-Illusory) if (v_aura_hardening >= 4)
 
 
@@ -1362,9 +1362,9 @@ Shortly after their talk, I hear the sound of their bodies vibrating loudly as t
 Shortly after their talk, I hear the sound of their bodies vibrating loudly as they are teleporting away, and then there is only silence for a while. The silence doesn't last for long, however, because it soon gets replaced with the sound of Flower shouting in my ear, while she is shaking me violently. 
 
 }
-choice("Kill Peter and the king of the underground.", B3-Ch09b-Kill, v_current_scene = B3-Ch09b-Kill, v_b3_ch9_enemies = 1) if (v_b3_ch9_backup == 0 && v_toughness >= 4 || v_b3_ch9_backup == 1)
-choice("Spare their lives.", B3-Ch09b-Cube, v_current_scene = B3-Ch09b-Cube, v_b3_ch9_enemies = 0) if (v_b3_ch9_backup == 0 && v_toughness >= 4 || v_b3_ch9_backup == 1)
-choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1) if (v_b3_ch9_assassinate == 0 && v_b3_ch9_backup == 0 && v_toughness < 4 || v_b3_ch9_assassinate == 1 && v_b3_ch9_backup == 0 && v_toughness < 4)
+choice("Kill Peter and the king of the underground.", B3-Ch09b-Kill, v_current_scene = B3-Ch09b-Kill, v_b3_ch9_enemies = 1) if (v_b3_ch9_backup == 1 || v_toughness >= 4)
+choice("Spare their lives.", B3-Ch09b-Cube, v_current_scene = B3-Ch09b-Cube, v_b3_ch9_enemies = 0) if (v_b3_ch9_backup == 1 || v_toughness >= 4)
+choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1) if (v_b3_ch9_backup == 0 && v_toughness < 4)
 
 
 ID: B3-Ch09b-Kill

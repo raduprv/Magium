@@ -323,13 +323,14 @@ class Scene:
             group = list(group)
             new_response = deepcopy(group[0])
             cond_vars = set(itertools.chain.from_iterable([response.conditions.keys() for response in group]))
-            new_response.conditions = sp.simplify_logic(sp.Or(*[sp.And(*response.conditions.values()) for response in group]),form="dnf")
+            new_response.conditions = sp.simplify_logic(sp.Or(*[sp.And(*response.conditions.values()) for response in group]),form="cnf")
             for var in cond_vars:
                 try:
                     new_response.conditions = new_response.conditions.subs(sp.Or(*[sp.Eq(sp.symbols(var),int(possible_value)) for possible_value in var_possible_values[var]]),True)
                 except:
                     print(var,var_possible_values[var])
                     continue
+            new_response.conditions = sp.simplify_logic(new_response.conditions,form="dnf")
             new_responses.append(new_response)
         return new_responses
 

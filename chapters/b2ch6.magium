@@ -1061,7 +1061,7 @@ I look around the ranged weapons section one more time to see if there aren't an
 
 }
 choice("Buy the cheaper crossbow", B2-Ch06a-Elixir, v_current_scene = B2-Ch06a-Elixir, v_b2_ch6_crossbow = 0)
-choice("Buy the expensive crossbow ", B2-Ch06a-Elixir, v_current_scene = B2-Ch06a-Elixir, v_b2_ch6_crossbow = 1) if (v_b2_ch5_scimitar == 2 && v_ch10_gems == 0 || v_ch10_gems == 1 || v_ch3_treasure != 0)
+choice("Buy the expensive crossbow ", B2-Ch06a-Elixir, v_current_scene = B2-Ch06a-Elixir, v_b2_ch6_crossbow = 1) if (v_b2_ch5_scimitar == 2 || v_ch10_gems == 1 || v_ch3_treasure != 0)
 choice("Buy the expensive crossbow ", B2-Ch06a-Elixir, v_ac_b2_ch6_edge = 1, v_current_scene = B2-Ch06a-Elixir, v_b2_ch6_crossbow = 1) if (v_ch10_gems == 0 && v_ch3_treasure == 0 && v_b2_ch5_scimitar != 2)
 
 
@@ -1485,4 +1485,4 @@ Tap the button below to proceed.
 Tap the button below to proceed.
 
 }
-choice("Go to next chapter", B2-Ch07a-Intro, v_next_chapter_crash = 1, v_current_scene = B2-Ch07a-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, special:checkpoint_save) if (v_b2_ch1_interfere == 0 && v_second_book_purchased == 0 || v_b2_ch1_interfere == 0 && v_second_book_purchased == 1 || v_b2_ch1_interfere == 1 && v_second_book_purchased == 0 || v_b2_ch1_interfere == 1 && v_second_book_purchased == 1)
+choice("Go to next chapter", B2-Ch07a-Intro, v_next_chapter_crash = 1, v_current_scene = B2-Ch07a-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, special:checkpoint_save) if (v_second_book_purchased == 0 || v_second_book_purchased == 1)
