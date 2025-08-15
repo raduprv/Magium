@@ -325,16 +325,25 @@ class Scene:
             new_response = deepcopy(group[0])
             new_response.conditions = sp.simplify_logic(sp.Or(*[sp.And(*response.conditions.values()) for response in group]),form="cnf")
 
+            initial_conditions = sp.simplify_logic(new_response.conditions,form="dnf")
+
             cond_vars = set(itertools.chain.from_iterable([response.conditions.keys() for response in group]))
             cond_vars = {var for var in cond_vars if var not in STATS_VARIABLE_NAMES}
             for var in cond_vars:
                 tautological_cond = sp.Or(*[sp.Eq(sp.symbols(var),int(possible_value)) for possible_value in var_possible_values[var]])
                 try:
-                    new_response.conditions = new_response.conditions.subs(tautological_cond,True)
+                    #new_response.conditions = new_response.conditions.subs(tautological_cond,True)
+                    new_response.conditions = sp.simplify_logic(new_response.conditions,dontcare=~tautological_cond)
                 except:
                     print(var,var_possible_values[var])
                     continue
+            # print("Simplified")
+            # print(new_response.conditions)
             new_response.conditions = sp.simplify_logic(new_response.conditions,form="dnf")
+            # print("Initial",initial_conditions)
+            if len(str(initial_conditions)) < len(str(new_response.conditions)):
+                new_response.conditions = initial_conditions
+            # print(new_response.conditions)
             new_responses.append(new_response)
             
         # We can remove the conditions if all the responses have the same conditions
@@ -445,7 +454,7 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
-# chapters = ["ch1","ch2"]
+# chapters = ["b3ch9c"]
 verbose = False
 var_possible_values = defaultdict(set)
 for chapter in chapters:
