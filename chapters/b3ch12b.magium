@@ -97,7 +97,7 @@ We both continue flying until we are directly above them, and we position oursel
 "Agreed," Illuna says. "We've already seen everything that could be seen from this distance. There is no point in staying here any longer."
 
 }
-choice("Continue", B3-Ch12b-Necromancers, v_current_scene = B3-Ch12b-Necromancers) if (v_b3_ch11_red == 0 || v_b3_ch11_red == 1 || v_perception == 2 || v_perception >= 3 || v_perception < 2)
+choice("Continue", B3-Ch12b-Necromancers, v_current_scene = B3-Ch12b-Necromancers)
 
 
 ID: B3-Ch12b-Necromancers
@@ -201,7 +201,7 @@ After hearing what Daren had to say, all three of the necromancers begin to laug
 "What?..." Daren asks, confused. "Why?... What business could you possibly have with Flower?"
 
 }
-choice("Continue", B3-Ch12b-Hostage, v_current_scene = B3-Ch12b-Hostage) if (v_b3_ch12_scout == 0 || v_b3_ch12_scout == 1 || v_b3_ch12_scout == 2 || v_b3_ch12_scout == 3)
+choice("Continue", B3-Ch12b-Hostage, v_current_scene = B3-Ch12b-Hostage)
 
 
 ID: B3-Ch12b-Hostage
@@ -255,7 +255,7 @@ TEXT:
 "You dare speak this way to me, you lunatic?!" the necromancer leader says. "After I was gracious enough to let you join us on this trip?"
 
 }
-choice("Continue", B3-Ch12b-Visions, v_current_scene = B3-Ch12b-Visions) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
+choice("Continue", B3-Ch12b-Visions, v_current_scene = B3-Ch12b-Visions)
 
 
 ID: B3-Ch12b-Visions
@@ -580,8 +580,8 @@ TEXT:
 "Music to my ears!" Arraka tells him.
 
 }
-choice("Continue", B3-Ch12b-Digging, v_current_scene = B3-Ch12b-Digging) if (v_b3_ch12_punches == 0 && v_b3_ch12_scout == 3 || v_b3_ch12_punches == 1 && v_b3_ch12_scout == 3 || v_b3_ch12_punches == 2 && v_b3_ch12_scout == 3)
-choice("Continue", B3-Ch12b-Detector, v_current_scene = B3-Ch12b-Detector) if (v_b3_ch12_punches == 0 && v_b3_ch12_scout != 3 || v_b3_ch12_punches == 1 && v_b3_ch12_scout != 3 || v_b3_ch12_punches == 2 && v_b3_ch12_scout != 3)
+choice("Continue", B3-Ch12b-Digging, v_current_scene = B3-Ch12b-Digging) if (v_b3_ch12_scout == 3)
+choice("Continue", B3-Ch12b-Detector, v_current_scene = B3-Ch12b-Detector) if (v_b3_ch12_scout != 3)
 
 
 ID: B3-Ch12b-Digging
@@ -663,7 +663,7 @@ Other than this, the rest of our trip to the golden fox's forest has been rather
 "Umm, yeah!" Flower says. "Just press on this button, right? Should be easy enough! Alright, here I go. Wish me luck!"
 
 }
-choice("Continue", B3-Ch12b-Pinecone, v_current_scene = B3-Ch12b-Pinecone) if (v_b3_ch12_hadrik == 0 || v_b3_ch12_hadrik == 1)
+choice("Continue", B3-Ch12b-Pinecone, v_current_scene = B3-Ch12b-Pinecone)
 
 
 ID: B3-Ch12b-Pinecone
@@ -781,8 +781,8 @@ She then laughs very nervously for about two seconds.
 "Huh..." says Hadrik, after Eleya teleports away from us. "I guess the fox really does have a soft spot for Flower. Who would have thought, eh?"
 
 }
-choice("Continue", B3-Ch12b-Wolf, v_current_scene = B3-Ch12b-Wolf) if (v_b2_ch9_animals == 2 && v_b3_ch12_hideous == 0 || v_b2_ch9_animals == 2 && v_b3_ch12_hideous == 1 || v_b2_ch9_animals == 2 && v_b3_ch12_hideous == 2)
-choice("Continue", B3-Ch12b-Dwellers, v_current_scene = B3-Ch12b-Dwellers) if (v_b3_ch12_hideous == 0 && v_b2_ch9_animals != 2 || v_b3_ch12_hideous == 1 && v_b2_ch9_animals != 2 || v_b3_ch12_hideous == 2 && v_b2_ch9_animals != 2)
+choice("Continue", B3-Ch12b-Wolf, v_current_scene = B3-Ch12b-Wolf) if (v_b2_ch9_animals == 2)
+choice("Continue", B3-Ch12b-Dwellers, v_current_scene = B3-Ch12b-Dwellers) if (v_b2_ch9_animals != 2)
 
 
 ID: B3-Ch12b-Wolf
@@ -973,7 +973,7 @@ As Eiden is talking, I can feel a drop of sweat sliding down my neck.
 "I honestly don't have a clue," Eiden says, while shrugging. "The idea never came to me to tell you not to inform Meridith about my ability to sense the lessathi from afar, so thinking about it logically, there may well have been some other important details that you've found out about me during the many discussions we've had in the past few weeks. Since I can't be bothered to remember every single conversation I've had with you, and I very much doubt that you can recall every discussion you've had with Diane about me either, the simplest solution to my quandary is to remove Diane from the equation completely. Wouldn't you agree?"
 
 }
-choice("Continue", B3-Ch12b-Eiden3, v_current_scene = B3-Ch12b-Eiden3) if (v_b3_ch12_hesitant == 0 || v_b3_ch12_hesitant == 1)
+choice("Continue", B3-Ch12b-Eiden3, v_current_scene = B3-Ch12b-Eiden3)
 
 
 ID: B3-Ch12b-Eiden3
@@ -1236,9 +1236,9 @@ The whole area around Eiden suddenly gets covered in fire, as Daren uses his shi
 Just as I thought I was safe, I can feel Eiden's invisible hand grabbing my head from above and exploding it into a thousand pieces, killing me in an instant.
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b3_ch11_red == 0 || v_b3_ch11_red == 1 || v_b3_ch12_scout != 0)
-choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch11_red == 0 || v_b3_ch11_red == 1 || v_b3_ch12_scout != 0)
-choice("Load game", , , special:saves) if (v_b3_ch11_red == 0 || v_b3_ch11_red == 1 || v_b3_ch12_scout != 0)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart)
+choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load)
+choice("Load game", , , special:saves)
 
 
 ID: B3-Ch12b-Allout1
@@ -1282,7 +1282,7 @@ It looks like in the short time that I haven't been paying attention to them, Ha
 The whole area around Eiden suddenly gets covered in fire, as Daren uses his shield to defend himself and Hadrik, while Illuna creates a large pillar of water in front of us to slow down the flames while we fly away.
 
 }
-choice("Continue", B3-Ch12b-Allout2, v_current_scene = B3-Ch12b-Allout2) if (v_b3_ch11_red == 0 || v_b3_ch11_red == 1 || v_b3_ch12_scout != 0)
+choice("Continue", B3-Ch12b-Allout2, v_current_scene = B3-Ch12b-Allout2)
 
 
 ID: B3-Ch12b-Allout2
@@ -1392,7 +1392,7 @@ He is clearly baiting me at the moment. The lightning spell I used just now show
 "Oh, yeah," I say, in a deadpan voice, "I'm shivering from all the excitement."
 
 }
-choice("Continue", B3-Ch12b-Together2, v_current_scene = B3-Ch12b-Together2) if (v_b3_ch11_red == 0 || v_b3_ch11_red == 1 || v_b3_ch12_scout != 0)
+choice("Continue", B3-Ch12b-Together2, v_current_scene = B3-Ch12b-Together2)
 
 
 ID: B3-Ch12b-Together2
@@ -1443,10 +1443,10 @@ This isn't going to work. If I keep letting him control the entire flow of the b
 choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b3_ch10_eiden == 0 && v_b3_ch12_hadrik == 0)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch10_eiden == 0 && v_b3_ch12_hadrik == 0)
 choice("Load game", , , special:saves) if (v_b3_ch10_eiden == 0 && v_b3_ch12_hadrik == 0)
-choice("Tell Eiden that there is a drunken flying orangutan wearing a party hat behind him.", B3-Ch12b-Orangutan, v_current_scene = B3-Ch12b-Orangutan, v_b3_ch12_eiden = 0) if (v_b3_ch11_transferred == 0 && v_b3_ch12_hadrik == 1 || v_b3_ch11_transferred == 1 && v_b3_ch12_hadrik == 1 || v_b3_ch11_transferred == 0 && v_b3_ch12_hadrik == 0 && v_b3_ch10_eiden != 0 || v_b3_ch11_transferred == 1 && v_b3_ch12_hadrik == 0 && v_b3_ch10_eiden != 0)
-choice("Attack Eiden with my dagger.", B3-Ch12b-Dagger, v_current_scene = B3-Ch12b-Dagger, v_b3_ch12_eiden = 1) if (v_b3_ch11_transferred == 0 && v_b3_ch12_hadrik == 1 || v_b3_ch11_transferred == 1 && v_b3_ch12_hadrik == 1 || v_b3_ch11_transferred == 0 && v_b3_ch12_hadrik == 0 && v_b3_ch10_eiden != 0 || v_b3_ch11_transferred == 1 && v_b3_ch12_hadrik == 0 && v_b3_ch10_eiden != 0)
-choice("Tell Illuna to cast her dish washing spell on Eiden.", B3-Ch12b-Washing, v_current_scene = B3-Ch12b-Washing, v_b3_ch12_eiden = 2) if (v_b3_ch11_transferred == 0 && v_b3_ch12_hadrik == 1 || v_b3_ch11_transferred == 1 && v_b3_ch12_hadrik == 1 || v_b3_ch11_transferred == 0 && v_b3_ch12_hadrik == 0 && v_b3_ch10_eiden != 0 || v_b3_ch11_transferred == 1 && v_b3_ch12_hadrik == 0 && v_b3_ch10_eiden != 0)
-choice("Temporarily steal Eiden's energy with my stat device.", B3-Ch12b-Steal, v_current_scene = B3-Ch12b-Steal, v_b3_ch12_eiden = 3) if (v_b3_ch11_transferred == 1 && v_b3_ch12_hadrik == 1 || v_b3_ch11_transferred == 1 && v_b3_ch12_hadrik == 0 && v_b3_ch10_eiden != 0)
+choice("Tell Eiden that there is a drunken flying orangutan wearing a party hat behind him.", B3-Ch12b-Orangutan, v_current_scene = B3-Ch12b-Orangutan, v_b3_ch12_eiden = 0) if (v_b3_ch12_hadrik == 1 || v_b3_ch10_eiden != 0)
+choice("Attack Eiden with my dagger.", B3-Ch12b-Dagger, v_current_scene = B3-Ch12b-Dagger, v_b3_ch12_eiden = 1) if (v_b3_ch12_hadrik == 1 || v_b3_ch10_eiden != 0)
+choice("Tell Illuna to cast her dish washing spell on Eiden.", B3-Ch12b-Washing, v_current_scene = B3-Ch12b-Washing, v_b3_ch12_eiden = 2) if (v_b3_ch12_hadrik == 1 || v_b3_ch10_eiden != 0)
+choice("Temporarily steal Eiden's energy with my stat device.", B3-Ch12b-Steal, v_current_scene = B3-Ch12b-Steal, v_b3_ch12_eiden = 3) if (v_b3_ch11_transferred == 1 && v_b3_ch12_hadrik == 1 || v_b3_ch11_transferred == 1 && v_b3_ch10_eiden != 0)
 
 
 ID: B3-Ch12b-Orangutan
@@ -1520,9 +1520,9 @@ As Eiden cancels the tornado, he falls to the ground again and then puts his han
 The orangutan in front of me suddenly reaches his right arm for me, and before I have the time to realize that it's not in fact an illusion, he closes his fist around my head and squashes it like a watermelon.
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b3_ch12_hadrik == 0 && v_bluff == 4 || v_b3_ch12_hadrik == 0 && v_bluff < 4 || v_b3_ch12_hadrik == 1 && v_bluff < 4)
-choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch12_hadrik == 0 && v_bluff == 4 || v_b3_ch12_hadrik == 0 && v_bluff < 4 || v_b3_ch12_hadrik == 1 && v_bluff < 4)
-choice("Load game", , , special:saves) if (v_b3_ch12_hadrik == 0 && v_bluff == 4 || v_b3_ch12_hadrik == 0 && v_bluff < 4 || v_b3_ch12_hadrik == 1 && v_bluff < 4)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b3_ch12_hadrik == 0 && v_bluff == 4 || v_bluff < 4)
+choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch12_hadrik == 0 && v_bluff == 4 || v_bluff < 4)
+choice("Load game", , , special:saves) if (v_b3_ch12_hadrik == 0 && v_bluff == 4 || v_bluff < 4)
 choice("Continue", B3-Ch12b-Blinding, v_current_scene = B3-Ch12b-Blinding) if (v_b3_ch12_hadrik == 1 && v_bluff == 4)
 
 
@@ -1567,8 +1567,8 @@ I then begin to fly towards Eiden, slashing my dagger at him, while he dodges ev
 He then begins to ready up what seems to be an incredibly strong beam of fire that he is aiming right at me. If I take that head on, I don't think all the magical protections in the world would save me. What should I do?
 
 }
-choice("Fly straight at Eiden while he's overconfident and stab him with my dagger.", B3-Ch12b-Overconfident, v_current_scene = B3-Ch12b-Overconfident) if (v_b3_ch12_hadrik == 0 || v_b3_ch12_hadrik == 1)
-choice("Fly away from Eiden and try to think of a different plan.", B3-Ch12b-Away, v_current_scene = B3-Ch12b-Away) if (v_b3_ch12_hadrik == 0 || v_b3_ch12_hadrik == 1)
+choice("Fly straight at Eiden while he's overconfident and stab him with my dagger.", B3-Ch12b-Overconfident, v_current_scene = B3-Ch12b-Overconfident)
+choice("Fly away from Eiden and try to think of a different plan.", B3-Ch12b-Away, v_current_scene = B3-Ch12b-Away)
 
 
 ID: B3-Ch12b-Away
@@ -1721,9 +1721,9 @@ I fire a lightning spell towards Eiden without thinking, but he already disappea
 Just as I thought I was safe, I can feel Eiden's invisible hand grabbing my head from above and exploding it into a thousand pieces, killing me in an instant.
 
 }
-choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b3_ch12_hadrik == 0 && v_b3_ch12_scout != 3 || v_b3_ch12_hadrik == 1)
-choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch12_hadrik == 0 && v_b3_ch12_scout != 3 || v_b3_ch12_hadrik == 1)
-choice("Load game", , , special:saves) if (v_b3_ch12_hadrik == 0 && v_b3_ch12_scout != 3 || v_b3_ch12_hadrik == 1)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b3_ch12_hadrik == 1 || v_b3_ch12_scout != 3)
+choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch12_hadrik == 1 || v_b3_ch12_scout != 3)
+choice("Load game", , , special:saves) if (v_b3_ch12_hadrik == 1 || v_b3_ch12_scout != 3)
 choice("Continue", B3-Ch12b-Blinding, v_current_scene = B3-Ch12b-Blinding) if (v_b3_ch12_hadrik == 0 && v_b3_ch12_scout == 3)
 
 
@@ -1831,7 +1831,7 @@ As Eiden cancels the tornado, he falls to the ground again and then puts his han
 choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b3_ch11_red == 0 && v_aura_hardening < 4)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b3_ch11_red == 0 && v_aura_hardening < 4)
 choice("Load game", , , special:saves) if (v_b3_ch11_red == 0 && v_aura_hardening < 4)
-choice("Continue", B3-Ch12b-Blinding, v_current_scene = B3-Ch12b-Blinding) if (v_aura_hardening == 4 && v_b3_ch11_red == 0 || v_b3_ch11_red == 1)
+choice("Continue", B3-Ch12b-Blinding, v_current_scene = B3-Ch12b-Blinding) if (v_aura_hardening == 4 || v_b3_ch11_red == 1)
 
 
 ID: B3-Ch12b-Blinding
@@ -1841,10 +1841,10 @@ set(v_ac_b3_ch12_dagger,1) if (v_b3_ch12_eiden == 1)
 set(v_ac_b3_ch12_delegator,1) if (v_b3_ch12_eiden == 2)
 set(v_ac_b3_ch12_hugger,1) if (v_b3_ch12_eiden == 4)
 set(v_ac_b3_ch12_liar,1) if (v_b3_ch12_approach == 2 && v_b3_ch12_eiden == 0 && v_b3_ch12_hadrik == 1)
-achievement("Delegator",v_ac_b3_ch12_delegator)
-achievement("One Dagger Man",v_ac_b3_ch12_dagger)
-achievement("Serial liar",v_ac_b3_ch12_liar)
 achievement("Tree-hugger",v_ac_b3_ch12_hugger)
+achievement("One Dagger Man",v_ac_b3_ch12_dagger)
+achievement("Delegator",v_ac_b3_ch12_delegator)
+achievement("Serial liar",v_ac_b3_ch12_liar)
  I waste no time and I cast my dizziness spell on Eiden. If this is the same as when I tested the spell on Diane, he should normally be hearing a ringing in his ears right now... the exact same kind of ringing noise that you would hear if Wolford's daze had been cast on you.
 
 If Eiden were in a calm state of mind, he would have easily noticed that the magical flow of my dizziness spell was slightly different, but with the way he is at the moment, and considering that Wolford's daze gives you only a limited time to cancel it before it fully activates, Eiden really only has one choice. He needs to open his eyes.
@@ -1944,7 +1944,7 @@ Kate is now attempting to create some icicles with her scepter, but her magical 
 "So that is what happened..." Eiden says, as he seems to now quickly be putting everything together in his mind.
 
 }
-choice("Continue", B3-Ch12b-Invitation2, v_current_scene = B3-Ch12b-Invitation2) if (v_b3_ch12_hesitant == 0 || v_b3_ch12_hesitant == 1)
+choice("Continue", B3-Ch12b-Invitation2, v_current_scene = B3-Ch12b-Invitation2)
 
 
 ID: B3-Ch12b-Invitation2
@@ -2107,7 +2107,7 @@ TEXT:
 "Precisely!" Azarius says.
 
 }
-choice("Continue", B3-Ch12b-Ending, v_current_scene = B3-Ch12b-Ending) if (v_b3_ch12_thank == 0 || v_b3_ch12_thank == 1)
+choice("Continue", B3-Ch12b-Ending, v_current_scene = B3-Ch12b-Ending)
 
 
 ID: B3-Ch12b-Ending

@@ -52,8 +52,8 @@ We all do as Daren says, and we head over to Rose, until we are right in front o
 Rose does not react to Kate's words in any way. She doesn't even seem to be aware of our presence. It's as if she were in some sort of... trance.
 
 }
-choice("Keep trying to talk to her.", B2-Ch11a-Keep, v_current_scene = B2-Ch11a-Keep, v_checkpoint_rich = 0) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
-choice("Grab her by the arms, and try to shake her out of the trance.", B2-Ch11a-Grab, v_current_scene = B2-Ch11a-Grab, v_checkpoint_rich = 0) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
+choice("Keep trying to talk to her.", B2-Ch11a-Keep, v_current_scene = B2-Ch11a-Keep, v_checkpoint_rich = 0)
+choice("Grab her by the arms, and try to shake her out of the trance.", B2-Ch11a-Grab, v_current_scene = B2-Ch11a-Grab, v_checkpoint_rich = 0)
 
 
 ID: B2-Ch11a-Keep
@@ -111,7 +111,7 @@ Seeing that she still isn't doing anything, I position myself right next to her,
 Rose then disappears again, and she reappears on our left side, preparing to speak again, as the echo in her voice gets more intense, in order to signify the beginning of the prophecy. After each line that she speaks, Rose disappears and appears in a different place, making us all turn our heads in confusion.
 
 }
-choice("Continue", B2-Ch11a-Prophecy, v_current_scene = B2-Ch11a-Prophecy) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
+choice("Continue", B2-Ch11a-Prophecy, v_current_scene = B2-Ch11a-Prophecy)
 
 
 ID: B2-Ch11a-Grab
@@ -165,7 +165,7 @@ The revenant then disappears again, and she reappears on our left side, preparin
 Rose then disappears again, and she reappears on our left side, preparing to speak again, as the echo in her voice gets more intense, in order to signify the beginning of the prophecy. After each line that she speaks, Rose disappears and appears in a different place, making us all turn our heads in confusion.
 
 }
-choice("Continue", B2-Ch11a-Prophecy, v_current_scene = B2-Ch11a-Prophecy) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
+choice("Continue", B2-Ch11a-Prophecy, v_current_scene = B2-Ch11a-Prophecy)
 
 
 ID: B2-Ch11a-Prophecy
@@ -243,7 +243,7 @@ A prophecy about a great disaster... Two old enemies... Does this mean that we w
 "Only if everything happens in the same way that it did six hundred years ago," Melindra says. "The last time I've had the honor of witnessing a time weaver's prophecy, I didn't have to wait long until--"
 
 }
-choice("Continue", B2-Ch11a-Prophecy2, v_current_scene = B2-Ch11a-Prophecy2) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
+choice("Continue", B2-Ch11a-Prophecy2, v_current_scene = B2-Ch11a-Prophecy2)
 
 
 ID: B2-Ch11a-Prophecy2
@@ -287,9 +287,9 @@ While I was standing there, considering my options, the God of Time was slowly m
 "Don't listen to what he says," Arraka tells us. "He needs you alive for his plans to work. He can't do anything to you. He's just bluffing."
 
 }
-choice("Kneel before the God of Time", B2-Ch11a-Kneel, v_current_scene = B2-Ch11a-Kneel, v_b2_ch11_kneel = 1) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
-choice("Stand my ground", B2-Ch11a-Kneel, v_current_scene = B2-Ch11a-Kneel, v_b2_ch11_kneel = 0) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
-choice("Stand my ground and insult the God of Time", B2-Ch11a-Kneel, v_current_scene = B2-Ch11a-Kneel, v_b2_ch11_kneel = 2) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
+choice("Kneel before the God of Time", B2-Ch11a-Kneel, v_current_scene = B2-Ch11a-Kneel, v_b2_ch11_kneel = 1)
+choice("Stand my ground", B2-Ch11a-Kneel, v_current_scene = B2-Ch11a-Kneel, v_b2_ch11_kneel = 0)
+choice("Stand my ground and insult the God of Time", B2-Ch11a-Kneel, v_current_scene = B2-Ch11a-Kneel, v_b2_ch11_kneel = 2)
 
 
 ID: B2-Ch11a-Kneel
@@ -379,7 +379,7 @@ Upon hearing Arraka's words, the God of Time casts one last time-reversal spell,
 "And we will," the God of Time says. "As soon as we are both back to our peak conditions. You wouldn't want to fight me from inside an amulet, would you?"
 
 }
-choice("Continue", B2-Ch11a-Absorb, v_current_scene = B2-Ch11a-Absorb) if (v_b2_ch11_kneel == 0 || v_b2_ch11_kneel == 1 || v_b2_ch11_kneel == 2)
+choice("Continue", B2-Ch11a-Absorb, v_current_scene = B2-Ch11a-Absorb)
 
 
 ID: B2-Ch11a-Absorb
@@ -550,7 +550,7 @@ He pauses.
 After the god is done talking, a blinding white light fills our entire area, making it impossible to see any further than my own hands.
 
 }
-choice("Continue.", B2-Ch11a-Cabin, v_current_scene = B2-Ch11a-Cabin) if (v_ch4_spared_dave == 0 || v_ch4_spared_dave == 1)
+choice("Continue.", B2-Ch11a-Cabin, v_current_scene = B2-Ch11a-Cabin)
 
 
 ID: B2-Ch11a-Invitation
@@ -602,7 +602,7 @@ He pauses.
 After the god is done talking, a blinding white light fills our entire area, making it impossible to see any further than my own hands.
 
 }
-choice("Continue.", B2-Ch11a-Cabin, v_current_scene = B2-Ch11a-Cabin) if (v_ch4_spared_dave == 0 || v_ch4_spared_dave == 1)
+choice("Continue.", B2-Ch11a-Cabin, v_current_scene = B2-Ch11a-Cabin)
 
 
 ID: B2-Ch11a-Cabin
@@ -929,8 +929,8 @@ I take a quick glance around me to see what our current situation is. The God of
 "Which ones are you talking about?" Arraka says. "The ones that already passed, or the ones still inside the trance?"
 
 }
-choice(""Both, I guess?..."", B2-Ch11a-Transparent, v_current_scene = B2-Ch11a-Transparent, v_b2_ch11_both = 1) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
-choice(""The ones that are still inside their rituals, obviously."", B2-Ch11a-Transparent, v_current_scene = B2-Ch11a-Transparent, v_b2_ch11_both = 0) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
+choice(""Both, I guess?..."", B2-Ch11a-Transparent, v_current_scene = B2-Ch11a-Transparent, v_b2_ch11_both = 1)
+choice(""The ones that are still inside their rituals, obviously."", B2-Ch11a-Transparent, v_current_scene = B2-Ch11a-Transparent, v_b2_ch11_both = 0)
 
 
 ID: B2-Ch11a-Transparent
@@ -1024,7 +1024,7 @@ Once again, the whole scenery around us changes in an instant, and we both find 
 "No, you idiot!" Arraka says. "How many times do I need to tell you that your friends are connected to the Magium, right now? Reading their thoughts while they are in this state is easy if you have some decent knowledge of how auras work. Now shut up and pay attention! I didn't bring you here for nothing."
 
 }
-choice("Continue", B2-Ch11a-Luggage, v_current_scene = B2-Ch11a-Luggage) if (v_b2_ch11_both == 0 || v_b2_ch11_both == 1)
+choice("Continue", B2-Ch11a-Luggage, v_current_scene = B2-Ch11a-Luggage)
 
 
 ID: B2-Ch11a-Luggage

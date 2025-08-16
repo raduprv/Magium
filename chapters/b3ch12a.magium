@@ -72,7 +72,7 @@ I let Arraka focus on researching her new spell while I head to a more isolated 
  The only way in which I can become accustomed to this is through repeated experimentation, just as I would have done if I were a regular mage. I suppose this is one rare thing for which Brinhorn genuinely deserves some praise. Whenever I came up with an outlandish idea for combining two or more spells, he almost always managed to make it work nearly effortlessly, and could follow my instructions perfectly. You could easily tell that he had spent countless amounts of hours practicing his magic, all for the purpose of one day surpassing Azarius.
 
 }
-choice("Continue", B3-Ch12a-Practicing, v_current_scene = B3-Ch12a-Practicing, v_available_points = +4, v_available_points_aux = +4) if (v_b3_ch12_believe == 0 || v_b3_ch12_believe == 1)
+choice("Continue", B3-Ch12a-Practicing, v_current_scene = B3-Ch12a-Practicing, v_available_points = +4, v_available_points_aux = +4)
 
 
 ID: B3-Ch12a-Practicing
@@ -131,9 +131,9 @@ If not, then I suppose I could always try the brute force approach, by using my 
 Or... I could just try to bluff him.
 
 }
-choice("Try to predict Hadrik's movements from his aura.", B3-Ch12a-Predict, v_current_scene = B3-Ch12a-Predict, v_b3_ch12_approach = 0) if (v_b3_ch12_invest == 0 || v_b3_ch12_invest == 1)
-choice("Attempt to get close to Hadrik so I can aim at him easier.", B3-Ch12a-Brute, v_current_scene = B3-Ch12a-Brute, v_b3_ch12_approach = 1) if (v_b3_ch12_invest == 0 || v_b3_ch12_invest == 1)
-choice("Tell Hadrik that him standing in place would make it harder for me to aim at him.", B3-Ch12a-Bluff, v_current_scene = B3-Ch12a-Bluff, v_b3_ch12_approach = 2) if (v_b3_ch12_invest == 0 || v_b3_ch12_invest == 1)
+choice("Try to predict Hadrik's movements from his aura.", B3-Ch12a-Predict, v_current_scene = B3-Ch12a-Predict, v_b3_ch12_approach = 0)
+choice("Attempt to get close to Hadrik so I can aim at him easier.", B3-Ch12a-Brute, v_current_scene = B3-Ch12a-Brute, v_b3_ch12_approach = 1)
+choice("Tell Hadrik that him standing in place would make it harder for me to aim at him.", B3-Ch12a-Bluff, v_current_scene = B3-Ch12a-Bluff, v_b3_ch12_approach = 2)
 
 
 ID: B3-Ch12a-Predict
@@ -229,7 +229,7 @@ Still, that went much better than I thought it would. After only a few adjustmen
 "Then shut up and do it," Arraka says. "As long as you do exactly the same thing that you did on the ethereal plane, it will work."
 
 }
-choice("Continue", B3-Ch12a-Hermit, v_current_scene = B3-Ch12a-Hermit) if (v_magical_sense == 4 && v_perception == 4 || v_magical_sense == 4 && v_perception < 4 || v_magical_sense < 4)
+choice("Continue", B3-Ch12a-Hermit, v_current_scene = B3-Ch12a-Hermit)
 
 
 ID: B3-Ch12a-Brute
@@ -317,7 +317,7 @@ Instead of dashing away again, Hadrik just stands there for a few moments and pl
 "Then shut up and do it," Arraka says. "As long as you do exactly the same thing that you did on the ethereal plane, it will work."
 
 }
-choice("Continue", B3-Ch12a-Hermit, v_current_scene = B3-Ch12a-Hermit) if (v_agility == 4 && v_reflexes == 4 || v_agility == 4 && v_reflexes < 4 || v_agility < 4)
+choice("Continue", B3-Ch12a-Hermit, v_current_scene = B3-Ch12a-Hermit)
 
 
 ID: B3-Ch12a-Bluff
@@ -393,7 +393,7 @@ Realizing that I won't get any more help from him, I decide to pull out my noteb
 "Then shut up and do it," Arraka says. "As long as you do exactly the same thing that you did on the ethereal plane, it will work."
 
 }
-choice("Continue", B3-Ch12a-Hermit, v_current_scene = B3-Ch12a-Hermit) if (v_bluff == 4 || v_bluff < 4)
+choice("Continue", B3-Ch12a-Hermit, v_current_scene = B3-Ch12a-Hermit)
 
 
 ID: B3-Ch12a-Hermit
@@ -598,7 +598,7 @@ TEXT:
 "What is Wolf-- Wolfer-- Wolfor's daze?" Flower asks us. "I've never heard of it before."
 
 }
-choice("Continue", B3-Ch12a-Wolford, v_current_scene = B3-Ch12a-Wolford) if (v_b3_ch12_hadrik == 0 || v_b3_ch12_hadrik == 1 || v_b3_ch12_spell == 0 || v_b3_ch12_spell == 1 || v_b3_ch12_spell == 2 || v_b3_ch12_spell == 3)
+choice("Continue", B3-Ch12a-Wolford, v_current_scene = B3-Ch12a-Wolford)
 
 
 ID: B3-Ch12a-Wolford
@@ -715,9 +715,9 @@ Now that I think about it, this wasn't the first time when Diane acted in this m
 "Around here should be fine, I think," Diane says, as she stops somewhere near the river. "We're far enough from the others to not be distracting them from their own trainings. So, what kind of spells will we be testing today, Barry? As you may have guessed, I have a rather high tolerance for pain, so there's no need to hold back!"
 
 }
-choice(""I'm not sure if I should be relieved or worried that you feel comfortable joking about this."", B3-Ch12a-Describe, v_current_scene = B3-Ch12a-Describe, v_b3_ch12_relieved = 0) if (v_b3_ch12_chance == 0 || v_b3_ch12_chance == 1)
-choice(""That's reassuring, because my next spell does have an unusually high mortality rate."", B3-Ch12a-Describe, v_current_scene = B3-Ch12a-Describe, v_b3_ch12_relieved = 1) if (v_b3_ch12_chance == 0 || v_b3_ch12_chance == 1)
-choice(""I actually wasn't planning on using any painful spells, but that's good to know."", B3-Ch12a-Describe, v_current_scene = B3-Ch12a-Describe, v_b3_ch12_relieved = 2) if (v_b3_ch12_chance == 0 || v_b3_ch12_chance == 1)
+choice(""I'm not sure if I should be relieved or worried that you feel comfortable joking about this."", B3-Ch12a-Describe, v_current_scene = B3-Ch12a-Describe, v_b3_ch12_relieved = 0)
+choice(""That's reassuring, because my next spell does have an unusually high mortality rate."", B3-Ch12a-Describe, v_current_scene = B3-Ch12a-Describe, v_b3_ch12_relieved = 1)
+choice(""I actually wasn't planning on using any painful spells, but that's good to know."", B3-Ch12a-Describe, v_current_scene = B3-Ch12a-Describe, v_b3_ch12_relieved = 2)
 
 
 ID: B3-Ch12a-Describe
@@ -789,7 +789,7 @@ As soon as I'm done checking my notebook, I get into my stance and I cast the di
 "Sure, sure, not a problem," Diane says.
 
 }
-choice("Continue", B3-Ch12a-Nausea, v_current_scene = B3-Ch12a-Nausea) if (v_b3_ch12_relieved == 0 || v_b3_ch12_relieved == 1 || v_b3_ch12_relieved == 2)
+choice("Continue", B3-Ch12a-Nausea, v_current_scene = B3-Ch12a-Nausea)
 
 
 ID: B3-Ch12a-Nausea
@@ -850,8 +850,8 @@ I decide to head in the opposite direction, so that I can test out a few more co
 Normally, this wouldn't have been a big deal, but this is the third time in the past two days that I've seen Kate do the exact same thing, despite the fact that she usually takes her aim training very seriously. I think something is up with her. Maybe I should go ask her what's wrong.
 
 }
-choice("Go talk to Kate.", B3-Ch12a-Kate1, v_current_scene = B3-Ch12a-Kate1, v_b3_ch12_kate = 1) if (v_b3_ch12_diane == 0 || v_b3_ch12_diane == 1)
-choice("Ignore Kate and go test some spell combinations.", B3-Ch12a-Ignore, v_current_scene = B3-Ch12a-Ignore, v_b3_ch12_kate = 0) if (v_b3_ch12_diane == 0 || v_b3_ch12_diane == 1)
+choice("Go talk to Kate.", B3-Ch12a-Kate1, v_current_scene = B3-Ch12a-Kate1, v_b3_ch12_kate = 1)
+choice("Ignore Kate and go test some spell combinations.", B3-Ch12a-Ignore, v_current_scene = B3-Ch12a-Ignore, v_b3_ch12_kate = 0)
 
 
 ID: B3-Ch12a-Kate1
@@ -1153,7 +1153,7 @@ About twenty minutes later, Daren finally makes his way to our meeting spot and 
 Once I was done telling him a few of my stories, I couldn't help but notice that I managed to maintain his interest for much longer than I was expecting. He seemed to be paying close attention the whole time I was talking, and sometimes it even felt like he could barely wait any longer to hear the end of the story. Could it be that he actually enjoyed it?
 
 }
-choice("Continue", B3-Ch12a-Brinhorn, v_current_scene = B3-Ch12a-Brinhorn) if (v_b3_ch12_delusional == 0 || v_b3_ch12_delusional == 1 || v_b3_ch12_delusional == 2 || v_b3_ch12_spell == 0 || v_b3_ch12_spell == 1 || v_b3_ch12_spell == 2 || v_b3_ch12_spell == 3 || v_b3_ch5_moustache == 2)
+choice("Continue", B3-Ch12a-Brinhorn, v_current_scene = B3-Ch12a-Brinhorn)
 
 
 ID: B3-Ch12a-Brinhorn
@@ -1255,7 +1255,7 @@ TEXT:
 "Yeah, you've definitely lost me, Barry," Daren says. "I know you were trying to make this sound less confusing, but all of this Magium, fragments and node stuff is going way over my head. I can only hope that we will have as little interaction as possible with all of them in the future, so I won't actually need to understand any of this. All I want from the Magium is to use the node to get the knowledge I require from it and that's it. No other complications!"
 
 }
-choice("Continue", B3-Ch12a-Unusual, v_current_scene = B3-Ch12a-Unusual) if (v_b3_ch12_conflicted == 0 || v_b3_ch12_conflicted == 1 || v_b3_ch12_conflicted == 2)
+choice("Continue", B3-Ch12a-Unusual, v_current_scene = B3-Ch12a-Unusual)
 
 
 ID: B3-Ch12a-Unusual
@@ -1321,7 +1321,7 @@ TEXT:
 "Shouldn't you be the one who is worried?" Illuna asks Diane, while raising an eyebrow. "If they make a deal with Fyron about his node, they will have one less reason to take Meridith's deal about killing Eiden."
 
 }
-choice("Continue", B3-Ch12a-Obscure, v_current_scene = B3-Ch12a-Obscure) if (v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1)
+choice("Continue", B3-Ch12a-Obscure, v_current_scene = B3-Ch12a-Obscure)
 
 
 ID: B3-Ch12a-Obscure
@@ -1408,8 +1408,8 @@ set(v_b3_ch12_sincere,2) if (v_b3_ch12_sincere == 1 && v_bluff == 0)
 "Hmm..." Arraka says. "Not bad. There are a few tiny adjustments that I'd make, but other than that, it doesn't look bad at all. Here, let me mark some of the inadequacies I've noticed, so that you can work on them."
 
 }
-choice("Continue", B3-Ch12a-Sober, v_current_scene = B3-Ch12a-Sober) if (v_b3_ch12_hadrik == 1 && v_b3_ch12_sincere == 0 || v_b3_ch12_hadrik == 1 && v_b3_ch12_sincere == 2 || v_b3_ch12_hadrik == 1 && v_b3_ch12_sincere == 1 && v_bluff == 0 || v_b3_ch12_hadrik == 1 && v_b3_ch12_sincere == 1 && v_bluff > 0)
-choice("Continue", B3-Ch12a-Rock, v_current_scene = B3-Ch12a-Rock) if (v_b3_ch12_hadrik == 0 && v_b3_ch12_sincere == 0 || v_b3_ch12_hadrik == 0 && v_b3_ch12_sincere == 2 || v_b3_ch12_hadrik == 0 && v_b3_ch12_sincere == 1 && v_bluff == 0 || v_b3_ch12_hadrik == 0 && v_b3_ch12_sincere == 1 && v_bluff > 0)
+choice("Continue", B3-Ch12a-Sober, v_current_scene = B3-Ch12a-Sober) if (v_b3_ch12_hadrik == 1 && v_b3_ch12_sincere == 0 || v_b3_ch12_hadrik == 1 && v_b3_ch12_sincere == 2 || v_b3_ch12_hadrik == 1 && v_bluff == 0 || v_b3_ch12_hadrik == 1 && v_bluff > 0)
+choice("Continue", B3-Ch12a-Rock, v_current_scene = B3-Ch12a-Rock) if (v_b3_ch12_hadrik == 0 && v_b3_ch12_sincere == 0 || v_b3_ch12_hadrik == 0 && v_b3_ch12_sincere == 2 || v_b3_ch12_hadrik == 0 && v_bluff == 0 || v_b3_ch12_hadrik == 0 && v_bluff > 0)
 
 
 ID: B3-Ch12a-Sober
@@ -1529,4 +1529,4 @@ As soon as we leave the area, Flower pulls out her transceiver, and she shouts i
 "Hey, Melindra!" she says. "You'll never guess what rock I found lying in the grass in the middle of the woods!"
 
 }
-choice("Continue", B3-Ch12b-Distracting, v_current_scene = B3-Ch12b-Distracting) if (v_b3_ch12_diane == 0 && v_b3_ch12_hadrik == 0 || v_b3_ch12_diane == 0 && v_b3_ch12_hadrik == 1 || v_b3_ch12_diane == 1 && v_b3_ch12_hadrik == 0 || v_b3_ch12_diane == 1 && v_b3_ch12_hadrik == 1)
+choice("Continue", B3-Ch12b-Distracting, v_current_scene = B3-Ch12b-Distracting)

@@ -87,7 +87,7 @@ When I turn to look towards Peter, who was somewhere around twenty feet away fro
 "Peter, I'm sorry for interrupting," says the king of the underground. "But I have a quick question for you before we begin our fight."
 
 }
-choice("Continue", B3-Ch09b-Logical, v_current_scene = B3-Ch09b-Logical) if (v_b3_ch9_backup == 0 || v_b3_ch9_backup == 1 || v_b3_ch9_conclusions != 1)
+choice("Continue", B3-Ch09b-Logical, v_current_scene = B3-Ch09b-Logical)
 
 
 ID: B3-Ch09b-Logical
@@ -139,8 +139,8 @@ Following my lead, Flower also commences the attack, by hitting both Peter and t
 "That was quite the powerful attack you fired towards us, little girl," the king of the underground says, once the ice dome is completely gone. "If I didn't know any better, I might even get the wrong idea that you were trying to kill us."
 
 }
-choice(""Nobody is trying to kill anyone. All we want is to defeat you and bring this war to an end."", B3-Ch09b-Impenetrable, v_current_scene = B3-Ch09b-Impenetrable, v_b3_ch9_assassinate = 0) if (v_b3_ch9_backup == 0 || v_b3_ch9_backup == 1)
-choice(""Of course we're trying to kill you. That's what you get for plotting to assassinate us."", B3-Ch09b-Impenetrable, v_current_scene = B3-Ch09b-Impenetrable, v_b3_ch9_assassinate = 1) if (v_b3_ch9_backup == 0 || v_b3_ch9_backup == 1)
+choice(""Nobody is trying to kill anyone. All we want is to defeat you and bring this war to an end."", B3-Ch09b-Impenetrable, v_current_scene = B3-Ch09b-Impenetrable, v_b3_ch9_assassinate = 0)
+choice(""Of course we're trying to kill you. That's what you get for plotting to assassinate us."", B3-Ch09b-Impenetrable, v_current_scene = B3-Ch09b-Impenetrable, v_b3_ch9_assassinate = 1)
 
 
 ID: B3-Ch09b-Impenetrable
@@ -172,9 +172,9 @@ TEXT:
 As usual, a bright light surrounds us and our bodies start to vibrate loudly. A few seconds later, we find ourselves outside the box, but it looks like we have a slight problem on our hands. A new semi-transparent box was created just as quickly around us, and the air inside it is also beginning to freeze at a rapid pace, likely as a result of one of Peter's spells.
 
 }
-choice("Tell Flower to teleport us closer to the king and Peter this time.", B3-Ch09b-Blabbering, v_current_scene = B3-Ch09b-Blabbering, v_b3_ch9_teleport = 0) if (v_b3_ch9_assassinate == 0 || v_b3_ch9_assassinate == 1)
-choice("Tell Flower that we should move in separate directions as soon as we teleport again.", B3-Ch09b-Separate, v_current_scene = B3-Ch09b-Separate, v_b3_ch9_teleport = 1) if (v_b3_ch9_assassinate == 0 || v_b3_ch9_assassinate == 1)
-choice("Ask Flower if she can attack the king with a pillar of fire to break his concentration.", B3-Ch09b-Blabbering, v_current_scene = B3-Ch09b-Blabbering, v_b3_ch9_teleport = 2) if (v_b3_ch9_assassinate == 0 || v_b3_ch9_assassinate == 1)
+choice("Tell Flower to teleport us closer to the king and Peter this time.", B3-Ch09b-Blabbering, v_current_scene = B3-Ch09b-Blabbering, v_b3_ch9_teleport = 0)
+choice("Tell Flower that we should move in separate directions as soon as we teleport again.", B3-Ch09b-Separate, v_current_scene = B3-Ch09b-Separate, v_b3_ch9_teleport = 1)
+choice("Ask Flower if she can attack the king with a pillar of fire to break his concentration.", B3-Ch09b-Blabbering, v_current_scene = B3-Ch09b-Blabbering, v_b3_ch9_teleport = 2)
 
 
 ID: B3-Ch09b-Separate
@@ -270,7 +270,7 @@ Shortly after their talk, I hear the sound of their bodies vibrating loudly as t
 Shortly after their talk, I hear the sound of their bodies vibrating loudly as they are teleporting away, and then there is only silence for a while. The silence doesn't last for long, however, because it soon gets replaced with the sound of Flower shouting in my ear, while she is shaking me violently. 
 
 }
-choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1) if (v_b3_ch9_assassinate == 0 && v_b3_ch9_backup == 0 || v_b3_ch9_assassinate == 1 && v_b3_ch9_backup == 0)
+choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1) if (v_b3_ch9_backup == 0)
 choice("Continue", B3-Ch09b-Invent, v_current_scene = B3-Ch09b-Invent) if (v_b3_ch9_backup == 1)
 
 
@@ -331,7 +331,7 @@ Okay, so the way I see it, this technique has one major weakness, which is the f
 Oh, boy... I really hope I didn't think all that out loud, or I'll be making a complete fool of myself.
 
 }
-choice("Continue", B3-Ch09b-Invent, v_current_scene = B3-Ch09b-Invent) if (v_b3_ch9_teleport == 0 || v_b3_ch9_teleport == 2)
+choice("Continue", B3-Ch09b-Invent, v_current_scene = B3-Ch09b-Invent)
 
 
 ID: B3-Ch09b-Invent
@@ -573,7 +573,7 @@ Shortly after their talk, I hear the sound of their bodies vibrating loudly as t
 Shortly after their talk, I hear the sound of their bodies vibrating loudly as they are teleporting away, and then there is only silence for a while. The silence doesn't last for long, however, because it soon gets replaced with the sound of Flower shouting in my ear, while she is shaking me violently. 
 
 }
-choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1) if (v_b3_ch9_assassinate == 0 || v_b3_ch9_assassinate == 1)
+choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1)
 
 
 ID: B3-Ch09b-Together
@@ -653,7 +653,7 @@ While Peter is talking, I can slowly feel the whole world beginning to spin arou
 "As a former apprentice of Brinhorn, I'm sure that you will immediately recognize the famous battle that I am about to recreate before your eyes. Let us see if you can live up to your old mentor's teachings."
 
 }
-choice("Continue", B3-Ch09b-Balance, v_current_scene = B3-Ch09b-Balance) if (v_b3_ch9_element == 0 || v_b3_ch9_element == 1 || v_b3_ch9_element == 2 || v_b3_ch9_element == 3)
+choice("Continue", B3-Ch09b-Balance, v_current_scene = B3-Ch09b-Balance)
 
 
 ID: B3-Ch09b-Manually
@@ -731,7 +731,7 @@ Shortly after their talk, I hear the sound of their bodies vibrating loudly as t
 Shortly after their talk, I hear the sound of their bodies vibrating loudly as they are teleporting away, and then there is only silence for a while. The silence doesn't last for long, however, because it soon gets replaced with the sound of Flower shouting in my ear, while she is shaking me violently. 
 
 }
-choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1) if (v_b3_ch9_assassinate == 0 || v_b3_ch9_assassinate == 1)
+choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1)
 
 
 ID: B3-Ch09b-Freezing
@@ -775,7 +775,7 @@ Shortly after their talk, I hear the sound of their bodies vibrating loudly as t
 Shortly after their talk, I hear the sound of their bodies vibrating loudly as they are teleporting away, and then there is only silence for a while. The silence doesn't last for long, however, because it soon gets replaced with the sound of Flower shouting in my ear, while she is shaking me violently. 
 
 }
-choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1) if (v_b3_ch9_assassinate == 0 || v_b3_ch9_assassinate == 1)
+choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1)
 
 
 ID: B3-Ch09b-Counter
@@ -859,9 +859,9 @@ TEXT:
 "Have you already forgotten that we're supposed to be reenacting one of the battles between Brinhorn and Azarius?" Peter says. "We've barely even recreated the first few seconds of that fight so far. There is so much more that we need to do."
 
 }
-choice("Counter him by doing exactly what Brinhorn did in the battle against Azarius.", B3-Ch09b-Copy, v_current_scene = B3-Ch09b-Copy) if (v_b3_ch9_backup == 0 || v_b3_ch9_backup == 1)
-choice("Use my own spells instead of copying Brinhorn, in order to throw Peter off.", B3-Ch09b-Adversary, v_current_scene = B3-Ch09b-Adversary) if (v_b3_ch9_backup == 0 || v_b3_ch9_backup == 1)
-choice("Begin by copying Brinhorn's spells, but switch to my own spells later on.", B3-Ch09b-Guarantee, v_current_scene = B3-Ch09b-Guarantee) if (v_b3_ch9_backup == 0 || v_b3_ch9_backup == 1)
+choice("Counter him by doing exactly what Brinhorn did in the battle against Azarius.", B3-Ch09b-Copy, v_current_scene = B3-Ch09b-Copy)
+choice("Use my own spells instead of copying Brinhorn, in order to throw Peter off.", B3-Ch09b-Adversary, v_current_scene = B3-Ch09b-Adversary)
+choice("Begin by copying Brinhorn's spells, but switch to my own spells later on.", B3-Ch09b-Guarantee, v_current_scene = B3-Ch09b-Guarantee)
 
 
 ID: B3-Ch09b-Adversary
@@ -911,7 +911,7 @@ Shortly after their talk, I hear the sound of their bodies vibrating loudly as t
 Shortly after their talk, I hear the sound of their bodies vibrating loudly as they are teleporting away, and then there is only silence for a while. The silence doesn't last for long, however, because it soon gets replaced with the sound of Flower shouting in my ear, while she is shaking me violently. 
 
 }
-choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1) if (v_b3_ch9_assassinate == 0 || v_b3_ch9_assassinate == 1)
+choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1)
 
 
 ID: B3-Ch09b-Copy
@@ -971,7 +971,7 @@ Shortly after their talk, I hear the sound of their bodies vibrating loudly as t
 Shortly after their talk, I hear the sound of their bodies vibrating loudly as they are teleporting away, and then there is only silence for a while. The silence doesn't last for long, however, because it soon gets replaced with the sound of Flower shouting in my ear, while she is shaking me violently. 
 
 }
-choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1) if (v_b3_ch9_assassinate == 0 || v_b3_ch9_assassinate == 1)
+choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1)
 
 
 ID: B3-Ch09b-Guarantee
@@ -1047,7 +1047,7 @@ Hah. I knew it! I knew that asking Kate to teach me a spell that affects a large
 When I look towards Peter to see what happened to him I notice that he is unharmed, because he had conjured a large wall of reinforced stone in front of him in the nick of time. I do not give him the opportunity to summon new manticores and I rain down a swarm of icicles on him, forcing him to fly away from his position. Instead of going on the defensive, Peter fights back immediately by creating a huge cloud of poison mist that quickly engulfs us both, before I get to move away from it.
 
 }
-choice("Continue", B3-Ch09b-Poison, v_current_scene = B3-Ch09b-Poison) if (v_b3_ch9_element == 0 || v_b3_ch9_element == 1 || v_b3_ch9_element == 2 || v_b3_ch9_element == 3)
+choice("Continue", B3-Ch09b-Poison, v_current_scene = B3-Ch09b-Poison)
 
 
 ID: B3-Ch09b-Poison
@@ -1112,7 +1112,7 @@ Shortly after their talk, I hear the sound of their bodies vibrating loudly as t
 Shortly after their talk, I hear the sound of their bodies vibrating loudly as they are teleporting away, and then there is only silence for a while. The silence doesn't last for long, however, because it soon gets replaced with the sound of Flower shouting in my ear, while she is shaking me violently. 
 
 }
-choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1) if (v_b3_ch9_assassinate == 0 || v_b3_ch9_assassinate == 1)
+choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1)
 
 
 ID: B3-Ch09b-Appreciate
@@ -1237,7 +1237,7 @@ Shortly after their talk, I hear the sound of their bodies vibrating loudly as t
 Shortly after their talk, I hear the sound of their bodies vibrating loudly as they are teleporting away, and then there is only silence for a while. The silence doesn't last for long, however, because it soon gets replaced with the sound of Flower shouting in my ear, while she is shaking me violently. 
 
 }
-choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1) if (v_b3_ch9_assassinate == 0 && v_aura_hardening < 4 || v_b3_ch9_assassinate == 1 && v_aura_hardening < 4)
+choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1) if (v_aura_hardening < 4)
 choice("Continue", B3-Ch09b-Illusory, v_current_scene = B3-Ch09b-Illusory) if (v_aura_hardening >= 4)
 
 
@@ -1286,7 +1286,7 @@ While I am busy contemplating my own existence, I suddenly detect the king of th
 "It looks like your luck may have finally run out," the king of the underground tells me, and then I begin to feel a powerful pressure forming on top of me.
 
 }
-choice("Continue", B3-Ch09b-Floating, v_current_scene = B3-Ch09b-Floating) if (v_b3_ch9_listen == 0 || v_b3_ch9_listen == 1)
+choice("Continue", B3-Ch09b-Floating, v_current_scene = B3-Ch09b-Floating)
 
 
 ID: B3-Ch09b-Floating
@@ -1362,9 +1362,9 @@ Shortly after their talk, I hear the sound of their bodies vibrating loudly as t
 Shortly after their talk, I hear the sound of their bodies vibrating loudly as they are teleporting away, and then there is only silence for a while. The silence doesn't last for long, however, because it soon gets replaced with the sound of Flower shouting in my ear, while she is shaking me violently. 
 
 }
-choice("Kill Peter and the king of the underground.", B3-Ch09b-Kill, v_current_scene = B3-Ch09b-Kill, v_b3_ch9_enemies = 1) if (v_b3_ch9_backup == 0 && v_toughness >= 4 || v_b3_ch9_backup == 1)
-choice("Spare their lives.", B3-Ch09b-Cube, v_current_scene = B3-Ch09b-Cube, v_b3_ch9_enemies = 0) if (v_b3_ch9_backup == 0 && v_toughness >= 4 || v_b3_ch9_backup == 1)
-choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1) if (v_b3_ch9_assassinate == 0 && v_b3_ch9_backup == 0 && v_toughness < 4 || v_b3_ch9_assassinate == 1 && v_b3_ch9_backup == 0 && v_toughness < 4)
+choice("Kill Peter and the king of the underground.", B3-Ch09b-Kill, v_current_scene = B3-Ch09b-Kill, v_b3_ch9_enemies = 1) if (v_b3_ch9_backup == 1 || v_toughness >= 4)
+choice("Spare their lives.", B3-Ch09b-Cube, v_current_scene = B3-Ch09b-Cube, v_b3_ch9_enemies = 0) if (v_b3_ch9_backup == 1 || v_toughness >= 4)
+choice("Continue", B3-Ch09b-Melding, v_current_scene = B3-Ch09b-Melding, v_ac_b3_ch9_consolation = +1) if (v_b3_ch9_backup == 0 && v_toughness < 4)
 
 
 ID: B3-Ch09b-Kill
@@ -1410,8 +1410,8 @@ She cancels her fire jets a few seconds later when she comes back to her senses,
 "So, what are you going to tell Daren, then?..." Flower says. "I thought we both promised him that we'd try our best to keep all casualties to a minimum."
 
 }
-choice(""I'll tell him the truth."", B3-Ch09b-Cube, v_current_scene = B3-Ch09b-Cube, v_b3_ch9_enemies = 2) if (v_b3_ch9_backup == 0 || v_b3_ch9_backup == 1)
-choice(""I'll tell him that there was no way to avoid killing them, and that they died in battle."", B3-Ch09b-Cube, v_current_scene = B3-Ch09b-Cube, v_b3_ch9_enemies = 3) if (v_b3_ch9_backup == 0 || v_b3_ch9_backup == 1)
+choice(""I'll tell him the truth."", B3-Ch09b-Cube, v_current_scene = B3-Ch09b-Cube, v_b3_ch9_enemies = 2)
+choice(""I'll tell him that there was no way to avoid killing them, and that they died in battle."", B3-Ch09b-Cube, v_current_scene = B3-Ch09b-Cube, v_b3_ch9_enemies = 3)
 
 
 ID: B3-Ch09b-Cube
@@ -1678,7 +1678,7 @@ I wish I could have explored that world more. I wish I could have tested my spel
 "Hey wait, where are you taking the rebels?" I say, but the red-eyed drone does not seem to be smart enough to answer any questions, so it simply flies away and leaves the plaza after having delivered its message.
 
 }
-choice("Continue", B3-Ch09b-Agreement, v_current_scene = B3-Ch09b-Agreement) if (v_b3_ch9_backup == 0 || v_b3_ch9_backup == 1)
+choice("Continue", B3-Ch09b-Agreement, v_current_scene = B3-Ch09b-Agreement)
 
 
 ID: B3-Ch09b-Agreement
@@ -1810,4 +1810,4 @@ However, instead of sending a green-eyed drone to talk to Barry and his team, th
 Reluctantly, Barry and the others started heading towards the Ollendor castle, so that they could have one last discussion with the Overseer about his plans of ruling the city, now that the rebels no longer posed a problem for him.
 
 }
-choice("Proceed to next chapter", B3-Ch10a-Intro, v_current_scene = B3-Ch10a-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, special:checkpoint_save) if (v_b3_ch8_overseer2 == 0 || v_b3_ch8_overseer2 == 1)
+choice("Proceed to next chapter", B3-Ch10a-Intro, v_current_scene = B3-Ch10a-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, special:checkpoint_save)

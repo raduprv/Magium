@@ -75,8 +75,8 @@ TEXT:
 "If you don't think he's leading us into a trap, then I do not see the problem," Illuna says. "We already decided that we would cooperate with the Overseer before we left the rebel base. Otherwise we would have never bothered to respond to his initial invitation. Whether he has any personal goals or not should not concern us unless we have reasons to believe that they'd conflict with our own."
 
 }
-choice(""I agree. The secret passage is probably our best option right now."", B3-Ch04b-Passage, v_current_scene = B3-Ch04b-Passage) if (v_b3_ch4_control == 0 || v_b3_ch4_control == 1)
-choice(""I still think that listening to the Overseer in this case might be a bad idea."", B3-Ch04b-Guarantee, v_current_scene = B3-Ch04b-Guarantee, v_b3_ch4_billy = 0) if (v_b3_ch4_control == 0 || v_b3_ch4_control == 1)
+choice(""I agree. The secret passage is probably our best option right now."", B3-Ch04b-Passage, v_current_scene = B3-Ch04b-Passage)
+choice(""I still think that listening to the Overseer in this case might be a bad idea."", B3-Ch04b-Guarantee, v_current_scene = B3-Ch04b-Guarantee, v_b3_ch4_billy = 0)
 
 
 ID: B3-Ch04b-Passage
@@ -579,7 +579,7 @@ He then takes out his transceiver and puts it close to his mouth.
 "Farewell," the Overseer says, as we are being teleported out of the room. "I'm sure we'll be seeing each other again quite soon."
 
 }
-choice("Continue", B3-Ch04b-Ending, v_current_scene = B3-Ch04b-Ending) if (v_b3_ch4_control == 0 || v_b3_ch4_control == 1)
+choice("Continue", B3-Ch04b-Ending, v_current_scene = B3-Ch04b-Ending)
 
 
 ID: B3-Ch04b-Undetected
@@ -674,7 +674,7 @@ Before the Overseer gets to say another word, Kate sends dozens of icicles into 
 "Farewell," the Overseer says, as we are being teleported out of the room. "I'm sure we'll be seeing each other again quite soon."
 
 }
-choice("Continue", B3-Ch04b-Ending, v_current_scene = B3-Ch04b-Ending) if (v_b3_ch4_billy == 6 || v_b3_ch4_billy == 9)
+choice("Continue", B3-Ch04b-Ending, v_current_scene = B3-Ch04b-Ending)
 
 
 ID: B3-Ch04b-Voluntarily
@@ -872,7 +872,7 @@ Before the Overseer gets to say another word, Kate sends dozens of icicles into 
 "Bye-bye, Overseer," I say, as I wave to the green-eyed drone while being teleported. "I don't think we'll be seeing you again anytime soon."
 
 }
-choice("Continue", B3-Ch04b-Ending, v_current_scene = B3-Ch04b-Ending) if (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8 || v_b3_ch4_billy == 9)
+choice("Continue", B3-Ch04b-Ending, v_current_scene = B3-Ch04b-Ending)
 
 
 ID: B3-Ch04b-Guarantee
@@ -1442,7 +1442,7 @@ It sounds like the teleporter guy is still saying something, but the magical sig
 It sounds like the teleporter guy is still saying something, but the magical signal is much too poor for us to be able to understand any of his words. When I look around the room to figure out what's happening, I see that four flying drones with orange-colored eyes are now slowly moving in to surround us, while a green-eyed drone flies past them and stops a few feet away from our position.
 
 }
-choice("Continue", B3-Ch04b-Contact3, v_current_scene = B3-Ch04b-Contact3) if (v_b3_ch4_control == 0 || v_b3_ch4_control == 1)
+choice("Continue", B3-Ch04b-Contact3, v_current_scene = B3-Ch04b-Contact3)
 
 
 ID: B3-Ch04b-Contact3

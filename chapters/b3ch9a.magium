@@ -246,7 +246,7 @@ Some of the mages were still casting protection spells on the area when we arriv
 "Make way, please," the king of the underground says to his men, when he sees us approaching him. "I wish to speak to them."
 
 }
-choice("Continue", B3-Ch09a-Gregory, v_current_scene = B3-Ch09a-Gregory) if (v_b3_ch8_overseer2 == 0 || v_b3_ch8_overseer2 == 1 || v_b3_ch9_currents == 0 || v_b3_ch9_currents == 1)
+choice("Continue", B3-Ch09a-Gregory, v_current_scene = B3-Ch09a-Gregory)
 
 
 ID: B3-Ch09a-Gregory
@@ -358,7 +358,7 @@ The king of the underground does not engage them, and he instead makes a semi-tr
 The king of the underground keeps baiting the drones for another minute or so, until about a hundred or more of them are surrounding him, and just as we are about to lose sight of him due to the high number of metal balls swarming him from all directions, the king unleashes a shockwave so powerful that it makes all of the drones around him explode at once.
 
 }
-choice("Continue", B3-Ch09a-Carcasses, v_current_scene = B3-Ch09a-Carcasses) if (v_b3_ch8_overseer2 == 0 || v_b3_ch8_overseer2 == 1)
+choice("Continue", B3-Ch09a-Carcasses, v_current_scene = B3-Ch09a-Carcasses)
 
 
 ID: B3-Ch09a-Refused
@@ -450,7 +450,7 @@ The king of the underground does not engage them, and he instead makes a semi-tr
 The king of the underground keeps baiting the drones for another minute or so, until about a hundred or more of them are surrounding him, and just as we are about to lose sight of him due to the high number of metal balls swarming him from all directions, the king unleashes a shockwave so powerful that it makes all of the drones around him explode at once.
 
 }
-choice("Continue", B3-Ch09a-Carcasses, v_current_scene = B3-Ch09a-Carcasses) if (v_b3_ch8_overseer2 == 0 || v_b3_ch8_overseer2 == 1)
+choice("Continue", B3-Ch09a-Carcasses, v_current_scene = B3-Ch09a-Carcasses)
 
 
 ID: B3-Ch09a-Caught
@@ -510,7 +510,7 @@ The king of the underground does not engage them, and he instead makes a semi-tr
 The king of the underground keeps baiting the drones for another minute or so, until about a hundred or more of them are surrounding him, and just as we are about to lose sight of him due to the high number of metal balls swarming him from all directions, the king unleashes a shockwave so powerful that it makes all of the drones around him explode at once.
 
 }
-choice("Continue", B3-Ch09a-Carcasses, v_current_scene = B3-Ch09a-Carcasses) if (v_b3_ch8_overseer2 == 0 || v_b3_ch8_overseer2 == 1)
+choice("Continue", B3-Ch09a-Carcasses, v_current_scene = B3-Ch09a-Carcasses)
 
 
 ID: B3-Ch09a-Carcasses
@@ -611,7 +611,7 @@ As soon as the circling flames slow down and disappear, the now unfrozen Albert 
 Just as I am about to finish my sentence, the red-eyed drones that were attacking the rebels fly higher into the sky and they begin to spin in place, while the light from their eyes is blinking constantly.
 
 }
-choice("Continue", B3-Ch09a-Warning, v_current_scene = B3-Ch09a-Warning, v_b3_ch3_stats_unavailable = 1) if (v_b3_ch8_overseer2 == 0 || v_b3_ch8_overseer2 == 1)
+choice("Continue", B3-Ch09a-Warning, v_current_scene = B3-Ch09a-Warning, v_b3_ch3_stats_unavailable = 1)
 
 
 ID: B3-Ch09a-Warning
@@ -803,7 +803,7 @@ As soon as I'm done saying the words, I look down and I see how my arms are slow
 "Flower has been living here a long time, so naturally she is more accustomed to the ways of this place," Illuna says. "Aside from her advantage of being an ethereal, I think there's also the fact that on the ethereal plane you benefit from having stronger emotions rather than from analyzing every little detail, and Flower typically has strong emotions about anything. This is the only place in the world where her illogical way of thinking actually gives her the upper hand, instead of being one of her weak points."
 
 }
-choice("Continue", B3-Ch09a-Reference, v_current_scene = B3-Ch09a-Reference) if (v_b3_ch9_illuna == 0 || v_b3_ch9_illuna == 1 || v_b3_ch9_illuna == 2)
+choice("Continue", B3-Ch09a-Reference, v_current_scene = B3-Ch09a-Reference)
 
 
 ID: B3-Ch09a-Reference
@@ -1389,9 +1389,9 @@ As Hadrik is teaching Daren how to avoid thinking out loud, the rest of us take 
 "Great!" I say. "I'll try to cast one right now, then. Give me a second!"
 
 }
-choice("Attempt to cast a fireball.", B3-Ch09a-Stance, v_current_scene = B3-Ch09a-Stance, v_b3_ch9_attempt = 0) if (v_b3_ch8_overseer2 == 0 || v_b3_ch8_overseer2 == 1 || v_b3_ch9_food == 0 || v_b3_ch9_food == 1 || v_b3_ch9_food == 2)
-choice("Attempt to shoot a gust of wind.", B3-Ch09a-Stance, v_current_scene = B3-Ch09a-Stance, v_b3_ch9_attempt = 1) if (v_b3_ch8_overseer2 == 0 || v_b3_ch8_overseer2 == 1 || v_b3_ch9_food == 0 || v_b3_ch9_food == 1 || v_b3_ch9_food == 2)
-choice("Attempt to create a water jet.", B3-Ch09a-Stance, v_current_scene = B3-Ch09a-Stance, v_b3_ch9_attempt = 2) if (v_b3_ch8_overseer2 == 0 || v_b3_ch8_overseer2 == 1 || v_b3_ch9_food == 0 || v_b3_ch9_food == 1 || v_b3_ch9_food == 2)
+choice("Attempt to cast a fireball.", B3-Ch09a-Stance, v_current_scene = B3-Ch09a-Stance, v_b3_ch9_attempt = 0)
+choice("Attempt to shoot a gust of wind.", B3-Ch09a-Stance, v_current_scene = B3-Ch09a-Stance, v_b3_ch9_attempt = 1)
+choice("Attempt to create a water jet.", B3-Ch09a-Stance, v_current_scene = B3-Ch09a-Stance, v_b3_ch9_attempt = 2)
 
 
 ID: B3-Ch09a-Stance
@@ -1443,7 +1443,7 @@ A water jet suddenly shoots out of my palms and straight for the vase with tulip
 "There used to be a time when I was under the illusion that even a normal person could cast magic if they knew every little detail that goes into the process of spell casting by heart," I say. "You have no idea how much time I spent on memorizing every particle position, every hand and body movement required, every last bit of theory that went into creating the spells... These are the types of things that you never forget."
 
 }
-choice("Continue", B3-Ch09a-Lunatic, v_current_scene = B3-Ch09a-Lunatic) if (v_b3_ch9_attempt == 0 || v_b3_ch9_attempt == 1 || v_b3_ch9_attempt == 2)
+choice("Continue", B3-Ch09a-Lunatic, v_current_scene = B3-Ch09a-Lunatic)
 
 
 ID: B3-Ch09a-Lunatic
@@ -1558,7 +1558,7 @@ I spend the next few minutes showing Flower the fire spells that I already know 
 For about forty minutes or so, I exchange information with Flower about the fire spells I know, and whenever we find one that she recognizes, I ask her to give me as many details as she can, until I can figure out what types of flows and patterns best fit her description. Fortunately, since I already know so many spells, it is easier for me to observe repetitive patterns between them, so I can mostly guess the directions and movements of the magical particles even if the information is incomplete.
 
 }
-choice("Continue", B3-Ch09a-Afford, v_current_scene = B3-Ch09a-Afford) if (v_b3_ch9_attempt == 0 || v_b3_ch9_attempt == 1 || v_b3_ch9_attempt == 2)
+choice("Continue", B3-Ch09a-Afford, v_current_scene = B3-Ch09a-Afford)
 
 
 ID: B3-Ch09a-Water
@@ -1602,7 +1602,7 @@ I spend the next few minutes showing Illuna the water spells that I already know
 For about forty minutes or so, Illuna helps me learn the majority of the spells on her list. I can clearly see that she has studied the theory behind these spells from the way she's teaching them to me, and thanks to her clear and concise explanations, I manage to learn a lot more than I would have hoped in such a brief period of time. I guess I made a good call when I chose her as the teacher.
 
 }
-choice("Continue", B3-Ch09a-Afford, v_current_scene = B3-Ch09a-Afford) if (v_b3_ch8_overseer2 == 0 || v_b3_ch8_overseer2 == 1)
+choice("Continue", B3-Ch09a-Afford, v_current_scene = B3-Ch09a-Afford)
 
 
 ID: B3-Ch09a-Air
@@ -1690,7 +1690,7 @@ I pause from my magic practice for a brief time, to ponder over Kate's words.
 Once I manage to shoot a beam of ice of acceptable proportions, Kate continues to teach me a few more of her spells, and as I am focusing on the task at hand, forty minutes pass us by without me even noticing.
 
 }
-choice("Continue", B3-Ch09a-Afford, v_current_scene = B3-Ch09a-Afford) if (v_b3_ch8_overseer2 == 0 || v_b3_ch8_overseer2 == 1)
+choice("Continue", B3-Ch09a-Afford, v_current_scene = B3-Ch09a-Afford)
 
 
 ID: B3-Ch09a-Afford

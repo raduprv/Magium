@@ -232,7 +232,7 @@ He then stops suppressing his magical power, and for a moment, it feels like the
 "These two fools have already sealed their fate!" Talmak shouts, as he faces the other members of our team. "But the rest of you do not need to die together with them. If you join my side now, you will be allowed to live."
 
 }
-choice("Continue", B2-Ch10b-Denied, v_current_scene = B2-Ch10b-Denied) if (v_b2_ch10_advisor == 0 || v_b2_ch10_advisor == 1 || v_b2_ch10_advisor == 2)
+choice("Continue", B2-Ch10b-Denied, v_current_scene = B2-Ch10b-Denied)
 
 
 ID: B2-Ch10b-Denied
@@ -1351,8 +1351,8 @@ All of a sudden, Melindra loses control of one of her wind blades, which flies a
 "Damn..." Daren says, as he looks at the hole in the ground left by the blade from earlier. "I really hope that my barrier is strong enough to protect us from one of these, if it hits us..."
 
 }
-choice(""Would your barrier work more effectively if we huddled closer together?"", B2-Ch10b-Huddled, v_current_scene = B2-Ch10b-Huddled) if (v_b2_ch10_target == 0 || v_b2_ch10_target == 1)
-choice(""Maybe you could try to use your sword to absorb the wind blades."", B2-Ch10b-Absorb, v_current_scene = B2-Ch10b-Absorb) if (v_b2_ch10_target == 0 || v_b2_ch10_target == 1)
+choice(""Would your barrier work more effectively if we huddled closer together?"", B2-Ch10b-Huddled, v_current_scene = B2-Ch10b-Huddled)
+choice(""Maybe you could try to use your sword to absorb the wind blades."", B2-Ch10b-Absorb, v_current_scene = B2-Ch10b-Absorb)
 
 
 ID: B2-Ch10b-Huddled
@@ -1480,7 +1480,7 @@ Before she gets to finish what she had to say, the banshee gets teleported out o
 "They're just trying to be nice, Melindra," I say. "There's no need to act so shocked about it. Also, could we maybe move away from this camp? I have a feeling that we're going to start getting attacked by a hundred pinecone-collecting underlings if we stay in this place much longer..."
 
 }
-choice("Continue", B2-Ch10b-Empty, v_current_scene = B2-Ch10b-Empty, v_b2_ch11_added_hearing = 0) if (v_b2_ch10_target == 0 || v_b2_ch10_target == 1)
+choice("Continue", B2-Ch10b-Empty, v_current_scene = B2-Ch10b-Empty, v_b2_ch11_added_hearing = 0)
 
 
 ID: B2-Ch10b-Empty
@@ -1624,7 +1624,7 @@ Before I get to finish my train of thought, Hadrik is the one to hit the nail on
 "So, I've been wondering about something for a while... maybe you guys can clear it up for me," Hadrik says. "Does the time look frozen to anyone else? Or is it just me?..."
 
 }
-choice("Next chapter", B2-Ch11a-Intro, v_next_chapter_crash = 1, v_current_scene = B2-Ch11a-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, special:checkpoint_save) if (v_b2_ch10_activate == 0 || v_b2_ch10_activate == 1 || v_ch4_spared_dave == 0 || v_ch4_spared_dave == 1)
+choice("Next chapter", B2-Ch11a-Intro, v_next_chapter_crash = 1, v_current_scene = B2-Ch11a-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, special:checkpoint_save)
 
 
 ID: B2-Ch10b-Details
@@ -1754,4 +1754,4 @@ Tap the button below to proceed.
 Tap the button below to proceed.
 
 }
-choice("Go to next chapter", B2-Ch11a-Intro, v_next_chapter_crash = 1, v_current_scene = B2-Ch11a-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, special:checkpoint_save) if (v_second_book_purchased == 0 || v_second_book_purchased == 1)
+choice("Go to next chapter", B2-Ch11a-Intro, v_next_chapter_crash = 1, v_current_scene = B2-Ch11a-Intro, v_chapter_save_counter = 5, v_checkpoint_rich = 1, special:checkpoint_save)

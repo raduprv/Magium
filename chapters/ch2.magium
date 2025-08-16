@@ -151,9 +151,9 @@ Great. I'm wondering if he plans to blow my cover to every single person we meet
 "Is that what he told you?" the woman asks. "And you believe him? He's just trying to get you to lower your guard!" 
 
 }
-choice("Ask her what she has against me", Ch2-Against, v_current_scene = Ch2-Against) if (v_ch1_stillwater == 1 || v_ch1_stillwater == 2)
-choice("Ask why the two of us should trust her", Ch2-Trust, v_current_scene = Ch2-Trust) if (v_ch1_stillwater == 1 || v_ch1_stillwater == 2)
-choice("Ask why she's so quick to trust Daren and not me", Ch2-Quick, v_current_scene = Ch2-Quick) if (v_ch1_stillwater == 1 || v_ch1_stillwater == 2)
+choice("Ask her what she has against me", Ch2-Against, v_current_scene = Ch2-Against)
+choice("Ask why the two of us should trust her", Ch2-Trust, v_current_scene = Ch2-Trust)
+choice("Ask why she's so quick to trust Daren and not me", Ch2-Quick, v_current_scene = Ch2-Quick)
 
 
 ID: Ch2-Against
@@ -451,7 +451,7 @@ The young mage slashes his dagger towards my neck. The slash is too fast for me 
 The last thing I see is Daren trying in vain to heal my wound, as my consciousness slowly fades away.
 
 }
-choice("Continue", Ch2-Battle-begins, v_current_scene = Ch2-Battle-begins) if (v_premonition == 0 && v_reflexes > 0 || v_is_dead == 0 && v_premonition == 0 && v_reflexes == 0 && v_toughness > 2 || v_is_dead == 1 && v_premonition == 0 && v_reflexes == 0 && v_toughness > 2 || v_premonition > 0)
+choice("Continue", Ch2-Battle-begins, v_current_scene = Ch2-Battle-begins) if (v_premonition == 0 && v_reflexes > 0 || v_premonition == 0 && v_reflexes == 0 && v_toughness > 2 || v_premonition > 0)
 choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_premonition == 0 && v_reflexes == 0 && v_toughness < 3)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_premonition == 0 && v_reflexes == 0 && v_toughness < 3)
 choice("Load game", , , special:saves) if (v_premonition == 0 && v_reflexes == 0 && v_toughness < 3)
