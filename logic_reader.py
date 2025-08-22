@@ -130,6 +130,9 @@ def is_compatible(comp1,comp2):
 def all_is_compatible(comp_set1,comp_set2):
     return all(is_compatible(comp_set1[key],comp_set2.get(key)) for key in comp_set1)
 
+def any_is_compatible(comp_set1,comp_set2):
+    return any(is_compatible(comp_set1[key],comp_set2.get(key)) for key in comp_set1)
+
 def apply_condition_to_sympy(x,cond_type,cond_value):
     if cond_type == ">":
         return x > cond_value
@@ -194,6 +197,7 @@ class Path:
     responses: list[Response]
     paragraphs: list[Paragraph]
     set_variables: list[SceneVariableSet]
+    text_only: bool = False
 
     def __repr__(self) -> str:
         text = "Path\n"
@@ -201,6 +205,7 @@ class Path:
         text += f"\tParagraphs: {self.paragraphs}\n"
         text += f"\tResponses: {self.responses}\n"
         text += f"\tSet variables: {self.set_variables}\n"
+        text += f"\tText only: {self.text_only}\n"
         return text
 
 
@@ -454,8 +459,8 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
-# chapters = ["b3ch9c"]
-verbose = False
+chapters = ["b2ch10a"]
+verbose = True
 var_possible_values = defaultdict(set)
 for chapter in chapters:
     filename = root_folder/chapter/"logic.txt"
@@ -479,6 +484,11 @@ for chapter in chapters:
         scene_id = event.conditions["scene"]
         if scene_id not in scenes:
             scenes[scene_id] = Scene(scene_id)
+
+        for path in scenes[scene_id].paths:
+            if any_is_compatible(path.conditions,event.conditions["variables"]):
+                path.text_only = True
+                path.responses = []
 
         scenes[scene_id].paths.append(Path(
             conditions=event.conditions["variables"],
@@ -507,6 +517,8 @@ for chapter in chapters:
         grouped_set_variables = [(group[0],[condition[1] for condition in group[1]]) for group in grouped_set_variables]
 
         for path in scenes[scene_id].paths:
+            if path.text_only:
+                continue
             for set_variable, conditions_list in grouped_set_variables:
                 if (
                     set_variable not in [v.name for v in path.set_variables]
