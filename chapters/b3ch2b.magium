@@ -901,6 +901,7 @@ Gontrok laughs.
 
 "Perhaps you've forgotten, Hadrik," Gontrok says, "but I've learned many of the weaknesses in your combat style, back when we were sparring repeatedly in our homeland. You likely learned many of my weaknesses too, but I've worked hard to overcome them since then, and I've already changed my combat style dramatically in these last years. But the question is... did you change yours?"
 
+choice("Continue", B3-Ch02b-Gontrok2, v_current_scene = B3-Ch02b-Gontrok2)
 
 
 ID: B3-Ch02b-Gontrok2

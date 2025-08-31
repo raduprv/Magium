@@ -439,7 +439,7 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
-chapters = ["b3ch3a"]
+# chapters = ["b3ch2b"]
 verbose = False
 var_possible_values = defaultdict(set)
 for chapter in chapters:
@@ -475,6 +475,7 @@ for chapter in chapters:
         ))
 
 
+    # Handling some more complex scenes
     for scene in scenes.values():
         for i, path in enumerate(scene.paths):
             path_conditions = {key:val for key,val in path.conditions.items()}
@@ -483,6 +484,10 @@ for chapter in chapters:
 
             should_be_neutralized = False
             for other_path in scene.paths[i+1:]:
+                # If the path does not have responses, it cannot override
+                if len(other_path.responses) == 0:
+                    continue
+
                 other_path_conditions = {key:val for key,val in other_path.conditions.items()}
                 for set_variable in other_path.set_variables:
                     other_path_conditions[set_variable.name] = sp.Eq(sp.symbols(set_variable.name),set_variable.value)
@@ -679,7 +684,7 @@ for chapter in chapters:
             if (isinstance(set_variable.value,str) and set_variable.value.isnumeric()) or isinstance(set_variable.value,int):
                 var_possible_values[set_variable.name].add(int(set_variable.value))
 
-    # print(*scenes["Ch6-Joking"].paths,sep="\n")
+    # print(*scenes["B3-Ch02b-Gontrok"].paths,sep="\n")
     magium_vals = "\n\n".join(scene.to_magium(paragraphs, var_possible_values) for scene in scenes.values())
     with open(root_folder/f"{chapter}.magium","w") as f:
         f.write(magium_vals) 
