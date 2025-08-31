@@ -95,6 +95,13 @@ def compare(value,comparison):
 def is_compatible(comp1,comp2):
     if comp1 is None or comp2 is None:
         return False
+    # Handling cases like toughness > 2 and toughness < 3
+    if isinstance(comp1,sp.StrictGreaterThan) and isinstance(comp2,sp.StrictLessThan):
+        if int(comp1.rhs) == int(comp2.rhs) - 1:
+            return False
+    if isinstance(comp1,sp.StrictLessThan) and isinstance(comp2,sp.StrictGreaterThan):
+        if int(comp1.rhs) - 1 == int(comp2.rhs):
+            return False
     return sp.simplify(sp.And(comp1,comp2)) != False
 
 def all_is_compatible(comp_set1,comp_set2):
@@ -104,8 +111,10 @@ def is_compatible_permissive(comp1,comp2):
     if comp1 is None or comp2 is None:
         return True
     if isinstance(comp1,sp.StrictGreaterThan) and isinstance(comp2,sp.StrictLessThan):
-        print(comp1.rhs,comp2.rhs)
         if int(comp1.rhs) == int(comp2.rhs) - 1:
+            return False
+    if isinstance(comp1,sp.StrictLessThan) and isinstance(comp2,sp.StrictGreaterThan):
+        if int(comp1.rhs) - 1 == int(comp2.rhs):
             return False
     return sp.simplify(sp.And(comp1,comp2)) != False
 
@@ -439,7 +448,7 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
-# chapters = ["b3ch2b"]
+# chapters = ["ch2"]
 verbose = False
 var_possible_values = defaultdict(set)
 for chapter in chapters:
@@ -465,8 +474,6 @@ for chapter in chapters:
         if scene_id not in scenes:
             scenes[scene_id] = Scene(scene_id)
 
-        
-        
         scenes[scene_id].paths.append(Path(
             conditions=event.conditions["variables"],
             responses=[Response(button) for button in event.results["add_buttons"]],
@@ -533,6 +540,7 @@ for chapter in chapters:
             for path in scenes[scene_id].paths:
                 if path.text_only:
                     continue
+
                 if (
                     set_variable not in path.conditions
                     and set_variable not in [v.name for v in path.set_variables]
@@ -684,7 +692,7 @@ for chapter in chapters:
             if (isinstance(set_variable.value,str) and set_variable.value.isnumeric()) or isinstance(set_variable.value,int):
                 var_possible_values[set_variable.name].add(int(set_variable.value))
 
-    # print(*scenes["B3-Ch02b-Gontrok"].paths,sep="\n")
+    # print(*scenes["Ch2-Battle-stillwater"].paths,sep="\n")
     magium_vals = "\n\n".join(scene.to_magium(paragraphs, var_possible_values) for scene in scenes.values())
     with open(root_folder/f"{chapter}.magium","w") as f:
         f.write(magium_vals) 
