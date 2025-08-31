@@ -141,7 +141,6 @@ choice("Let Leila handle her headache by herself and go follow her.", B3-Ch07a-M
 ID: B3-Ch07a-Massage
 TEXT:
 
-set(v_b3_ch7_massage,0) if (v_b3_ch7_massage == 1 && v_magical_sense < 2 || v_b3_ch7_massage == 2 && v_magical_sense >= 2 || v_b3_ch7_massage == 0)
 set(v_b3_ch7_massage,2) if (v_b3_ch7_massage == 1 && v_magical_sense >= 2)
 #if(v_b3_ch7_massage == 2 && v_magical_sense >= 2 || v_b3_ch7_massage == 1) {
  
@@ -547,7 +546,7 @@ ID: B3-Ch07a-Respite
 TEXT:
 
 set(v_is_dead,1) if (v_agility < 4 || v_reflexes < 4)
-set(v_is_dead,0) if (v_b3_ch7_bet == 0 && v_is_dead == 0 || v_b3_ch7_bet == 1 && v_is_dead == 0 || v_b3_ch7_bet == 3 && v_is_dead == 0 || v_agility >= 4 && v_reflexes >= 4)
+set(v_is_dead,0) if (v_agility >= 4 && v_reflexes >= 4)
 #if(v_reflexes < 4) {
  
 
@@ -1606,7 +1605,7 @@ TEXT:
 
 set(v_ac_b3_ch7_sharpshooter,1) if (v_b3_ch7_assassinate == 1 && v_b3_ch7_door == 0 && v_perception < 2)
 set(v_is_dead,1) if (v_b3_ch7_assassinate == 1 && v_b3_ch7_door == 0 && v_perception < 2)
-set(v_is_dead,0) if (v_b3_ch4_billy == 0 && v_is_dead == 0 || v_b3_ch4_billy == 7 && v_is_dead == 0 || v_b3_ch4_billy == 8 && v_is_dead == 0 || v_b3_ch4_billy == 9 && v_is_dead == 0 || v_b3_ch7_assassinate == 0 && v_b3_ch7_door == 0 || v_b3_ch7_assassinate == 0 && v_b3_ch7_door == 1 || v_b3_ch7_assassinate == 1 && v_b3_ch7_door == 1 || v_is_dead == 0 && v_b3_ch4_billy != 0 || v_b3_ch7_assassinate == 1 && v_b3_ch7_door == 0 && v_perception >= 2)
+set(v_is_dead,0) if (v_b3_ch7_assassinate == 0 && v_b3_ch7_door == 0 || v_b3_ch7_assassinate == 0 && v_b3_ch7_door == 1 || v_b3_ch7_assassinate == 1 && v_b3_ch7_door == 1 || v_b3_ch7_assassinate == 1 && v_b3_ch7_door == 0 && v_perception >= 2)
 achievement("Sharpshooter",v_ac_b3_ch7_sharpshooter)
 #if(v_b3_ch7_assassinate == 1 && v_b3_ch7_door == 0 && v_perception < 2) {
  

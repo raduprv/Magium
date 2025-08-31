@@ -238,7 +238,6 @@ choice("Continue", B3-Ch03a-Hag, v_current_scene = B3-Ch03a-Hag, v_b3_ch3_monste
 choice(""Listen, there was no way we could have known those were good goblins!"", B3-Ch03a-Goblins, v_current_scene = B3-Ch03a-Goblins, v_b3_ch3_monsters = 0) if (v_b3_ch2_goblins == 1)
 choice(""All we can really do now is try and make it up to him in some way."", B3-Ch03a-Goblins, v_current_scene = B3-Ch03a-Goblins, v_b3_ch3_monsters = 1) if (v_b3_ch2_goblins == 1)
 choice(""Does it really matter that much? They were all monsters, after all."", B3-Ch03a-Goblins, v_current_scene = B3-Ch03a-Goblins, v_b3_ch3_monsters = 2) if (v_b3_ch2_goblins == 1)
-choice("Continue", B3-Ch03a-Goblins, v_current_scene = B3-Ch03a-Goblins, v_b3_ch3_monsters = 0) if (v_b3_ch2_goblins == 1)
 
 
 ID: B3-Ch03a-Roam
@@ -307,7 +306,6 @@ choice("Continue", B3-Ch03a-Hag, v_current_scene = B3-Ch03a-Hag, v_b3_ch3_monste
 choice(""Listen, there was no way we could have known those were good goblins!"", B3-Ch03a-Goblins, v_current_scene = B3-Ch03a-Goblins, v_b3_ch3_monsters = 0) if (v_b3_ch2_goblins == 1)
 choice(""All we can really do now is try and make it up to him in some way."", B3-Ch03a-Goblins, v_current_scene = B3-Ch03a-Goblins, v_b3_ch3_monsters = 1) if (v_b3_ch2_goblins == 1)
 choice(""Does it really matter that much? They were all monsters, after all."", B3-Ch03a-Goblins, v_current_scene = B3-Ch03a-Goblins, v_b3_ch3_monsters = 2) if (v_b3_ch2_goblins == 1)
-choice("Continue", B3-Ch03a-Goblins, v_current_scene = B3-Ch03a-Goblins, v_b3_ch3_monsters = 0) if (v_b3_ch2_goblins == 1)
 
 
 ID: B3-Ch03a-Guided
@@ -376,7 +374,6 @@ choice("Continue", B3-Ch03a-Hag, v_current_scene = B3-Ch03a-Hag, v_b3_ch3_monste
 choice(""Listen, there was no way we could have known those were good goblins!"", B3-Ch03a-Goblins, v_current_scene = B3-Ch03a-Goblins, v_b3_ch3_monsters = 0) if (v_b3_ch2_goblins == 1)
 choice(""All we can really do now is try and make it up to him in some way."", B3-Ch03a-Goblins, v_current_scene = B3-Ch03a-Goblins, v_b3_ch3_monsters = 1) if (v_b3_ch2_goblins == 1)
 choice(""Does it really matter that much? They were all monsters, after all."", B3-Ch03a-Goblins, v_current_scene = B3-Ch03a-Goblins, v_b3_ch3_monsters = 2) if (v_b3_ch2_goblins == 1)
-choice("Continue", B3-Ch03a-Goblins, v_current_scene = B3-Ch03a-Goblins, v_b3_ch3_monsters = 0) if (v_b3_ch2_goblins == 1)
 
 
 ID: B3-Ch03a-Goblins
@@ -621,7 +618,7 @@ ID: B3-Ch03a-Plans
 TEXT:
 
 set(v_ac_b3_ch3_ominous,1) if (v_premonition == 4 && v_b3_ch1_unlock != 2)
-set(v_b3_ch3_chains,0) if (v_premonition < 4 && v_b3_ch1_unlock != 2 || v_b3_ch1_unlock == 2 || v_b3_ch3_plans == 0 || v_b3_ch3_plans == 1 || v_b3_ch3_plans == 2 || v_b3_ch3_plans == 3 || v_b3_ch3_plans == 4 || v_b3_ch3_plans == 5 || v_b3_ch3_plans == 6)
+set(v_b3_ch3_chains,0) if (v_b3_ch1_unlock == 2 || v_premonition < 4)
 set(v_b3_ch3_chains,1) if (v_premonition == 4 && v_b3_ch1_unlock != 2)
 achievement("Ominous foreshadowing",v_ac_b3_ch3_ominous)
 #if(v_b3_ch3_plans == 0) {

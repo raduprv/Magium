@@ -440,8 +440,8 @@ choice("Continue", B2-Ch10a-Mammoth, v_current_scene = B2-Ch10a-Mammoth)
 ID: B2-Ch10a-Dagger
 TEXT:
 
+set(v_is_dead,0) if (v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 || v_b2_ch10_toast == 0 || v_b2_ch9_drink == 0)
 set(v_is_dead,1) if (v_b2_ch10_toast == 0 && v_reflexes < 1 || v_b2_ch9_drink == 0 && v_reflexes < 1 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_reflexes < 2)
-set(v_is_dead,0) if (v_b2_ch10_toast == 0 && v_reflexes >= 1 || v_is_dead == 0)
 #if(v_b2_ch10_toast == 1 && v_b2_ch5_scimitar == 0 && v_b2_ch9_drink == 1) {
  
 
@@ -521,6 +521,9 @@ As Daren was finishing his sentence, a very large blue circle appeared on the gr
 
 }
 choice("Continue", B2-Ch10a-Mammoth, v_current_scene = B2-Ch10a-Mammoth)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b2_ch10_toast == 0 && v_reflexes < 1 || v_b2_ch9_drink == 0 && v_reflexes < 1 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_reflexes < 2)
+choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b2_ch10_toast == 0 && v_reflexes < 1 || v_b2_ch9_drink == 0 && v_reflexes < 1 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_reflexes < 2)
+choice("Load game", , , special:saves) if (v_b2_ch10_toast == 0 && v_reflexes < 1 || v_b2_ch9_drink == 0 && v_reflexes < 1 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_reflexes < 2)
 
 
 ID: B2-Ch10a-Mammoth
@@ -947,8 +950,8 @@ choice("Continue", B2-Ch10a-Breed, v_current_scene = B2-Ch10a-Breed) if (v_refle
 ID: B2-Ch10a-Breed
 TEXT:
 
+set(v_is_dead,0) if (v_b2_ch10_weakpoint == 0 && v_strength == 4 || v_b2_ch10_weakpoint == 1 && v_reflexes >= 2 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar != 0)
 set(v_is_dead,1) if (v_b2_ch10_weakpoint == 0 && v_strength < 4 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 && v_reflexes < 2)
-set(v_is_dead,0) if (v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar != 0)
 #if(v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 || v_b2_ch10_weakpoint == 0) {
  
 
@@ -1031,7 +1034,10 @@ The mammoth finally manages to pull itself away from Hadrik's grip, and it quick
 I pull my dagger out and I manage to get out of the trunk's way just in time. The mammoth tries to attack me again, but it stops, and it begins to make loud noises, trying to gasp for air, as the damage I did to its airways finally starts to have a visible effect. After about ten more seconds of the creature desperately trying to breathe, its gasps for air start to get faster and shorter, until they eventually stop, and the mammoth falls completely silent, as it slowly crashes to the ground, causing a small earth tremor due to the enormous size of its body.
 
 }
-choice("Continue", B2-Ch10a-Arena, v_current_scene = B2-Ch10a-Arena)
+choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b2_ch10_weakpoint == 0 && v_strength < 4 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 && v_reflexes < 2)
+choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b2_ch10_weakpoint == 0 && v_strength < 4 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 && v_reflexes < 2)
+choice("Load game", , , special:saves) if (v_b2_ch10_weakpoint == 0 && v_strength < 4 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 && v_reflexes < 2)
+choice("Continue", B2-Ch10a-Arena, v_current_scene = B2-Ch10a-Arena) if (v_b2_ch10_weakpoint == 0 && v_strength == 4 || v_b2_ch10_weakpoint == 1 && v_reflexes >= 2 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar != 0)
 
 
 ID: B2-Ch10a-Arena

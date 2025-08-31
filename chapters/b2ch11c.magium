@@ -912,7 +912,7 @@ choice("Continue", B2-Ch11c-Frenzy, v_current_scene = B2-Ch11c-Frenzy)
 ID: B2-Ch11c-Frenzy
 TEXT:
 
-set(v_b2_ch11_added_hearing,0) if (v_ancient_languages == 0 || v_ancient_languages == 1 || v_ancient_languages == 2 || v_ancient_languages == 3 || v_ancient_languages == 4 || v_b2_ch11_added_hearing == 0 || v_b2_ch11_added_hearing == 2)
+set(v_b2_ch11_added_hearing,0) if (v_ancient_languages == 0 || v_ancient_languages == 1 || v_ancient_languages == 2 || v_ancient_languages == 3 || v_ancient_languages == 4)
 set(v_b2_ch11_added_hearing,2) if (v_b2_ch11_added_hearing == 1)
 set(v_b2_ch11_district,1) if (v_ancient_languages == 4)
 set(v_b2_ch11_district,0) if (v_ancient_languages == 0 || v_ancient_languages == 1 || v_ancient_languages == 2 || v_ancient_languages == 3 || v_b2_ch11_added_hearing == 0 || v_b2_ch11_added_hearing == 1 || v_b2_ch11_added_hearing == 2)

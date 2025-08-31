@@ -96,42 +96,21 @@ def is_compatible(comp1,comp2):
     if comp1 is None or comp2 is None:
         return False
     return sp.simplify(sp.And(comp1,comp2)) != False
-    if comp1.type == "=": 
-        return compare(comp1.value,comp2)
-    elif comp2.type == "=": 
-        return compare(comp2.value,comp1)
-    elif comp1 == comp2:
-        return True
-    elif comp1.type == "<" and comp2.type == ">" and comp2.value >= comp1.value-1:
-        return False
-    elif comp2.type == "<" and comp1.type == ">" and comp1.value >= comp2.value-1:
-        return False
-    elif comp1.type == ">=" and comp2.type == "<" and comp1.value >= comp2.value:
-        return False
-    elif comp2.type == ">=" and comp1.type == "<" and comp2.value >= comp1.value:
-        return False
-    elif comp1.type == ">=" and comp2.type == "<" and comp1.value < comp2.value:
-        return False
-    elif comp2.type == ">=" and comp1.type == "<" and comp2.value < comp1.value:
-        return False
-    elif comp1.type == "<" and comp2.type == "<" and comp1.value <= comp2.value:
-        return True
-    elif comp1.type == "<" and comp2.type == "<" and comp1.value > comp2.value:
-        return False
-    elif comp1.type == ">=" and comp2.type == ">=" and comp1.value >= comp2.value:
-        return False
-    elif comp1.type == ">=" and comp2.type == ">=" and comp1.value < comp2.value:
-        return True
-    elif comp1.type == "<" and comp2.type == ">=":
-        return False
-    else:
-        raise ValueError(f"Do not know whether {comp1} and {comp2} are compatible")
 
 def all_is_compatible(comp_set1,comp_set2):
     return all(is_compatible(comp_set1[key],comp_set2.get(key)) for key in comp_set1)
 
-def any_is_compatible(comp_set1,comp_set2):
-    return any(is_compatible(comp_set1[key],comp_set2.get(key)) for key in comp_set1)
+def is_compatible_permissive(comp1,comp2):
+    if comp1 is None or comp2 is None:
+        return True
+    if isinstance(comp1,sp.StrictGreaterThan) and isinstance(comp2,sp.StrictLessThan):
+        print(comp1.rhs,comp2.rhs)
+        if int(comp1.rhs) == int(comp2.rhs) - 1:
+            return False
+    return sp.simplify(sp.And(comp1,comp2)) != False
+
+def all_is_compatible_permissive(comp_set1,comp_set2):
+    return all(is_compatible_permissive(comp_set1[key],comp_set2.get(key)) for key in comp_set1)
 
 def apply_condition_to_sympy(x,cond_type,cond_value):
     if cond_type == ">":
@@ -422,7 +401,8 @@ class Parser:
                     event.results["paragraphs"].append((int(match.group("paragraph")),3))
                 elif match := re.search('checks : Set alterable string to (?P<text>.*)',current):
                     if "Checkpoint reached" in match.group("text"):
-                        event.type = "scene_load"
+                        pass
+                        # event.type = "scene_load"
                 elif match := re.search('storyboard controls : Jump to frame "Stats"',current):
                     event.results["special"] = "stats"
                 elif match := re.search('storyboard controls : Jump to frame "Save load game"',current):
@@ -459,8 +439,8 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
-chapters = ["b2ch10a"]
-verbose = True
+chapters = ["b3ch3a"]
+verbose = False
 var_possible_values = defaultdict(set)
 for chapter in chapters:
     filename = root_folder/chapter/"logic.txt"
@@ -485,17 +465,45 @@ for chapter in chapters:
         if scene_id not in scenes:
             scenes[scene_id] = Scene(scene_id)
 
-        for path in scenes[scene_id].paths:
-            if any_is_compatible(path.conditions,event.conditions["variables"]):
-                path.text_only = True
-                path.responses = []
-
+        
+        
         scenes[scene_id].paths.append(Path(
             conditions=event.conditions["variables"],
             responses=[Response(button) for button in event.results["add_buttons"]],
             paragraphs=[Paragraph(paragraph[0],paragraph[1]) for paragraph in event.results["paragraphs"]],
             set_variables=[SceneVariableSet(variable,int(value)) for variable, value in event.results["set_variables"].items()],
         ))
+
+
+    for scene in scenes.values():
+        for i, path in enumerate(scene.paths):
+            path_conditions = {key:val for key,val in path.conditions.items()}
+            for set_variable in path.set_variables:
+                path_conditions[set_variable.name] = sp.Eq(sp.symbols(set_variable.name),set_variable.value)
+
+            should_be_neutralized = False
+            for other_path in scene.paths[i+1:]:
+                other_path_conditions = {key:val for key,val in other_path.conditions.items()}
+                for set_variable in other_path.set_variables:
+                    other_path_conditions[set_variable.name] = sp.Eq(sp.symbols(set_variable.name),set_variable.value)
+
+                is_set_in_any_path = False
+                for condition in other_path_conditions:
+                    is_set_in_any_path |= any([condition in [x.name for x in path.set_variables] for path in scenes[scene_id].paths])
+
+                # If the path is compatible, it may overwrite the responses
+                if all_is_compatible_permissive(path_conditions,other_path_conditions) and not is_set_in_any_path:
+                    if scene.id == "Ch6-Joking":
+                        print("Simplifying!!!!")
+                        print("path",path_conditions)
+                        print("other_path",other_path_conditions)
+                        print(all_is_compatible_permissive(path_conditions,other_path_conditions))
+                    should_be_neutralized = sp.Or(should_be_neutralized,sp.And(*other_path_conditions.values()))
+            
+            # If there is a combination of overwriting paths that covers everything, neutralize it
+            if should_be_neutralized == True:
+                path.text_only = True
+                path.responses = []
 
     for event in [e for e in events if e.type == "button"]:
         if verbose:
@@ -516,12 +524,13 @@ for chapter in chapters:
         grouped_set_variables = list(groupby_unsorted(set_variables,key=lambda r:(r[0].name)))
         grouped_set_variables = [(group[0],[condition[1] for condition in group[1]]) for group in grouped_set_variables]
 
-        for path in scenes[scene_id].paths:
-            if path.text_only:
-                continue
-            for set_variable, conditions_list in grouped_set_variables:
+        for set_variable, conditions_list in grouped_set_variables:
+            for path in scenes[scene_id].paths:
+                if path.text_only:
+                    continue
                 if (
-                    set_variable not in [v.name for v in path.set_variables]
+                    set_variable not in path.conditions
+                    and set_variable not in [v.name for v in path.set_variables]
                     and not any([all_is_compatible(path.conditions,conditions) for conditions in conditions_list])
                     and set_variable not in STATS_VARIABLE_NAMES
                 ):
@@ -670,6 +679,7 @@ for chapter in chapters:
             if (isinstance(set_variable.value,str) and set_variable.value.isnumeric()) or isinstance(set_variable.value,int):
                 var_possible_values[set_variable.name].add(int(set_variable.value))
 
+    # print(*scenes["Ch6-Joking"].paths,sep="\n")
     magium_vals = "\n\n".join(scene.to_magium(paragraphs, var_possible_values) for scene in scenes.values())
     with open(root_folder/f"{chapter}.magium","w") as f:
         f.write(magium_vals) 
