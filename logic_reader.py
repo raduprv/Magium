@@ -448,7 +448,7 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
-# chapters = ["ch2"]
+# chapters = ["b3ch6a"]
 verbose = False
 var_possible_values = defaultdict(set)
 for chapter in chapters:
@@ -496,8 +496,8 @@ for chapter in chapters:
                     continue
 
                 other_path_conditions = {key:val for key,val in other_path.conditions.items()}
-                for set_variable in other_path.set_variables:
-                    other_path_conditions[set_variable.name] = sp.Eq(sp.symbols(set_variable.name),set_variable.value)
+                # for set_variable in other_path.set_variables:
+                #     other_path_conditions[set_variable.name] = sp.Eq(sp.symbols(set_variable.name),set_variable.value)
 
                 is_set_in_any_path = False
                 for condition in other_path_conditions:
@@ -505,15 +505,19 @@ for chapter in chapters:
 
                 # If the path is compatible, it may overwrite the responses
                 if all_is_compatible_permissive(path_conditions,other_path_conditions) and not is_set_in_any_path:
-                    if scene.id == "Ch6-Joking":
+                    if scene.id == "B3-Ch06a-Hadrik-Plan":
                         print("Simplifying!!!!")
                         print("path",path_conditions)
                         print("other_path",other_path_conditions)
                         print(all_is_compatible_permissive(path_conditions,other_path_conditions))
                     should_be_neutralized = sp.Or(should_be_neutralized,sp.And(*other_path_conditions.values()))
             
+            if scene.id == "B3-Ch06a-Hadrik-Plan":
+                print("ccccccc")
+                print(path)
+                print(sp.simplify(should_be_neutralized))
             # If there is a combination of overwriting paths that covers everything, neutralize it
-            if should_be_neutralized == True:
+            if sp.simplify(should_be_neutralized) == True:
                 path.text_only = True
                 path.responses = []
 
@@ -541,6 +545,16 @@ for chapter in chapters:
                 if path.text_only:
                     continue
 
+                if scene_id == "B3-Ch06a-Hadrik-Plan":
+                    print("bbbbbbbbbb")
+                    print(set_variable)
+                    print(path)
+                    print("conditions",conditions_list)
+                    print(set_variable not in path.conditions)
+                    print(set_variable not in [v.name for v in path.set_variables])
+                    print([all_is_compatible(path.conditions,conditions) for conditions in conditions_list])
+                    print(set_variable not in STATS_VARIABLE_NAMES)
+
                 if (
                     set_variable not in path.conditions
                     and set_variable not in [v.name for v in path.set_variables]
@@ -548,6 +562,9 @@ for chapter in chapters:
                     and set_variable not in STATS_VARIABLE_NAMES
                 ):
                     path.set_variables.append(SceneVariableSet(set_variable,0))
+
+                if scene_id == "B3-Ch06a-Hadrik-Plan":
+                    print(path)
 
         event_conditions = event.conditions["variables"]
         for path in scenes[scene_id].paths:
@@ -692,7 +709,7 @@ for chapter in chapters:
             if (isinstance(set_variable.value,str) and set_variable.value.isnumeric()) or isinstance(set_variable.value,int):
                 var_possible_values[set_variable.name].add(int(set_variable.value))
 
-    # print(*scenes["Ch2-Battle-stillwater"].paths,sep="\n")
+    # print(*scenes["B3-Ch06a-Hadrik-Plan"].paths,sep="\n")
     magium_vals = "\n\n".join(scene.to_magium(paragraphs, var_possible_values) for scene in scenes.values())
     with open(root_folder/f"{chapter}.magium","w") as f:
         f.write(magium_vals) 

@@ -627,8 +627,8 @@ choice("Tell Leila to perform the technique on Gontrok while I keep him busy.", 
 ID: B3-Ch07a-Perform
 TEXT:
 
-set(v_is_dead,0) if (v_b3_ch7_massage == 0 || v_b3_ch7_massage == 1 || v_b3_ch7_massage == 2 || v_combat_technique >= 2)
 set(v_is_dead,1) if (v_combat_technique < 2)
+set(v_is_dead,0) if (v_combat_technique >= 2)
 #if(v_b3_ch7_massage == 0) {
  
 

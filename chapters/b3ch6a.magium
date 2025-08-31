@@ -1314,11 +1314,10 @@ Luckily for me, when the drone tries to shock me with an electric attack, my aur
 The drone shocks me with an electrical current, but my partial resistance to electricity due to being a half-lessathi isn't enough to protect me from the damage. It only takes a few more seconds until I lose my consciousness and then my heart slowly stops beating for good.
 
 }
-choice("Continue", B3-Ch06a-Entrance, v_current_scene = B3-Ch06a-Entrance) if (v_is_dead == 0 || v_aura_hardening >= 2 || v_combat_technique >= 1)
+choice("Continue", B3-Ch06a-Entrance, v_current_scene = B3-Ch06a-Entrance) if (v_aura_hardening >= 2 || v_combat_technique >= 1)
 choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_aura_hardening < 2 && v_combat_technique < 1)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_aura_hardening < 2 && v_combat_technique < 1)
 choice("Load game", , , special:saves) if (v_aura_hardening < 2 && v_combat_technique < 1)
-choice("Continue", Ch1-Intro1, v_current_scene = Ch1-Intro1) if (v_is_dead == 1)
 
 
 ID: B3-Ch06a-Rose-Awake
