@@ -440,8 +440,8 @@ choice("Continue", B2-Ch10a-Mammoth, v_current_scene = B2-Ch10a-Mammoth)
 ID: B2-Ch10a-Dagger
 TEXT:
 
-set(v_is_dead,0) if (v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 || v_b2_ch10_toast == 0 || v_b2_ch9_drink == 0 || v_is_dead == 0)
 set(v_is_dead,1) if (v_b2_ch10_toast == 0 && v_reflexes < 1 || v_b2_ch9_drink == 0 && v_reflexes < 1 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_reflexes < 2)
+set(v_is_dead,0) if (v_b2_ch10_toast == 0 && v_reflexes >= 1 || v_b2_ch9_drink == 0 && v_reflexes >= 1 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_reflexes >= 2)
 #if(v_b2_ch10_toast == 1 && v_b2_ch5_scimitar == 0 && v_b2_ch9_drink == 1) {
  
 
@@ -520,10 +520,10 @@ As Daren was finishing his sentence, a very large blue circle appeared on the gr
 "Get out of the summoning circle!" Daren shouts. "Get out, now!"
 
 }
-choice("Continue", B2-Ch10a-Mammoth, v_current_scene = B2-Ch10a-Mammoth)
 choice("Restart game", Ch1-Intro1, v_current_scene = Ch1-Intro1, special:restart) if (v_b2_ch10_toast == 0 && v_reflexes < 1 || v_b2_ch9_drink == 0 && v_reflexes < 1 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_reflexes < 2)
 choice("Load from last checkpoint", , v_chapter_save_counter = 5, special:checkpoint_load) if (v_b2_ch10_toast == 0 && v_reflexes < 1 || v_b2_ch9_drink == 0 && v_reflexes < 1 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_reflexes < 2)
 choice("Load game", , , special:saves) if (v_b2_ch10_toast == 0 && v_reflexes < 1 || v_b2_ch9_drink == 0 && v_reflexes < 1 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_reflexes < 2)
+choice("Continue", B2-Ch10a-Mammoth, v_current_scene = B2-Ch10a-Mammoth) if (v_b2_ch10_toast == 0 && v_reflexes >= 1 || v_b2_ch9_drink == 0 && v_reflexes >= 1 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_reflexes >= 2 || v_is_dead == 0)
 
 
 ID: B2-Ch10a-Mammoth
@@ -950,8 +950,8 @@ choice("Continue", B2-Ch10a-Breed, v_current_scene = B2-Ch10a-Breed) if (v_refle
 ID: B2-Ch10a-Breed
 TEXT:
 
-set(v_is_dead,0) if (v_b2_ch10_weakpoint == 0 && v_strength == 4 || v_b2_ch10_weakpoint == 1 && v_reflexes >= 2 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar != 0)
 set(v_is_dead,1) if (v_b2_ch10_weakpoint == 0 && v_strength < 4 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 && v_reflexes < 2)
+set(v_is_dead,0) if (v_b2_ch10_weakpoint == 0 && v_strength == 4 || v_b2_ch10_weakpoint == 1 && v_reflexes >= 2 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar != 0)
 #if(v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 || v_b2_ch10_weakpoint == 0) {
  
 

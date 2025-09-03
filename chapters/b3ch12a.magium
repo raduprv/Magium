@@ -1352,7 +1352,6 @@ choice(""I agree with Kate. There would be nothing wrong with you wanting some p
 ID: B3-Ch12a-Plates
 TEXT:
 
-set(v_b3_ch12_sincere,0) if (v_b3_ch12_sincere == 1 && v_bluff > 0 || v_b3_ch12_hadrik == 1 && v_b3_ch12_sincere == 1 && v_bluff == 0 || v_b3_ch12_sincere == 0 || v_b3_ch12_sincere == 2)
 set(v_b3_ch12_sincere,2) if (v_b3_ch12_sincere == 1 && v_bluff == 0)
 #if(v_b3_ch12_sincere == 1 && v_bluff > 0) {
  "Actually, I would never use such a technique even if I had it!"

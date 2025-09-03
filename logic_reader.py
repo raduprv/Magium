@@ -14,6 +14,8 @@ import sympy as sp
 root_folder = pathlib.Path("./chapters")
 pp = pprint.PrettyPrinter(2)
 
+DEBUG_SCENE = "B2-Ch10a-Dagger"
+
 STATS_VARIABLE_NAMES = [
     "v_agility",
     "v_aura_hardening",
@@ -95,40 +97,31 @@ def compare(value,comparison):
 def is_compatible(comp1,comp2):
     if comp1 is None or comp2 is None:
         return False
+    # Handling cases like toughness > 2 and toughness < 3
+    if isinstance(comp1,sp.StrictGreaterThan) and isinstance(comp2,sp.StrictLessThan):
+        if int(comp1.rhs) == int(comp2.rhs) - 1:
+            return False
+    if isinstance(comp1,sp.StrictLessThan) and isinstance(comp2,sp.StrictGreaterThan):
+        if int(comp1.rhs) - 1 == int(comp2.rhs):
+            return False
     return sp.simplify(sp.And(comp1,comp2)) != False
-    if comp1.type == "=": 
-        return compare(comp1.value,comp2)
-    elif comp2.type == "=": 
-        return compare(comp2.value,comp1)
-    elif comp1 == comp2:
-        return True
-    elif comp1.type == "<" and comp2.type == ">" and comp2.value >= comp1.value-1:
-        return False
-    elif comp2.type == "<" and comp1.type == ">" and comp1.value >= comp2.value-1:
-        return False
-    elif comp1.type == ">=" and comp2.type == "<" and comp1.value >= comp2.value:
-        return False
-    elif comp2.type == ">=" and comp1.type == "<" and comp2.value >= comp1.value:
-        return False
-    elif comp1.type == ">=" and comp2.type == "<" and comp1.value < comp2.value:
-        return False
-    elif comp2.type == ">=" and comp1.type == "<" and comp2.value < comp1.value:
-        return False
-    elif comp1.type == "<" and comp2.type == "<" and comp1.value <= comp2.value:
-        return True
-    elif comp1.type == "<" and comp2.type == "<" and comp1.value > comp2.value:
-        return False
-    elif comp1.type == ">=" and comp2.type == ">=" and comp1.value >= comp2.value:
-        return False
-    elif comp1.type == ">=" and comp2.type == ">=" and comp1.value < comp2.value:
-        return True
-    elif comp1.type == "<" and comp2.type == ">=":
-        return False
-    else:
-        raise ValueError(f"Do not know whether {comp1} and {comp2} are compatible")
 
 def all_is_compatible(comp_set1,comp_set2):
     return all(is_compatible(comp_set1[key],comp_set2.get(key)) for key in comp_set1)
+
+def is_compatible_permissive(comp1,comp2):
+    if comp1 is None or comp2 is None:
+        return True
+    if isinstance(comp1,sp.StrictGreaterThan) and isinstance(comp2,sp.StrictLessThan):
+        if int(comp1.rhs) == int(comp2.rhs) - 1:
+            return False
+    if isinstance(comp1,sp.StrictLessThan) and isinstance(comp2,sp.StrictGreaterThan):
+        if int(comp1.rhs) - 1 == int(comp2.rhs):
+            return False
+    return sp.simplify(sp.And(comp1,comp2)) != False
+
+def all_is_compatible_permissive(comp_set1,comp_set2):
+    return all(is_compatible_permissive(comp_set1[key],comp_set2.get(key)) for key in comp_set1)
 
 def apply_condition_to_sympy(x,cond_type,cond_value):
     if cond_type == ">":
@@ -194,6 +187,7 @@ class Path:
     responses: list[Response]
     paragraphs: list[Paragraph]
     set_variables: list[SceneVariableSet]
+    text_only: bool = False
 
     def __repr__(self) -> str:
         text = "Path\n"
@@ -201,6 +195,7 @@ class Path:
         text += f"\tParagraphs: {self.paragraphs}\n"
         text += f"\tResponses: {self.responses}\n"
         text += f"\tSet variables: {self.set_variables}\n"
+        text += f"\tText only: {self.text_only}\n"
         return text
 
 
@@ -417,7 +412,8 @@ class Parser:
                     event.results["paragraphs"].append((int(match.group("paragraph")),3))
                 elif match := re.search('checks : Set alterable string to (?P<text>.*)',current):
                     if "Checkpoint reached" in match.group("text"):
-                        event.type = "scene_load"
+                        pass
+                        # event.type = "scene_load"
                 elif match := re.search('storyboard controls : Jump to frame "Stats"',current):
                     event.results["special"] = "stats"
                 elif match := re.search('storyboard controls : Jump to frame "Save load game"',current):
@@ -454,7 +450,7 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
-# chapters = ["b3ch9c"]
+# chapters = ["b2ch10a"]
 verbose = False
 var_possible_values = defaultdict(set)
 for chapter in chapters:
@@ -487,6 +483,53 @@ for chapter in chapters:
             set_variables=[SceneVariableSet(variable,int(value)) for variable, value in event.results["set_variables"].items()],
         ))
 
+    # Handling some more complex scenes
+    for scene in scenes.values():
+        for i, path in enumerate(scene.paths):
+            path_conditions = {key:val for key,val in path.conditions.items()}
+            for set_variable in path.set_variables:
+                path_conditions[set_variable.name] = sp.Eq(sp.symbols(set_variable.name),set_variable.value)
+
+            should_be_neutralized = False
+            for other_path in scene.paths[i+1:]:
+                # If the path does not have responses, it cannot override
+                if len(other_path.responses) == 0:
+                    continue
+
+                other_path_conditions = {key:val for key,val in other_path.conditions.items()}
+                # for set_variable in other_path.set_variables:
+                #     other_path_conditions[set_variable.name] = sp.Eq(sp.symbols(set_variable.name),set_variable.value)
+
+                is_set_in_any_path = False
+                for condition in other_path_conditions:
+                    is_set_in_any_path |= any([condition in [x.name for x in path.set_variables] for path in scenes[scene_id].paths])
+
+                if scene.id == DEBUG_SCENE:
+                    print("Simplifying!!!!")
+                    print("path",path_conditions)
+                    print("other_path",other_path_conditions)
+                    print(all_is_compatible_permissive(path_conditions,other_path_conditions),is_set_in_any_path)
+                # If the path is compatible, it may overwrite the responses
+                if all_is_compatible_permissive(path_conditions,other_path_conditions) and not is_set_in_any_path:
+                    should_be_neutralized = sp.Or(should_be_neutralized,sp.And(*other_path_conditions.values()))
+
+            for condition in path_conditions.values():
+                if not isinstance(should_be_neutralized,bool):
+                    print(should_be_neutralized,condition)
+                    should_be_neutralized = should_be_neutralized.subs(condition,True)
+            
+            if scene.id == DEBUG_SCENE:
+                print("ccccccc")
+                print(path)
+                print(sp.simplify(should_be_neutralized))
+
+            # If there is a combination of overwriting paths that covers everything, neutralize it
+            if sp.simplify(should_be_neutralized) == True:
+                print("Neutralized")
+                path.text_only = True
+                path.responses = []
+                print(path)
+
     for event in [e for e in events if e.type == "button"]:
         if verbose:
             print("#"*60)
@@ -506,14 +549,31 @@ for chapter in chapters:
         grouped_set_variables = list(groupby_unsorted(set_variables,key=lambda r:(r[0].name)))
         grouped_set_variables = [(group[0],[condition[1] for condition in group[1]]) for group in grouped_set_variables]
 
-        for path in scenes[scene_id].paths:
-            for set_variable, conditions_list in grouped_set_variables:
+        for set_variable, conditions_list in grouped_set_variables:
+            for path in scenes[scene_id].paths:
+                if path.text_only:
+                    continue
+
+                if scene_id == DEBUG_SCENE:
+                    print("bbbbbbbbbb")
+                    print(set_variable)
+                    print(path)
+                    print("conditions",conditions_list)
+                    print(set_variable not in path.conditions)
+                    print(set_variable not in [v.name for v in path.set_variables])
+                    print([all_is_compatible(path.conditions,conditions) for conditions in conditions_list])
+                    print(set_variable not in STATS_VARIABLE_NAMES)
+
                 if (
-                    set_variable not in [v.name for v in path.set_variables]
+                    set_variable not in path.conditions
+                    and set_variable not in [v.name for v in path.set_variables]
                     and not any([all_is_compatible(path.conditions,conditions) for conditions in conditions_list])
                     and set_variable not in STATS_VARIABLE_NAMES
                 ):
                     path.set_variables.append(SceneVariableSet(set_variable,0))
+
+                if scene_id == DEBUG_SCENE:
+                    print(path)
 
         event_conditions = event.conditions["variables"]
         for path in scenes[scene_id].paths:
@@ -658,6 +718,7 @@ for chapter in chapters:
             if (isinstance(set_variable.value,str) and set_variable.value.isnumeric()) or isinstance(set_variable.value,int):
                 var_possible_values[set_variable.name].add(int(set_variable.value))
 
+    # print(*scenes[DEBUG_SCENE].paths,sep="\n")
     magium_vals = "\n\n".join(scene.to_magium(paragraphs, var_possible_values) for scene in scenes.values())
     with open(root_folder/f"{chapter}.magium","w") as f:
         f.write(magium_vals) 
