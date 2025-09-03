@@ -558,7 +558,7 @@ TEXT:
 "Sounds good to me," Hadrik says. "Alright, see you all later. I'm gonna go see if I can improve my new shapeshifting technique some more."
 
 }
-#if(v_b3_ch8_king == 5 && v_b3_ch4_billy != 7) {
+#if(v_b3_ch8_king == 5 && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8) {
  "Sounds good to me," Hadrik says. "Alright, see you all later. I'm gonna go see if I can improve my new shapeshifting technique some more."
 
 }
@@ -572,7 +572,7 @@ TEXT:
 "Sounds good to me," Hadrik says. "Alright, see you all later. I'm gonna go see if I can improve my new shapeshifting technique some more."
 
 }
-#if(v_b3_ch4_billy != 7 && v_b3_ch8_king != 5) {
+#if(v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8 && v_b3_ch8_king != 5) {
  "Even if it were possible to find out his true intentions," Daren says, "it would still be a bad idea to tell the king about our discussion with the Overseer, because that would almost guarantee our exclusion from tomorrow's mission. With how suspicious the king of the underground usually tends to get over the smallest of things, I really don't see how he could trust us in any way after hearing that we're having secret conversations with the Overseer in his very own underground base. I don't think we can obtain any more information from either the king of the underground or the Overseer, so we'll just have to think long and hard and decide whose side we'll take by the end of the day. Either way, we should probably-- hey, wait a minute... I completely forgot to check, but Albert wouldn't by any chance have been following us invisibly this whole time, would he?"
 
 "Relax," Arraka says. "If he were following you, I would have told you about it."
@@ -637,7 +637,7 @@ choice("Tell the Overseer that we won't help him set an ambush for the king of t
 ID: B3-Ch08b-Answer
 TEXT:
 
-#if(v_b3_ch8_overseer2 == 0 && v_b3_ch4_billy != 8) {
+#if(v_b3_ch8_overseer2 == 0 && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8) {
  ...tell the Overseer that we won't help him set an ambush for the king of the underground.
 
 Once we decided what to say to him, all we had to do was go back to our sleeping quarters and call out the Overseer's name for him to immediately respond to us from one of the crystals, as if he'd been there this whole time, just waiting for our answer.

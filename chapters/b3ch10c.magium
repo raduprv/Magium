@@ -95,7 +95,7 @@ achievement("No man left behind",v_ac_b3_ch10_behind)
 "I see," Eiden says.
 
 }
-#if(v_b3_ch8_overseer2 == 1 && v_b3_ch4_billy != 8) {
+#if(v_b3_ch8_overseer2 == 1 && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8) {
  "I think he will be a great leader."
 
 "The Overseer?" Eiden says, while stroking his chin. "The last I heard of him, he was looking to add more mage slaves to the seredium towers, in order to power up his drones more efficiently."

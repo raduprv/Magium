@@ -14,7 +14,7 @@ import sympy as sp
 root_folder = pathlib.Path("./chapters")
 pp = pprint.PrettyPrinter(2)
 
-DEBUG_SCENE = "B2-Ch10a-Dagger"
+DEBUG_SCENE = "B2-Ch04b-Strength-check"
 
 STATS_VARIABLE_NAMES = [
     "v_agility",
@@ -379,8 +379,11 @@ class Parser:
                         var_name = transform_var_name(match.group("variable"))
                         # Do not use the aux variables in conditions
                         var_name = var_name.removesuffix("_aux")
-                        event.conditions["variables"][var_name] = apply_condition_to_sympy(sp.symbols(var_name),match.group("comparison"),int(match.group("value")))
-
+                        new_condition = apply_condition_to_sympy(sp.symbols(var_name),match.group("comparison"),int(match.group("value")))
+                        if var_name not in event.conditions["variables"]:
+                            event.conditions["variables"][var_name] = new_condition
+                        else:
+                            event.conditions["variables"][var_name] = sp.And(new_condition,event.conditions["variables"][var_name])
             else:
                 if match := re.search('List : Add line "(?P<button_name>.*)"',current):
                     event.type = "scene_load"
@@ -450,7 +453,7 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
-# chapters = ["b2ch10a"]
+# chapters = ["b2ch4b"]
 verbose = False
 var_possible_values = defaultdict(set)
 for chapter in chapters:
@@ -504,31 +507,18 @@ for chapter in chapters:
                 for condition in other_path_conditions:
                     is_set_in_any_path |= any([condition in [x.name for x in path.set_variables] for path in scenes[scene_id].paths])
 
-                if scene.id == DEBUG_SCENE:
-                    print("Simplifying!!!!")
-                    print("path",path_conditions)
-                    print("other_path",other_path_conditions)
-                    print(all_is_compatible_permissive(path_conditions,other_path_conditions),is_set_in_any_path)
                 # If the path is compatible, it may overwrite the responses
                 if all_is_compatible_permissive(path_conditions,other_path_conditions) and not is_set_in_any_path:
                     should_be_neutralized = sp.Or(should_be_neutralized,sp.And(*other_path_conditions.values()))
 
             for condition in path_conditions.values():
                 if not isinstance(should_be_neutralized,bool):
-                    print(should_be_neutralized,condition)
                     should_be_neutralized = should_be_neutralized.subs(condition,True)
             
-            if scene.id == DEBUG_SCENE:
-                print("ccccccc")
-                print(path)
-                print(sp.simplify(should_be_neutralized))
-
             # If there is a combination of overwriting paths that covers everything, neutralize it
             if sp.simplify(should_be_neutralized) == True:
-                print("Neutralized")
                 path.text_only = True
                 path.responses = []
-                print(path)
 
     for event in [e for e in events if e.type == "button"]:
         if verbose:
@@ -554,16 +544,6 @@ for chapter in chapters:
                 if path.text_only:
                     continue
 
-                if scene_id == DEBUG_SCENE:
-                    print("bbbbbbbbbb")
-                    print(set_variable)
-                    print(path)
-                    print("conditions",conditions_list)
-                    print(set_variable not in path.conditions)
-                    print(set_variable not in [v.name for v in path.set_variables])
-                    print([all_is_compatible(path.conditions,conditions) for conditions in conditions_list])
-                    print(set_variable not in STATS_VARIABLE_NAMES)
-
                 if (
                     set_variable not in path.conditions
                     and set_variable not in [v.name for v in path.set_variables]
@@ -571,9 +551,6 @@ for chapter in chapters:
                     and set_variable not in STATS_VARIABLE_NAMES
                 ):
                     path.set_variables.append(SceneVariableSet(set_variable,0))
-
-                if scene_id == DEBUG_SCENE:
-                    print(path)
 
         event_conditions = event.conditions["variables"]
         for path in scenes[scene_id].paths:
@@ -712,7 +689,8 @@ for chapter in chapters:
                 if (isinstance(value,str) and value.isnumeric()) or isinstance(value,int):
                     var_possible_values[set_variable_name].add(int(value))
             for set_variable_name,value in response.conditions.items():
-                var_possible_values[set_variable_name].add(value.rhs)
+                if isinstance(value,sp.Eq):
+                    var_possible_values[set_variable_name].add(value.rhs)
             
         for set_variable in scene.set_variables:
             if (isinstance(set_variable.value,str) and set_variable.value.isnumeric()) or isinstance(set_variable.value,int):

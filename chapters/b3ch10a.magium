@@ -364,7 +364,7 @@ TEXT:
 "Actually, that is incorrect," the Overseer says. "Both the king of the underground and Peter were unconscious when you killed them, so they did not in fact pose any threat to you whatsoever at that particular point in time."
 
 }
-#if(v_b3_ch9_enemies == 0 && v_b3_ch4_billy != 8) {
+#if(v_b3_ch9_enemies == 0 && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8) {
  "That remains to be seen," the Overseer says. "Ideally, it should be someone who is easily manipulatable, but also not stupid enough to give away his connection to me. Most people would react badly if they found out that a machine was the real ruler behind the scenes, so it would be best to avoid such a scenario."
 
 "Right," Melindra says.
@@ -422,7 +422,7 @@ He pauses.
 "Hey, Overseer," Melindra says. "You mentioned earlier that you would only rule the city from the shadows. Who is going to be the official king, then?"
 
 }
-#if(v_b3_ch9_enemies == 2 && v_b3_ch4_billy != 8 || v_b3_ch9_enemies == 3 && v_b3_ch4_billy != 8) {
+#if(v_b3_ch9_enemies == 2 && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8 || v_b3_ch9_enemies == 3 && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8) {
  "That remains to be seen," the Overseer says. "Ideally, it should be someone who is easily manipulatable, but also not stupid enough to give away his connection to me. Most people would react badly if they found out that a machine was the real ruler behind the scenes, so it would be best to avoid such a scenario."
 
 "Right," Melindra says.
@@ -452,7 +452,7 @@ choice("Continue", B3-Ch10a-Towers, v_current_scene = B3-Ch10a-Towers)
 ID: B3-Ch10a-Towers
 TEXT:
 
-#if(v_b3_ch4_billy != 8) {
+#if(v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8) {
  "So, what are you planning to do about the seredium towers, now that you have full control of the city?" Kate asks.
 
 "The Overseer protocol would like to remind you that we had not reached a proper conclusion when we discussed this subject before the battle," the Overseer says.
@@ -530,7 +530,7 @@ choice("Continue", B3-Ch10a-Feedback, v_current_scene = B3-Ch10a-Feedback)
 ID: B3-Ch10a-Feedback
 TEXT:
 
-#if(v_b3_ch4_billy != 8) {
+#if(v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8) {
  "So, what do we do now?" Hadrik asks, once the door behind us closes, and we are walking through the corridor that leads out of the palace.
 
 "There's not much we can do, at this point," Daren says. "We're the ones who helped the Overseer gain control of the city. It's too late to switch sides now, after everything that's happened."

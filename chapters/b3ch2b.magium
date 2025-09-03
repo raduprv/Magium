@@ -122,7 +122,7 @@ As the metal ball keeps pestering us, more and more of the citizens we are passi
 
 }
 choice("Continue", B3-Ch02b-Esteemed, v_current_scene = B3-Ch02b-Esteemed) if (v_b3_ch2_goblins == 3 || v_b3_ch2_goblins == 4 || v_b3_ch2_infiltration == 3)
-choice("Continue", B3-Ch02b-Premonition, v_current_scene = B3-Ch02b-Premonition) if (v_b3_ch2_goblins != 4 && v_b3_ch2_infiltration != 3)
+choice("Continue", B3-Ch02b-Premonition, v_current_scene = B3-Ch02b-Premonition) if (v_b3_ch2_goblins != 3 && v_b3_ch2_goblins != 4 && v_b3_ch2_infiltration != 3)
 
 
 ID: B3-Ch02b-Esteemed
@@ -641,7 +641,7 @@ After smacking the floor two more times with his scepter, the man in blue robes 
 "My beloved people!" the king says. "As I've announced yesterday, our Creator has finally returned. I've spoken to him yesterday, and he has gracefully agreed to participate in this ceremony, in order to receive the blessing of the God of the Seas, just like every other citizen of Ollendor. Once he becomes one of us, I'm certain that he will guide us to new heights, and together with him we will no longer need to fear any of our enemies!"
 
 }
-#if(v_b3_ch2_goblins != 4 && v_b3_ch2_infiltration != 3) {
+#if(v_b3_ch2_goblins != 3 && v_b3_ch2_goblins != 4 && v_b3_ch2_infiltration != 3) {
  As Melindra begins to concentrate on remembering the right way towards the palace, I can feel the air currents around me disappearing, likely because she can no longer maintain her focus on them.
 
 "At least we won't have to worry about being attacked here, with all these civilians standing around," Hadrik says, as he looks at all the people gathered in our area. "What do you all suppose this ceremony is about, anyway?"
@@ -885,7 +885,7 @@ Gontrok laughs.
 "See, now that's what I've been waiting to hear!" Gontrok says. "To be perfectly honest, I've been itching to have another fight with Hadrik for a long time, and I don't think I'll ever get a better opportunity than this. You two stay back! I alone should be enough to finish them all off!"
 
 }
-#if(v_b3_ch2_goblins != 4 && v_b3_ch2_infiltration != 3) {
+#if(v_b3_ch2_goblins != 3 && v_b3_ch2_goblins != 4 && v_b3_ch2_infiltration != 3) {
  "I don't care about your race's history, recruit," the captain says, in a cold tone. "What I do care about, however, is the reason why these criminals have still not been apprehended by our city guards. From the descriptions we received, these are clearly the hoodlums that destroyed our front gates and invaded our city."
 
 "As long as we deal with them ourselves, it doesn't really matter that much, does it, captain?" Gontrok says. "To be perfectly honest, I've been itching to have another fight with Hadrik for a long time, and I don't think I'll ever get a better opportunity than this. You two stay back! I alone should be enough to finish them all off!"

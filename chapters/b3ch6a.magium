@@ -489,8 +489,9 @@ Now that Leila mentions it, I realize that most of the shopkeepers we've passed 
 
 As we all look up at the sky, we see a green-eyed drone slowly making its way down towards us.    
 
-choice("Continue", B3-Ch06a-Helpful, v_current_scene = B3-Ch06a-Helpful) if (v_b3_ch4_billy == 0 && v_ch11_saved_rose == 0 || v_b3_ch4_billy == 9)
-choice("Continue", B3-Ch06a-Processing, v_current_scene = B3-Ch06a-Processing) if (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8 || v_b3_ch4_billy != 0)
+choice("Continue", B3-Ch06a-Mercy, v_current_scene = B3-Ch06a-Mercy) if (v_b3_ch4_billy == 9)
+choice("Continue", B3-Ch06a-Helpful, v_current_scene = B3-Ch06a-Helpful) if (v_b3_ch4_billy == 0 && v_ch11_saved_rose == 0 || v_b3_ch4_billy <= 6 && v_b3_ch4_billy != 0)
+choice("Continue", B3-Ch06a-Processing, v_current_scene = B3-Ch06a-Processing) if (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8)
 choice("Continue", B3-Ch06a-Complaint, v_current_scene = B3-Ch06a-Complaint) if (v_b3_ch4_billy == 0 && v_ch11_saved_rose == 1)
 
 

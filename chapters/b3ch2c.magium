@@ -475,7 +475,7 @@ Albert sighs.
 "Of course it's possible, you idiots!" Arraka blurts out, all of a sudden. "It's just like when you're making golems. If golems can be smart enough to make decisions on their own, then why not also this 'Overseer', or whatever it's called? To me, this 'artificial intelligence' just sounds like a smarter version of those golems that you typically see guarding ruins and attacking everyone that gets within their range of sight. I don't really see why there's any need to treat it as something special."
 
 }
-#if(v_b3_ch2_goblins != 4 && v_b3_ch2_infiltration != 3) {
+#if(v_b3_ch2_goblins != 3 && v_b3_ch2_goblins != 4 && v_b3_ch2_infiltration != 3) {
  "I'm not sure who this Overseer is supposed to be, but if by 'drowns' you mean those flying metal balls, then yeah, we did meet them," I say. "Those pieces of junk nearly killed us."
 
 "Oh yeah," the man says. "Those 'drowns' are not to be underestimated, but the Overseer is even worse... He has complete control over those metal balls, and he can even use them to spy on you. Some people here may not agree with me, but I think that bastard is even more dangerous than Billy Bob and the royal guards combined."
