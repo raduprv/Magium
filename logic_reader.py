@@ -14,6 +14,8 @@ import sympy as sp
 root_folder = pathlib.Path("./chapters")
 pp = pprint.PrettyPrinter(2)
 
+DEBUG_SCENE = "B2-Ch10a-Dagger"
+
 STATS_VARIABLE_NAMES = [
     "v_agility",
     "v_aura_hardening",
@@ -448,7 +450,7 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
-# chapters = ["b3ch6a"]
+# chapters = ["b2ch10a"]
 verbose = False
 var_possible_values = defaultdict(set)
 for chapter in chapters:
@@ -481,7 +483,6 @@ for chapter in chapters:
             set_variables=[SceneVariableSet(variable,int(value)) for variable, value in event.results["set_variables"].items()],
         ))
 
-
     # Handling some more complex scenes
     for scene in scenes.values():
         for i, path in enumerate(scene.paths):
@@ -503,23 +504,31 @@ for chapter in chapters:
                 for condition in other_path_conditions:
                     is_set_in_any_path |= any([condition in [x.name for x in path.set_variables] for path in scenes[scene_id].paths])
 
+                if scene.id == DEBUG_SCENE:
+                    print("Simplifying!!!!")
+                    print("path",path_conditions)
+                    print("other_path",other_path_conditions)
+                    print(all_is_compatible_permissive(path_conditions,other_path_conditions),is_set_in_any_path)
                 # If the path is compatible, it may overwrite the responses
                 if all_is_compatible_permissive(path_conditions,other_path_conditions) and not is_set_in_any_path:
-                    if scene.id == "B3-Ch06a-Hadrik-Plan":
-                        print("Simplifying!!!!")
-                        print("path",path_conditions)
-                        print("other_path",other_path_conditions)
-                        print(all_is_compatible_permissive(path_conditions,other_path_conditions))
                     should_be_neutralized = sp.Or(should_be_neutralized,sp.And(*other_path_conditions.values()))
+
+            for condition in path_conditions.values():
+                if not isinstance(should_be_neutralized,bool):
+                    print(should_be_neutralized,condition)
+                    should_be_neutralized = should_be_neutralized.subs(condition,True)
             
-            if scene.id == "B3-Ch06a-Hadrik-Plan":
+            if scene.id == DEBUG_SCENE:
                 print("ccccccc")
                 print(path)
                 print(sp.simplify(should_be_neutralized))
+
             # If there is a combination of overwriting paths that covers everything, neutralize it
             if sp.simplify(should_be_neutralized) == True:
+                print("Neutralized")
                 path.text_only = True
                 path.responses = []
+                print(path)
 
     for event in [e for e in events if e.type == "button"]:
         if verbose:
@@ -545,7 +554,7 @@ for chapter in chapters:
                 if path.text_only:
                     continue
 
-                if scene_id == "B3-Ch06a-Hadrik-Plan":
+                if scene_id == DEBUG_SCENE:
                     print("bbbbbbbbbb")
                     print(set_variable)
                     print(path)
@@ -563,7 +572,7 @@ for chapter in chapters:
                 ):
                     path.set_variables.append(SceneVariableSet(set_variable,0))
 
-                if scene_id == "B3-Ch06a-Hadrik-Plan":
+                if scene_id == DEBUG_SCENE:
                     print(path)
 
         event_conditions = event.conditions["variables"]
@@ -709,7 +718,7 @@ for chapter in chapters:
             if (isinstance(set_variable.value,str) and set_variable.value.isnumeric()) or isinstance(set_variable.value,int):
                 var_possible_values[set_variable.name].add(int(set_variable.value))
 
-    # print(*scenes["B3-Ch06a-Hadrik-Plan"].paths,sep="\n")
+    # print(*scenes[DEBUG_SCENE].paths,sep="\n")
     magium_vals = "\n\n".join(scene.to_magium(paragraphs, var_possible_values) for scene in scenes.values())
     with open(root_folder/f"{chapter}.magium","w") as f:
         f.write(magium_vals) 
