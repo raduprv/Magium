@@ -1267,7 +1267,7 @@ choice("Continue", B3-Ch04b-Blades, v_current_scene = B3-Ch04b-Blades) if (v_hea
 ID: B3-Ch04b-Blades
 TEXT:
 
-#if(v_b3_ch4_tasked != 5) {
+#if(v_b3_ch4_tasked != 2 && v_b3_ch4_tasked != 3 && v_b3_ch4_tasked != 5) {
  "Breynan, did you try contacting your friend from the teleporter room again?" Melindra says, while we're still walking through the hallway. "Maybe you can reach him from here."
 
 "I already tried but he still won't answer," Breynan says. "Maybe we'll have better luck if we keep moving upwar--"

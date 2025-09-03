@@ -1570,7 +1570,7 @@ achievement("Hidden alliance aftermath",v_ac_b3_ch11_aftermath)
 As expected, the Overseer ignores Daren completely, and he just plays the conversation that he recorded, by using the blue crystal.
 
 }
-#if(v_b3_ch8_overseer2 == 1 && v_b3_ch4_billy != 7) {
+#if(v_b3_ch8_overseer2 == 1 && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8) {
  "What do you want, Overseer?" Daren asks him, bluntly.
 
 "First of all, I wanted to report to you that as promised, the issues concerning the seredium towers from Ollendor will soon be resolved," the Overseer says. "Upon closer analysis, I have concluded that these towers were not operating at full capacity, which is why I am now in the process of adding more mage slaves, so that everything will work more smoothly. No thanks are necessary."

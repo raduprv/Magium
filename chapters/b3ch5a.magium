@@ -55,7 +55,7 @@ choice(""Sure, we'll tell you. For a price."", B3-Ch05a-Price, v_current_scene =
 ID: B3-Ch05a-Price
 TEXT:
 
-#if(v_b3_ch5_negotiations == 2 && v_b3_ch4_billy != 8) {
+#if(v_b3_ch5_negotiations == 2 && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8) {
  "Sure, we'll tell you. For a price."
 
 "A price?..." the king of the underground says, and he spends a few moments thinking about my offer. "Well, to be perfectly honest with you, I can't say that I would be willing to spend a lot of money on this information. The way I see it, either you struck some secret deal with the Overseer, in which case you obviously aren't going to tell me about it, or your discussion was centered on viable ways to assassinate the king, which have likely become irrelevant now that the king has ordered a city-wide lockdown. However, I would be willing to pay you ten gold coins upfront if you agree to confirm or deny my hypothesis. What do you say?"
@@ -78,7 +78,7 @@ TEXT:
 
 set(v_ac_b3_ch5_opportunist,1) if (v_b3_ch5_negotiations == 3)
 achievement("Opportunist",v_ac_b3_ch5_opportunist)
-#if(v_b3_ch5_negotiations == 1 && v_b3_ch4_billy != 8) {
+#if(v_b3_ch5_negotiations == 1 && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8) {
  "I mean, the cat's out of the bag already, so I guess we might as well tell you."
 
 "I'm all ears," the king says. "Please go on."
@@ -126,7 +126,7 @@ The king of the underground shrugs.
 "Suit yourself, then," he says. "I don't really see why you would deny my offer, since it's just free money for you at this point, but I won't waste any time trying to change your mind. Anyway, now that we're done discussing this topic, I recommend that you all go get some rest, because tomorrow is likely going to be a busy day. We'll talk again in the morning."
 
 }
-#if(v_b3_ch4_billy == 7 && v_b3_ch5_negotiations != 4 || v_b3_ch4_billy == 8 && v_b3_ch5_negotiations != 4) {
+#if(v_b3_ch4_billy == 7 && v_b3_ch5_negotiations != 0 && v_b3_ch5_negotiations != 4 || v_b3_ch4_billy == 8 && v_b3_ch5_negotiations != 0 && v_b3_ch5_negotiations != 4) {
  "My king, is there anything I can help you with?" Breynan says.
 
 "Well, you could begin by taking some of these reports off my hands," the king of the underground says, as he points at a man standing next to him who is holding a stack of papers. "Start with the ones at the bottom. Those should be easy enough for you to understand even without knowing the layout of the city by heart like I do. We need to evacuate as many people as we can by sunrise, so you'd better be ready for another sleepless night. We're going to be here for a while."
@@ -140,7 +140,7 @@ We leave the king and Breynan behind, and we begin heading for the tunnel leadin
 "Hey, even I'm not that crazy!" I tell her.
 
 }
-#if(v_b3_ch5_negotiations == 0 || v_b3_ch5_negotiations == 4 || v_b3_ch4_billy != 8) {
+#if(v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8 || v_b3_ch5_negotiations == 0 || v_b3_ch5_negotiations == 4) {
  "My king, is there anything I can help you with?" Breynan says.
 
 "Well, you could begin by taking some of these reports off my hands," the king of the underground says, as he points at a man standing next to him who is holding a stack of papers. "Start with the ones at the bottom. Those should be easy enough for you to understand even without knowing the layout of the city by heart like I do. We need to evacuate as many people as we can by sunrise, so you'd better be ready for another sleepless night. We're going to be here for a while."
@@ -330,7 +330,7 @@ Once we are done giving them all of the details about what was happening beneath
 "Here's an idea," Arraka says. "How about you stop looking for help from all these losers and actually start searching for ways to deal with your problems by yourselves. Do you think these idiot rebels are going to be there to hold your hands while you're fighting the God of Time? Do you think they'll be there to fight by your side when that copy version of me from five thousand years ago is going to put her hand through your mouths and rip out your skeletons? When are you low-lives finally going to understand that this isn't a game, and that you're going to need to take your training seriously if you want to have the slightest chance of achieving your unrealistic goals?"
 
 }
-#if(v_b3_ch4_billy != 0) {
+#if(v_b3_ch4_billy <= 6 && v_b3_ch4_billy != 0) {
  "I'm not sure what to say, here," I answer Daren. "He seemed grateful that we killed Billy Bob for him and he seemed willing to return the favor, but I don't know what his plans are, so I don't think we can really leave our guards down around him."
 
 "Who cares about the Overseer?" Hadrik says. "He's just a machine! The rebels are the ones that matter. Do we know if we can trust them? Maybe we can talk to them to assemble a rescue team or something."
@@ -408,7 +408,7 @@ Once we are done giving them all of the details about what was happening beneath
 "Here's an idea," Arraka says. "How about you stop looking for help from all these losers and actually start searching for ways to deal with your problems by yourselves. Do you think these idiot rebels are going to be there to hold your hands while you're fighting the God of Time? Do you think they'll be there to fight by your side when that copy version of me from five thousand years ago is going to put her hand through your mouths and rip out your skeletons? When are you low-lives finally going to understand that this isn't a game, and that you're going to need to take your training seriously if you want to have the slightest chance of achieving your unrealistic goals?"
 
 }
-#if(v_b3_ch4_billy != 0) {
+#if(v_b3_ch4_billy <= 6 && v_b3_ch4_billy != 0) {
  "I'm not sure what to say, here," I answer Daren. "He seemed grateful that we killed Billy Bob for him and he seemed willing to return the favor, but I don't know what his plans are, so I don't think we can really leave our guards down around him."
 
 "Who cares about the Overseer?" Hadrik says. "He's just a machine! The rebels are the ones that matter. Do we know if we can trust them? Maybe we can talk to them to assemble a rescue team or something."
@@ -498,7 +498,7 @@ Once we are done giving them all of the details about what was happening beneath
 "Here's an idea," Arraka says. "How about you stop looking for help from all these losers and actually start searching for ways to deal with your problems by yourselves. Do you think these idiot rebels are going to be there to hold your hands while you're fighting the God of Time? Do you think they'll be there to fight by your side when that copy version of me from five thousand years ago is going to put her hand through your mouths and rip out your skeletons? When are you low-lives finally going to understand that this isn't a game, and that you're going to need to take your training seriously if you want to have the slightest chance of achieving your unrealistic goals?"
 
 }
-#if(v_b3_ch4_billy != 0) {
+#if(v_b3_ch4_billy <= 6 && v_b3_ch4_billy != 0) {
  "I'm not sure what to say, here," I answer Daren. "He seemed grateful that we killed Billy Bob for him and he seemed willing to return the favor, but I don't know what his plans are, so I don't think we can really leave our guards down around him."
 
 "Who cares about the Overseer?" Hadrik says. "He's just a machine! The rebels are the ones that matter. Do we know if we can trust them? Maybe we can talk to them to assemble a rescue team or something."
