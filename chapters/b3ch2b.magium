@@ -198,7 +198,6 @@ TEXT:
 "It appears that you would like to change your initial designation," the metal ball says. "Unfortunately, it is not possible to change your group's name at this time. You will therefore continue to be referred to as 'Da-ren' for the time being. We apologize for the inconvenience."
 
 }
-#if(v_b3_ch2_name == 0 || v_b3_ch2_name == 1 || v_b3_ch2_name == 2 || v_b3_ch2_name == 3 || v_b3_ch2_name == 4) {
  "Hey, no problem!" I say. "In that case, I guess we'll be goin--"
 
 "In order for this unit to be able to properly guide you through the city, you will first need to specify your intended destination," the metal ball says.
@@ -211,7 +210,6 @@ TEXT:
 
 "Error," the metal ball says. "This unit is not equipped to deal with such a scenario. Initiating experimental artificial intelligence protocol: designation Overseer. Please standby. Your inquiry will be answered shortly."
 
-}
 choice("Continue", B3-Ch02b-Formulating, v_current_scene = B3-Ch02b-Formulating)
 
 
@@ -1061,7 +1059,7 @@ As Gontrok approaches me, I quickly realize that his wings grant him a far highe
 The only way I could compensate for this would be to react quicker than him, whenever he attacks me, but unfortunately my reflexes are nowhere near good enough for this to happen, and so the giant soon catches up to me, grabbing me with one hand by my shirt and punching me so hard in the face with the other, that he completely shatters my skull and kills me in an instant.
 
 }
-#if(v_combat_technique == 4 && v_reflexes == 4 && v_b3_ch1_unlock != 2 || v_reflexes == 4 && v_combat_technique < 4 && v_b3_ch1_unlock != 2) {
+#if(v_reflexes == 4 && (v_combat_technique == 4 || v_combat_technique < 4) && v_b3_ch1_unlock != 2) {
  
 
 "What's the matter, hero?" Gontrok says with a malicious grin, as he kicks Daren in the stomach once again just when he was trying to get back up. "Isn't this supposed to be the part where you defy the odds and make a spectacular comeback? Don't disappoint me like this... I was having such high expectations of you!"

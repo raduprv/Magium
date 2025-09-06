@@ -4,7 +4,7 @@ TEXT:
 set(v_ac_ch5_wielder,1) if (v_ch4_dave_defeat == 1 && v_ch4_ending == 5)
 set(v_is_dead,0)
 achievement("Stat device wielder",v_ac_ch5_wielder)
-#if(v_ch4_ending == 1) {
+#if(v_ch4_ending == 1 && (v_ch4_dave_defeat == 1 || v_ch4_ending != 5)) {
 
 "Daren!" I shout. "Daren, can you hear me?"
 
@@ -20,18 +20,8 @@ Well, it's not like I'm going anywhere. My knees still hurt like hell. I've bare
 
 He casts a healing spell on me and I suddenly get enveloped in a warm, soothing light. The pain leaves me completely, and I manage to get back on my feet with no difficulty. I always knew there were healing spells like this, but witnessing one of them first hand is something else. Most healers I've met in my lifetime could barely even heal light bruises or ankle sprains.
 
-"Where's the stillwater?"
-
-"Gone. I just saw him kill Cutthroat Dave along with a whole crew of henchmen. Turns out he can cast fire magic, combustive magic and teleportation without even breaking a sweat. Eiden got upset because Cutthroat Dave mistook him for me, and I took advantage of the situation."
-
-"Hah! Serves him right! But how did I end up unconscious on the ground?"
-
-"You mean you don't remember? He just waved his hand casually and put you to sleep."
-
-"What?... That can't be right. I have so much protection against sleep spells that I should be almost immune. At the very least I should be able to keep my consciousness! And what was that about him using fire magic? I'm pretty sure he used air magic on me when we first met him. Normally it takes a lifetime to master even a single element!"
-
 }
-#if(v_ch4_ending == 2) {
+#if(v_ch4_ending == 2 && (v_ch4_dave_defeat == 1 || v_ch4_ending != 5)) {
 
 "Daren!"
 
@@ -53,26 +43,8 @@ Daren suddenly wakes up and starts looking around him, confused.
 
 Daren and I start filling her in on the details of our first encounter with Eiden.
 
-After we're done talking, Kate takes a few moments to reflect on our words.
-
-"So, let me see if I got this right..." she says. "Barry, you traded our lives for one message."
-
-"Right," I say.
-
-"And we need to deliver this message to any robed men we might encounter that wear a brooch with a picture of a hawk holding the sun in its talons."
-
-"Yeah. Does that description tell you anything?"
-
-"Yes..." she says, and then almost immediately looks towards the ground.
-
-She's hiding something again. I just know it.
-
-"They're an underground group," she continues. "Most of the time they don't really show themselves in public. Nobody knows exactly who they are, or what they do. Most people don't even know they exist. But there are rumors that they are being backed by the kings of Varathia."
-
-"They're being backed by the kings?" Daren asks. "What would Eiden want with these hotshots? You simply have to tell them to remember the still winter, right? I wonder what that's supposed to mean?"
-
 }
-#if(v_ch4_ending == 4) {
+#if(v_ch4_ending == 4 && (v_ch4_dave_defeat == 1 || v_ch4_ending != 5)) {
 
 "Barry!" Daren calls out to me again as he approaches the trees.
 
@@ -91,7 +63,7 @@ He enters the forest, and starts looking around for Cutthroat Dave.
 "Wait, you're saying he used fire magic? Didn't he use air magic that time when he pinned me to the ground? Normally it takes a lifetime to master even a single element!"
 
 }
-#if(v_ch4_ending == 5 && v_ch4_dave_defeat != 1 || v_ch4_ending == 3) {
+#if((v_ch4_ending == 3 || v_ch4_ending == 5) && (v_ch4_ending == 3 || v_ch4_dave_defeat != 1) && v_ch4_ending != 6) {
 
 "Daren!"
 
@@ -176,6 +148,38 @@ Daren suddenly wakes up and starts looking around him, confused.
 "Well I'm just telling you what I saw. I don't claim to understand it either."
 
 "Wait a minute... Didn't we just see him cast fire magic too? There's something seriously wrong here. I'm pretty sure he used air magic on me the first time we met. How could he know two types of elemental magic? Normally it takes a lifetime to master even a single element!"
+
+}
+#if(v_ch4_ending == 1) {
+"Where's the stillwater?"
+
+"Gone. I just saw him kill Cutthroat Dave along with a whole crew of henchmen. Turns out he can cast fire magic, combustive magic and teleportation without even breaking a sweat. Eiden got upset because Cutthroat Dave mistook him for me, and I took advantage of the situation."
+
+"Hah! Serves him right! But how did I end up unconscious on the ground?"
+
+"You mean you don't remember? He just waved his hand casually and put you to sleep."
+
+"What?... That can't be right. I have so much protection against sleep spells that I should be almost immune. At the very least I should be able to keep my consciousness! And what was that about him using fire magic? I'm pretty sure he used air magic on me when we first met him. Normally it takes a lifetime to master even a single element!"
+
+}
+#if(v_ch4_ending == 2) {
+After we're done talking, Kate takes a few moments to reflect on our words.
+
+"So, let me see if I got this right..." she says. "Barry, you traded our lives for one message."
+
+"Right," I say.
+
+"And we need to deliver this message to any robed men we might encounter that wear a brooch with a picture of a hawk holding the sun in its talons."
+
+"Yeah. Does that description tell you anything?"
+
+"Yes..." she says, and then almost immediately looks towards the ground.
+
+She's hiding something again. I just know it.
+
+"They're an underground group," she continues. "Most of the time they don't really show themselves in public. Nobody knows exactly who they are, or what they do. Most people don't even know they exist. But there are rumors that they are being backed by the kings of Varathia."
+
+"They're being backed by the kings?" Daren asks. "What would Eiden want with these hotshots? You simply have to tell them to remember the still winter, right? I wonder what that's supposed to mean?"
 
 }
 choice(""Maybe he has some artifact that's helping him?"", Ch5-Artifact, v_current_scene = Ch5-Artifact, v_checkpoint_rich = 0) if (v_ch4_ending == 1 || v_ch4_ending == 4 || v_ch4_ending == 6)

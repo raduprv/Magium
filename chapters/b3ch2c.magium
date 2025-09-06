@@ -993,7 +993,7 @@ As I am still busy trying to get Kate to snap out of it, Breynan suddenly turns 
 "Oh my..." Kelrim says. "In that case, they must already be waiting for me at our meeting spot. I will have to go there as soon as possible."
 
 }
-#if(v_b3_ch1_password == 0 && v_b3_ch2_goblins == 0 || v_b3_ch1_password == 1 && v_b3_ch2_goblins == 0 || v_b3_ch2_goblins == 2 || v_b3_ch2_goblins == 3 || v_b3_ch2_goblins == 4) {
+#if(v_b3_ch2_goblins == 0 || v_b3_ch2_goblins == 2 || v_b3_ch2_goblins == 3 || v_b3_ch2_goblins == 4) {
  All of a sudden, Breynan turns around and then he jumps back, out of shock, now looking at a man in his mid-fifties standing in front of him, who is wearing chainmail armor and a gray mantle around his shoulders.
 
 }

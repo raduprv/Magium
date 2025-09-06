@@ -289,7 +289,6 @@ I then take Arraka's amulet from Illuna, and I start spinning it, while Illuna l
 "No, I can't 'see' anything from inside here, are you stupid?" Arraka says. "I have no eyes. I can make out most things with my magical sense, so I don't really need my eyesight for anything important, but to me, the girl's drawings in the air were just magical particles, floating around at random. Now that I know what they're supposed to be, I might be able to make a little more sense of them."
 
 }
-#if(v_b2_ch3_spin == 1 || v_b2_ch3_spin == 2 || v_b2_ch3_spin == 3) {
  "Are you sure it's safe to carry her around like this?" Leila writes, looking concerned.
 
 "Don't worry, she's not that tough!" I say. "Hell, I fought her with a dagger while she was in her best condition, and she still couldn't kill me!"
@@ -304,7 +303,6 @@ She pauses.
 
 "Thank you," Leila writes, as Illuna begins to cast her healing spells.  
 
-}
 choice("Continue", B2-Ch03a-Accounting, v_current_scene = B2-Ch03a-Accounting)
 
 

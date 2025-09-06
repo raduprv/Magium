@@ -1333,7 +1333,7 @@ TEXT:
 
 set(v_ac_b2_ch1_breed,1) if (v_b2_ch1_spin == 0)
 achievement("Half-breed",v_ac_b2_ch1_breed)
-#if(v_b2_ch1_spin == 0 && v_ch11_kill_noble == 1) {
+#if(v_b2_ch1_spin == 0 && v_ch11_kill_noble == 1 && v_ch11_saved_slave != 3) {
  "We didn't kill him! We're innocent!" 
 
 "Oh?" Golmyck says, while stroking his chin. "That's strange. Our reports show that it was you, specifically, who killed the earl of Ollendor. I would have thought that you'd know by now just how hard it is to hide information in my city. Why would you lie to us like this?"
@@ -1367,7 +1367,7 @@ As we all turn around, Eiden starts to walk slowly towards the ambassador, and h
 "What's the matter, ambassador?" Eiden asks, with a smirk. "Aren't you going to bow before your Creator?"
 
 }
-#if(v_b2_ch1_spin == 1 && v_ch11_kill_noble == 1) {
+#if(v_b2_ch1_spin == 1 && v_ch11_kill_noble == 1 && v_ch11_saved_slave != 3) {
  "We didn't kill him! We're innocent!" 
 
 "Oh?" Golmyck says, while stroking his chin. "That's strange. Our reports show that it was you, specifically, who killed the earl of Ollendor. I would have thought that you'd know by now just how hard it is to hide information in my city. Why would you lie to us like this?"
@@ -1589,6 +1589,7 @@ choice("Continue", B2-Ch01a-Creator2, v_current_scene = B2-Ch01a-Creator2)
 ID: B2-Ch01a-Creator2
 TEXT:
 
+#if(v_ch11_saved_slave == 3 || v_ch11_kill_noble != 0) {
  "Oh?" Eiden says, with an evil smile. "And what if I told you that I was in fact the one who gave them the ability to hurt the people of Varathia?"
 
 The ambassador is now sweating even harder than before, and he seems to be too afraid to give Eiden an answer. Seeing the expression on his face, Eiden starts to laugh.
@@ -1605,6 +1606,7 @@ The ambassador is now sweating even harder than before, and he seems to be too a
 
 "No..." the ambassador says. "No, of course not..."
 
+}
 #if(v_ch11_kill_noble == 0 && v_ch11_saved_slave != 3) {
  "Oh?" Eiden says, with an evil smile. "And what if I told you that I was in fact both the one who gave them the ability to hurt the people of Varathia, and the one who killed your beloved earl?"
 

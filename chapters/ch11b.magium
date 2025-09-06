@@ -862,7 +862,7 @@ choice("Continue", Ch11b-Sacrificial, v_current_scene = Ch11b-Sacrificial)
 ID: Ch11b-Sacrificial
 TEXT:
 
-#if(v_ch11_strategy == 1 || v_ch11_strategy == 2) {
+#if(v_ch11_strategy != 3 && v_ch11_strategy != 4) {
  "No!" Zack shouts. "I won't let it end like this!"
 
 Right after he finishes his sentence, the necromancer takes a knife out of his robes and he uses it to stab himself in the chest. He then gets enveloped in a bright red light, and soon afterwards, he starts turning into ashes. 
@@ -894,7 +894,6 @@ As we all gather around to look at the pile of ashes that the necromancer has tu
 "Relax," Hadrik says. "If his all-powerful stillwater skeletons couldn't kill us, what do you expect him to do after he's already dead?"
 
 }
-#if(v_ch11_strategy == 1 || v_ch11_strategy == 2 || v_ch11_strategy == 3 || v_ch11_strategy == 4) {
  "That's some tough talk coming from someone who couldn't even identify an obvious weakness in their enemy's defenses," Arraka says. "You all would have been toast if it weren't for me. I'm the one who saved all of you losers. Where's my reward for that, huh?"
 
 "Oh, I've got your reward right here!" Hadrik says, as he grabs Arraka's amulet from Flower's neck, and he starts spinning it by the chain.
@@ -903,7 +902,6 @@ As we all gather around to look at the pile of ashes that the necromancer has tu
 
 "Really?" Hadrik says, with a grin, as he continues to spin Arraka. "Huh. I guess it must have slipped my mind."
 
-}
 choice(""Put her down, Hadrik. It's not worth the bother."", Ch11b-Bother, v_current_scene = Ch11b-Bother)
 choice(""I suppose she does deserve this after all she's done."", Ch11b-Deserve, v_current_scene = Ch11b-Deserve)
 choice(""Can I spin her next?"", Ch11b-Spin, v_current_scene = Ch11b-Spin)
@@ -1048,7 +1046,7 @@ Just as I reach her, all of the stones in front of Rose suddenly get sent flying
 Soon after Daren starts to heal us, a loud booming noise suddenly starts to echo all throughout the city. 
 
 }
-#if(v_hearing == 4 && v_perception < 4 || v_hearing < 4) {
+#if(v_hearing < 4 && v_agility != 4 || v_hearing < 4 && v_hearing != 4 || v_hearing < 4 && v_perception != 4 || v_hearing == 4 && v_perception < 4 && v_agility != 4 || v_hearing == 4 && v_perception < 4 && v_perception != 4) {
  It's no use... I'm sure that Daren must have realized it as well. Rose is no longer breathing. She stopped breathing even before she hit the ground. She's dead. After all we've been through to bring her back home safely. After everything that's happened this past week. She died, just like that. And not even Daren can bring her back.
 
 "No..." Kate says. "This isn't right. This has to be an illusion! The necromancer could never harm her like this. The tournament's spell would have prevented him! This has to be a--"
@@ -1063,6 +1061,8 @@ Kate stops for a few seconds, in order to rub her eyes with her hands, as she tr
 
 "This is my fault..." Daren says, as he finally lets go of Rose. "I was the one who offered to escort her home. I was the one who promised we'd protect her. I failed her. It's my fault that she's dead..."
 
+}
+#if(v_hearing == 4 && v_perception < 4 || v_hearing < 4) {
  "Hey, now, hold on there!" Hadrik says. "You can't just go and blame this all on yourself. Rose knew very well what she was getting into when she decided to stick with us after what happened yesterday with the noble. She made her own choice and she stuck by it until the end. She died with honor, and we should all respect her for that."
 
 "What do you know about Rose?!" Daren shouts furiously, all of a sudden. "Do you think she wanted to live her last moments in a cesspool like this? Do you think she died happily, knowing that she left her little siblings behind to fend for themselves? Do you seriously think that everything in the world can be measured by your primitive values? What gives you the right to talk about Rose this way? Tell me!"

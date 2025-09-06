@@ -14,7 +14,7 @@ import sympy as sp
 root_folder = pathlib.Path("./chapters")
 pp = pprint.PrettyPrinter(2)
 
-DEBUG_SCENE = "B2-Ch04b-Strength-check"
+DEBUG_SCENE = "B3-Ch06c-Herbs"
 
 STATS_VARIABLE_NAMES = [
     "v_agility",
@@ -264,7 +264,7 @@ class Scene:
         for achievement in set(self.achievements):
             text += f'achievement("{achievement.text}",{achievement.variable})\n'
 
-        paragraph_groups = self.merge_paragraphs()
+        paragraph_groups = self.merge_paragraphs(var_possible_values)
         for par_group in paragraph_groups:
             if par_group.conditions != True:
                 text += f"#if({sp.jscode(par_group.conditions)}) {{\n"
@@ -291,7 +291,7 @@ class Scene:
 
         return text
 
-    def merge_paragraphs(self):
+    def merge_paragraphs(self,var_possible_values: dict[str,set]):
         grouped_paragraphs = groupby_unsorted(self.paragraphs[::-1],key=lambda r:(r.id,r.version))
         new_paragraphs = []
         for (id,version),group in grouped_paragraphs:
@@ -301,6 +301,26 @@ class Scene:
 
         # Necessary to ensure paragraphs remain in the correct order
         new_paragraphs = sorted(new_paragraphs[::-1],key=lambda x:x.version)
+
+        # If we have several options for a paragraph version, ensure they are incompatible
+        for i in range(3):
+            paragraphs_i = [paragraph for paragraph in new_paragraphs if paragraph.version == i]
+            if len(paragraphs_i):
+                for j,paragraph in enumerate(paragraphs_i):
+                    for other_paragraph in paragraphs_i[j+1:]:
+                        if is_compatible(paragraph.conditions,other_paragraph.conditions):
+                            paragraph.conditions = sp.simplify(sp.And(paragraph.conditions,sp.Not(other_paragraph.conditions)))
+        
+        cond_vars = set(itertools.chain.from_iterable([paragraph.conditions.keys() for paragraph in self.paragraphs]))
+        cond_vars = {var for var in cond_vars if var not in STATS_VARIABLE_NAMES}
+        for var in cond_vars:
+            tautological_cond = sp.Or(*[sp.Eq(sp.symbols(var),int(possible_value)) for possible_value in var_possible_values[var]])
+            for new_paragraph in new_paragraphs:
+                try:
+                    new_paragraph.conditions = sp.simplify_logic(new_paragraph.conditions,dontcare=~tautological_cond)
+                except:
+                    print(var,var_possible_values[var])
+                    continue
 
         paragraph_groups = {}
         for paragraph in new_paragraphs:
@@ -453,7 +473,7 @@ chapters = (
     + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
-# chapters = ["b2ch4b"]
+# chapters = ["b3ch6c"]
 verbose = False
 var_possible_values = defaultdict(set)
 for chapter in chapters:
@@ -696,7 +716,6 @@ for chapter in chapters:
             if (isinstance(set_variable.value,str) and set_variable.value.isnumeric()) or isinstance(set_variable.value,int):
                 var_possible_values[set_variable.name].add(int(set_variable.value))
 
-    # print(*scenes[DEBUG_SCENE].paths,sep="\n")
     magium_vals = "\n\n".join(scene.to_magium(paragraphs, var_possible_values) for scene in scenes.values())
     with open(root_folder/f"{chapter}.magium","w") as f:
         f.write(magium_vals) 

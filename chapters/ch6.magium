@@ -459,7 +459,7 @@ ID: Ch6-Secure
 TEXT:
 
 set(v_ch6_secure,1)
-#if(v_ch2_human_reason == 1 && v_ch3_kate_badly_hurt == 0 || v_ch3_kate_badly_hurt == 0 && v_ch5_admit_lie == 1) {
+#if(v_ch3_kate_badly_hurt == 0 && (v_ch2_human_reason == 1 || v_ch5_admit_lie == 1) && (v_ch2_human_reason != 2 || v_ch5_admit_lie != 0) && (v_ch2_human_reason != 3 || v_ch5_admit_lie != 0)) {
 "Secure it. Better to be safe than sorry."
 
 "As you wish."
@@ -479,7 +479,7 @@ We spent the next few hours travelling south, taking the most direct route avail
 The scenery that we've seen during our travel has been rather underwhelming. Maybe my expectations were too high, but I always thought that the fabled continent of Varathia would be filled with all sorts of natural wonders and mythical creatures. All I've seen today were your everyday pine and oak forests, with a lake or a river here and there to keep it from becoming completely monotonous. At least it's been a few hours since the last time we've been attacked, which is quite an achievement, judging by how this tournament has been going so far. 
 
 }
-#if(v_ch2_human_reason == 1 && v_ch3_kate_badly_hurt == 1 || v_ch3_kate_badly_hurt == 1 && v_ch5_admit_lie == 1) {
+#if(v_ch3_kate_badly_hurt == 1 && (v_ch2_human_reason == 1 || v_ch5_admit_lie == 1) && (v_ch2_human_reason != 2 || v_ch5_admit_lie != 0) && (v_ch2_human_reason != 3 || v_ch5_admit_lie != 0)) {
 "Secure it. Better to be safe than sorry."
 
 "As you wish."
@@ -613,7 +613,7 @@ ID: Ch6-Enough
 TEXT:
 
 set(v_ch6_secure,0)
-#if(v_ch2_human_reason == 1 && v_ch3_kate_badly_hurt == 0 || v_ch3_kate_badly_hurt == 0 && v_ch5_admit_lie == 1) {
+#if(v_ch3_kate_badly_hurt == 0 && (v_ch2_human_reason == 1 || v_ch5_admit_lie == 1) && (v_ch2_human_reason != 2 || v_ch5_admit_lie != 0) && (v_ch2_human_reason != 3 || v_ch5_admit_lie != 0)) {
 "No, leave it like that. It's secure enough as it is."
 
 "As you wish."
@@ -633,7 +633,7 @@ We spent the next few hours travelling south, taking the most direct route avail
 The scenery that we've seen during our travel has been rather underwhelming. Maybe my expectations were too high, but I always thought that the fabled continent of Varathia would be filled with all sorts of natural wonders and mythical creatures. All I've seen today were your everyday pine and oak forests, with a lake or a river here and there to keep it from becoming completely monotonous. At least it's been a few hours since the last time we've been attacked, which is quite an achievement, judging by how this tournament has been going so far. 
 
 }
-#if(v_ch2_human_reason == 1 && v_ch3_kate_badly_hurt == 1 || v_ch3_kate_badly_hurt == 1 && v_ch5_admit_lie == 1) {
+#if(v_ch3_kate_badly_hurt == 1 && (v_ch2_human_reason == 1 || v_ch5_admit_lie == 1) && (v_ch2_human_reason != 2 || v_ch5_admit_lie != 0) && (v_ch2_human_reason != 3 || v_ch5_admit_lie != 0)) {
 "No, leave it like that. It's secure enough as it is."
 
 "As you wish."
@@ -2156,7 +2156,7 @@ TEXT:
 
 set(v_is_dead,0) if (v_ch6_improvise == 1 && v_perception == 4 || v_ch6_offense == 1 && v_perception == 4 || v_ch6_offense == 2 && v_perception == 4 || v_ch6_improvise == 1 && v_premonition == 4 && v_perception < 4 || v_ch6_offense == 1 && v_premonition == 4 && v_perception < 4 || v_ch6_offense == 2 && v_premonition == 4 && v_perception < 4 || v_ch6_improvise == 1 && v_reflexes == 4 && v_perception < 4 && v_premonition < 4 || v_ch6_offense == 1 && v_reflexes == 4 && v_perception < 4 && v_premonition < 4 || v_ch6_offense == 2 && v_reflexes == 4 && v_perception < 4 && v_premonition < 4)
 set(v_is_dead,1) if (v_perception < 4 && v_premonition < 4 && v_reflexes < 4)
-#if(v_ch6_improvise == 1 && v_perception == 4 || v_ch6_offense == 1 && v_perception == 4) {
+#if(v_perception == 4 && (v_ch6_improvise == 1 || v_ch6_offense == 1) && v_ch6_offense != 2) {
 
 I notice that there's something off about the way the sun is shining on the dragon's scales. It's as if the light is coming from the wrong direction. Could it be that the dragon I'm looking at is an illusion? If that's the case, then where's the real dragon?
 
@@ -2174,7 +2174,7 @@ I cast a spell on myself that allows me to see through illusions. Sure enough, t
 I teleport next to the dragon, and swing my sword at him. He gets taken by surprise, and he teleports away to avoid taking any damage. 
 
 }
-#if(v_ch6_improvise == 1 && v_premonition == 4 && v_perception < 4 || v_ch6_offense == 1 && v_premonition == 4 && v_perception < 4) {
+#if(v_premonition == 4 && (v_ch6_improvise == 1 || v_ch6_offense == 1) && v_perception < 4 && v_ch6_offense != 2) {
 
 I suddenly see a vision of the dragon in front of me slowly fading away, and a different dragon appearing behind me. My premonition sense is trying to warn me of something. Could it be that I'm currently looking at an illusion?
 
@@ -2203,7 +2203,7 @@ Tyrath quickly whips his tail towards me and grabs me with it. The force with wh
 The force of his tail's grip is so strong that I can feel it crushing my internal organs. As I cough up some blood, I can feel my vision starting to blur. The last thing I see is the dragon's hideous face, as he laughs triumphantly. 
 
 }
-#if(v_ch6_improvise == 1 && v_reflexes == 4 && v_perception < 4 && v_premonition < 4 || v_ch6_offense == 1 && v_reflexes == 4 && v_perception < 4 && v_premonition < 4) {
+#if(v_reflexes == 4 && (v_ch6_improvise == 1 || v_ch6_offense == 1) && v_perception < 4 && v_premonition < 4 && v_ch6_offense != 2) {
 
 I shoot a bolt of lightning at him, which hits him head on, although it doesn't seem to have affected him in any way. Suddenly, the dragon in front of me disappears and a different dragon appears behind me.
 
@@ -2471,7 +2471,7 @@ Just before I reach the ground, I suddenly stop in mid-air and then I fall flat 
 "How disappointing," I hear Eiden's voice from high above in the sky. "How very disappointing. Barry, I was expecting a lot more from you. I didn't give you all of that magical energy just so you could waste it by activating your device's temporary maximized mode."
 
 }
-#if(v_ch6_improvise == 2 && v_ch6_offense == 1 || v_ch6_improvise == 1) {
+#if(v_ch6_improvise == 1 || v_ch6_offense == 1) {
 Now I'm the one starting to get angry. I can feel my body starting to radiate heat. I can even see steam coming out of me. Suddenly, I can feel my speed increase by the tenfold. What kind of spell did I just cast? My stat device never told me I had access to anything like this. I feel like I can never lose to anyone ever again.
 
 Everything seems to be moving much slower all of a sudden. Or am I just the one moving faster? I can predict the dragon's attack before he even teleports in front of me, but I don't feel the need to dodge anymore. Instead, I simply block Tyrath's next claw strike with my left hand.

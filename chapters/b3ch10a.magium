@@ -132,14 +132,12 @@ She then pauses for a few seconds, to take a good look at each of us in turn.
 "Illuna..." Kate says. "Right now, like it or not, we ARE on the same side. At least until this whole conflict with the God of Time gets resolved. I thought we had all already agreed that we would accept her help."
 
 }
-#if(v_b3_ch10_spin == 0 || v_b3_ch10_spin == 1) {
  "Accepting her help and treating her as if she is truly an ally are two completely different things," Illuna says. "When I agreed to have her train us, it was under the assumption that we would all know who we are dealing with. Regardless of how helpful Arraka is, she is NOT to be trusted. Please tell me that you understand this."
 
 "Look," Daren says, "nobody is saying that we should suddenly become friends with her, hold hands and sing happy songs together. We're just saying that in the past few days she's changed slightly for the better, that's all."
 
 "No, she has NOT changed," Illuna says, in a louder voice, as she is now finally losing her cool. "She will never change! She will always be the same ruthless, sadistic and manipulative mass murderer that she has been since long before she even came to the earthen plane. You cannot afford to treat her like an ally. You cannot afford to even consider that possibility. Do not make the same mistake I did! I guarantee you that you will regret it for as long as you'll live!"
 
-}
 choice("Continue", B3-Ch10a-Trumpets, v_current_scene = B3-Ch10a-Trumpets)
 
 
@@ -170,7 +168,6 @@ As Illuna goes to the front of the group, the rest of us exchange a few looks, a
 Once we're done traversing the hallway, we open the door leading into the next room, and we are suddenly greeted by the sound of two loud trumpets, which are apparently being used by two red-eyed drones that are hovering on each side of the throne in front of us.
 
 }
-#if(v_b3_ch10_spin == 0 || v_b3_ch10_spin == 1) {
  The drones seem to be using wind magic to blow into the trumpets, since they do not have mouths, but somehow they are perfectly in tune with each other and they aren't getting even one note wrong. I immediately recognize the music I'm hearing as being one of the most commonly used songs during public coronation events.
 
 As we are all making our way into the throne room, a green-eyed drone with a red mantle placed on top of its round metal surface is now entering the room as well, from the side, and it is slowly advancing towards the throne, where a few red-eyed drones are waiting for it. Once the green-eyed drone reaches its destination, the song from the trumpets stops, as one of the red-eyed drones begins to speak.
@@ -189,7 +186,6 @@ Two other red-eyed drones are now approaching the green-eyed one while holding a
 
 "Precisely," the Overseer says. "It should also be easier for us to have a conversation, now that we are each aware of our own social status. If you have any trouble finding ways to address me from now on, you can try calling me 'your majesty' or 'my king'. Either one will do."
 
-}
 choice(""Yes, your majesty."", B3-Ch10a-Intimidation, v_current_scene = B3-Ch10a-Intimidation, v_b3_ch10_majesty = 0)
 choice(""Yes, my king."", B3-Ch10a-Intimidation, v_current_scene = B3-Ch10a-Intimidation, v_b3_ch10_majesty = 1)
 choice(""I hope you're joking."", B3-Ch10a-Intimidation, v_current_scene = B3-Ch10a-Intimidation, v_b3_ch10_majesty = 2)
@@ -240,7 +236,6 @@ TEXT:
 "What do you mean it was a stalling tactic?" Hadrik asks. "A stalling tactic for what?..."
 
 }
-#if(v_b3_ch10_majesty == 0 || v_b3_ch10_majesty == 1 || v_b3_ch10_majesty == 2) {
  "I believe it would be quicker to give you a demonstration than to explain it to you ," the Overseer says. "Please stand by. If you are to experience any discomfort during the next few minutes, you are advised to seek out the nearest red-eyed unit for a quick medical check-up."
 
 As soon as the green-eyed drone stops talking, the world around us suddenly disappears, and it is replaced by a sea of light, as far as the eye can see. It doesn't take me long to realize that my perspective has once again been forcefully switched to that of my soul on the ethereal plane, and that all of our souls were kicked out of our minds again by the Overseer.
@@ -249,7 +244,6 @@ When I look around us, I see that aside from all of my friends and the green-eye
 
 "As you can see," the green-eyed drone tells us, on the ethereal plane, "while you were busy making your way to the palace, I have been working on improving my soul displacement technique so that it now transports your souls to an exact location on the ethereal plane instead of randomly teleporting you all across the ether. I have also made use of this time to further develop a disintegration beam that can only function on the ethereal plane. Would you like to see it in action?"
 
-}
 #if(v_b3_ch4_billy == 9) {
  "Alright, alright, we get it!" Hadrik says. "This is you intimidating us directly. So, what's next, then? Are you going to completely ignore our deal and do whatever you want now that you've shown us who's in charge?"
 
@@ -370,13 +364,13 @@ TEXT:
 "Right," Melindra says.
 
 }
-#if(v_b3_ch4_billy == 7 && v_b3_ch9_enemies == 0 && v_b3_ch8_king != 5 || v_b3_ch4_billy == 8 && v_b3_ch9_enemies == 0 && v_b3_ch8_king != 5) {
+#if(v_b3_ch9_enemies == 0 && (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8) && v_b3_ch8_king != 5) {
  "The official king is going to be Breynan, as we've established previously," the Overseer says. "That was the deal we made, was it not?"
 
 "Oh, right," Melindra says. "I forgot about that. My bad."
 
 }
-#if(v_b3_ch4_billy == 7 && v_b3_ch8_king == 5 && v_b3_ch9_enemies == 0 || v_b3_ch4_billy == 8 && v_b3_ch8_king == 5 && v_b3_ch9_enemies == 0) {
+#if(v_b3_ch8_king == 5 && v_b3_ch9_enemies == 0 && (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8)) {
  "The official king is going to be Breynan, as we've established previously," the Overseer says. "That was the deal we made, was it not?"
 
 "We also discussed Kelrim as an alternative, but we didn't reach a definitive conclusion," Daren reminds the Overseer. "You said that we were going revisit this matter after the end of the battle."
@@ -388,7 +382,7 @@ TEXT:
 "Yes," the Overseer says. "That is my intention."
 
 }
-#if(v_b3_ch4_billy == 9 && v_b3_ch9_enemies == 2 || v_b3_ch9_enemies == 2 && v_b3_ch4_billy < 9) {
+#if(v_b3_ch9_enemies == 2 && (v_b3_ch4_billy == 9 || v_b3_ch4_billy < 9)) {
  "No, but we already know that the king of the underground wanted to have us assassinated," I say. "What was to guarantee that he wouldn't try the same thing again if he got out of prison? And what about Leila and doctor Reidzek? How could we leave them in this city with that madman still running loose?"
 
 "You can't just decide things like this on a whim," Daren says. "We're talking about people's lives, here! You say that the king wanted us assassinated, but there's barely any proof that Peter was even involved in that plot. Why would you kill him too? Just because he was a witness?"
@@ -404,7 +398,7 @@ He pauses.
 "Hey, Overseer," Melindra says. "You mentioned earlier that you would only rule the city from the shadows. Who is going to be the official king, then?"
 
 }
-#if(v_b3_ch4_billy == 9 && v_b3_ch9_enemies == 3 || v_b3_ch9_enemies == 3 && v_b3_ch4_billy < 9) {
+#if(v_b3_ch9_enemies == 3 && (v_b3_ch4_billy == 9 || v_b3_ch4_billy < 9)) {
  "Barry, I can't believe what I'm hearing..." Daren says. "I know that the king of the underground was a jerk, but--"
 
 "He was more than just a jerk," I say. "He wanted to have us assassinated. What was to guarantee that he wouldn't try the same thing again if he got out of prison? And what about Leila and doctor Reidzek? How could we leave them in this city with that madman still running loose?"
@@ -422,19 +416,19 @@ He pauses.
 "Hey, Overseer," Melindra says. "You mentioned earlier that you would only rule the city from the shadows. Who is going to be the official king, then?"
 
 }
-#if(v_b3_ch9_enemies == 2 && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8 || v_b3_ch9_enemies == 3 && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8) {
+#if((v_b3_ch9_enemies == 2 || v_b3_ch9_enemies == 3) && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8) {
  "That remains to be seen," the Overseer says. "Ideally, it should be someone who is easily manipulatable, but also not stupid enough to give away his connection to me. Most people would react badly if they found out that a machine was the real ruler behind the scenes, so it would be best to avoid such a scenario."
 
 "Right," Melindra says.
 
 }
-#if(v_b3_ch4_billy == 7 && v_b3_ch9_enemies == 2 && v_b3_ch8_king != 5 || v_b3_ch4_billy == 7 && v_b3_ch9_enemies == 3 && v_b3_ch8_king != 5 || v_b3_ch4_billy == 8 && v_b3_ch9_enemies == 2 && v_b3_ch8_king != 5 || v_b3_ch4_billy == 8 && v_b3_ch9_enemies == 3 && v_b3_ch8_king != 5) {
+#if((v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8) && (v_b3_ch9_enemies == 2 || v_b3_ch9_enemies == 3) && v_b3_ch8_king != 5) {
  "The official king is going to be Breynan, as we've established previously," the Overseer says. "That was the deal we made, was it not?"
 
 "Oh, right," Melindra says. "I forgot about that. My bad."
 
 }
-#if(v_b3_ch4_billy == 7 && v_b3_ch8_king == 5 && v_b3_ch9_enemies == 2 || v_b3_ch4_billy == 7 && v_b3_ch8_king == 5 && v_b3_ch9_enemies == 3 || v_b3_ch4_billy == 8 && v_b3_ch8_king == 5 && v_b3_ch9_enemies == 2 || v_b3_ch4_billy == 8 && v_b3_ch8_king == 5 && v_b3_ch9_enemies == 3) {
+#if(v_b3_ch8_king == 5 && (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8) && (v_b3_ch9_enemies == 2 || v_b3_ch9_enemies == 3)) {
  "The official king is going to be Breynan, as we've established previously," the Overseer says. "That was the deal we made, was it not?"
 
 "We also discussed Kelrim as an alternative, but we didn't reach a definitive conclusion," Daren reminds the Overseer. "You said that we were going revisit this matter after the end of the battle."
@@ -639,7 +633,7 @@ At the moment, our group is standing somewhere in the back of the large room, so
 "It's very possible," Daren says. "But one can still hope."
 
 }
-#if(v_b3_ch8_king == 3 || v_b3_ch8_king == 4) {
+#if((v_b3_ch8_king == 3 || v_b3_ch8_king == 4) && v_b3_ch8_king != 5) {
  There were three candidates in total: the king of the underground and two rebels whose names I never heard mentioned until now.
 
 Each of the candidates climbed on a makeshift podium and gave short speeches before the voting commenced, although the two no-name rebels seemed to have made very little impact on the crowd, because there was barely anyone cheering for them at the end. Something tells me that neither of them will be offering much competition to the king of the underground in this contest.
@@ -669,7 +663,6 @@ At the moment, our group is standing somewhere in the back of the large room, so
 "Hmm... I suppose you do have a point," Hadrik says. "Let's keep our eyes peeled, then."
 
 }
-#if(v_b3_ch8_king == 0 || v_b3_ch8_king == 1 || v_b3_ch8_king == 2 || v_b3_ch8_king == 3 || v_b3_ch8_king == 4 || v_b3_ch8_king == 5) {
  Not long after our discussion, the men in charge of gathering the votes pass by us and collect our voting papers. We all paid close attention to what they were doing, but even though the crowd of people obscured our view a few times, it didn't seem like they had the opportunity to switch such a large number of votes without us noticing. Once the votes have been gathered, the men placed the papers on the podium and then they started counting them, while several supposedly neutral observers were checking on them, to make sure that they were doing the count correctly.
 
 "Do you think they could just fake the counting?" Hadrik says. "I have no idea who those observers are supposed to be. Can they be trusted?"
@@ -682,7 +675,6 @@ At the moment, our group is standing somewhere in the back of the large room, so
 
 "Good," Hadrik says, looking slightly relieved. "It was getting a little stressful!"
 
-}
 choice("Continue", B3-Ch10a-Podium, v_current_scene = B3-Ch10a-Podium)
 
 
@@ -780,14 +772,12 @@ She then pauses for a few seconds, to take a good look at each of us in turn.
 "Illuna..." Kate says. "Right now, like it or not, we ARE on the same side. At least until this whole conflict with the God of Time gets resolved. I thought we had all already agreed that we would accept her help."
 
 }
-#if(v_b3_ch10_spin == 0 || v_b3_ch10_spin == 1) {
  "Accepting her help and treating her as if she is truly an ally are two completely different things," Illuna says. "When I agreed to have her train us, it was under the assumption that we would all know who we are dealing with. Regardless of how helpful Arraka is, she is NOT to be trusted. Please tell me that you understand this."
 
 "Look," Daren says, "nobody is saying that we should suddenly become friends with her, hold hands and sing happy songs together. We're just saying that in the past few days she's changed slightly for the better, that's all."
 
 "No, she has NOT changed," Illuna says, in a louder voice, as she is now finally losing her cool. "She will never change! She will always be the same ruthless, sadistic and manipulative mass murderer that she has been since long before she even came to the earthen plane. You cannot afford to treat her like an ally. You cannot afford to even consider that possibility. Do not make the same mistake I did! I guarantee you that you will regret it for as long as you'll live!"
 
-}
 choice("Continue", B3-Ch10a-Speech, v_current_scene = B3-Ch10a-Speech)
 
 
@@ -868,7 +858,7 @@ As Illuna turns around, the rest of us exchange a few looks, and then we all con
 "Hey, don't act like you're some kind of saint," I say. "Don't forget that we know you were planning to have us assassinated!"
 
 }
-#if(v_b3_ch8_king == 2 || v_b3_ch8_king == 3 || v_b3_ch8_king == 4) {
+#if((v_b3_ch8_king == 2 || v_b3_ch8_king == 3 || v_b3_ch8_king == 4) && v_b3_ch8_king != 5) {
  Not long afterwards, the vote counters announce the victor, and to nobody's surprise, the king of the underground was the one who won. As the king gets up on the podium to give his victory speech, Daren turns towards us again, with a visibly unhappy look on his face.
 
 "Well..." Daren says. "We can't say that we weren't expecting this, but that still doesn't make things any less disappointing."
@@ -880,22 +870,6 @@ As Illuna turns around, the rest of us exchange a few looks, and then we all con
 "To be fair, we've only been here for a few days," Hadrik says. "We barely know these people. Maybe it's better that we didn't involve ourselves too much in their election. We already interfered enough as it is."
 
 "Yeah..." Daren says. "Perhaps you're right."
-
- The victory speech lasts for a short while longer, and it is followed by a round of applause, as well as several cheers coming from the people in front of us. Once the election is officially over, the crowd begins to slowly disperse, while we stay behind to see what the king of the underground is doing. When he notices us looking at him, the king of the underground nods at us from a distance, and then he walks over to our corner of the room, so that he can talk to us.
-
-"I was wondering if you would be joining us or not..." the king of the underground says, as soon as he stops next to us. "Tell me, did you enjoy the election?"
-
-"Obviously, not as much as you," Hadrik says.
-
-"Listen..." the king of the underground says. "I realize that I may not have been the ideal choice for you, but I assure you that things will turn out for the better, despite your misgivings."
-
-"Things will turn out for the better?" Hadrik asks. "Better for whom?"
-
-"For the people of Ollendor," the king of the underground says.
-
-"Mhm..." Hadrik says, skeptically. "I'm sure they will."
-
-"So, now that you've finally been elected king, can we stop looking over our shoulder all the time?" I say. "Or are you still planning to have us assassinated, just in case?"
 
 }
 #if(v_b3_ch8_king == 5) {
@@ -924,13 +898,31 @@ As Illuna turns around, the rest of us exchange a few looks, and then we all con
 "You thought I was going to have the goblin assassinated?!" the king of the underground says, looking genuinely shocked. "Dear gods, I always knew that you had a very low opinion of me, but I never imagined it would be this bad."
 
 }
+#if(v_b3_ch8_king == 2 || v_b3_ch8_king == 3 || v_b3_ch8_king == 4) {
+ The victory speech lasts for a short while longer, and it is followed by a round of applause, as well as several cheers coming from the people in front of us. Once the election is officially over, the crowd begins to slowly disperse, while we stay behind to see what the king of the underground is doing. When he notices us looking at him, the king of the underground nods at us from a distance, and then he walks over to our corner of the room, so that he can talk to us.
+
+"I was wondering if you would be joining us or not..." the king of the underground says, as soon as he stops next to us. "Tell me, did you enjoy the election?"
+
+"Obviously, not as much as you," Hadrik says.
+
+"Listen..." the king of the underground says. "I realize that I may not have been the ideal choice for you, but I assure you that things will turn out for the better, despite your misgivings."
+
+"Things will turn out for the better?" Hadrik asks. "Better for whom?"
+
+"For the people of Ollendor," the king of the underground says.
+
+"Mhm..." Hadrik says, skeptically. "I'm sure they will."
+
+"So, now that you've finally been elected king, can we stop looking over our shoulder all the time?" I say. "Or are you still planning to have us assassinated, just in case?"
+
+}
 choice("Continue", B3-Ch10a-Morning, v_current_scene = B3-Ch10a-Morning)
 
 
 ID: B3-Ch10a-Morning
 TEXT:
 
-#if(v_b3_ch8_king == 0 || v_b3_ch8_king == 1 || v_b3_ch8_king == 2 || v_b3_ch8_king == 3 || v_b3_ch8_king == 4) {
+#if(v_b3_ch8_king != 5) {
  "Like I said before, it was only a misunderstanding," the king says. "I never told Albert to kill any of you."
 
 "You told him to deal with us 'discreetly'," I say.
@@ -984,7 +976,7 @@ TEXT:
 "I see..." Kate says.
 
 }
-#if(v_b3_ch8_king == 2 || v_b3_ch8_king == 3 || v_b3_ch8_king == 4) {
+#if((v_b3_ch8_king == 2 || v_b3_ch8_king == 3 || v_b3_ch8_king == 4) && v_b3_ch8_king != 5) {
  "I wanted him to ruin your reputations, of course," the king says. "Albert was to spread rumors of you secretly working with the Overseer, so that the people here would lose their trust in you and refuse to join your side in case you were planning to oppose the idea of the election. Of course, this plan was only to be enacted if you actively tried to delegitimize the election, which thankfully is not something that you chose to do."
 
 "What about the seredium towers?" Kate interjects. "What's going to happen to all those prisoners now?"
@@ -994,14 +986,12 @@ TEXT:
 "I see..." Kate says.
 
 }
-#if(v_b3_ch8_king == 0 || v_b3_ch8_king == 1 || v_b3_ch8_king == 2 || v_b3_ch8_king == 3 || v_b3_ch8_king == 4 || v_b3_ch8_king == 5) {
  "Now, if you'll excuse me," the king of the underground says, "I have some business to attend to, so I will take my leave. As always, you are free to roam these caverns as much as you like, although I suspect that we will be relocating to the surface very soon, now that old king is finally gone. It will be nice to see the sun in the morning when I wake up, after all this time spent in the underground. I'm actually looking forward to it. Farewell!"
 
 "Yeah, see you later," Daren says, and then the king of the underground walks out the door, without looking back.
 
 "Huh..." Daren tells us, once the king is out of the room. "I'm starting to think that we may have had the wrong idea about this guy all along. Maybe he wasn't as bad as we thought he was, after all."
 
-}
 choice(""You may be right."", B3-Ch10a-Prisoners, v_current_scene = B3-Ch10a-Prisoners, v_b3_ch10_wrong = 0)
 choice(""Nah, I think he was lying through his teeth about not planning to kill us."", B3-Ch10a-Prisoners, v_current_scene = B3-Ch10a-Prisoners, v_b3_ch10_wrong = 1)
 choice(""I don't really care if we were right or wrong. I still don't like the guy."", B3-Ch10a-Prisoners, v_current_scene = B3-Ch10a-Prisoners, v_b3_ch10_wrong = 2)
@@ -1094,7 +1084,7 @@ Just as Daren is saying this, Kelrim walks over to us, with Sir Horace right beh
 "It doesn't really matter to me if he wanted to assassinate us or not," Kate says. "What I'm more worried about is what is going to happen to those prisoners in the towers."
 
 }
-#if(v_b3_ch10_wrong == 0 && v_b3_ch8_king == 5 || v_b3_ch10_wrong == 1 && v_b3_ch8_king == 5 || v_b3_ch10_wrong == 2 && v_b3_ch8_king == 5) {
+#if(v_b3_ch8_king == 5) {
  "Umm... Kelrim!" Kate says, a little awkwardly. "I don't know if this is the right time, but there's something very important that I need to ask you about. Do you know of the mage prisoners from the seredium towers?"
 
 "Yes..." Kelrim says, looking very distraught. "Breynan told me about them. Those poor people... I can't imagine what they must be going through, even as we speak..."
@@ -1122,7 +1112,7 @@ Just as Daren is saying this, Kelrim walks over to us, with Sir Horace right beh
 "Yes..." Kate says, in a relieved tone. "I'm glad!"
 
 }
-#if(v_b3_ch10_wrong == 0 && v_b3_ch8_king != 5 || v_b3_ch10_wrong == 1 && v_b3_ch8_king != 5 || v_b3_ch10_wrong == 2 && v_b3_ch8_king != 5) {
+#if(v_b3_ch8_king != 5) {
  "Didn't the king of the underground say that they were planning to rescue all of the prisoners, in the end?" Daren says. "It's just that some will be rescued sooner than others."
 
 "Yes, but what if they never find an alternative power source?" Kate says. "Will those imprisoned mages stay there forever?"
@@ -1345,6 +1335,7 @@ choice("Continue", B3-Ch10a-Awkward, v_current_scene = B3-Ch10a-Awkward)
 ID: B3-Ch10a-Awkward
 TEXT:
 
+#if((v_ch11_romance_rose != 1 || v_ch11_saved_rose != 1) && v_b2_ch8_energizer != 1 && v_b3_ch8_heartfelt != 2) {
  As promised, Melindra goes to pull down several of the levers that are on the walls, and once she is done, she comes back to us.
 
 "Alright, now we need to wait for about a minute or so," Melindra says.
@@ -1381,17 +1372,8 @@ As Melindra is busy pulling on one of the levers at the farther end of the corri
 
 "Oh, nothing," I say. "Nothing at all."
 
- All of a sudden, I get a splitting headache, and my consciousness gets switched between the ethereal and earthen planes several times in a row, in quick succession, very similarly to how it happened when the ether was attacking me. Just when I thought it was over, the same thing happens again, except that I go back and forth between the two planes more than ten times in one second.
-
-"Barry, what's wrong?" Kate asks me, now looking very worried. "Did somebody cast a dizziness spell on you?"
-
-"No, it's not a dizziness spell, it's-- argh..."
-
-The headache takes over me again, and I spend a good few moments alternating between my soul's and my body's perspectives constantly. I think this time I may have switched between the two planes at least a hundred times.
-
-"Do you have any idea what's causing this?" Kate asks me. "Does it feel like a normal headache, or is it something else?"
-
-#if(v_b3_ch8_heartfelt == 2) {
+}
+#if(v_b3_ch8_heartfelt == 2 && (v_ch11_romance_rose != 1 || v_ch11_saved_rose != 1) && v_b2_ch8_energizer != 1) {
  As promised, Melindra goes to pull down several of the levers that are on the walls, and once she is done, she comes back to us.
 
 "Alright, now we need to wait for about a minute or so," Melindra says.
@@ -1497,6 +1479,16 @@ After Flower says this, there is an awkward silence for about ten seconds, durin
 Melindra then goes to the farther end of the corridor and she pulls one of the levers from the left wall.
 
 }
+ All of a sudden, I get a splitting headache, and my consciousness gets switched between the ethereal and earthen planes several times in a row, in quick succession, very similarly to how it happened when the ether was attacking me. Just when I thought it was over, the same thing happens again, except that I go back and forth between the two planes more than ten times in one second.
+
+"Barry, what's wrong?" Kate asks me, now looking very worried. "Did somebody cast a dizziness spell on you?"
+
+"No, it's not a dizziness spell, it's-- argh..."
+
+The headache takes over me again, and I spend a good few moments alternating between my soul's and my body's perspectives constantly. I think this time I may have switched between the two planes at least a hundred times.
+
+"Do you have any idea what's causing this?" Kate asks me. "Does it feel like a normal headache, or is it something else?"
+
 choice("Agree to Melindra's proposition.", B3-Ch10a-Proposition, v_current_scene = B3-Ch10a-Proposition, v_b3_ch10_benefits = 1) if (v_b2_ch8_energizer == 1)
 choice("Decline Melindra's proposition.", B3-Ch10a-Proposition, v_current_scene = B3-Ch10a-Proposition, v_b3_ch10_benefits = 0) if (v_b2_ch8_energizer == 1)
 choice("Tell Kate the truth about what's happening to me.", B3-Ch10a-Abyss, v_current_scene = B3-Ch10a-Abyss) if (v_b2_ch8_energizer != 1)
@@ -1545,7 +1537,6 @@ Melindra then goes to the farther end of the corridor and she pulls one of the l
 "None whatsoever," she says, and then she goes to pull on another lever.
 
 }
-#if(v_b3_ch10_benefits == 0 || v_b3_ch10_benefits == 1) {
  All of a sudden, I get a splitting headache, and my consciousness gets switched between the ethereal and earthen planes several times in a row, in quick succession, very similarly to how it happened when the ether was attacking me. Just when I thought it was over, the same thing happens again, except that I go back and forth between the two planes more than ten times in one second.
 
 "Barry, what's wrong?" Kate asks me, now looking very worried. "Did somebody cast a dizziness spell on you?"
@@ -1556,7 +1547,6 @@ The headache takes over me again, and I spend a good few moments alternating bet
 
 "Do you have any idea what's causing this?" Kate asks me. "Does it feel like a normal headache, or is it something else?"
 
-}
 choice("Tell Kate the truth about what's happening to me.", B3-Ch10a-Abyss, v_current_scene = B3-Ch10a-Abyss)
 choice("Tell Kate that it's just a normal headache and that she shouldn't worry about it.", B3-Ch10a-Headache, v_current_scene = B3-Ch10a-Headache)
 
@@ -2174,13 +2164,13 @@ TEXT:
 For the next hour or two, we walked around the caverns, talking with everyone that we've had contact with these past few days and saying our goodbyes, since tomorrow we will have to leave first thing in the morning. We said goodbye to Breynan, Peter, Albert, Desmond, doctor Reidzek and even Barry Thundercloud, who is still being held in the rebels' prison.
 
 }
-#if(v_b3_ch2_goblins == 1 && v_b3_ch6_kelrim == 1 || v_b3_ch2_goblins == 1 && v_b3_ch6_plan == 3) {
+#if(v_b3_ch2_goblins == 1 && (v_b3_ch6_kelrim == 1 || v_b3_ch6_plan == 3)) {
  After about twenty minutes of flying, we finally reach our friends, who appear to have already finished all of their shopping. Once we're done telling them about what happened in the ruins with the illusionist, we also spend a few minutes buying some provisions, and then we decide to contact the teleporting engineer from the rebels, so that he can bring us back to the underground base.
 
 For the next hour or two, we walked around the caverns, talking with everyone that we've had contact with these past few days and saying our goodbyes, since tomorrow we will have to leave first thing in the morning. We said goodbye to Breynan, Peter, Albert, Desmond, doctor Reidzek, Kelrim and even Barry Thundercloud, who is still being held in the rebels' prison.
 
 }
-#if(v_b3_ch6_kelrim == 1 && v_b3_ch2_goblins != 1 || v_b3_ch6_plan == 3 && v_b3_ch2_goblins != 1) {
+#if((v_b3_ch6_kelrim == 1 || v_b3_ch6_plan == 3) && v_b3_ch2_goblins != 1) {
  After about twenty minutes of flying, we finally reach our friends, who appear to have already finished all of their shopping. Once we're done telling them about what happened in the ruins with the illusionist, we also spend a few minutes buying some provisions, and then we decide to contact the teleporting engineer from the rebels, so that he can bring us back to the underground base.
 
 For the next hour or two, we walked around the caverns, talking with everyone that we've had contact with these past few days and saying our goodbyes, since tomorrow we will have to leave first thing in the morning. We said goodbye to Breynan, Peter, Albert, Desmond, doctor Reidzek, Kelrim, Kelrim's goblin friends and even Barry Thundercloud, who is still being held in the rebels' prison.
@@ -2238,7 +2228,6 @@ choice("Continue", B3-Ch10a-Flow, v_current_scene = B3-Ch10a-Flow)
 ID: B3-Ch10a-Flow
 TEXT:
 
-#if(v_b3_ch8_overseer2 == 0 || v_b3_ch8_overseer2 == 1) {
  It took me more than an hour, but I eventually found a way to be aware of both planes at the same time, even if one of them would only be there in the back of my mind, as if it were somewhere in my peripheral vision. 
 
 This way, I would not need to be worried about my body being attacked in the earthen plane while my soul would be busy exploring the ethereal plane. It would also be a guarantee that if any of my friends had anything to say to me while I was in the ethereal plane, I could hear them talking and switch back. One other thing I achieved by training myself was to no longer handle the shift between planes by blinking my eyes, and rather to do it simply by focusing my consciousness on one plane or the other.
@@ -2251,7 +2240,6 @@ As these thoughts keep racing through my head, I am finding it more and more dif
 
 Something needs to be done. Things can't be allowed to go on like this.
 
-}
 #if(v_b3_ch8_overseer2 == 0) {
  When the evening was finally at an end, we all went to sleep in our room, except for Kate and Leila, who took the first night shift somewhere outside our sleeping quarters. Then, a few hours later, Kate was the one who woke me up, telling me that Leila was waiting for me further down the corridor.
 
@@ -2319,7 +2307,6 @@ After more than ten seconds of silence, I decide that I simply can't take it any
 "Yes, I'm pretty sure we did," Leila writes.
 
 }
-#if(v_b3_ch10_biscuit == 0 || v_b3_ch10_biscuit == 1) {
  "Here's a crazy idea..." I say. "What if the reason why we're having so much trouble harnessing energy with our devices in the cities is because there are hundreds of other devices gathered in these places, and the energy is getting divided equally between them?"
 
 "I don't think so," Leila writes. "If there were so many people with devices walking around these cities, I would have detected at least one of them. My stat booster alerts me when there are other stat devices around me, remember?"
@@ -2344,7 +2331,6 @@ After more than ten seconds of silence, I decide that I simply can't take it any
 
 "Exactly!" Leila writes. "So, let's just forget all about it and talk normally, like we always do."
 
-}
 choice("Continue", B3-Ch10a-Appropriate, v_current_scene = B3-Ch10a-Appropriate) if (v_b3_ch8_heartfelt == 2)
 choice("Continue", B3-Ch10a-Letters, v_current_scene = B3-Ch10a-Letters) if (v_b3_ch8_heartfelt != 2)
 
@@ -2352,7 +2338,6 @@ choice("Continue", B3-Ch10a-Letters, v_current_scene = B3-Ch10a-Letters) if (v_b
 ID: B3-Ch10a-Appropriate
 TEXT:
 
-#if(v_b3_ch8_overseer2 == 0 || v_b3_ch8_overseer2 == 1) {
  "Alright, you've convinced me!" I say. "So, what do you figure should be our next topic of conversation?"
 
 "It doesn't matter," Leila writes, with a smile. "But whatever it is, I am planning to enjoy every moment of it!"
@@ -2367,7 +2352,6 @@ The rest of the hours passed us by very quickly, but we made very sure during th
 
 "Barry, before we end our night shift... there's just... one last thing that I wanted to talk to you about," Leila writes, looking slightly embarrassed. "The other night, when you promised me that we'd go on adventures together and I... kissed you all of a sudden... I know that it might not have been the appropriate thing to do in that situation, but I was just so happy, and I kind of just... did it without thinking. I really hope I didn't put you in a difficult position by doing something like that completely out of the blue..."
 
-}
 #if(v_b3_ch8_overseer2 == 0) {
  "I'll probably stay with the rebels for a while," Leila writes, "but the king of the underground did mention that they're planning to relocate to the surface soon, so my father and I will most likely just rent a house somewhere inside the city later and make it our new home."
 
@@ -2464,7 +2448,6 @@ choice("Continue", B3-Ch10a-Section-Ending, v_current_scene = B3-Ch10a-Section-E
 ID: B3-Ch10a-Letters
 TEXT:
 
-#if(v_b3_ch8_overseer2 == 0 || v_b3_ch8_overseer2 == 1) {
  "Alright, you've convinced me!" I say. "So, what do you figure should be our next topic of conversation?"
 
 "It doesn't matter," Leila writes, with a smile. "But whatever it is, I am planning to enjoy every moment of it!"
@@ -2489,7 +2472,6 @@ After taking a few steps forward, Leila turns her head back to me one more time,
 
 With these last words, we head back to our room, and we do not say anything else to each other until we wake all of our friends up.
 
-}
 #if(v_b3_ch8_overseer2 == 0) {
  "I'll probably stay with the rebels for a while," Leila writes, "but the king of the underground did mention that they're planning to relocate to the surface soon, so my father and I will most likely just rent a house somewhere inside the city later and make it our new home."
 
@@ -2546,7 +2528,6 @@ By the time that Kate's turn finally came to say her goodbye, she could no longe
 "See you later," Leila writes with a smile, as the rest of us begin to head towards Ollendor's gates, while waving goodbye to Leila one last time.
 
 }
-#if(v_b3_ch8_overseer2 == 0 || v_b3_ch8_overseer2 == 1) {
  "What is WRONG with you people?!" Arraka shouts all of a sudden from her amulet. "You're all going to be seeing each other again in one week, but you're whining and crying like children! Is there really no limit to your stupidity?!"
 
 "How do you know it's going to be only one week?" Daren asks her. "At the moment, we have no idea when the tournament will end. It could be well over a month before--"
@@ -2555,5 +2536,4 @@ By the time that Kate's turn finally came to say her goodbye, she could no longe
 
 "Yeah, but Leila will no longer be travelling with us at that time," Hadrik says. "How is he going to get her into the trial if she won't even be there with us anymore?"
 
-}
 choice("Proceed to next section of chapter", B3-Ch10b-Preoccupied, v_current_scene = B3-Ch10b-Preoccupied)

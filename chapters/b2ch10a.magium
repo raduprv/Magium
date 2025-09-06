@@ -126,7 +126,6 @@ As I put down the bottle, I suddenly realize that I may have went a little overb
 "What's going on?" Flower asks, as her and Leila are both coming towards us, after having been woken up from the noise. "Are we having a visitor?"
 
 }
-#if(v_b2_ch10_toast == 1 && v_b2_ch9_drink == 0 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 || v_b2_ch10_toast == 0) {
  "Yeah, this is Daren's old enchanting master," Hadrik says. "It's the first time that they're seeing each other in over ten years, so we're holding a toast to celebrate their reunion."
 
 "Another female mage?..." Nolderan asks, as he senses the magic in Flower's aura.
@@ -159,7 +158,6 @@ As I put down the bottle, I suddenly realize that I may have went a little overb
 
 "After I lost my sage title, you mean?" Nolderan says. "You can say it out loud, boy. It's not like I'm going to sulk. It's been fourteen years since then. I've moved on by now. Sure, I haven't really been competing as much, since then, but this time it's different. This Magium tournament has given me an opportunity of a lifetime, so I couldn't just ignore it."
 
-}
 choice("Continue", B2-Ch10a-Undefeated, v_current_scene = B2-Ch10a-Undefeated)
 
 
@@ -466,7 +464,7 @@ I decide that it's time for me to join the battle as well, so I grab my scimitar
 The orc sees me coming, and he blocks my first blow with his shield, while he swings his mace for my head. There's no time for me to parry the hit after I've only just attacked, so I try to jump back, in order to dodge the orc's weapon.
 
 }
-#if(v_b2_ch10_toast == 0 && v_b2_ch5_scimitar == 0 || v_b2_ch5_scimitar == 0 && v_b2_ch9_drink == 0) {
+#if(v_b2_ch5_scimitar == 0 && (v_b2_ch10_toast == 0 || v_b2_ch9_drink == 0)) {
  
 
 He then runs full speed ahead, towards an orc that is too busy fighting Daren to pay attention to Nolderan, and he makes a horizontal jump, rotating himself to the side in mid-air, and propelling his feet into the monster's back. As the orc gets knocked off-balance, the ex-sage falls to the ground, on his left shoulder. Daren immediately seizes the opportunity, and he drives his sword through the monster's head, while Nolderan quickly rolls to the side, in order to avoid getting bludgeoned by another orc's mace. As soon as the ex-sage gets up, he feints an attack with one of his swords, pretending to do a full swing from the left side, and just as the orc raises his shield to defend himself, Nolderan's second sword comes swinging for the monster's neck from the right, cutting his head off in one move.
@@ -476,7 +474,7 @@ I decide that it's time for me to join the battle as well, so I grab my dagger i
 The orc sees me coming, and he blocks my first blow with his shield, while he swings his mace for my head. There's no time for me to parry the hit after I've only just attacked, so I try to jump back, in order to dodge the orc's weapon.
 
 }
-#if(v_b2_ch10_toast == 0 && v_b2_ch5_scimitar != 0 || v_b2_ch9_drink == 0 && v_b2_ch5_scimitar != 0) {
+#if((v_b2_ch10_toast == 0 || v_b2_ch9_drink == 0) && v_b2_ch5_scimitar != 0) {
  
 
 He then runs full speed ahead, towards an orc that is too busy fighting Daren to pay attention to Nolderan, and he makes a horizontal jump, rotating himself to the side in mid-air, and propelling his feet into the monster's back. As the orc gets knocked off-balance, the ex-sage falls to the ground, on his left shoulder. Daren immediately seizes the opportunity, and he drives his sword through the monster's head, while Nolderan quickly rolls to the side, in order to avoid getting bludgeoned by another orc's mace. As soon as the ex-sage gets up, he feints an attack with one of his swords, pretending to do a full swing from the left side, and just as the orc raises his shield to defend himself, Nolderan's second sword comes swinging for the monster's neck from the right, cutting his head off in one move.
@@ -490,11 +488,11 @@ The orc sees me coming, and he blocks my first blow with his shield, while he sw
  My dizziness caused me to react a bit too late, however, and the mace hit me hard in the head, crushing my skull under its weight, and sending me crashing to the ground, while my consciousness faded away, forever.
 
 }
-#if(v_b2_ch10_toast == 0 && v_reflexes < 1 || v_b2_ch9_drink == 0 && v_reflexes < 1) {
+#if((v_b2_ch10_toast == 0 || v_b2_ch9_drink == 0) && v_reflexes < 1) {
  I reacted too late, however, and the mace hit me hard in the head, crushing my skull under its weight, and sending me crashing to the ground, while my consciousness faded away, forever.
 
 }
-#if(v_b2_ch10_toast == 0 && v_reflexes >= 1 || v_b2_ch9_drink == 0 && v_reflexes >= 1 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_reflexes >= 2) {
+#if((v_b2_ch10_toast == 1 || v_reflexes >= 1) && (v_b2_ch9_drink == 1 || v_reflexes >= 1) && (v_reflexes >= 1 || v_reflexes >= 2) && (v_b2_ch10_toast == 0 || v_b2_ch9_drink == 0 || v_reflexes >= 2)) {
  I manage to get out of harm's way in time, and before the monster gets to attack me a second time, Leila stabs him from behind, with one of her daggers, forcing him to turn her way once more. I take advantage of this, and I immediately dash back towards my enemy, driving my blade through the back of his helmet, which makes it pass straight through his neck. After a few seconds of gurgling up blood, the orc finally falls to the ground, and he dies soon afterwards.
 
 As I look to see how the others are doing, I notice that the rest of the monsters are already dead, and that my teammates are now assembling near the woods, so we can go and fight the orc mages and their captain together.
@@ -638,7 +636,6 @@ choice("Continue", B2-Ch10a-Currents, v_current_scene = B2-Ch10a-Currents)
 ID: B2-Ch10a-Currents
 TEXT:
 
-#if(v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 || v_b2_ch10_toast == 0 || v_b2_ch9_drink == 0) {
  I wait for a few seconds, to see if I get any reaction, but still, the only answer I get is silence.
 
 "Listen," I say. "I'm not asking you to join the battle. You don't need to give yourself away or anything. All I'm asking is that you cast a spell on me that will allow me to fly."
@@ -653,7 +650,6 @@ I wait for another three seconds, but there are no sounds coming from inside the
 
 All of a sudden, I can feel several air currents circling around me, similar to the ones I felt when Melindra raised me in the air for the first time. Then, only a few seconds later, my body gets lifted from the ground, and I start to float several feet above the soil. When I move my hands around, a little, I notice that the air currents are reacting to my movements, and changing my direction accordingly. If I raise my arms in the air, the air currents propel me upwards. If I lower them, I slowly come to a halt. The currents also seem to be taking into account the way I lean my body, and the way I move my legs when they establish what direction I need to go in.
 
-}
 #if(v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1) {
  Obviously, they're not going to be as responsive as the currents I was using to lift me from the ground back when I was using my stat device's emergency mode, due to the fact that these particular air currents need to wait for my movements, before they change my direction and speed, but it's much better than what I would have expected, from a spell of this kind. I could still do without all the nausea I'm getting every time I do a quick turn, but that's probably due to my current drunken state, and not the fault of the spell.
 
@@ -710,7 +706,7 @@ He then tries to impale me with his spear, but I dive out of his way, and then I
 The two wyverns are now once again diving towards me, while their riders are readying their spears.
 
 }
-#if(v_b2_ch5_scimitar == 2 && v_ch10_gems == 0 || v_b2_ch6_crossbow == 0 && v_ch10_gems == 0 || v_ch10_gems == 0 && v_ch3_treasure != 0) {
+#if(v_ch10_gems == 0 && (v_b2_ch5_scimitar == 2 || v_b2_ch6_crossbow == 0 || v_ch3_treasure != 0)) {
  I take my gold pouch out of my pocket, and I show the orc the gold pieces that I have inside it. The monster laughs when he sees the amount of money I'm offering.
 
 "You expect us to betray our ruler for this paltry amount of gold?" the orc says.
@@ -896,7 +892,6 @@ While Hadrik is talking, the sound of his voice keeps fluctuating in intensity, 
 "Sounds like a good plan," I shout, "although, I'd rather aim for a weak point other than the eyes. But how are you planning on holding down the trunk?"
 
 }
-#if(v_b2_ch10_weakpoint == 0 || v_b2_ch10_weakpoint == 1) {
  "Don't worry," Hadrik says. "I've got that covered."
 
 He then jumps off the trunk and he lands on the ground.
@@ -909,7 +904,6 @@ I don't have time to think about this much longer, because the mammoth is now fu
 
 Apparently, Hadrik has turned himself into a giant snail... And he's just crawling on the ground at a very low speed... Oh man, I sure hope he's not messing with me, right now. At any rate, I already told Hadrik that I'd follow his plan, so all I can do now is keep dodging, and hope that he knows what he's doing.
 
-}
 #if(v_b2_ch10_toast == 0 || v_b2_ch9_drink == 0) {
  After flying out of the trunk's way a few more times, I notice that Hadrik is finally done with his shapeshifting, and he is now back in his dwarf form, standing with his feet in the slime that his snail form left behind. He has his arms raised, and he is looking straight at me.
 
@@ -952,7 +946,7 @@ TEXT:
 
 set(v_is_dead,1) if (v_b2_ch10_weakpoint == 0 && v_strength < 4 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 && v_reflexes < 2)
 set(v_is_dead,0) if (v_b2_ch10_weakpoint == 0 && v_strength == 4 || v_b2_ch10_weakpoint == 1 && v_reflexes >= 2 || v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar != 0)
-#if(v_b2_ch10_weakpoint == 1 && v_b2_ch5_scimitar == 0 || v_b2_ch10_weakpoint == 0) {
+#if(v_b2_ch10_weakpoint == 0 || v_b2_ch5_scimitar == 0) {
  
 
 "Alright, Barry!" Hadrik shouts. "Now try to make the mammoth swing its trunk over here!"
@@ -1102,7 +1096,7 @@ TEXT:
 "Hah!" Hadrik says. "What did I tell you about Barry and his resourcefulness? It's like he has this constant supply of crazy ideas in his head, and whenever he needs one, he just pulls it out, like it's nothing. I mean seriously, who else would have actually thought of trying to bribe an enemy orc, in the middle of a fight?"
 
 }
-#if(v_b2_ch10_scouts == 0 && v_b2_ch10_bribe != 2 || v_b2_ch10_scouts == 0 && v_ch10_gems != 1) {
+#if(v_b2_ch10_scouts == 0 && (v_b2_ch10_bribe != 2 || v_ch10_gems != 1)) {
  "What if they have a tracking spell cast on us?"
 
 "You mean, like the one that the golden fox cast on us before we arrived in Thilias?" Daren says. "I don't think that's the case. As a white mage, I should be able to detect these sorts of spells better than anyone. The fox is a really powerful spirit from the magical plane, so her spells would be much more difficult to detect than normal, but these are just some lowly monsters. I really shouldn't have any problems detecting spells cast by one or two orc mages."
@@ -1118,7 +1112,7 @@ Once they get close enough to our position, Flower and Kate dismiss their fire j
 "We should at least be prepared, in case it happens," Daren says. "Let's start with some healing. Come over here, and I'll tend to each of your wounds, in turn."
 
 }
-#if(v_b2_ch10_scouts == 1 && v_b2_ch10_bribe != 2 || v_b2_ch10_scouts == 1 && v_ch10_gems != 1) {
+#if(v_b2_ch10_scouts == 1 && (v_b2_ch10_bribe != 2 || v_ch10_gems != 1)) {
  "They could also have scouts, scattered all around the continent."
 
 "Actually, that would make a lot of sense..." Daren says. "The dragon has a huge army of orcs, so it's only natural that he'd have scouts all over the place. And if they're using transceivers to communicate, there would be no real way for us to kill them before they get to report our location. I suppose that we have no other choice than to keep mowing down their troops, until they decide to stop sending them after us, then..."
@@ -1134,7 +1128,7 @@ Once they get close enough to our position, Flower and Kate dismiss their fire j
 "We should at least be prepared, in case it happens," Daren says. "Let's start with some healing. Come over here, and I'll tend to each of your wounds, in turn."
 
 }
-#if(v_b2_ch10_bribe == 2 && v_b2_ch10_scouts == 0 && v_ch10_gems == 1 || v_b2_ch10_bribe == 2 && v_b2_ch10_scouts == 1 && v_ch10_gems == 1) {
+#if(v_b2_ch10_bribe == 2 && v_ch10_gems == 1) {
  As Kate and Flower come landing on the ground, next to us, the wyvern rider stops a dozen feet above the ground, as the wyvern keeps slowly flapping its wings, to maintain its altitude.
 
 "All of the other orcs are dead, human," the orc says. "I have fulfilled my end of the bargain."
@@ -1307,7 +1301,7 @@ As we walk through the forest, we come upon a few more mages that are filling th
 "Well, we're a pretty big group, so we must be looking quite intimidating to them," Hadrik says. "Maybe they think that we'll try to steal their cones."
 
 }
-#if(v_b2_ch10_toast == 0 && v_b2_ch10_traps == 0 || v_b2_ch10_traps == 0 && v_b2_ch9_drink == 0) {
+#if(v_b2_ch10_traps == 0 && (v_b2_ch10_toast == 0 || v_b2_ch9_drink == 0)) {
  "I suppose not..." Melindra says, as she takes a small break to contemplate on my words. "But I'd still rather keep the others from knowing, at least until we reach Ollendor. It's not like I could help much in a battle, even if I wanted to, so I don't really see any need for them to know. And if this means that they'll keep hating me, then so be it."
 
 "As you wish..." I say. "Either way, I think we're done, here, so I'll go pack up my tent. See you in a few minutes."
@@ -1321,7 +1315,7 @@ Before we left, Melindra and I had a private conversation with Arraka, and we as
 "Well, we're a pretty big group, so we must be looking quite intimidating to them," Hadrik says. "Maybe they think that we'll try to steal their cones."
 
 }
-#if(v_b2_ch10_toast == 0 && v_b2_ch10_traps == 1 || v_b2_ch10_traps == 1 && v_b2_ch9_drink == 0) {
+#if(v_b2_ch10_traps == 1 && (v_b2_ch10_toast == 0 || v_b2_ch9_drink == 0)) {
  "I suppose not..." Melindra says, as she takes a small break to contemplate on my words. "But I'd still rather keep the others from knowing, at least until we reach Ollendor. It's not like I could help much in a battle, even if I wanted to, so I don't really see any need for them to know. And if this means that they'll keep hating me, then so be it."
 
 "As you wish..." I say. "Either way, I think we're done, here, so I'll go pack up my tent. See you in a few minutes."
@@ -1341,7 +1335,6 @@ choice("Continue", B2-Ch10a-Diverse, v_current_scene = B2-Ch10a-Diverse)
 ID: B2-Ch10a-Diverse
 TEXT:
 
-#if(v_b2_ch10_traps == 0 || v_b2_ch10_traps == 1) {
  "Hey, Barry," Kate says. "There's something that I forgot to ask. How did you manage to cast that flight spell on yourself, earlier? Was it with the help of your stat device?"
 
 As Kate finishes her question, I see Melindra right behind her, staring straight at me, with a menacing look in her eyes.
@@ -1364,7 +1357,6 @@ As Kate finishes her question, I see Melindra right behind her, staring straight
 
 "It's a long story," Nolderan says. "If you want, I'll tell it to you when we get there."
 
-}
 #if(v_b2_ch10_traps == 0) {
  "Arraka," Illuna says, all of a sudden. "Can you sense the camp? How many mages are there inside, waiting for us?"
 

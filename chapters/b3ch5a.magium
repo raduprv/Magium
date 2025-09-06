@@ -61,7 +61,7 @@ TEXT:
 "A price?..." the king of the underground says, and he spends a few moments thinking about my offer. "Well, to be perfectly honest with you, I can't say that I would be willing to spend a lot of money on this information. The way I see it, either you struck some secret deal with the Overseer, in which case you obviously aren't going to tell me about it, or your discussion was centered on viable ways to assassinate the king, which have likely become irrelevant now that the king has ordered a city-wide lockdown. However, I would be willing to pay you ten gold coins upfront if you agree to confirm or deny my hypothesis. What do you say?"
 
 }
-#if(v_b3_ch4_billy == 7 && v_b3_ch5_negotiations == 2 || v_b3_ch4_billy == 8 && v_b3_ch5_negotiations == 2) {
+#if(v_b3_ch5_negotiations == 2 && (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8)) {
  "Sure, we'll tell you. For a price."
 
 When they hear what I answered the king, Kate and Breynan both instinctively turn their heads towards me, but they only do it for a brief moment, realizing that they can't afford to raise any more suspicion. The king doesn't seem to have noticed them, because he is currently giving me his undivided attention.
@@ -88,7 +88,7 @@ achievement("Opportunist",v_ac_b3_ch5_opportunist)
 "Yes, I suspected that this might have been the case..." the king of the underground says. "Still, I am thankful for your honesty. The situation is bad enough as it is, so it's good to know that at least I won't have to also worry about you hiding crucial information from me. I recommend that you all go get some rest, because tomorrow is likely going to be a busy day. We'll talk again in the morning."
 
 }
-#if(v_b3_ch4_billy == 7 && v_b3_ch5_negotiations == 1 || v_b3_ch4_billy == 8 && v_b3_ch5_negotiations == 1) {
+#if(v_b3_ch5_negotiations == 1 && (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8)) {
  "I mean, the cat's out of the bag already, so I guess we might as well tell you."
 
 When they hear what I answered the king, Kate and Breynan both instinctively turn their heads towards me, but they only do it for a brief moment, realizing that they can't afford to raise any more suspicion. The king doesn't seem to have noticed them, because he is currently giving me his undivided attention.
@@ -126,7 +126,7 @@ The king of the underground shrugs.
 "Suit yourself, then," he says. "I don't really see why you would deny my offer, since it's just free money for you at this point, but I won't waste any time trying to change your mind. Anyway, now that we're done discussing this topic, I recommend that you all go get some rest, because tomorrow is likely going to be a busy day. We'll talk again in the morning."
 
 }
-#if(v_b3_ch4_billy == 7 && v_b3_ch5_negotiations != 0 && v_b3_ch5_negotiations != 4 || v_b3_ch4_billy == 8 && v_b3_ch5_negotiations != 0 && v_b3_ch5_negotiations != 4) {
+#if((v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8) && v_b3_ch5_negotiations != 0 && v_b3_ch5_negotiations != 4) {
  "My king, is there anything I can help you with?" Breynan says.
 
 "Well, you could begin by taking some of these reports off my hands," the king of the underground says, as he points at a man standing next to him who is holding a stack of papers. "Start with the ones at the bottom. Those should be easy enough for you to understand even without knowing the layout of the city by heart like I do. We need to evacuate as many people as we can by sunrise, so you'd better be ready for another sleepless night. We're going to be here for a while."
@@ -190,6 +190,7 @@ TEXT:
 
 "Should I take it that you're making progress with finding the cure for the people in the quarantine area?" Illuna says, when Daren and Arraka reach us.
 
+#if(False) {
  "So, what you are saying is that it is now your turn to backstab us?" Illuna asks the king.
 
 "Good heavens, no!" the king of the underground says. "I'm not planning to do anything to you. Breynan might not be all that loyal to me, but he is most certainly loyal to the people of Ollendor, so I couldn't possibly imagine him still being on friendly terms with you if you had tried to hurt our people in any way. Given that he's not saying anything, I'm going to assume that at the very least you're not working against the interests of our people. That is good enough for me. After all, your healer friend has been working tirelessly to save my men's lives in the quarantine zone ever since he came here, so it would be an insult to him if I were to treat any of you as my enemies."
@@ -198,6 +199,7 @@ TEXT:
 
 "Obviously I'm still going to ask you that question," the king says. "But you are free to not answer me if that is your decision. So... are you going to tell me what were the results of your negotiations with the Overseer or not?"
 
+}
 #if(v_ch11_saved_rose == 1) {
  "Yes," Arraka says. "But only because the goblin managed to explain to Daren what I wanted from him, in simple enough terms that even someone like him could understand. Now he pretty much figured out the cause of the disease, so all he needs to do is go get the right tools for the job."
 
@@ -1314,7 +1316,6 @@ TEXT:
 "Exactly," I say. "But no matter how Illuna acts, we all know by now that she doesn't really mean it, and you should know that too. So there's no need to keep worrying about things like that, alright?"
 
 }
-#if(v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1) {
  "Okay..." Flower says. "I'll try to stop worrying about it. But I'll need some time to decide what to do about... the way I've been acting lately. I'm still a little confused about what it is that I want right now."
 
 "Hey, we're not in a hurry," I say. "Take your time. Sort everything out. Just don't forget to do some of Arraka's training too when you're not too tired. After all, the God of Time isn't going to defeat himself."
@@ -1327,7 +1328,6 @@ TEXT:
 
 "She does sleep from time to time, but she usually only needs a few hours a week or less to be well-rested," Flower says. "It's just another one of the perks she gained after she absorbed all those thousands of souls in the magical plane. You know, aside from her overwhelming magical power and her near-immortality."
 
-}
 choice(""What do you mean by near-immortality?"", B3-Ch05a-Magnificence, v_current_scene = B3-Ch05a-Magnificence, v_b3_ch5_moustache = 0)
 choice(""So, how do you wake her up if you need her while she's asleep? Do you spin her amulet?"", B3-Ch05a-Magnificence, v_current_scene = B3-Ch05a-Magnificence, v_b3_ch5_moustache = 1)
 choice(""Does this mean that we can draw a fake moustache on her amulet and she won’t notice?"", B3-Ch05a-Magnificence, v_current_scene = B3-Ch05a-Magnificence, v_b3_ch5_moustache = 2)
@@ -1384,7 +1384,6 @@ TEXT:
 "Ugh..." I say. "Not the rocks again."
 
 }
-#if(v_b3_ch5_moustache == 0 || v_b3_ch5_moustache == 1 || v_b3_ch5_moustache == 2) {
  "Oh?" Melindra says, with a smirk. "Do you still not appreciate the magnificence of my rock collection, Barry? Then I guess I have no choice. Flower and I will just have to spend the entirety of this night shift explaining to you in great detail what makes these rocks so unique. I'll teach you everything I know, until you will become an expert in rocks of all shapes and sizes!"
 
 "You are far too kind," I tell Melindra. "But there is no need to spend so much effort just for my sake."
@@ -1395,5 +1394,4 @@ For the next three hours or so, Melindra and Flower made sure to give me a compl
 
 Obviously, even at the end of the night shift my original opinion remained largely unchanged, but at the very least I could now say that I understood what made the difference between an ordinary rock and a collectable rock in their eyes, so their hobby would no longer seem as incomprehensible and illogical as before. 
 
-}
 choice("Continue", B3-Ch05b-Refreshed, v_current_scene = B3-Ch05b-Refreshed)

@@ -212,7 +212,6 @@ After hearing Kate's words, Talmak keeps turning his head between me and Daren, 
 After hearing Kate's words, Talmak keeps turning his head between me and Daren, looking at each of us in turn, as if he is simply refusing to believe what is happening before his eyes. Once he finally understands that we are indeed being serious, he completely loses his temper, and his face contorts into a snarl.
 
 }
-#if(v_b2_ch10_advisor == 0 || v_b2_ch10_advisor == 1 || v_b2_ch10_advisor == 2) {
  "You would compete against me?" Talmak shouts furiously, as he gets up from his chair and looks at me directly. "ME? The Sage of the North?"
 
 He then stops suppressing his magical power, and for a moment, it feels like the intensity of his aura is hitting me right in the face.
@@ -231,7 +230,6 @@ He then stops suppressing his magical power, and for a moment, it feels like the
 
 "These two fools have already sealed their fate!" Talmak shouts, as he faces the other members of our team. "But the rest of you do not need to die together with them. If you join my side now, you will be allowed to live."
 
-}
 choice("Continue", B2-Ch10b-Denied, v_current_scene = B2-Ch10b-Denied)
 
 
@@ -1327,7 +1325,6 @@ As we all take a look to see what's happening, we are shocked to find out that a
 "Why don't you try absorbing this golem with your sword, Daren?" Talmak shouts from above. "Maybe you'll manage to scratch the sole of its foot, before it stomps you to death!"
 
 }
-#if(v_b2_ch10_target == 0 || v_b2_ch10_target == 1) {
  He then uses his earth powers to move the walls of rock on the sides of the chasm closer together, in order to create a path for his stone giant to walk on. The earth is trembling violently once more, as the pit below us gets narrower by the second, until the walls forming the crevice get joined together, leaving nothing but a small crack in the earth, between them.
 
 In the meantime, Melindra makes us float until we are at a relatively safe distance from the golem, and then she lands us on the ground.
@@ -1350,7 +1347,6 @@ All of a sudden, Melindra loses control of one of her wind blades, which flies a
 
 "Damn..." Daren says, as he looks at the hole in the ground left by the blade from earlier. "I really hope that my barrier is strong enough to protect us from one of these, if it hits us..."
 
-}
 choice(""Would your barrier work more effectively if we huddled closer together?"", B2-Ch10b-Huddled, v_current_scene = B2-Ch10b-Huddled)
 choice(""Maybe you could try to use your sword to absorb the wind blades."", B2-Ch10b-Absorb, v_current_scene = B2-Ch10b-Absorb)
 
@@ -1460,7 +1456,6 @@ Before she gets to finish what she had to say, the banshee gets teleported out o
 "Sure, I guess..." Daren says, confused. "But I don't see why--"
 
 }
-#if(v_b2_ch10_target == 0 || v_b2_ch10_target == 1) {
  "Then let me ask you directly..." Melindra says. "Are you, or are you not planning to cast a spell on me that limits my powers?"
 
 "What?..." Daren says. "No! Of course not! What are you even saying? Do you know how risky it would be to try and cast a spell like that on you, given the nature of your stillwater aura? You could even die from something like that. I would never even dream of casting such a spell on you!"
@@ -1479,7 +1474,6 @@ Before she gets to finish what she had to say, the banshee gets teleported out o
 
 "They're just trying to be nice, Melindra," I say. "There's no need to act so shocked about it. Also, could we maybe move away from this camp? I have a feeling that we're going to start getting attacked by a hundred pinecone-collecting underlings if we stay in this place much longer..."
 
-}
 choice("Continue", B2-Ch10b-Empty, v_current_scene = B2-Ch10b-Empty, v_b2_ch11_added_hearing = 0)
 
 
