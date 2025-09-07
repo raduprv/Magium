@@ -492,7 +492,7 @@ The orc sees me coming, and he blocks my first blow with his shield, while he sw
  I reacted too late, however, and the mace hit me hard in the head, crushing my skull under its weight, and sending me crashing to the ground, while my consciousness faded away, forever.
 
 }
-#if(v_b2_ch10_toast == 0 && v_reflexes >= 1 || v_b2_ch9_drink == 0 && v_reflexes >= 1 || v_reflexes >= 1 && v_reflexes >= 2 || v_b2_ch10_toast == 1 && v_b2_ch9_drink == 1 && v_reflexes >= 2) {
+#if(v_b2_ch10_toast == 0 && v_reflexes >= 1 || v_b2_ch9_drink == 0 && v_reflexes >= 1 || v_reflexes >= 1 && v_reflexes >= 2) {
  I manage to get out of harm's way in time, and before the monster gets to attack me a second time, Leila stabs him from behind, with one of her daggers, forcing him to turn her way once more. I take advantage of this, and I immediately dash back towards my enemy, driving my blade through the back of his helmet, which makes it pass straight through his neck. After a few seconds of gurgling up blood, the orc finally falls to the ground, and he dies soon afterwards.
 
 As I look to see how the others are doing, I notice that the rest of the monsters are already dead, and that my teammates are now assembling near the woods, so we can go and fight the orc mages and their captain together.

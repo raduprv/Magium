@@ -809,7 +809,7 @@ As I manage to very narrowly evade another fire beam, I suddenly realize that th
 After we repeat these exact same motions a few more times, the golem begins to just stand there, without doing anything, probably because it's trying to understand why its flawless path prediction algorithm is no longer working as intended. This staring contest between us continues for a while longer, until I see a small but familiar shape on the ground approaching the golem at a breathtaking speed.
 
 }
-#if(v_aura_hardening == 0 && v_b3_ch9_currents == 1 && v_perception < 3 || v_b3_ch9_currents == 1 && v_reflexes >= 3 && v_perception < 3 || v_b3_ch9_currents == 1 && v_aura_hardening > 0 && v_perception < 3) {
+#if(v_b3_ch9_currents == 1 && v_aura_hardening >= 0 && v_perception < 3 || v_b3_ch9_currents == 1 && v_reflexes >= 3 && v_perception < 3) {
  
 
 I begin to focus my consciousness on the earthen plane and I raise my arms up, causing Melindra's air currents to activate themselves and to propel me upwards.
@@ -1078,7 +1078,7 @@ To my shock, it seems that one of the golems has finally decided that getting ri
  Unfortunately, the time it took me to switch back my focus to the earthen plane and to dash away was not enough for me to escape the beam, especially considering how unresponsive my currents are, and the flames burnt me to ashes in a matter of seconds.
 
 }
-#if(v_b3_ch9_currents == 0 && v_reflexes >= 2 || v_b3_ch9_currents == 1 && v_reflexes >= 4 || v_reflexes >= 2 && v_reflexes >= 4) {
+#if(v_b3_ch9_currents == 0 && v_reflexes >= 2 || v_reflexes >= 2 && v_reflexes >= 4) {
  I would've probably been dead if not for my quick reaction time, but I managed to switch my focus back to the earthen plane and to get out of the way just in time to see the golem behind me getting absolutely destroyed by the beam of its comrade-in-arms. The metal giant that attacked me seems to now be regretting its decision, because it is keeping its head down, without making any more movements, as if it were mourning its deceased partner.
 
 This momentary pause gives me the opportunity to go place the final pillar that was needed for the paralysis spell to function in the ethereal plane, and as soon as I'm done, I give the 'okay' signal to Peter so that we can commence our simultaneous casting.
@@ -1130,7 +1130,7 @@ To my shock, it seems that one of the two golems between which I've positioned m
  Unfortunately, the time it took me to switch back my focus to the earthen plane and to dash away was not enough for me to escape the beam, especially considering how unresponsive my currents are, and the flames burnt me to ashes in a matter of seconds.
 
 }
-#if(v_b3_ch9_currents == 0 && v_reflexes >= 2 || v_b3_ch9_currents == 1 && v_reflexes >= 4 || v_reflexes >= 2 && v_reflexes >= 4) {
+#if(v_b3_ch9_currents == 0 && v_reflexes >= 2 || v_reflexes >= 2 && v_reflexes >= 4) {
  I would've probably been dead if not for my quick reaction time, but I managed to switch my focus back to the earthen plane and to get out of the way just in time to see the golem behind me getting absolutely destroyed by the beam of its comrade-in-arms. The metal giant that attacked me seems to now be regretting its decision, because it is keeping its head down, without making any more movements, as if it were mourning its deceased partner.
 
 This momentary pause gives me the opportunity to go place the final pillar that was needed for the paralysis spell to function in the ethereal plane, and as soon as I'm done, I give the 'okay' signal to Peter so that we can commence our simultaneous casting.

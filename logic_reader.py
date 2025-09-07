@@ -318,12 +318,18 @@ class Scene:
             for new_paragraph in new_paragraphs:
                 try:
                     new_paragraph.conditions = sp.simplify_logic(new_paragraph.conditions, dontcare=~tautological_cond)
+                    new_paragraph.conditions = sp.simplify(new_paragraph.conditions.subs(sp.symbols(var) <= max(var_possible_values[var]), True))
                 except:
                     print(var,var_possible_values[var])
                     continue
 
         # Only do it now to avoid weird stuff
         for new_paragraph in new_paragraphs:
+            new_paragraph.conditions = sp.simplify(new_paragraph.conditions)
+            # Removing "stat <= 4" as this is always true (except for hearing which can go above)
+            for var in STATS_VARIABLE_NAMES:
+                if var != "v_hearing":
+                    new_paragraph.conditions = new_paragraph.conditions.subs(sp.symbols(var) <= 4,True)
             new_paragraph.conditions = sp.simplify_logic(new_paragraph.conditions, form= "dnf")
 
         paragraph_groups = {}

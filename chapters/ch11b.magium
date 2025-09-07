@@ -1062,7 +1062,7 @@ Kate stops for a few seconds, in order to rub her eyes with her hands, as she tr
 "This is my fault..." Daren says, as he finally lets go of Rose. "I was the one who offered to escort her home. I was the one who promised we'd protect her. I failed her. It's my fault that she's dead..."
 
 }
-#if(v_hearing == 4 && v_perception < 4 || v_hearing < 4) {
+#if(v_hearing <= 4 && v_hearing < 4 || v_hearing <= 4 && v_perception < 4) {
  "Hey, now, hold on there!" Hadrik says. "You can't just go and blame this all on yourself. Rose knew very well what she was getting into when she decided to stick with us after what happened yesterday with the noble. She made her own choice and she stuck by it until the end. She died with honor, and we should all respect her for that."
 
 "What do you know about Rose?!" Daren shouts furiously, all of a sudden. "Do you think she wanted to live her last moments in a cesspool like this? Do you think she died happily, knowing that she left her little siblings behind to fend for themselves? Do you seriously think that everything in the world can be measured by your primitive values? What gives you the right to talk about Rose this way? Tell me!"

@@ -382,7 +382,7 @@ TEXT:
 "Yes," the Overseer says. "That is my intention."
 
 }
-#if(v_b3_ch4_billy == 9 && v_b3_ch9_enemies == 2 || v_b3_ch9_enemies == 2 && v_b3_ch4_billy < 9) {
+#if(v_b3_ch9_enemies == 2) {
  "No, but we already know that the king of the underground wanted to have us assassinated," I say. "What was to guarantee that he wouldn't try the same thing again if he got out of prison? And what about Leila and doctor Reidzek? How could we leave them in this city with that madman still running loose?"
 
 "You can't just decide things like this on a whim," Daren says. "We're talking about people's lives, here! You say that the king wanted us assassinated, but there's barely any proof that Peter was even involved in that plot. Why would you kill him too? Just because he was a witness?"
@@ -398,7 +398,7 @@ He pauses.
 "Hey, Overseer," Melindra says. "You mentioned earlier that you would only rule the city from the shadows. Who is going to be the official king, then?"
 
 }
-#if(v_b3_ch4_billy == 9 && v_b3_ch9_enemies == 3 || v_b3_ch9_enemies == 3 && v_b3_ch4_billy < 9) {
+#if(v_b3_ch9_enemies == 3) {
  "Barry, I can't believe what I'm hearing..." Daren says. "I know that the king of the underground was a jerk, but--"
 
 "He was more than just a jerk," I say. "He wanted to have us assassinated. What was to guarantee that he wouldn't try the same thing again if he got out of prison? And what about Leila and doctor Reidzek? How could we leave them in this city with that madman still running loose?"

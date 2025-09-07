@@ -617,7 +617,6 @@ TEXT:
 
 set(v_is_dead,1) if (v_combat_technique < 4)
 set(v_is_dead,0) if (v_combat_technique == 4)
-#if(v_combat_technique == 4 || v_combat_technique < 4) {
  
 
 It's time to stop playing games, and to start going on the offensive. Let's see... What can I use against him?
@@ -630,7 +629,6 @@ I start to punch all of the stone slates that are magically created, while makin
 
 I keep dodging and punching rocks until it looks as if Talmak has all of his focus on Hadrik, and then I start flying as fast as I can, straight towards the sage and his platform, which are both right below me.
 
-}
 #if(v_combat_technique < 4) {
  Unfortunately, it seems that Talmak was still paying attention to me, and as soon as he sees me approach him, he conjures a large slate of stone, exactly in front of me. I manage to stop before hitting the obstacle, but the rocks that were following right behind me hit me at full speed, and they crush me against the stone slate, killing me instantly.
 
@@ -703,7 +701,6 @@ TEXT:
 
 set(v_is_dead,1) if (v_perception < 4)
 set(v_is_dead,0) if (v_perception == 4)
-#if(v_perception == 4 || v_perception < 4) {
  
 
 It's time to stop playing games, and to start going on the offensive. But in order to do that, I'm going to need to pay a little more attention to my surroundings.
@@ -714,7 +711,6 @@ Given that Talmak always tries to anticipate where I'm going, while continuously
 
 I begin to fly in circles, without any aim or purpose, so that the sage would have a harder time predicting what I will do. This is working, to a certain extent, but it's not really helping me get anywhere near him. I need to keep watching the rocks and to see if I can't find any patterns in how he moves them, that I might be able to exploit.
 
-}
 #if(v_perception < 4) {
  As I am busy trying to observe how Talmak is moving and creating his rocks, I lose focus on the boulders that were actually out to get me, and one of them hits me right in the head. Before I have the time to recover, the sage creates even more stone slates, and I quickly get squashed between several layers of rock, which makes me die almost instantly.
 

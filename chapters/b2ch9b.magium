@@ -918,7 +918,7 @@ choice("Continue", B2-Ch09b-Interrupt, v_current_scene = B2-Ch09b-Interrupt)
 ID: B2-Ch09b-Interrupt
 TEXT:
 
-#if(v_b2_ch8_energizer != 0 && v_b2_ch8_energizer != 2 && v_b2_ch8_energizer != 3 && v_b2_ch9_amused != 0) {
+#if(v_b2_ch9_amused == 1 && v_b2_ch8_energizer != 0 && v_b2_ch8_energizer != 2 && v_b2_ch8_energizer != 3) {
  "It's hard to say," I tell him, as I place a card on the ground, facing up, as well. "I've had a little discussion with her this morning, but I didn't manage to convince her to stop antagonizing the group through her actions. She said that she shouldn't try to change the way she lives her life just to accommodate others, and that Eiden never had a problem with the way she was acting."
 
 "Yeah, I was afraid that she might say something like that," Hadrik says.
