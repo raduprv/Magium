@@ -127,7 +127,7 @@ It takes me a few moments to understand that what he's referring to is our decis
  "So... any final remarks before we head into battle?" Hadrik says, as our group is staying behind, watching the king of the underground's men leaving the building.
 
 }
-#if(v_b3_ch4_billy == 0 && (v_b3_ch6_kelrim == 1 || v_b3_ch6_plan == 3)) {
+#if(v_b3_ch4_billy == 0 && v_b3_ch6_kelrim == 1 || v_b3_ch4_billy == 0 && v_b3_ch6_plan == 3) {
  "Yes," I say. "I'm not sure if you heard my conversation with Rose on the transceiver before we teleported, but she said that we shouldn't count on her help this time around because she overdid her time power training yesterday and she woke up really tired this morning."
 
 "It's fine," Daren says. "She already helped us enough as it is. This is our battle to win, not hers."
@@ -135,7 +135,7 @@ It takes me a few moments to understand that what he's referring to is our decis
 "I can't help but notice that Kelrim was not teleported to the surface with us," Kate says. "Didn't he say yesterday that he wanted to join us in this last battle to liberate Ollendor?"
 
 }
-#if((v_b3_ch6_kelrim == 1 || v_b3_ch6_plan == 3) && v_b3_ch4_billy != 0) {
+#if(v_b3_ch6_kelrim == 1 && v_b3_ch4_billy != 0 || v_b3_ch6_plan == 3 && v_b3_ch4_billy != 0) {
  "Yes," Kate says. "I can't help but notice that Kelrim was not teleported to the surface with us. Didn't he say yesterday that he wanted to join us in this last battle to liberate Ollendor?"
 
 }
@@ -165,13 +165,13 @@ TEXT:
 "And if you get attacked while I'm in the air, what happens then?" I say. "Will I be stuck in the middle of the sky, unable to move?"
 
 }
-#if((v_b3_ch6_kelrim == 1 || v_b3_ch6_plan == 3) && v_b3_ch8_king != 5) {
+#if(v_b3_ch6_kelrim == 1 && v_b3_ch8_king != 5 || v_b3_ch6_plan == 3 && v_b3_ch8_king != 5) {
  "Oh, I forgot to tell you," Daren says. "I had a little chat with him before we left for the teleporter room, and he told me that the king of the underground refused his request to come with us. The king said that only highly skilled combat veterans were allowed to join, and that Kelrim would be of much more help if he remained in the underground base, so he could heal the wounded when we'd come back. Kelrim only followed us to the teleporter room to see us off, not to join us."
 
 "I see," Kate says.
 
 }
-#if(v_b3_ch8_king == 5 && (v_b3_ch6_kelrim == 1 || v_b3_ch6_plan == 3)) {
+#if(v_b3_ch6_kelrim == 1 && v_b3_ch8_king == 5 || v_b3_ch6_plan == 3 && v_b3_ch8_king == 5) {
  "Oh, I forgot to tell you," Daren says. "I had a little chat with him before we left for the teleporter room, and he told me that the king of the underground refused his request to come with us. The king said that only highly skilled combat veterans were allowed to join, and that Kelrim would be of much more help if he remained in the underground base, so he could heal the wounded when we'd come back. Kelrim only followed us to the teleporter room to see us off, not to join us."
 
 "I would not have expected the king of the underground himself to turn him down," Kate says. "I thought this would have been the perfect opportunity for him to assassinate the goblin, along with the rest of us."

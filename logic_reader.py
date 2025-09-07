@@ -296,7 +296,7 @@ class Scene:
         new_paragraphs = []
         for (id,version),group in grouped_paragraphs:
             group = list(group)
-            new_conditions = sp.simplify_logic(sp.Or(*[sp.And(*paragraph.conditions.values()) for paragraph in group]),form="dnf")
+            new_conditions = sp.simplify_logic(sp.Or(*[sp.And(*paragraph.conditions.values()) for paragraph in group]),form="cnf")
             new_paragraphs.append(Paragraph(id,version,new_conditions))
 
         # Necessary to ensure paragraphs remain in the correct order
@@ -324,7 +324,7 @@ class Scene:
 
         # Only do it now to avoid weird stuff
         for new_paragraph in new_paragraphs:
-            new_paragraph.conditions = sp.simplify_logic(new_paragraph.conditions, form= "cnf")
+            new_paragraph.conditions = sp.simplify_logic(new_paragraph.conditions, form= "dnf")
 
         paragraph_groups = {}
         for paragraph in new_paragraphs:

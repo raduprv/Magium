@@ -751,7 +751,7 @@ As we are about to exit the throne room, we hear some whispers behind us, and so
 We then go out through the door and into the tunnel outside, as we begin to head for the waiting room.
 
 }
-#if((v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8 || v_b3_ch4_billy <= 6) && (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8 || v_b3_ch4_billy != 0)) {
+#if(v_b3_ch4_billy <= 6 && v_b3_ch4_billy != 0 || v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8) {
  "One moment, please…" the king says. "Peter has just reminded me of something that I think you might want to know about before you return to the surface. In short, we've noticed that the flying metal balls have no longer been following their usual patrol routes since yesterday evening, and they've also been behaving quite erratically. I heard from Breynan that you killed Billy Bob yesterday, so this may be a part of the reason, but I would be careful if I were you. Something tells me that the Overseer is planning something big, and you might not want to be caught in the middle of it."
 
 "Alright," Daren says. "We'll try to be careful. Farewell!"

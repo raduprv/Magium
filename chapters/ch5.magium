@@ -4,7 +4,7 @@ TEXT:
 set(v_ac_ch5_wielder,1) if (v_ch4_dave_defeat == 1 && v_ch4_ending == 5)
 set(v_is_dead,0)
 achievement("Stat device wielder",v_ac_ch5_wielder)
-#if(v_ch4_ending == 1 && (v_ch4_dave_defeat == 1 || v_ch4_ending != 5)) {
+#if(v_ch4_dave_defeat == 1 && v_ch4_ending == 1 || v_ch4_ending == 1 && v_ch4_ending != 5) {
 
 "Daren!" I shout. "Daren, can you hear me?"
 
@@ -21,7 +21,7 @@ Well, it's not like I'm going anywhere. My knees still hurt like hell. I've bare
 He casts a healing spell on me and I suddenly get enveloped in a warm, soothing light. The pain leaves me completely, and I manage to get back on my feet with no difficulty. I always knew there were healing spells like this, but witnessing one of them first hand is something else. Most healers I've met in my lifetime could barely even heal light bruises or ankle sprains.
 
 }
-#if(v_ch4_ending == 2 && (v_ch4_dave_defeat == 1 || v_ch4_ending != 5)) {
+#if(v_ch4_dave_defeat == 1 && v_ch4_ending == 2 || v_ch4_ending == 2 && v_ch4_ending != 5) {
 
 "Daren!"
 
@@ -44,7 +44,7 @@ Daren suddenly wakes up and starts looking around him, confused.
 Daren and I start filling her in on the details of our first encounter with Eiden.
 
 }
-#if(v_ch4_ending == 4 && (v_ch4_dave_defeat == 1 || v_ch4_ending != 5)) {
+#if(v_ch4_dave_defeat == 1 && v_ch4_ending == 4 || v_ch4_ending == 4 && v_ch4_ending != 5) {
 
 "Barry!" Daren calls out to me again as he approaches the trees.
 
@@ -63,7 +63,7 @@ He enters the forest, and starts looking around for Cutthroat Dave.
 "Wait, you're saying he used fire magic? Didn't he use air magic that time when he pinned me to the ground? Normally it takes a lifetime to master even a single element!"
 
 }
-#if((v_ch4_ending == 3 || v_ch4_ending == 5) && (v_ch4_ending == 3 || v_ch4_dave_defeat != 1) && v_ch4_ending != 6) {
+#if(v_ch4_ending == 3 && v_ch4_ending != 6 || v_ch4_ending == 5 && v_ch4_dave_defeat != 1 && v_ch4_ending != 6) {
 
 "Daren!"
 

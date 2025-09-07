@@ -1198,7 +1198,7 @@ While Melindra was busy showing Flower her rocks, Daren decided to do one final 
 "Yeah, yeah, we've been over this before," Hadrik says. "Depending on how tight the security is, we either try to sneak in, or we bust right through their front door. It's not like we have many other options anyway."
 
 }
-#if((v_b3_ch1_unlock == 2 || v_perception == 4 || v_perception < 4) && (v_ancient_languages == 4 || v_b3_ch1_unlock == 2 || v_ancient_languages < 4 || v_perception < 4)) {
+#if(v_ancient_languages == 4 && v_perception == 4 || v_perception == 4 && v_ancient_languages < 4 || v_b3_ch1_unlock == 2 || v_perception < 4) {
  "Hold on, there..." Melindra says, as she suddenly turns towards us. "You guys have been discussing how to infiltrate the city of Ollendor without including me in your meetings?"
 
 "Well, we asked you to join us a million times, but you just kept putting us off, so we eventually had to do a meeting without you!" Daren says. "It's not like we could just start planning these things after we'd already reached the city."

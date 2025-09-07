@@ -61,7 +61,7 @@ TEXT:
 "A price?..." the king of the underground says, and he spends a few moments thinking about my offer. "Well, to be perfectly honest with you, I can't say that I would be willing to spend a lot of money on this information. The way I see it, either you struck some secret deal with the Overseer, in which case you obviously aren't going to tell me about it, or your discussion was centered on viable ways to assassinate the king, which have likely become irrelevant now that the king has ordered a city-wide lockdown. However, I would be willing to pay you ten gold coins upfront if you agree to confirm or deny my hypothesis. What do you say?"
 
 }
-#if(v_b3_ch5_negotiations == 2 && (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8)) {
+#if(v_b3_ch4_billy == 7 && v_b3_ch5_negotiations == 2 || v_b3_ch4_billy == 8 && v_b3_ch5_negotiations == 2) {
  "Sure, we'll tell you. For a price."
 
 When they hear what I answered the king, Kate and Breynan both instinctively turn their heads towards me, but they only do it for a brief moment, realizing that they can't afford to raise any more suspicion. The king doesn't seem to have noticed them, because he is currently giving me his undivided attention.
@@ -88,7 +88,7 @@ achievement("Opportunist",v_ac_b3_ch5_opportunist)
 "Yes, I suspected that this might have been the case..." the king of the underground says. "Still, I am thankful for your honesty. The situation is bad enough as it is, so it's good to know that at least I won't have to also worry about you hiding crucial information from me. I recommend that you all go get some rest, because tomorrow is likely going to be a busy day. We'll talk again in the morning."
 
 }
-#if(v_b3_ch5_negotiations == 1 && (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8)) {
+#if(v_b3_ch4_billy == 7 && v_b3_ch5_negotiations == 1 || v_b3_ch4_billy == 8 && v_b3_ch5_negotiations == 1) {
  "I mean, the cat's out of the bag already, so I guess we might as well tell you."
 
 When they hear what I answered the king, Kate and Breynan both instinctively turn their heads towards me, but they only do it for a brief moment, realizing that they can't afford to raise any more suspicion. The king doesn't seem to have noticed them, because he is currently giving me his undivided attention.
@@ -126,7 +126,7 @@ The king of the underground shrugs.
 "Suit yourself, then," he says. "I don't really see why you would deny my offer, since it's just free money for you at this point, but I won't waste any time trying to change your mind. Anyway, now that we're done discussing this topic, I recommend that you all go get some rest, because tomorrow is likely going to be a busy day. We'll talk again in the morning."
 
 }
-#if((v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8) && v_b3_ch5_negotiations != 0 && v_b3_ch5_negotiations != 4) {
+#if(v_b3_ch4_billy == 7 && v_b3_ch5_negotiations != 0 && v_b3_ch5_negotiations != 4 || v_b3_ch4_billy == 8 && v_b3_ch5_negotiations != 0 && v_b3_ch5_negotiations != 4) {
  "My king, is there anything I can help you with?" Breynan says.
 
 "Well, you could begin by taking some of these reports off my hands," the king of the underground says, as he points at a man standing next to him who is holding a stack of papers. "Start with the ones at the bottom. Those should be easy enough for you to understand even without knowing the layout of the city by heart like I do. We need to evacuate as many people as we can by sunrise, so you'd better be ready for another sleepless night. We're going to be here for a while."
@@ -140,7 +140,7 @@ We leave the king and Breynan behind, and we begin heading for the tunnel leadin
 "Hey, even I'm not that crazy!" I tell her.
 
 }
-#if((v_b3_ch5_negotiations == 0 || v_b3_ch5_negotiations == 4 || v_b3_ch4_billy != 7) && (v_b3_ch5_negotiations == 0 || v_b3_ch5_negotiations == 4 || v_b3_ch4_billy != 8)) {
+#if(v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8 || v_b3_ch5_negotiations == 0 || v_b3_ch5_negotiations == 4) {
  "My king, is there anything I can help you with?" Breynan says.
 
 "Well, you could begin by taking some of these reports off my hands," the king of the underground says, as he points at a man standing next to him who is holding a stack of papers. "Start with the ones at the bottom. Those should be easy enough for you to understand even without knowing the layout of the city by heart like I do. We need to evacuate as many people as we can by sunrise, so you'd better be ready for another sleepless night. We're going to be here for a while."

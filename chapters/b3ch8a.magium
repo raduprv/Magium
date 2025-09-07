@@ -551,7 +551,7 @@ choice("Continue", B3-Ch08a-Antagonizing, v_current_scene = B3-Ch08a-Antagonizin
 ID: B3-Ch08a-Rescue
 TEXT:
 
-#if((v_b3_ch4_billy == 9 || v_b3_ch4_billy <= 6) && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8) {
+#if(v_b3_ch4_billy == 9 && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8 || v_b3_ch4_billy <= 6 && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8) {
  "I'm on whichever side helps us rescue the prisoners from the seredium towers."
 
 "Error," the Overseer says. "According to my analysis, neither of the two sides will consider the rescue of the seredium tower prisoners to be a priority. Could you please clarify which side you were referring to, specifically?"

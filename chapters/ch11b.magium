@@ -1046,7 +1046,7 @@ Just as I reach her, all of the stones in front of Rose suddenly get sent flying
 Soon after Daren starts to heal us, a loud booming noise suddenly starts to echo all throughout the city. 
 
 }
-#if((v_hearing == 4 || v_hearing < 4) && (v_hearing < 4 || v_perception < 4) && (v_agility != 4 || v_hearing != 4 || v_perception != 4)) {
+#if(v_hearing <= 4 && v_hearing < 4 && v_hearing != 4 || v_hearing <= 4 && v_hearing < 4 && v_perception != 4 || v_hearing <= 4 && v_perception < 4 && v_hearing != 4 || v_hearing <= 4 && v_perception < 4 && v_perception != 4 || v_agility >= 4 && v_hearing <= 4 && v_hearing < 4 && v_agility != 4 || v_agility >= 4 && v_hearing <= 4 && v_perception < 4 && v_agility != 4) {
  It's no use... I'm sure that Daren must have realized it as well. Rose is no longer breathing. She stopped breathing even before she hit the ground. She's dead. After all we've been through to bring her back home safely. After everything that's happened this past week. She died, just like that. And not even Daren can bring her back.
 
 "No..." Kate says. "This isn't right. This has to be an illusion! The necromancer could never harm her like this. The tournament's spell would have prevented him! This has to be a--"
@@ -1062,7 +1062,7 @@ Kate stops for a few seconds, in order to rub her eyes with her hands, as she tr
 "This is my fault..." Daren says, as he finally lets go of Rose. "I was the one who offered to escort her home. I was the one who promised we'd protect her. I failed her. It's my fault that she's dead..."
 
 }
-#if((v_hearing == 4 || v_hearing < 4) && (v_hearing < 4 || v_perception < 4)) {
+#if(v_hearing == 4 && v_perception < 4 || v_hearing < 4) {
  "Hey, now, hold on there!" Hadrik says. "You can't just go and blame this all on yourself. Rose knew very well what she was getting into when she decided to stick with us after what happened yesterday with the noble. She made her own choice and she stuck by it until the end. She died with honor, and we should all respect her for that."
 
 "What do you know about Rose?!" Daren shouts furiously, all of a sudden. "Do you think she wanted to live her last moments in a cesspool like this? Do you think she died happily, knowing that she left her little siblings behind to fend for themselves? Do you seriously think that everything in the world can be measured by your primitive values? What gives you the right to talk about Rose this way? Tell me!"

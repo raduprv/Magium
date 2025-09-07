@@ -1560,7 +1560,7 @@ As expected, the Overseer ignores Daren completely, and he just plays the conver
 As expected, the Overseer ignores Daren completely, and he just plays the conversation that he recorded, by using the blue crystal.
 
 }
-#if(v_b3_ch8_overseer2 == 1 && (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8)) {
+#if(v_b3_ch4_billy == 7 && v_b3_ch8_overseer2 == 1 || v_b3_ch4_billy == 8 && v_b3_ch8_overseer2 == 1) {
  "Is this... the only reason why you showed yourself to us?" Daren asks him, suspiciously.
 
 "Negative," the Overseer says. "There were in fact two other reasons. First of all I wanted to report to you that my research towards improving the seredium towers is going smoothly, and I estimate that in two weeks we should already be able to free the first batch of prisoners, without affecting the city's energy source in any meaningful way."

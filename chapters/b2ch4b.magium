@@ -143,7 +143,7 @@ choice("Continue", B2-Ch04b-Associates, v_current_scene = B2-Ch04b-Associates) i
 ID: B2-Ch04b-Wilhelm-lessathi
 TEXT:
 
-#if((v_b2_ch2_lessathi == 1 || v_b2_ch2_threatened == 1) && v_b2_ch2_threatened != 0) {
+#if(v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened != 0 || v_b2_ch2_threatened == 1 && v_b2_ch2_threatened != 0) {
  I suddenly realize that Wilhelm is no longer by our side. Does that mean what I think it means?
 
 I quickly turn around, and I see Wilhelm, holding his orange hilted dagger in both hands, looking as if he'd been just seconds away from delivering a finishing blow.
@@ -159,7 +159,7 @@ Wilhelm is sweating hard. He stands there, looking at me for another few seconds
 Good riddance. Hopefully he'll think twice before trying that again.
 
 }
-#if(v_b2_ch2_threatened == 0 && (v_b2_ch2_fist == 1 || v_b2_ch2_fist == 2)) {
+#if(v_b2_ch2_fist == 1 && v_b2_ch2_threatened == 0 || v_b2_ch2_fist == 2 && v_b2_ch2_threatened == 0) {
  I suddenly realize that Wilhelm is no longer by our side. When did he leave? The fight's only just ended. Wait a minute... Didn't Bruce tell me that Wilhelm was an assassin? 
 
 I get a really bad feeling about all of this, and I quickly turn around. As I feared, Wilhelm was right there, behind me, holding his orange hilted dagger in both hands, looking as if he'd been just seconds away from delivering a finishing blow.
@@ -380,7 +380,7 @@ TEXT:
 
 set(v_is_dead,0) if (v_b2_ch4_backpack == 2 && v_premonition >= 1 || v_b2_ch4_backpack == 2 && v_hearing >= 2 && v_reflexes >= 2 || v_b2_ch4_backpack == 1 || v_b2_ch4_backpack == 3)
 set(v_is_dead,1) if (v_b2_ch4_backpack == 2 && v_hearing < 2 && v_premonition < 1 || v_b2_ch4_backpack == 2 && v_premonition < 1 && v_reflexes < 2)
-#if((v_b2_ch4_backpack == 1 || v_b2_ch4_backpack == 3 || v_b2_ch4_backpack != 2) && (v_premonition >= 1 || v_reflexes >= 2 || v_hearing < 2 || v_b2_ch4_backpack != 2)) {
+#if(v_b2_ch4_backpack == 1 && v_premonition >= 1 || v_b2_ch4_backpack == 1 && v_reflexes >= 2 || v_b2_ch4_backpack == 1 && v_hearing < 2 || v_b2_ch4_backpack == 3 && v_premonition >= 1 || v_b2_ch4_backpack == 3 && v_reflexes >= 2 || v_b2_ch4_backpack == 3 && v_hearing < 2 || v_b2_ch4_backpack != 2) {
  No, wait... this isn't over, yet. 
 
 I look up, and I see that one of the manticores is now diving straight at me. I knew it! The manticore was waiting for me to kill something before attacking me. They were doing the same thing in Hadrik's fight, and in the one before.
@@ -461,7 +461,7 @@ Leila is just about to reach me, and she sends one of her blue texts ahead of he
 "Great!" I say, as she stops in front of me. "Let's try taking down that marauder over there, first."
 
 }
-#if(v_b2_ch4_charge == 1 && (v_b2_ch2_lessathi == 1 || v_b2_ch2_threatened == 1) && v_b2_ch2_threatened != 0) {
+#if(v_b2_ch2_lessathi == 1 && v_b2_ch4_charge == 1 && v_b2_ch2_threatened != 0 || v_b2_ch2_threatened == 1 && v_b2_ch4_charge == 1 && v_b2_ch2_threatened != 0) {
  Perfect! Two creatures are already down. But what about Wilhelm? Is he trying to kill me, yet?
 
 I turn around, and I see Wilhelm standing right behind me, holding his orange hilted dagger with both hands, ready to strike.
@@ -479,7 +479,7 @@ As I prepare to engage him, Wilhelm suddenly gets knocked out from behind, and h
 "Let's start with that marauder over there," I say, as I point towards the marauder that's nearer to us.
 
 }
-#if(v_b2_ch4_charge == 2 && (v_b2_ch2_lessathi == 1 || v_b2_ch2_threatened == 1) && v_b2_ch2_threatened != 0) {
+#if(v_b2_ch2_lessathi == 1 && v_b2_ch4_charge == 2 && v_b2_ch2_threatened != 0 || v_b2_ch2_threatened == 1 && v_b2_ch4_charge == 2 && v_b2_ch2_threatened != 0) {
  Perfect! Two creatures are already down. But what about Wilhelm? Is he trying to kill me, yet?
 
 I turn around, and I see Wilhelm standing right behind me, holding his orange hilted dagger with both hands, ready to strike.
@@ -529,7 +529,7 @@ Before I get to decide, I hear the sound of something dropping to the ground beh
 "Let's start with that marauder over there," I say, as I point towards the marauder that's nearer to us.
 
 }
-#if(v_b2_ch2_threatened == 0 && v_b2_ch4_charge == 1 && (v_b2_ch2_fist == 1 || v_b2_ch2_fist == 2)) {
+#if(v_b2_ch2_fist == 1 && v_b2_ch2_threatened == 0 && v_b2_ch4_charge == 1 || v_b2_ch2_fist == 2 && v_b2_ch2_threatened == 0 && v_b2_ch4_charge == 1) {
  Perfect! Two creatures are already down. Now let's see which monsters I should attack next.
 
 Before I get to decide, I hear the sound of something dropping to the ground behind me, and I turn around to see what happened. From what I can gather, it would seem that Wilhelm is the one that's been knocked out, and Leila is the one who hit him. Wilhelm was right behind me, and he was holding an orange hilted dagger before Leila took him out. 
@@ -547,7 +547,7 @@ Before I get to decide, I hear the sound of something dropping to the ground beh
 "Let's start with that marauder over there," I say, as I point towards the marauder that's nearer to us.
 
 }
-#if(v_b2_ch2_threatened == 0 && v_b2_ch4_charge == 2 && (v_b2_ch2_fist == 1 || v_b2_ch2_fist == 2)) {
+#if(v_b2_ch2_fist == 1 && v_b2_ch2_threatened == 0 && v_b2_ch4_charge == 2 || v_b2_ch2_fist == 2 && v_b2_ch2_threatened == 0 && v_b2_ch4_charge == 2) {
  Perfect! Two creatures are already down. Now let's see which monsters I should attack next.
 
 Before I get to decide, I hear the sound of something dropping to the ground behind me, and I turn around to see what happened. From what I can gather, it would seem that Wilhelm is the one that's been knocked out, and Leila is the one who hit him. Wilhelm was right behind me, and he was holding an orange hilted dagger before Leila took him out. 
@@ -626,7 +626,7 @@ Leila sighs.
 She then takes another spear off the wall, and she throws it towards the manticore. The spear pierces the manticore's chest, and it kills the beast in mid-flight, sending it falling to the ground.
 
 }
-#if((v_b2_ch2_fist == 1 || v_b2_ch2_fist == 2) && v_strength < 1) {
+#if(v_b2_ch2_fist == 1 && v_strength < 1 || v_b2_ch2_fist == 2 && v_strength < 1) {
  
 
 "We should kill that manticore, first," I say. "We can't concentrate on killing the other monsters if we always have to worry about being attacked from above."
@@ -668,7 +668,7 @@ Leila sighs.
 She then takes another spear off the wall, and she throws it towards the manticore. The spear pierces the manticore's chest, and it kills the beast in mid-flight, sending it falling to the ground.
 
 }
-#if(v_strength >= 1 && (v_b2_ch2_fist == 1 || v_b2_ch2_fist == 2) && v_combat_technique < 1) {
+#if(v_b2_ch2_fist == 1 && v_strength >= 1 && v_combat_technique < 1 || v_b2_ch2_fist == 2 && v_strength >= 1 && v_combat_technique < 1) {
  
 
 "We should kill that manticore, first," I say. "We can't concentrate on killing the other monsters if we always have to worry about being attacked from above."
@@ -706,7 +706,7 @@ Alright," Leila writes. "Let's get going, then."
 We go around the marauders, and we head towards the arena wall which is closer to us, while making sure to never take our eyes off the tramplers and the cobras. When we reach it, I take a spear off the wall, and I throw it at the manticore. My hit was right on target, and the spear pierced the manticore's chest, killing the beast in mid-flight and sending it falling to the ground.
 
 }
-#if(v_combat_technique >= 1 && v_strength >= 1 && (v_b2_ch2_fist == 1 || v_b2_ch2_fist == 2)) {
+#if(v_b2_ch2_fist == 1 && v_combat_technique >= 1 && v_strength >= 1 || v_b2_ch2_fist == 2 && v_combat_technique >= 1 && v_strength >= 1) {
  
 
 "We should kill that manticore, first," I say. "We can't concentrate on killing the other monsters if we always have to worry about being attacked from above."
@@ -720,7 +720,7 @@ We go around the marauders, and we head towards the arena wall which is closer t
 We go around the marauders, and we head towards the arena wall which is closer to us, while making sure to never take our eyes off the tramplers and the cobras. When we reach it, I take a spear off the wall, and I throw it at the manticore. My hit was right on target, and the spear pierced the manticore's chest, killing the beast in mid-flight and sending it falling to the ground.
 
 }
-#if((v_combat_technique >= 1 || v_strength < 1 || v_b2_ch2_fist != 1) && (v_combat_technique >= 1 || v_strength < 1 || v_b2_ch2_fist != 2)) {
+#if(v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2 || v_combat_technique >= 1 || v_strength < 1) {
  The crowds burst into cheers. Actually, I think they've been cheering for a while, now. It's just that I've been too focused on the battle to notice. 
 
 While we were dealing with the manticore, the tramplers have taken the opportunity to reposition themselves, and they are now getting ready to charge towards us at full speed. The cobras are heading our way as well. The scorpions seem to have given up on us, and they are heading towards the other members of our team.
@@ -758,7 +758,7 @@ TEXT:
 As Leila goes to fight the cobras, I start heading towards the tramplers.
 
 }
-#if(v_strength >= 2 && (v_b2_ch2_fist == 1 || v_b2_ch2_fist == 2)) {
+#if(v_b2_ch2_fist == 1 && v_strength >= 2 || v_b2_ch2_fist == 2 && v_strength >= 2) {
  
 
 "Leila, could you take care of those two cobras?" I say. "I'll go deal with the tramplers in the meantime. My strength level should be more than enough to be able to break through their tough hides."
@@ -836,7 +836,7 @@ We start heading towards the giant cobras, and the two creatures are now stoppin
 "You take the one on the left," I tell him, and I make a rush towards the cobra on the right.
 
 }
-#if(v_b2_ch4_tactic == 3 && (v_b2_ch2_fist == 1 || v_b2_ch2_fist == 2)) {
+#if(v_b2_ch2_fist == 1 && v_b2_ch4_tactic == 3 || v_b2_ch2_fist == 2 && v_b2_ch4_tactic == 3) {
  I bait the cobra by standing in one place for two seconds, and then I jump out of the way, making the creature miss its shot and waste its acid. While the snake is busy gathering up more acid in its glands, I make a dash towards it, and I stab it in the head, killing it in one strike. 
 
 I take a look to see if Bruce needs any help, but he seems to have handled himself just fine on his own. The other snake is already dead, with its severed head lying on the ground beside its body, and Bruce is now coming back towards me, holding his double handed sword by his side as he walks. Leila is also done with the tramplers, and she's now heading our way.
@@ -844,7 +844,7 @@ I take a look to see if Bruce needs any help, but he seems to have handled himse
 What about the marauders, then? 
 
 }
-#if(v_b2_ch4_tactic == 2 && (v_b2_ch2_fist == 1 || v_b2_ch2_fist == 2)) {
+#if(v_b2_ch2_fist == 1 && v_b2_ch4_tactic == 2 || v_b2_ch2_fist == 2 && v_b2_ch4_tactic == 2) {
  I bait the cobra by standing in one place for two seconds, and then I jump out of the way, making the creature miss its shot and waste its acid. While the snake is busy gathering up more acid in its glands, I make a dash towards it, and I stab it in the head, killing it in one strike. 
 
 I take a look to see if Bruce needs any help, but he seems to have handled himself just fine on his own. The other snake is already dead, with its severed head lying on the ground beside its body, and Bruce is now coming back towards me, holding his double handed sword by his side as he walks. Leila is also done with the tramplers, and she's now heading our way. She appears to have killed the second manticore, as well.
@@ -852,7 +852,7 @@ I take a look to see if Bruce needs any help, but he seems to have handled himse
 What about the marauders, then? Last time I saw them, they were heading towards the other members of the team.
 
 }
-#if(v_b2_ch4_tactic == 1 && (v_b2_ch2_fist == 1 || v_b2_ch2_fist == 2)) {
+#if(v_b2_ch2_fist == 1 && v_b2_ch4_tactic == 1 || v_b2_ch2_fist == 2 && v_b2_ch4_tactic == 1) {
  I bait the cobra by standing in one place for two seconds, and then I jump out of the way, making the creature miss its shot and waste its acid. While the snake is busy gathering up more acid in its glands, I make a dash towards it, and I stab it in the head, killing it in one strike. 
 
 I take a look to see if Bruce needs any help, but he seems to have handled himself just fine on his own. The other snake is already dead, with its severed head lying on the ground beside its body, and Bruce is now coming back towards me, holding his double handed sword by his side as he walks. Leila is also done with the tramplers, and she's now heading our way.
@@ -981,7 +981,7 @@ It would seem that she didn't have much trouble on her end either. The cobras ar
 What about the marauders, then?
 
 }
-#if((v_b2_ch2_fist == 1 || v_b2_ch2_fist == 2) && v_b2_ch4_tactic != 1) {
+#if(v_b2_ch2_fist == 1 && v_b2_ch4_tactic != 1 || v_b2_ch2_fist == 2 && v_b2_ch4_tactic != 1) {
  I make a dash towards one of the tramplers, and I make sure to avoid its tail, before I step to its right side, and stab it in the neck with my knife. As the beast falls down, I waste no time, and I rush towards the other. The second trampler attempts to attack me with its horns, but I easily move out of the way, and I slit its throat with my blade, causing it to fall slowly to the ground as well, and die from the loss of blood.
 
 Hey, that wasn't so hard! Let's see what Leila and Bruce are doing.
@@ -1003,7 +1003,7 @@ This is it. It's over. The round is finally over. The crowds are going wild. The
 After a while, the announcer finally asks us to clear the fighting area, and we prepare to go back to our division room.
 
 }
-#if(v_b2_ch4_tactic == 1 && (v_b2_ch2_fist == 1 || v_b2_ch2_fist == 2)) {
+#if(v_b2_ch2_fist == 1 && v_b2_ch4_tactic == 1 || v_b2_ch2_fist == 2 && v_b2_ch4_tactic == 1) {
  I make a dash towards one of the tramplers, and I make sure to avoid its tail, before I step to its right side, and stab it in the neck with my knife. As the beast falls down, I waste no time, and I rush towards the other. The second trampler attempts to attack me with its horns, but I easily move out of the way, and I slit its throat with my blade, causing it to fall slowly to the ground as well, and die from the loss of blood.
 
 Hey, that wasn't so hard! Let's see what Leila and Bruce are doing.
@@ -1024,7 +1024,7 @@ TEXT:
 
 set(v_ac_b2_ch4_player,1) if (v_b2_ch2_fist == 1 && v_b2_ch2_heard == 0 || v_b2_ch2_fist == 2 && v_b2_ch2_heard == 0 || v_b2_ch2_fist == 1 && v_b2_ch4_inform2 == 0 && v_b2_ch4_inform3 == 0 || v_b2_ch2_fist == 2 && v_b2_ch4_inform2 == 0 && v_b2_ch4_inform3 == 0)
 achievement("Not a team player",v_ac_b2_ch4_player)
-#if(v_b2_ch2_heard == 1 && (v_b2_ch4_inform2 == 1 || v_b2_ch4_inform3 == 1) && (v_b2_ch4_inform2 != 0 || v_b2_ch4_inform3 != 0) && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2) {
+#if(v_b2_ch2_heard == 1 && v_b2_ch4_inform2 == 1 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2 && v_b2_ch4_inform2 != 0 || v_b2_ch2_heard == 1 && v_b2_ch4_inform2 == 1 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2 && v_b2_ch4_inform3 != 0 || v_b2_ch2_heard == 1 && v_b2_ch4_inform3 == 1 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2 && v_b2_ch4_inform2 != 0 || v_b2_ch2_heard == 1 && v_b2_ch4_inform3 == 1 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2 && v_b2_ch4_inform3 != 0) {
  As I look towards the other members of my team, I see that they are all still alive, surprisingly, and they've even managed to take down a marauder all by themselves. I signal Leila, and we head towards them. 
 
 Finishing off the last marauder was a piece of cake. We didn't even need to use its weaknesses. As we stand there, in the middle of all those corpses, we can hear the crowds cheering like never before. They were obviously not expecting us to win. Bruce is raising his arms, in victory, but the rest of us are just waiting for the announcer's signal that the round is over, so we can finally get a bit of rest.
@@ -1032,7 +1032,7 @@ Finishing off the last marauder was a piece of cake. We didn't even need to use 
 After a while, the announcer finally asks us to clear the fighting area, and we prepare to go back to our division room.
 
 }
-#if(v_b2_ch2_heard == 1 && (v_b2_ch2_fist == 1 || v_b2_ch2_fist == 2) && (v_b2_ch4_inform2 == 1 || v_b2_ch4_inform3 == 1) && (v_b2_ch4_inform2 != 0 || v_b2_ch4_inform3 != 0)) {
+#if(v_b2_ch2_fist == 1 && v_b2_ch2_heard == 1 && v_b2_ch4_inform2 == 1 && v_b2_ch4_inform2 != 0 || v_b2_ch2_fist == 1 && v_b2_ch2_heard == 1 && v_b2_ch4_inform2 == 1 && v_b2_ch4_inform3 != 0 || v_b2_ch2_fist == 1 && v_b2_ch2_heard == 1 && v_b2_ch4_inform3 == 1 && v_b2_ch4_inform2 != 0 || v_b2_ch2_fist == 1 && v_b2_ch2_heard == 1 && v_b2_ch4_inform3 == 1 && v_b2_ch4_inform3 != 0 || v_b2_ch2_fist == 2 && v_b2_ch2_heard == 1 && v_b2_ch4_inform2 == 1 && v_b2_ch4_inform2 != 0 || v_b2_ch2_fist == 2 && v_b2_ch2_heard == 1 && v_b2_ch4_inform2 == 1 && v_b2_ch4_inform3 != 0 || v_b2_ch2_fist == 2 && v_b2_ch2_heard == 1 && v_b2_ch4_inform3 == 1 && v_b2_ch4_inform2 != 0 || v_b2_ch2_fist == 2 && v_b2_ch2_heard == 1 && v_b2_ch4_inform3 == 1 && v_b2_ch4_inform3 != 0) {
  As I look towards the other members of my team, I see that they are all still alive, surprisingly, and they've even managed to take down a marauder all by themselves. I signal Leila and Bruce, and we head towards them. 
 
 Finishing off the last marauder was a piece of cake. We didn't even need to use its weaknesses. As we stand there, in the middle of all those corpses, we can hear the crowds cheering like never before. They were obviously not expecting us to win. Bruce is raising his arms, in victory, but the rest of us are just waiting for the announcer's signal that the round is over, so we can finally get a bit of rest.
@@ -1040,7 +1040,7 @@ Finishing off the last marauder was a piece of cake. We didn't even need to use 
 After a while, the announcer finally asks us to clear the fighting area, and we prepare to go back to our division room.
 
 }
-#if((v_b2_ch2_heard == 0 || v_b2_ch4_inform2 == 0) && (v_b2_ch2_heard == 0 || v_b2_ch4_inform3 == 0) && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2) {
+#if(v_b2_ch2_heard == 0 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2 || v_b2_ch4_inform2 == 0 && v_b2_ch4_inform3 == 0 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2) {
  As I look towards the other members of my team, I see that they aren't doing all that well. The ex-noble thug's friend appears to be dead, and even though they've somehow managed to take out one of the marauders, they are definitely having trouble dealing with the second one.
 
 I signal Leila, and we head towards the others, in order to help them finish off the last of the creatures. Once we are done, we can hear a loud burst of cheering coming from the crowds, as our round is finally coming to an end. 
@@ -1048,7 +1048,7 @@ I signal Leila, and we head towards the others, in order to help them finish off
 After a while, the announcer asks us to clear the fighting area, so we leave the dead thug behind, and we prepare to go back to our division room.
 
 }
-#if((v_b2_ch2_fist == 1 || v_b2_ch2_fist == 2) && (v_b2_ch2_heard == 0 || v_b2_ch4_inform2 == 0) && (v_b2_ch2_heard == 0 || v_b2_ch4_inform3 == 0)) {
+#if(v_b2_ch2_fist == 1 && v_b2_ch2_heard == 0 || v_b2_ch2_fist == 2 && v_b2_ch2_heard == 0 || v_b2_ch2_fist == 1 && v_b2_ch4_inform2 == 0 && v_b2_ch4_inform3 == 0 || v_b2_ch2_fist == 2 && v_b2_ch4_inform2 == 0 && v_b2_ch4_inform3 == 0) {
  As I look towards the other members of my team, I see that they aren't doing all that well. Both the thugs seem to be dead, and while they appear to have somehow managed to kill one of the marauders, the mage is currently being chased by the second one, and it doesn't look like he has any chance of turning the tide, by himself. 
 
 I signal Leila and Bruce, and we head towards the last marauder, in order to finish it off. Given that there are three of us this time, it doesn't take long for us to deal with it, and once the marauder falls to the ground, the crowd explodes in a burst of cheers like never before. 
@@ -1214,7 +1214,7 @@ I turn around and see, to my surprise, that Wilhelm is currently still helping t
 I signal the mage, and we start heading towards the other marauders.
 
 }
-#if((v_b2_ch2_lessathi == 1 || v_b2_ch2_threatened == 1) && (v_b2_ch2_cell == 1 || v_b2_ch2_fist != 1 || v_b2_ch2_threatened != 0) && (v_b2_ch2_cell == 1 || v_b2_ch2_fist != 2 || v_b2_ch2_threatened != 0) && (v_b2_ch2_threatened == 1 || v_b2_ch2_threatened == 2 || v_b2_ch2_threatened != 0)) {
+#if(v_b2_ch2_cell == 1 && v_b2_ch2_threatened == 1 || v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened != 0 || v_b2_ch2_threatened == 1 && v_b2_ch2_threatened != 0 || v_b2_ch2_cell == 1 && v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 || v_b2_ch2_threatened == 1 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2 || v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2) {
  Perfect! Two creatures are already down. But there's now a new problem that I need to deal with. Ever since we entered the arena, I've been keeping a close eye on Wilhelm, because my premonition did not tell me exactly when he would try to kill me. I tried to not let it show, but I've seen him getting closer to me ever since I jumped on that marauder. The fact that I can't see him now can only mean one thing.
 
 I quickly turn around, and I see Wilhelm standing right there, holding his orange hilted dagger with both hands, looking as if he'd been only seconds away from delivering a lethal blow. However, in this very moment, the man seems almost frozen. He keeps holding onto his dagger with both hands as if he were still about to attack me, but now that I'm facing him directly, all of his assassin instincts must be telling him to retreat, instead.
@@ -1246,7 +1246,7 @@ There's no time to think about that now. I'll figure this out after the battle. 
 "I don't know," I say. "But I don't want to waste time figuring that out now, in the middle of the battle. We're done here. Let's go help the others." 
 
 }
-#if(v_b2_ch2_threatened == 0 && (v_b2_ch2_fist == 1 || v_b2_ch2_fist == 2) && v_b2_ch2_cell != 1) {
+#if(v_b2_ch2_fist == 1 && v_b2_ch2_threatened == 0 && v_b2_ch2_cell != 1 || v_b2_ch2_fist == 2 && v_b2_ch2_threatened == 0 && v_b2_ch2_cell != 1) {
  Perfect! Two creatures are already down. Now let's see which monsters I should attack next.
 
 Before I get to decide, I hear the sound of something dropping to the ground behind me, and I turn around to see what happened. From what I can gather, it would seem that Wilhelm is the one that's been knocked out, and my mage teammate is the one who hit him. Taking a closer look at the man on the ground, I see that there is an orange hilted dagger lying beside him, which he was most likely using to attack me, earlier.
@@ -1266,7 +1266,7 @@ There's no time to think about that now. I'll figure this out after the battle. 
 "I don't know," I say. "But I don't want to waste time figuring that out now, in the middle of the battle. We're done here. Let's go help the others." 
 
 }
-#if((v_b2_ch2_lessathi == 1 || v_b2_ch2_threatened == 1) && (v_b2_ch2_threatened == 1 || v_b2_ch2_threatened == 2)) {
+#if(v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 || v_b2_ch2_threatened == 1) {
  Immediately after I stop talking, I use my right hand to hit him very hard in his left temple with the hilt of my dagger, in order to make sure that I knock him out without killing him. He loses his consciousness almost instantly, and then he falls to the ground, with his dagger beside him.
 
 "Idiot," I say to him, and then I begin heading towards the others.
@@ -1434,7 +1434,7 @@ choice("Continue", B2-Ch04b-Counting, v_current_scene = B2-Ch04b-Counting)
 ID: B2-Ch04b-Counting
 TEXT:
 
-#if(v_b2_ch2_cell == 1 && (v_b2_ch2_lessathi != 0 || v_b2_ch2_threatened != 2)) {
+#if(v_b2_ch2_cell == 1 && v_b2_ch2_lessathi != 0 || v_b2_ch2_cell == 1 && v_b2_ch2_threatened != 2) {
  "Uh, actually," the ex-noble thug says. "I think I'd rather wait for the silver haired princess to get back until we go fight the cobras. The more the merrier!"
 
 "Yeah, me too!" the other thug says.
@@ -1448,7 +1448,7 @@ TEXT:
 As we get closer to the giant cobras, the two creatures stop in their tracks, and they prepare to attack us.
 
 }
-#if((v_b2_ch2_lessathi != 0 || v_b2_ch2_threatened != 2) && v_b2_ch2_cell != 1) {
+#if(v_b2_ch2_cell != 1 && v_b2_ch2_lessathi != 0 || v_b2_ch2_cell != 1 && v_b2_ch2_threatened != 2) {
  "Uh, actually," the ex-noble thug says. "I think I'd rather wait for the silver haired princess to get back until we go fight the cobras. The more the merrier!"
 
 "Yeah, me too!" the other thug says.
@@ -1536,7 +1536,7 @@ TEXT:
 
 set(v_ac_b2_ch4_stats,1) if (v_available_points == 22 && v_b2_ch2_deal != 3)
 achievement("Who needs stats?",v_ac_b2_ch4_stats)
-#if(v_b2_ch4_charge == 3 && (v_b2_ch2_lessathi != 0 || v_b2_ch2_threatened != 2)) {
+#if(v_b2_ch4_charge == 3 && v_b2_ch2_lessathi != 0 || v_b2_ch4_charge == 3 && v_b2_ch2_threatened != 2) {
  "Wait, where's Wilhelm?" Bruce asks me, all of a sudden. "Wasn't he with you?
 
 "Oh, he's over there," I say, as I point towards Wilhelm's unconscious body. "He said he was a little sleepy, and he decided to take a nap."
@@ -1568,7 +1568,7 @@ Wilhelm gives Bruce a scornful look before he opens the door, but he leaves the 
 "Hah!" Bruce says. "They're already running out of creatures. I bet they weren't expecting so many of them to be taken out in the first few fights!"
 
 }
-#if((v_b2_ch2_lessathi != 0 || v_b2_ch2_threatened != 2) && v_b2_ch4_charge != 3) {
+#if(v_b2_ch2_lessathi != 0 && v_b2_ch4_charge != 3 || v_b2_ch2_threatened != 2 && v_b2_ch4_charge != 3) {
  Bruce goes to wake up Wilhelm, and when he reaches him, he begins slapping his face, while shouting loudly at him.
 
 "Wilhelm!" Bruce says. "Wilhelm, you no-good assassin, get up! The first round is over. We need to clear the area."
@@ -1692,7 +1692,7 @@ As we wait for the announcer to resume the event, I start hearing some voices co
 Soon after their conversation ends, the announcer picks his voice magnifier back up, and he gets ready to make another announcement.
 
 }
-#if(v_hearing >= 2 && (v_b2_ch2_lessathi != 0 || v_b2_ch2_threatened != 2)) {
+#if(v_hearing >= 2 && v_b2_ch2_lessathi != 0 || v_hearing >= 2 && v_b2_ch2_threatened != 2) {
  
 
 As we wait for the announcer to resume the event, I start hearing some voices coming from further down the hallway outside. The two people talking appear to be Wilhelm and the ambassador of Ollendor.

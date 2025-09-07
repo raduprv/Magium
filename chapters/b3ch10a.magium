@@ -364,13 +364,13 @@ TEXT:
 "Right," Melindra says.
 
 }
-#if(v_b3_ch9_enemies == 0 && (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8) && v_b3_ch8_king != 5) {
+#if(v_b3_ch4_billy == 7 && v_b3_ch9_enemies == 0 && v_b3_ch8_king != 5 || v_b3_ch4_billy == 8 && v_b3_ch9_enemies == 0 && v_b3_ch8_king != 5) {
  "The official king is going to be Breynan, as we've established previously," the Overseer says. "That was the deal we made, was it not?"
 
 "Oh, right," Melindra says. "I forgot about that. My bad."
 
 }
-#if(v_b3_ch8_king == 5 && v_b3_ch9_enemies == 0 && (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8)) {
+#if(v_b3_ch4_billy == 7 && v_b3_ch8_king == 5 && v_b3_ch9_enemies == 0 || v_b3_ch4_billy == 8 && v_b3_ch8_king == 5 && v_b3_ch9_enemies == 0) {
  "The official king is going to be Breynan, as we've established previously," the Overseer says. "That was the deal we made, was it not?"
 
 "We also discussed Kelrim as an alternative, but we didn't reach a definitive conclusion," Daren reminds the Overseer. "You said that we were going revisit this matter after the end of the battle."
@@ -382,7 +382,7 @@ TEXT:
 "Yes," the Overseer says. "That is my intention."
 
 }
-#if(v_b3_ch9_enemies == 2 && (v_b3_ch4_billy == 9 || v_b3_ch4_billy < 9)) {
+#if(v_b3_ch4_billy == 9 && v_b3_ch9_enemies == 2 || v_b3_ch9_enemies == 2 && v_b3_ch4_billy < 9) {
  "No, but we already know that the king of the underground wanted to have us assassinated," I say. "What was to guarantee that he wouldn't try the same thing again if he got out of prison? And what about Leila and doctor Reidzek? How could we leave them in this city with that madman still running loose?"
 
 "You can't just decide things like this on a whim," Daren says. "We're talking about people's lives, here! You say that the king wanted us assassinated, but there's barely any proof that Peter was even involved in that plot. Why would you kill him too? Just because he was a witness?"
@@ -398,7 +398,7 @@ He pauses.
 "Hey, Overseer," Melindra says. "You mentioned earlier that you would only rule the city from the shadows. Who is going to be the official king, then?"
 
 }
-#if(v_b3_ch9_enemies == 3 && (v_b3_ch4_billy == 9 || v_b3_ch4_billy < 9)) {
+#if(v_b3_ch4_billy == 9 && v_b3_ch9_enemies == 3 || v_b3_ch9_enemies == 3 && v_b3_ch4_billy < 9) {
  "Barry, I can't believe what I'm hearing..." Daren says. "I know that the king of the underground was a jerk, but--"
 
 "He was more than just a jerk," I say. "He wanted to have us assassinated. What was to guarantee that he wouldn't try the same thing again if he got out of prison? And what about Leila and doctor Reidzek? How could we leave them in this city with that madman still running loose?"
@@ -416,19 +416,19 @@ He pauses.
 "Hey, Overseer," Melindra says. "You mentioned earlier that you would only rule the city from the shadows. Who is going to be the official king, then?"
 
 }
-#if((v_b3_ch9_enemies == 2 || v_b3_ch9_enemies == 3) && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8) {
+#if(v_b3_ch9_enemies == 2 && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8 || v_b3_ch9_enemies == 3 && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8) {
  "That remains to be seen," the Overseer says. "Ideally, it should be someone who is easily manipulatable, but also not stupid enough to give away his connection to me. Most people would react badly if they found out that a machine was the real ruler behind the scenes, so it would be best to avoid such a scenario."
 
 "Right," Melindra says.
 
 }
-#if((v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8) && (v_b3_ch9_enemies == 2 || v_b3_ch9_enemies == 3) && v_b3_ch8_king != 5) {
+#if(v_b3_ch4_billy == 7 && v_b3_ch9_enemies == 2 && v_b3_ch8_king != 5 || v_b3_ch4_billy == 7 && v_b3_ch9_enemies == 3 && v_b3_ch8_king != 5 || v_b3_ch4_billy == 8 && v_b3_ch9_enemies == 2 && v_b3_ch8_king != 5 || v_b3_ch4_billy == 8 && v_b3_ch9_enemies == 3 && v_b3_ch8_king != 5) {
  "The official king is going to be Breynan, as we've established previously," the Overseer says. "That was the deal we made, was it not?"
 
 "Oh, right," Melindra says. "I forgot about that. My bad."
 
 }
-#if(v_b3_ch8_king == 5 && (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8) && (v_b3_ch9_enemies == 2 || v_b3_ch9_enemies == 3)) {
+#if(v_b3_ch4_billy == 7 && v_b3_ch8_king == 5 && v_b3_ch9_enemies == 2 || v_b3_ch4_billy == 7 && v_b3_ch8_king == 5 && v_b3_ch9_enemies == 3 || v_b3_ch4_billy == 8 && v_b3_ch8_king == 5 && v_b3_ch9_enemies == 2 || v_b3_ch4_billy == 8 && v_b3_ch8_king == 5 && v_b3_ch9_enemies == 3) {
  "The official king is going to be Breynan, as we've established previously," the Overseer says. "That was the deal we made, was it not?"
 
 "We also discussed Kelrim as an alternative, but we didn't reach a definitive conclusion," Daren reminds the Overseer. "You said that we were going revisit this matter after the end of the battle."
@@ -633,7 +633,7 @@ At the moment, our group is standing somewhere in the back of the large room, so
 "It's very possible," Daren says. "But one can still hope."
 
 }
-#if((v_b3_ch8_king == 3 || v_b3_ch8_king == 4) && v_b3_ch8_king != 5) {
+#if(v_b3_ch8_king == 3 && v_b3_ch8_king != 5 || v_b3_ch8_king == 4 && v_b3_ch8_king != 5) {
  There were three candidates in total: the king of the underground and two rebels whose names I never heard mentioned until now.
 
 Each of the candidates climbed on a makeshift podium and gave short speeches before the voting commenced, although the two no-name rebels seemed to have made very little impact on the crowd, because there was barely anyone cheering for them at the end. Something tells me that neither of them will be offering much competition to the king of the underground in this contest.
@@ -858,7 +858,7 @@ As Illuna turns around, the rest of us exchange a few looks, and then we all con
 "Hey, don't act like you're some kind of saint," I say. "Don't forget that we know you were planning to have us assassinated!"
 
 }
-#if((v_b3_ch8_king == 2 || v_b3_ch8_king == 3 || v_b3_ch8_king == 4) && v_b3_ch8_king != 5) {
+#if(v_b3_ch8_king == 2 && v_b3_ch8_king != 5 || v_b3_ch8_king == 3 && v_b3_ch8_king != 5 || v_b3_ch8_king == 4 && v_b3_ch8_king != 5) {
  Not long afterwards, the vote counters announce the victor, and to nobody's surprise, the king of the underground was the one who won. As the king gets up on the podium to give his victory speech, Daren turns towards us again, with a visibly unhappy look on his face.
 
 "Well..." Daren says. "We can't say that we weren't expecting this, but that still doesn't make things any less disappointing."
@@ -976,7 +976,7 @@ TEXT:
 "I see..." Kate says.
 
 }
-#if((v_b3_ch8_king == 2 || v_b3_ch8_king == 3 || v_b3_ch8_king == 4) && v_b3_ch8_king != 5) {
+#if(v_b3_ch8_king == 2 && v_b3_ch8_king != 5 || v_b3_ch8_king == 3 && v_b3_ch8_king != 5 || v_b3_ch8_king == 4 && v_b3_ch8_king != 5) {
  "I wanted him to ruin your reputations, of course," the king says. "Albert was to spread rumors of you secretly working with the Overseer, so that the people here would lose their trust in you and refuse to join your side in case you were planning to oppose the idea of the election. Of course, this plan was only to be enacted if you actively tried to delegitimize the election, which thankfully is not something that you chose to do."
 
 "What about the seredium towers?" Kate interjects. "What's going to happen to all those prisoners now?"
@@ -1335,7 +1335,7 @@ choice("Continue", B3-Ch10a-Awkward, v_current_scene = B3-Ch10a-Awkward)
 ID: B3-Ch10a-Awkward
 TEXT:
 
-#if((v_ch11_romance_rose != 1 || v_ch11_saved_rose != 1) && v_b2_ch8_energizer != 1 && v_b3_ch8_heartfelt != 2) {
+#if(v_b2_ch8_energizer != 1 && v_b3_ch8_heartfelt != 2 && v_ch11_romance_rose != 1 || v_b2_ch8_energizer != 1 && v_b3_ch8_heartfelt != 2 && v_ch11_saved_rose != 1) {
  As promised, Melindra goes to pull down several of the levers that are on the walls, and once she is done, she comes back to us.
 
 "Alright, now we need to wait for about a minute or so," Melindra says.
@@ -1373,7 +1373,7 @@ As Melindra is busy pulling on one of the levers at the farther end of the corri
 "Oh, nothing," I say. "Nothing at all."
 
 }
-#if(v_b3_ch8_heartfelt == 2 && (v_ch11_romance_rose != 1 || v_ch11_saved_rose != 1) && v_b2_ch8_energizer != 1) {
+#if(v_b3_ch8_heartfelt == 2 && v_b2_ch8_energizer != 1 && v_ch11_romance_rose != 1 || v_b3_ch8_heartfelt == 2 && v_b2_ch8_energizer != 1 && v_ch11_saved_rose != 1) {
  As promised, Melindra goes to pull down several of the levers that are on the walls, and once she is done, she comes back to us.
 
 "Alright, now we need to wait for about a minute or so," Melindra says.
@@ -2164,13 +2164,13 @@ TEXT:
 For the next hour or two, we walked around the caverns, talking with everyone that we've had contact with these past few days and saying our goodbyes, since tomorrow we will have to leave first thing in the morning. We said goodbye to Breynan, Peter, Albert, Desmond, doctor Reidzek and even Barry Thundercloud, who is still being held in the rebels' prison.
 
 }
-#if(v_b3_ch2_goblins == 1 && (v_b3_ch6_kelrim == 1 || v_b3_ch6_plan == 3)) {
+#if(v_b3_ch2_goblins == 1 && v_b3_ch6_kelrim == 1 || v_b3_ch2_goblins == 1 && v_b3_ch6_plan == 3) {
  After about twenty minutes of flying, we finally reach our friends, who appear to have already finished all of their shopping. Once we're done telling them about what happened in the ruins with the illusionist, we also spend a few minutes buying some provisions, and then we decide to contact the teleporting engineer from the rebels, so that he can bring us back to the underground base.
 
 For the next hour or two, we walked around the caverns, talking with everyone that we've had contact with these past few days and saying our goodbyes, since tomorrow we will have to leave first thing in the morning. We said goodbye to Breynan, Peter, Albert, Desmond, doctor Reidzek, Kelrim and even Barry Thundercloud, who is still being held in the rebels' prison.
 
 }
-#if((v_b3_ch6_kelrim == 1 || v_b3_ch6_plan == 3) && v_b3_ch2_goblins != 1) {
+#if(v_b3_ch6_kelrim == 1 && v_b3_ch2_goblins != 1 || v_b3_ch6_plan == 3 && v_b3_ch2_goblins != 1) {
  After about twenty minutes of flying, we finally reach our friends, who appear to have already finished all of their shopping. Once we're done telling them about what happened in the ruins with the illusionist, we also spend a few minutes buying some provisions, and then we decide to contact the teleporting engineer from the rebels, so that he can bring us back to the underground base.
 
 For the next hour or two, we walked around the caverns, talking with everyone that we've had contact with these past few days and saying our goodbyes, since tomorrow we will have to leave first thing in the morning. We said goodbye to Breynan, Peter, Albert, Desmond, doctor Reidzek, Kelrim, Kelrim's goblin friends and even Barry Thundercloud, who is still being held in the rebels' prison.

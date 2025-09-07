@@ -906,7 +906,7 @@ choice("Continue", B3-Ch02b-Weird, v_current_scene = B3-Ch02b-Weird)
 ID: B3-Ch02a-Insane
 TEXT:
 
-#if((v_b3_ch2_infiltration == 0 || v_b3_ch2_infiltration == 2) && v_b3_ch2_infiltration != 1) {
+#if(v_b3_ch2_infiltration == 0 && v_b3_ch2_infiltration != 1 || v_b3_ch2_infiltration == 2 && v_b3_ch2_infiltration != 1) {
  "Yeah, we reached him through the transceiver eventually, and he told us the password," I say. "It's 'gargoyle wings'. "
 
 "You're saying that the password is 'gargoyle wings'?" the guard says. "You sure about that?"

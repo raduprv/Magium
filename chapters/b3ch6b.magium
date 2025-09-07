@@ -425,7 +425,7 @@ I then fly in the direction of the air elementalist, who for some reason hasn't 
 I then fly in the direction of the air elementalist, who for some reason hasn't moved from his spot since the beginning of the battle. 
 
 }
-#if(v_b3_ch6_preparing == 1 && (v_b3_ch6_focus == 0 || v_b3_ch6_focus == 2)) {
+#if(v_b3_ch6_focus == 0 && v_b3_ch6_preparing == 1 || v_b3_ch6_focus == 2 && v_b3_ch6_preparing == 1) {
  "Dreymarr!" the captain shouts, while he is still struggling to maintain his barrier. "Are you still alive? Answer me!"
 
 The black-robed man remains completely silent, and it's no wonder. Given the number of ice cones that impaled him, he must have died almost instantly.
@@ -1011,7 +1011,7 @@ As I give Illuna a victory salute, she nods back at me and then she begins to at
 With the black-robed guy now dead, I land on the ground near Kate and Illuna and I take another look at the whole battlefield, in order to assess our current situation.
 
 }
-#if(v_b3_ch6_preparing == 0 && v_aura_hardening >= 3 && (v_b3_ch6_focus == 1 || v_b3_ch6_focus == 2) && v_b3_ch5_fight < 4) {
+#if(v_b3_ch6_focus == 1 && v_b3_ch6_preparing == 0 && v_aura_hardening >= 3 && v_b3_ch5_fight < 4 || v_b3_ch6_focus == 2 && v_b3_ch6_preparing == 0 && v_aura_hardening >= 3 && v_b3_ch5_fight < 4) {
  Thanks to my aura hardening stat the acid doesn't do any serious damage, even though it still stings a little, so I decide to wipe it off with my hand and to fling it back towards my attacker with a quick motion of my wrist.
 
 The black-robed man was not expecting this at all, so he was too slow to react properly. As soon as the acid touched his face he instinctively teleported away, but that didn't help him get the burning liquid out of his eyes so now he's just wiping his face constantly with his hands while groaning in pain.
@@ -1023,7 +1023,7 @@ As I give Illuna a victory salute, she nods back at me and then she begins to at
 With the black-robed guy now dead, I land on the ground near Kate and Illuna and I take another look at the whole battlefield, in order to assess our current situation.
 
 }
-#if(v_b3_ch6_focus == 0 && (v_b3_ch6_preparing == 1 || v_aura_hardening >= 3 || v_b3_ch5_fight >= 4)) {
+#if(v_b3_ch6_focus == 0 && v_b3_ch6_preparing == 1 || v_b3_ch6_focus == 0 && v_aura_hardening >= 3 || v_b3_ch6_focus == 0 && v_b3_ch5_fight >= 4) {
  What catches my eye the most is the unusual movement of the boulders in the sky. It looks like the earth elementalist is preparing for something. Is he finally going to use the rocks to attack everyone on the ground?
 
 "Those boulders up in the sky have begun to move," I tell Kate and Illuna. "I think we're going to need some magical barriers soon."
@@ -1039,7 +1039,7 @@ As soon as Kate, Flower, Kelrim and I get within five feet of Melindra, she begi
 "Yes," Kate says, "but as soon as I will start concentrating on reinforcing the ice dome, my icicles will become weaker, and that might give the captain the chance to strike back at us."
 
 }
-#if((v_b3_ch6_focus == 1 || v_b3_ch6_focus == 2) && (v_b3_ch6_preparing == 1 || v_aura_hardening >= 3 || v_b3_ch5_fight >= 4)) {
+#if(v_b3_ch6_focus == 1 && v_b3_ch6_preparing == 1 || v_b3_ch6_focus == 1 && v_aura_hardening >= 3 || v_b3_ch6_focus == 1 && v_b3_ch5_fight >= 4 || v_b3_ch6_focus == 2 && v_b3_ch6_preparing == 1 || v_b3_ch6_focus == 2 && v_aura_hardening >= 3 || v_b3_ch6_focus == 2 && v_b3_ch5_fight >= 4) {
  What catches my eye the most is what's currently happening in the sky. The big rocks that were floating high above us have more than doubled in number since the last time I looked at them. Does this mean that the earth elementalist has just been creating boulders non-stop since the beginning of the battle? 
 
 All of a sudden, the rocks in the sky begin to move around in a very unusual manner, as if the earth elementalist were preparing for something. This isn't looking good. Maybe I should tell the others about this.
@@ -1107,7 +1107,7 @@ I then turn towards Daren and Leila, who seem to still be searching for the guy 
 When Daren and Leila hear me, they come running towards us and once they get inside Melindra's wind barrier, Daren uses his shield to make a barrier of his own on top of that for good measure.
 
 }
-#if(v_b3_ch6_defense == 1 && (v_b3_ch6_air == 0 || v_b3_ch6_air >= 1)) {
+#if(v_b3_ch6_air == 0 && v_b3_ch6_defense == 1 || v_b3_ch6_defense == 1 && v_b3_ch6_air >= 1) {
  "Do you think your barrier will work against any of the rocks?" I ask Daren.
 
 "From what I've seen they all seem to have been created magically, so it should work fine," Daren says. "If there are any regular rocks in there, they'll pass right through the barrier, though."
@@ -1115,7 +1115,7 @@ When Daren and Leila hear me, they come running towards us and once they get ins
 "It's all well and good," I say. "We practically have three barriers stacked on top of each other now. It would be hard to top this, in terms of defense."
 
 }
-#if(v_b3_ch6_defense == 0 && (v_b3_ch6_air == 0 || v_b3_ch6_air >= 1)) {
+#if(v_b3_ch6_air == 0 && v_b3_ch6_defense == 0 || v_b3_ch6_defense == 0 && v_b3_ch6_air >= 1) {
  "Do you think your barrier will work against any of the rocks?" I ask Daren.
 
 "From what I've seen they all seem to have been created magically, so it should work fine," Daren says. "If there are any regular rocks in there, they'll pass right through the barrier, though."
@@ -1360,7 +1360,7 @@ All of a sudden, the captain and the ambassador both get surrounded by a golden 
 He then does a short waving motion with his hands and all of the cage's bars begin to bend until their shapes become completely distorted and turn into spirals. Soon afterwards, the spirals start spinning more and more rapidly until they become too blurry to be seen clearly, and eventually the whole cage fades away into nothingness.
 
 }
-#if(v_b3_ch6_uninjured == 1 && (v_b3_ch6_tie == 1 || v_b3_ch6_air >= 1)) {
+#if(v_b3_ch6_tie == 1 && v_b3_ch6_uninjured == 1 || v_b3_ch6_uninjured == 1 && v_b3_ch6_air >= 1) {
  "Daren, can you try using your left hand to get your sword back?" I say in a low voice.
 
 "Yeah, I could give it a shot," Daren says.
@@ -1378,7 +1378,7 @@ All of a sudden, the captain and the ambassador both get surrounded by a golden 
 He then does a short waving motion with his hands and all of the cage's bars begin to bend until their shapes become completely distorted and turn into spirals. Soon afterwards, the spirals start spinning more and more rapidly until they become too blurry to be seen clearly, and eventually the whole cage fades away into nothingness.
 
 }
-#if(v_b3_ch6_uninjured == 0 && (v_b3_ch6_tie == 1 || v_b3_ch6_air >= 1)) {
+#if(v_b3_ch6_tie == 1 && v_b3_ch6_uninjured == 0 || v_b3_ch6_uninjured == 0 && v_b3_ch6_air >= 1) {
  "Hey, Arraka," I say in a low voice, "could you highlight the aura technique's weak points again like yesterday, so that Kate can hit them with her icicles?"
 
 "I can't do that because the captain keeps moving them around," Arraka says. "He's obviously not planning to let us get the upper hand on him again."
@@ -1454,7 +1454,7 @@ The captain now begins to slowly amplify the pressure on top of us, probably try
 The invisible force above us is getting stronger with each passing moment. The pain is becoming more and more unbearable to the point that most of us have already given up on trying to keep quiet and we're now just screaming our lungs out.
 
 }
-#if((v_b3_ch6_air == 0 || v_b3_ch6_air >= 1) && (v_b3_ch6_tie == 1 || v_b3_ch6_air >= 1)) {
+#if(v_b3_ch6_air == 0 && v_b3_ch6_tie == 1 || v_b3_ch6_air >= 1) {
  "Now, then..." the captain says to us, once he confirms that the ambassador is no longer in danger. "I think I'm done taking risks with you lot. I will finish you all myself."
 
 He then begins to slowly amplify the pressure on top of us, probably trying to squish us to death.
@@ -1876,7 +1876,7 @@ TEXT:
 "The captain had a keen enough magical sense that I couldn't get anywhere near him without being detected," Albert says. "Trust me, if that weren't the case, I would have assassinated him a long time ago. There was nothing I could do."
 
 }
-#if(v_b3_ch6_wounded == 1 && (v_b3_ch6_preparing == 1 || v_b3_ch5_fight < 4)) {
+#if(v_b3_ch6_preparing == 1 && v_b3_ch6_wounded == 1 || v_b3_ch6_wounded == 1 && v_b3_ch5_fight < 4) {
  "Could you heal my shoulder wound before we leave?" I tell Daren, as Hadrik is now walking towards us, in his dwarf form. "The bleeding has stopped, but it still hurts like crazy."
 
 "Oh, of course," Daren says, and then he begins casting his healing spell on me. "From what I'm seeing, everyone except Barry has only minor wounds, so I'll handle the rest of the healing after we get out of here."
@@ -1884,7 +1884,7 @@ TEXT:
 As soon as his healing spell is done and Hadrik also gets close enough to us, Daren pulls out his transceiver so he can call the teleporter guy.
 
 }
-#if(v_b3_ch6_wounded == 0 && (v_b3_ch6_preparing == 1 || v_b3_ch5_fight < 4)) {
+#if(v_b3_ch6_preparing == 1 && v_b3_ch6_wounded == 0 || v_b3_ch6_wounded == 0 && v_b3_ch5_fight < 4) {
  After we all assemble in the same spot, including Hadrik, who is back in his dwarf form, Daren takes out his transceiver to call the teleporter guy.
 
 }
@@ -1938,7 +1938,7 @@ TEXT:
 "The captain had a keen enough magical sense that I couldn't get anywhere near him without being detected," Albert says. "Trust me, if that weren't the case, I would have assassinated him a long time ago. There was nothing I could do."
 
 }
-#if(v_b3_ch6_wounded == 1 && (v_b3_ch6_preparing == 1 || v_b3_ch5_fight < 4)) {
+#if(v_b3_ch6_preparing == 1 && v_b3_ch6_wounded == 1 || v_b3_ch6_wounded == 1 && v_b3_ch5_fight < 4) {
  "Could you heal my shoulder wound before we leave?" I tell Daren, as Hadrik is now walking towards us, in his dwarf form. "The bleeding has stopped, but it still hurts like crazy."
 
 "Oh, of course," Daren says, and then he begins casting his healing spell on me. "From what I'm seeing, everyone except Barry has only minor wounds, so I'll handle the rest of the healing after we get out of here."
@@ -1946,7 +1946,7 @@ TEXT:
 As soon as his healing spell is done and Hadrik also gets close enough to us, Daren pulls out his transceiver so he can call the teleporter guy.
 
 }
-#if(v_b3_ch6_wounded == 0 && (v_b3_ch6_preparing == 1 || v_b3_ch5_fight < 4)) {
+#if(v_b3_ch6_preparing == 1 && v_b3_ch6_wounded == 0 || v_b3_ch6_wounded == 0 && v_b3_ch5_fight < 4) {
  After we all assemble in the same spot, including Hadrik, who is back in his dwarf form, Daren takes out his transceiver to call the teleporter guy.
 
 }
@@ -1993,7 +1993,7 @@ TEXT:
 "The captain had a keen enough magical sense that I couldn't get anywhere near him without being detected," Albert says. "Trust me, if that weren't the case, I would have assassinated him a long time ago. There was nothing I could do."
 
 }
-#if(v_b3_ch6_wounded == 1 && (v_b3_ch6_preparing == 1 || v_b3_ch5_fight < 4)) {
+#if(v_b3_ch6_preparing == 1 && v_b3_ch6_wounded == 1 || v_b3_ch6_wounded == 1 && v_b3_ch5_fight < 4) {
  "Could you heal my shoulder wound before we leave?" I tell Daren, as Hadrik is now walking towards us, in his dwarf form. "The bleeding has stopped, but it still hurts like crazy."
 
 "Oh, of course," Daren says, and then he begins casting his healing spell on me. "From what I'm seeing, everyone except Barry has only minor wounds, so I'll handle the rest of the healing after we get out of here."
@@ -2001,7 +2001,7 @@ TEXT:
 As soon as his healing spell is done and Hadrik also gets close enough to us, Daren pulls out his transceiver so he can call the teleporter guy.
 
 }
-#if(v_b3_ch6_wounded == 0 && (v_b3_ch6_preparing == 1 || v_b3_ch5_fight < 4)) {
+#if(v_b3_ch6_preparing == 1 && v_b3_ch6_wounded == 0 || v_b3_ch6_wounded == 0 && v_b3_ch5_fight < 4) {
  After we all assemble in the same spot, including Hadrik, who is back in his dwarf form, Daren takes out his transceiver to call the teleporter guy.
 
 }
@@ -2258,7 +2258,7 @@ I then shoot the ambassador in the head, killing him before he has the chance to
 "Okay, Barry, you can teleport us now," Daren says.
 
 }
-#if((v_b3_ch6_preparing == 1 || v_b3_ch5_fight < 4) && v_b3_ch6_kelrim != 1 && v_b3_ch6_plan != 3) {
+#if(v_b3_ch6_preparing == 1 && v_b3_ch6_kelrim != 1 && v_b3_ch6_plan != 3 || v_b3_ch5_fight < 4 && v_b3_ch6_kelrim != 1 && v_b3_ch6_plan != 3) {
  Once everything is ready, we see the usual white light covering us as our bodies begin to vibrate loudly, and then we find ourselves back in the teleporter room, next to Barry Thundercloud and Albert.
 
 "W-what happened to Kelrim?..." the teleporter guy asks, when he sees the goblin's dead body in Daren's arms.
@@ -2276,7 +2276,7 @@ I then shoot the ambassador in the head, killing him before he has the chance to
 He then turns invisible along with the goblin's corpse, as he presumably heads back towards the rebel base.
 
 }
-#if((v_b3_ch6_kelrim == 1 || v_b3_ch6_plan == 3) && (v_b3_ch6_preparing == 1 || v_b3_ch5_fight < 4)) {
+#if(v_b3_ch6_kelrim == 1 && v_b3_ch6_preparing == 1 || v_b3_ch6_kelrim == 1 && v_b3_ch5_fight < 4 || v_b3_ch6_plan == 3 && v_b3_ch6_preparing == 1 || v_b3_ch6_plan == 3 && v_b3_ch5_fight < 4) {
  Once everything is ready, we see the usual white light covering us as our bodies begin to vibrate loudly, and then we find ourselves back in the teleporter room, next to Barry Thundercloud and Albert.
 
 "So, the captain's really dead?..." the teleporter guy asks immediately after he sees us, as if he still couldn't believe what he heard from Daren.
@@ -2312,7 +2312,7 @@ He then walks away from us and he turns invisible, as he is now presumably headi
 He then turns invisible along with the goblin's corpse, as he presumably heads back towards the rebel base.
 
 }
-#if(v_b3_ch6_preparing == 0 && v_b3_ch5_fight >= 4 && (v_b3_ch6_kelrim == 1 || v_b3_ch6_plan == 3)) {
+#if(v_b3_ch6_kelrim == 1 && v_b3_ch6_preparing == 0 && v_b3_ch5_fight >= 4 || v_b3_ch6_plan == 3 && v_b3_ch6_preparing == 0 && v_b3_ch5_fight >= 4) {
  Once everything is ready, we see the usual white light covering us as our bodies begin to vibrate loudly, and then we find ourselves back in the teleporter room, next to Barry Thundercloud.
 
 "So, the captain's really dead?..." the teleporter guy asks immediately after he sees us, as if he still couldn't believe what he heard from Daren.
@@ -2348,7 +2348,7 @@ TEXT:
  We wait for about half a minute for the teleporter guy to finally be done with his preparations.
 
 }
-#if((v_b3_ch6_preparing == 1 || v_b3_ch5_fight < 4) && v_b3_ch6_kelrim != 1 && v_b3_ch6_plan != 3) {
+#if(v_b3_ch6_preparing == 1 && v_b3_ch6_kelrim != 1 && v_b3_ch6_plan != 3 || v_b3_ch5_fight < 4 && v_b3_ch6_kelrim != 1 && v_b3_ch6_plan != 3) {
  Once everything is ready, we see the usual white light covering us as our bodies begin to vibrate loudly, and then we find ourselves back in the teleporter room, next to Barry Thundercloud and Albert.
 
 "W-what happened to Kelrim?..." the teleporter guy asks, when he sees the goblin's dead body in Daren's arms.
@@ -2366,7 +2366,7 @@ TEXT:
 He then turns invisible along with the goblin's corpse, as he presumably heads back towards the rebel base.
 
 }
-#if((v_b3_ch6_kelrim == 1 || v_b3_ch6_plan == 3) && (v_b3_ch6_preparing == 1 || v_b3_ch5_fight < 4)) {
+#if(v_b3_ch6_kelrim == 1 && v_b3_ch6_preparing == 1 || v_b3_ch6_kelrim == 1 && v_b3_ch5_fight < 4 || v_b3_ch6_plan == 3 && v_b3_ch6_preparing == 1 || v_b3_ch6_plan == 3 && v_b3_ch5_fight < 4) {
  Once everything is ready, we see the usual white light covering us as our bodies begin to vibrate loudly, and then we find ourselves back in the teleporter room, next to Barry Thundercloud and Albert.
 
 "So, the captain's really dead?..." the teleporter guy asks immediately after he sees us, as if he still couldn't believe what he heard from Daren.
@@ -2402,7 +2402,7 @@ He then walks away from us and he turns invisible, as he is now presumably headi
 He then turns invisible along with the goblin's corpse, as he presumably heads back towards the rebel base.
 
 }
-#if(v_b3_ch6_preparing == 0 && v_b3_ch5_fight >= 4 && (v_b3_ch6_kelrim == 1 || v_b3_ch6_plan == 3)) {
+#if(v_b3_ch6_kelrim == 1 && v_b3_ch6_preparing == 0 && v_b3_ch5_fight >= 4 || v_b3_ch6_plan == 3 && v_b3_ch6_preparing == 0 && v_b3_ch5_fight >= 4) {
  Once everything is ready, we see the usual white light covering us as our bodies begin to vibrate loudly, and then we find ourselves back in the teleporter room, next to Barry Thundercloud.
 
 "So, the captain's really dead?..." the teleporter guy asks immediately after he sees us, as if he still couldn't believe what he heard from Daren.

@@ -589,7 +589,7 @@ TEXT:
 "Oh, I see!" Leila's father says, as he seems to have finally found the key he was looking for. "My mistake, then!"
 
 }
-#if((v_ch11_romance_rose == 0 || v_ch11_saved_rose == 0) && v_b2_ch8_energizer != 1) {
+#if(v_ch11_romance_rose == 0 && v_b2_ch8_energizer != 1 || v_ch11_saved_rose == 0 && v_b2_ch8_energizer != 1) {
  "You two seem to be getting along quite well..." Leila's father says, as he turns to take a quick look at us, before he begins opening the first lock on the door to his workshop. "How long have you been travelling together, again?"
 
 "Uhm... I guess it's been around five days, now," I say. "But we also spent a lot of time together in the days before the arena, coming up with strategies and trying to sabotage the event."

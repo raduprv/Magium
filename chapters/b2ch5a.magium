@@ -1,7 +1,7 @@
 ID: B2-Ch05a-Intro
 TEXT:
 
-#if((v_b2_ch2_lessathi != 0 || v_b2_ch2_threatened != 2) && v_b2_ch2_deal != 3) {
+#if(v_b2_ch2_deal != 3 && v_b2_ch2_lessathi != 0 || v_b2_ch2_deal != 3 && v_b2_ch2_threatened != 2) {
  
 
 "Stillwater!" Bruce shouts. "Hey, stillwater, are you listening?"
@@ -13,7 +13,7 @@ I suddenly realize that I've been so lost in my own thoughts for the past minute
 "I was talking about Wilhelm," Bruce says. "We can't let him roam free throughout the arena after what he did last round. Who knows who he'll try to kill next? I say we tie him up, and leave him here. It's safer that way."
 
 }
-#if((v_b2_ch2_deal == 3 || v_b2_ch2_lessathi == 0) && (v_b2_ch2_deal == 3 || v_b2_ch2_threatened == 2)) {
+#if(v_b2_ch2_lessathi == 0 && v_b2_ch2_threatened == 2 || v_b2_ch2_deal == 3) {
  
 
 "Stillwater!" Bruce shouts. "Hey, stillwater, are you listening?"
@@ -1269,7 +1269,7 @@ The two ogres move away from us, and they start heading towards the arena gate, 
 "We're waiting for the announcer to come back..." I say. "He's the one that's supposed to announce the end of the fight."
 
 }
-#if(v_b2_ch5_negotiate == 0 && (v_b2_ch5_first_cut != 0 || v_b2_ch5_strategy != 2) && (v_b2_ch5_strategy != 2 || v_b2_ch5_wilhelm != 0)) {
+#if(v_b2_ch5_negotiate == 0 && v_b2_ch5_strategy != 2 || v_b2_ch5_negotiate == 0 && v_b2_ch5_first_cut != 0 && v_b2_ch5_wilhelm != 0) {
  Not long after we kill Velgos, Bruce also finishes his fight with the ogres, and then he comes heading straight for us.
 
 "You guys are already done with the troll?" Bruce asks, surprised, as he reaches us.
@@ -1281,7 +1281,7 @@ The two ogres move away from us, and they start heading towards the arena gate, 
 "We're waiting for the announcer to come back..." I say. "He's the one that's supposed to announce the end of the fight."
 
 }
-#if(v_b2_ch5_negotiate == 0 && v_b2_ch5_strategy == 2 && (v_b2_ch5_first_cut == 0 || v_b2_ch5_wilhelm == 0) && (v_b2_ch2_cell != 1 || v_b2_ch5_first_cut != 0 || v_b2_ch5_wilhelm != 0)) {
+#if(v_b2_ch5_first_cut == 0 && v_b2_ch5_negotiate == 0 && v_b2_ch5_strategy == 2 && v_b2_ch2_cell != 1 || v_b2_ch5_first_cut == 0 && v_b2_ch5_negotiate == 0 && v_b2_ch5_strategy == 2 && v_b2_ch5_wilhelm != 0 || v_b2_ch5_negotiate == 0 && v_b2_ch5_strategy == 2 && v_b2_ch5_wilhelm == 0 && v_b2_ch5_first_cut != 0) {
  "Don't think you're getting away that easily, you son of a bitch!" the mage tells me.
 
 "Get away with what?" I say.
@@ -1319,7 +1319,7 @@ He pauses.
 "We're waiting for the announcer to come back..." I say. "He's the one that's supposed to announce the end of the fight."
 
 }
-#if(v_b2_ch5_negotiate == 0 && v_b2_ch5_strategy == 2 && (v_b2_ch5_first_cut == 0 || v_b2_ch5_wilhelm == 0)) {
+#if(v_b2_ch5_first_cut == 0 && v_b2_ch5_negotiate == 0 && v_b2_ch5_strategy == 2 || v_b2_ch5_negotiate == 0 && v_b2_ch5_strategy == 2 && v_b2_ch5_wilhelm == 0) {
  While the mage is grinding his teeth, Bruce is now heading towards us, having finished his fight with the two ogres.
 
 "You guys are already done with the troll?" Bruce asks, surprised, as he reaches us.

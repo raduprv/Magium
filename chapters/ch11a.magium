@@ -623,7 +623,7 @@ Rose is looking a bit scared, as the noble points his finger towards her.
 Before he gets to finish his threat, the noble gets engulfed in flames, and within a matter of seconds, he turns into ashes, while the fire dies out almost as quickly as it appeared. The townsfolk who were walking down the street until now are all stopping to look at the pile of ashes gathering on the ground, with a terrified look in their eyes.
 
 }
-#if(v_ch11_kill_noble == 0 && (v_ch11_saved_slave == 1 || v_ch11_saved_slave == 2)) {
+#if(v_ch11_kill_noble == 0 && v_ch11_saved_slave == 1 || v_ch11_kill_noble == 0 && v_ch11_saved_slave == 2) {
  ”See, Barry, this is how you get the job done right," Eiden says. "You wouldn't want to cause your lovely host more trouble than you already have, would you?"
 
 "I suppose not..." I say.

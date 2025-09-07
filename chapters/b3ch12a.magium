@@ -207,7 +207,7 @@ Still, that went much better than I thought it would. After only a few adjustmen
 "Later," I say, simply, and then I pull out my notebook again, so I can get back to cataloguing my available spells.
 
 }
-#if((v_magical_sense == 4 || v_magical_sense < 4) && (v_perception == 4 || v_magical_sense < 4 || v_perception < 4)) {
+#if(v_magical_sense == 4 && v_perception == 4 || v_magical_sense == 4 && v_perception < 4 || v_magical_sense < 4) {
  About ten or so minutes later, Arraka finally calls me to her, so that she can give me my new task.
 
 "Alright, Barry-boy, let's see the fruits of your labor," Arraka says. "Go ahead and shoot a fire arrow at that tree over there."
@@ -295,7 +295,7 @@ Instead of dashing away again, Hadrik just stands there for a few moments and pl
 "Later," I say, simply, and then I pull out my notebook again, so I can get back to cataloguing my available spells.
 
 }
-#if((v_agility == 4 || v_agility < 4) && (v_reflexes == 4 || v_agility < 4 || v_reflexes < 4)) {
+#if(v_agility == 4 && v_reflexes == 4 || v_agility == 4 && v_reflexes < 4 || v_agility < 4) {
  About ten or so minutes later, Arraka finally calls me to her, so that she can give me my new task.
 
 "Alright, Barry-boy, let's see the fruits of your labor," Arraka says. "Go ahead and shoot a fire arrow at that tree over there."
@@ -1349,7 +1349,7 @@ set(v_b3_ch12_sincere,2) if (v_b3_ch12_sincere == 1 && v_bluff == 0)
 "Any time!" I tell her.
 
 }
-#if((v_b3_ch12_sincere == 2 || v_bluff == 0) && v_b3_ch12_sincere != 0) {
+#if(v_b3_ch12_sincere == 2 && v_b3_ch12_sincere != 0 || v_bluff == 0 && v_b3_ch12_sincere != 0) {
  "Actually, I would never use such a technique even if I had it!"
 
 "Of course not," Hadrik says, jokingly. "You would have no need for it. You already have your bluff stat for that!"
