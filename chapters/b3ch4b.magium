@@ -1386,7 +1386,6 @@ choice("Continue", B3-Ch04b-Contact2, v_current_scene = B3-Ch04b-Contact2)
 ID: B3-Ch04b-Contact2
 TEXT:
 
-#if(v_b3_ch4_control == 0 || v_b3_ch4_control == 1) {
  We all begin to move past the frozen blades as fast as we can, trying hard to fit into the narrow space between the multitude of sharp metal objects. When we finally reach the base of the stairs, I immediately try to let Rose know through the transceiver.
 
 "Rose, we're safe," I say. "You can unfreeze the time now."
@@ -1413,7 +1412,6 @@ When Kate, Flower and Illuna try to shoot the drones down with their magic, the 
 
 The air around us is gradually becoming heavier, and it's getting harder and harder to breathe. The pressure coming from all of the magical energy being gathered into one place is making it hard for us to even keep standing up. I don't know what spell these drones are preparing to cast, but whatever it is, it's going to be massive.
 
-}
 #if(v_b3_ch4_control == 1) {
  "We're not teleporting out of here before we get to the control room," Kate says.
 

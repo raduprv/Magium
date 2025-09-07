@@ -641,7 +641,7 @@ choice("Continue", Ch9-Blushing, v_current_scene = Ch9-Blushing)
 ID: Ch9-Blushing
 TEXT:
 
-#if(v_ch6_flirt == 1 || v_ch6_flirt == 5 || v_ch6_flirt == 6) {
+#if(v_ch6_flirt != 2 && v_ch6_flirt != 3 && v_ch6_flirt != 4) {
  As I don't really feel like embarrassing her, I decide to ignore what happened and change the subject.
 
 "So, anyway," I tell her, "there's something I've been meaning to ask you in private since this morning. What do you think about Flower?"

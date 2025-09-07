@@ -143,7 +143,7 @@ choice("Continue", B2-Ch04b-Associates, v_current_scene = B2-Ch04b-Associates) i
 ID: B2-Ch04b-Wilhelm-lessathi
 TEXT:
 
-#if(v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 || v_b2_ch2_threatened == 1) {
+#if(v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened != 0 || v_b2_ch2_threatened == 1) {
  I suddenly realize that Wilhelm is no longer by our side. Does that mean what I think it means?
 
 I quickly turn around, and I see Wilhelm, holding his orange hilted dagger in both hands, looking as if he'd been just seconds away from delivering a finishing blow.
@@ -380,7 +380,7 @@ TEXT:
 
 set(v_is_dead,0) if (v_b2_ch4_backpack == 2 && v_premonition >= 1 || v_b2_ch4_backpack == 2 && v_hearing >= 2 && v_reflexes >= 2 || v_b2_ch4_backpack == 1 || v_b2_ch4_backpack == 3)
 set(v_is_dead,1) if (v_b2_ch4_backpack == 2 && v_hearing < 2 && v_premonition < 1 || v_b2_ch4_backpack == 2 && v_premonition < 1 && v_reflexes < 2)
-#if(v_b2_ch4_backpack == 1 || v_b2_ch4_backpack == 3) {
+#if(v_b2_ch4_backpack == 1 && v_premonition >= 1 || v_b2_ch4_backpack == 1 && v_reflexes >= 2 || v_b2_ch4_backpack == 1 && v_hearing < 2 || v_b2_ch4_backpack == 3 && v_premonition >= 1 || v_b2_ch4_backpack == 3 && v_reflexes >= 2 || v_b2_ch4_backpack == 3 && v_hearing < 2 || v_b2_ch4_backpack != 2) {
  No, wait... this isn't over, yet. 
 
 I look up, and I see that one of the manticores is now diving straight at me. I knew it! The manticore was waiting for me to kill something before attacking me. They were doing the same thing in Hadrik's fight, and in the one before.
@@ -461,7 +461,7 @@ Leila is just about to reach me, and she sends one of her blue texts ahead of he
 "Great!" I say, as she stops in front of me. "Let's try taking down that marauder over there, first."
 
 }
-#if(v_b2_ch2_threatened == 1 && v_b2_ch4_charge == 1 || v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 && v_b2_ch4_charge == 1) {
+#if(v_b2_ch2_threatened == 1 && v_b2_ch4_charge == 1 || v_b2_ch2_lessathi == 1 && v_b2_ch4_charge == 1 && v_b2_ch2_threatened != 0) {
  Perfect! Two creatures are already down. But what about Wilhelm? Is he trying to kill me, yet?
 
 I turn around, and I see Wilhelm standing right behind me, holding his orange hilted dagger with both hands, ready to strike.
@@ -479,7 +479,7 @@ As I prepare to engage him, Wilhelm suddenly gets knocked out from behind, and h
 "Let's start with that marauder over there," I say, as I point towards the marauder that's nearer to us.
 
 }
-#if(v_b2_ch2_threatened == 1 && v_b2_ch4_charge == 2 || v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 && v_b2_ch4_charge == 2) {
+#if(v_b2_ch2_threatened == 1 && v_b2_ch4_charge == 2 || v_b2_ch2_lessathi == 1 && v_b2_ch4_charge == 2 && v_b2_ch2_threatened != 0) {
  Perfect! Two creatures are already down. But what about Wilhelm? Is he trying to kill me, yet?
 
 I turn around, and I see Wilhelm standing right behind me, holding his orange hilted dagger with both hands, ready to strike.
@@ -822,7 +822,7 @@ This is it. It's over. The round is finally over. The crowds are going wild. The
 After a while, the announcer finally asks us to clear the fighting area, and we prepare to go back to our division room.
 
 }
-#if(v_b2_ch2_fist == 1 && v_b2_ch4_tactic == 1 || v_b2_ch2_fist == 1 && v_b2_ch4_tactic == 2 || v_b2_ch2_fist == 1 && v_b2_ch4_tactic == 3 || v_b2_ch2_fist == 2 && v_b2_ch4_tactic == 1 || v_b2_ch2_fist == 2 && v_b2_ch4_tactic == 2 || v_b2_ch2_fist == 2 && v_b2_ch4_tactic == 3) {
+#if(v_b2_ch2_fist == 1 || v_b2_ch2_fist == 2) {
  "Bruce," I say, "I recommend you come with me. I'm sorry to say this, but I don't think you're strong enough to be able to cut through those tramplers' armor."
 
 "Oh," Bruce says. "Right, right... I'm coming."
@@ -1214,7 +1214,7 @@ I turn around and see, to my surprise, that Wilhelm is currently still helping t
 I signal the mage, and we start heading towards the other marauders.
 
 }
-#if(v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 || v_b2_ch2_threatened == 1) {
+#if(v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened != 0 || v_b2_ch2_cell == 1 && v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 || v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2 || v_b2_ch2_threatened == 1) {
  Perfect! Two creatures are already down. But there's now a new problem that I need to deal with. Ever since we entered the arena, I've been keeping a close eye on Wilhelm, because my premonition did not tell me exactly when he would try to kill me. I tried to not let it show, but I've seen him getting closer to me ever since I jumped on that marauder. The fact that I can't see him now can only mean one thing.
 
 I quickly turn around, and I see Wilhelm standing right there, holding his orange hilted dagger with both hands, looking as if he'd been only seconds away from delivering a lethal blow. However, in this very moment, the man seems almost frozen. He keeps holding onto his dagger with both hands as if he were still about to attack me, but now that I'm facing him directly, all of his assassin instincts must be telling him to retreat, instead.
@@ -1224,16 +1224,6 @@ I quickly turn around, and I see Wilhelm standing right there, holding his orang
 Wilhelm says nothing. He keeps staring at me, quietly, as a trickle of sweat runs down his forehead.
 
 "Wilhelm, are you alright, my friend?" I tell him, with a concerned tone, as I put my left hand on his shoulder. "You look rather tense!"
-
- Immediately after I stop talking, I use my right hand to hit him very hard in his left temple with the hilt of my dagger, in order to make sure that I knock him out without killing him. He loses his consciousness almost instantly, and then he falls to the ground, with his dagger beside him.
-
-"Idiot," I say to him, and then I begin heading towards the others.
-
-"So, uh..." I hear the mage's voice coming from behind me, as he catches up to me. "Do you have any idea why mister smiley over there would want you dead?"
-
-I completely forgot about this guy. I thought he already went to help the others, like the two thugs.
-
-"No idea," I say. "I'll figure it out later. Right now, we need to focus on killing the creatures."
 
 }
 #if(v_b2_ch2_threatened == 0 && v_b2_ch2_cell != 1 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2) {
@@ -1274,6 +1264,18 @@ There's no time to think about that now. I'll figure this out after the battle. 
 "Do you have any idea why mister smiley over here would want you dead?" the mage says.
 
 "I don't know," I say. "But I don't want to waste time figuring that out now, in the middle of the battle. We're done here. Let's go help the others." 
+
+}
+#if(v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 || v_b2_ch2_threatened == 1) {
+ Immediately after I stop talking, I use my right hand to hit him very hard in his left temple with the hilt of my dagger, in order to make sure that I knock him out without killing him. He loses his consciousness almost instantly, and then he falls to the ground, with his dagger beside him.
+
+"Idiot," I say to him, and then I begin heading towards the others.
+
+"So, uh..." I hear the mage's voice coming from behind me, as he catches up to me. "Do you have any idea why mister smiley over there would want you dead?"
+
+I completely forgot about this guy. I thought he already went to help the others, like the two thugs.
+
+"No idea," I say. "I'll figure it out later. Right now, we need to focus on killing the creatures."
 
 }
 choice("Continue", B2-Ch04b-Insane, v_current_scene = B2-Ch04b-Insane)
@@ -1502,7 +1504,6 @@ choice("Continue", B2-Ch04b-Over, v_current_scene = B2-Ch04b-Over)
 ID: B2-Ch04b-Over
 TEXT:
 
-#if(v_b2_ch4_backup == 0 || v_b2_ch4_backup == 1) {
  "Make sure you never stop moving sideways," I tell Bruce, as we approach the snakes. "The cobras can only shoot their acid in a straight line, and it takes them a few seconds to take aim, so as long as you don't give them the time they need, they won't be able to hit you."
 
 "Understood," Bruce says.
@@ -1511,7 +1512,6 @@ TEXT:
 
 I bait the cobra by standing in one place for two seconds, and then I jump out of the way, making the creature miss its shot, and waste its acid. While the snake is busy gathering up more acid in its glands, I make a dash towards it, and I stab it in the head, killing it in one strike. 
 
-}
 #if(v_b2_ch4_backup == 0) {
  I take a look to see if Bruce needs any help, but he seems to have handled himself just fine on his own. The other snake is already dead, with its severed head lying on the ground beside its body, and Bruce is now coming back towards me, holding his double handed sword by his side as he walks. Leila is also done with the tramplers, and she's now heading our way. She appears to have killed the second manticore, as well.
 
@@ -1789,7 +1789,6 @@ TEXT:
 
 set(v_ac_b2_ch4_time,1) if (v_ch11_saved_rose == 1)
 achievement("Time stop",v_ac_b2_ch4_time)
-#if(v_ch11_saved_rose == 0 || v_ch11_saved_rose == 1) {
  "Uh..." the announcer says, looking a bit stressed out. "Now that the fight is over, I believe it is time to address all of your concerns about what happened earlier. Rest assured that the gross violation of our rules that has occurred during this battle has not gone unnoticed. We do not yet know why our magical detectors didn't detect any spells being cast, but after we'll conduct a thorough investigation and solve this mystery, I am almost certain that the banshee will be found guilty and sentenced to--"
 
 "There will be no need for an investigation," we hear the voice of the arena's owner, as he makes his way on top of the elevated platform that the announcer is standing on. "First of all, there's a small correction that I'd like to make to our announcer's previous speech. The woman you see before you now is in fact not a banshee, but an actual mage, regardless of how hard some of you may be finding it to believe. I apologize for not making this clear from the very beginning, but I did not want to create any unnecessary tension if there was any chance that it could have been avoided."
@@ -1802,7 +1801,6 @@ The people in the crowd are not looking very convinced, and they are muttering b
 
 As the owner turns to leave, Kate and the others also head towards their division area, while the warriors of the sixth division are preparing to enter the battlefield.
 
-}
 #if(v_ch11_saved_rose == 1) {
  "Secondly," the owner says. "Our rules clearly state that in order for a magic spell to be considered illegal, it needs to set off our magical detectors. Obviously, this is more of a loophole than anything else, and I am not planning to let this go completely unpunished, however, I believe that ordering her execution in this case would be a bit too much, given the nature of her transgression. I will therefore agree to only turn her into an undesirable, as long as she agrees to tell us how she managed to bypass our magic detection system."
 
@@ -1917,7 +1915,6 @@ Not long after I finish my conversation with Leila, Kate gets chased by one of t
 Damn it! I really was hoping that it would not come to this. What's going to happen next? Will she really be able to handle everything by herself? Will Daren and Hadrik jump to her aid? Am I really content in leaving things as they are? I need to make a choice, and quick. I'm running out of time.
 
 }
-#if(v_b2_ch4_forsake == 1 || v_b2_ch4_forsake == 2 || v_b2_ch4_forsake == 3) {
  All of a sudden, one of the iron gates gets blown out of its hinges, and it drops to the ground, with a loud clang. Within seconds, Hadrik comes out of the gate, and he makes a dash towards the griffin attacking Kate, making a very high jump, and landing on the beast's back. The griffin doesn't appear to be too happy about what's happening, and it attempts to throw Hadrik off its back by doing sudden, violent movements, and by flapping its wings continuously.
 
 "Hah!" Hadrik says, while he maintains his balance by holding onto the griffin's mane with one of his hands. "I always wanted to ride one of these!"
@@ -1934,7 +1931,6 @@ He then jumps off the creature, and he heads towards Kate.
 
 "Are you alright, milady?" Hadrik says, with a bow.
 
-}
 choice("Continue", B2-Ch04b-Bonus, v_ac_b2_ch4_hadrik = 1, v_current_scene = B2-Ch04b-Bonus)
 
 

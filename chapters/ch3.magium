@@ -2522,7 +2522,7 @@ TEXT:
 
 set(v_is_dead,1) if (v_ch3_lift_tree == 0 && v_perception < 3 || v_ch3_lift_tree == 1 && v_perception < 3)
 set(v_is_dead,0) if (v_perception == 3)
-#if(v_ch3_lift_tree == 0 && v_perception < 3 || v_ch3_lift_tree == 1 && v_perception < 3) {
+#if(v_perception < 3) {
 
 I try to take advantage of the distance between us, by shooting them right away.
 
@@ -2547,7 +2547,7 @@ TEXT:
 
 set(v_is_dead,1) if (v_ch3_lift_tree == 0 && v_combat_technique < 3 || v_ch3_lift_tree == 1 && v_combat_technique < 3)
 set(v_is_dead,0) if (v_combat_technique == 3)
-#if(v_ch3_lift_tree == 0 && v_combat_technique < 3 || v_ch3_lift_tree == 1 && v_combat_technique < 3) {
+#if(v_combat_technique < 3) {
 
 I make sure I don't stop moving for even a second, and I start shooting them with my crossbow. 
 
