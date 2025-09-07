@@ -188,7 +188,7 @@ I then pull out my transceiver, set the frequency to Daren's number and tap it o
 "Alright," I say, as I take my hands away from Leila's head. "Follow me. I'm pretty sure I remember which way we went last time."
 
 }
-#if(v_b3_ch7_massage == 2 && v_magical_sense >= 2 || v_b3_ch7_massage == 1) {
+#if((v_b3_ch7_massage == 1 || v_b3_ch7_massage == 2) && (v_b3_ch7_massage == 1 || v_magical_sense >= 2)) {
  "So... what do you think happened to everyone at the rebel base?" Leila writes to me, while we are walking through the tunnels. "You don't suppose any of them got buried under the rubble from all those explosions, do you?..."
 
 "I don't know about the rebels or the civilians, but everyone in our group has been through far worse stuff than some lousy cave-ins," I say. "I wouldn't worry about them being buried under the rubble, but then again, those explosions are probably the least of their worries right now. If what Peter said was true, the king of Ollendor has sent a small army to attack the people in the underground, and what's left of the royal guards will be there too, including the trainees. It's going to be a tough fight for them, any way you look at it."

@@ -2560,7 +2560,7 @@ choice("Refuse the challenge", Ch7-Refuse, v_current_scene = Ch7-Refuse)
 ID: Ch7-Accept
 TEXT:
 
-#if(v_ch7_call_rose != 1 || v_ch7_watch_fight != 1) {
+#if((v_ch7_call_rose == 0 || v_ch7_watch_fight == 0) && (v_ch7_call_rose != 1 || v_ch7_watch_fight != 1)) {
  "Sure, why not? I'll give it a shot."
 
 "Hah! That's the spirit!" Hadrik says.

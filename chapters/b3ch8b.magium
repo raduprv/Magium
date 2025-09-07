@@ -199,7 +199,7 @@ TEXT:
 For a few moments, Daren looks in the direction of Kelrim but he hesitates to nominate him, probably because he doesn't want to put too much pressure on his friend, especially after having seen how doctor Reidzek and Desmond reacted when they were proposed as candidates for the throne. After looking through the whole waiting room for a while longer, Daren finally drops his head down, showing that he's given up.
 
 }
-#if(v_b3_ch6_kelrim != 1 && v_b3_ch6_plan != 3 || v_b3_ch8_king == 4) {
+#if((v_b3_ch8_king == 4 || v_b3_ch6_kelrim != 1) && (v_b3_ch8_king == 4 || v_b3_ch6_plan != 3)) {
  "So, are there any other people that you would like to recommend?" the king asks Daren.
 
 "Uh... I don't... I mean, what about Desmond?" Daren says. "He seems like he would be a great--" 
@@ -697,7 +697,7 @@ We also asked the Overseer to show Breynan the recording in which the king of th
 As soon as we were all on the same page regarding tomorrow's events and what needed to be done, Breynan went back to his own room, far away from us, and we also asked the Overseer nicely to no longer spy on us through the crystals so that we could go to sleep.
 
 }
-#if(v_b3_ch4_billy == 7 && v_b3_ch8_king == 5 || v_b3_ch4_billy == 8 && v_b3_ch8_king == 5 || v_b3_ch8_overseer2 == 0) {
+#if((v_b3_ch8_king == 5 || v_b3_ch8_overseer2 == 0) && (v_b3_ch4_billy == 7 || v_b3_ch4_billy == 8 || v_b3_ch8_overseer2 == 0)) {
  "So, does anyone feel like volunteering for a night shift?" Daren asks us, once we are all done making our beds.
 
 }

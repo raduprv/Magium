@@ -317,10 +317,14 @@ class Scene:
             tautological_cond = sp.Or(*[sp.Eq(sp.symbols(var),int(possible_value)) for possible_value in var_possible_values[var]])
             for new_paragraph in new_paragraphs:
                 try:
-                    new_paragraph.conditions = sp.simplify_logic(new_paragraph.conditions,dontcare=~tautological_cond)
+                    new_paragraph.conditions = sp.simplify_logic(new_paragraph.conditions, dontcare=~tautological_cond)
                 except:
                     print(var,var_possible_values[var])
                     continue
+
+        # Only do it now to avoid weird stuff
+        for new_paragraph in new_paragraphs:
+            new_paragraph.conditions = sp.simplify_logic(new_paragraph.conditions, form= "cnf")
 
         paragraph_groups = {}
         for paragraph in new_paragraphs:

@@ -1039,7 +1039,7 @@ As soon as Kate, Flower, Kelrim and I get within five feet of Melindra, she begi
 "Yes," Kate says, "but as soon as I will start concentrating on reinforcing the ice dome, my icicles will become weaker, and that might give the captain the chance to strike back at us."
 
 }
-#if(v_b3_ch6_focus == 1 && v_b3_ch6_preparing == 1 || v_b3_ch6_focus == 1 && v_aura_hardening >= 3 || v_b3_ch6_focus == 1 && v_b3_ch5_fight >= 4 || v_b3_ch6_focus == 2 && v_b3_ch6_preparing == 1 || v_b3_ch6_focus == 2 && v_aura_hardening >= 3 || v_b3_ch6_focus == 2 && v_b3_ch5_fight >= 4) {
+#if((v_b3_ch6_focus == 1 || v_b3_ch6_focus == 2) && (v_b3_ch6_preparing == 1 || v_aura_hardening >= 3 || v_b3_ch5_fight >= 4)) {
  What catches my eye the most is what's currently happening in the sky. The big rocks that were floating high above us have more than doubled in number since the last time I looked at them. Does this mean that the earth elementalist has just been creating boulders non-stop since the beginning of the battle? 
 
 All of a sudden, the rocks in the sky begin to move around in a very unusual manner, as if the earth elementalist were preparing for something. This isn't looking good. Maybe I should tell the others about this.
@@ -1454,7 +1454,7 @@ The captain now begins to slowly amplify the pressure on top of us, probably try
 The invisible force above us is getting stronger with each passing moment. The pain is becoming more and more unbearable to the point that most of us have already given up on trying to keep quiet and we're now just screaming our lungs out.
 
 }
-#if(v_b3_ch6_air == 0 && v_b3_ch6_tie == 1 || v_b3_ch6_air >= 1) {
+#if((v_b3_ch6_air == 0 || v_b3_ch6_air >= 1) && (v_b3_ch6_tie == 1 || v_b3_ch6_air >= 1)) {
  "Now, then..." the captain says to us, once he confirms that the ambassador is no longer in danger. "I think I'm done taking risks with you lot. I will finish you all myself."
 
 He then begins to slowly amplify the pressure on top of us, probably trying to squish us to death.
@@ -2276,7 +2276,7 @@ I then shoot the ambassador in the head, killing him before he has the chance to
 He then turns invisible along with the goblin's corpse, as he presumably heads back towards the rebel base.
 
 }
-#if(v_b3_ch6_kelrim == 1 && v_b3_ch6_preparing == 1 || v_b3_ch6_kelrim == 1 && v_b3_ch5_fight < 4 || v_b3_ch6_plan == 3 && v_b3_ch6_preparing == 1 || v_b3_ch6_plan == 3 && v_b3_ch5_fight < 4) {
+#if((v_b3_ch6_kelrim == 1 || v_b3_ch6_plan == 3) && (v_b3_ch6_preparing == 1 || v_b3_ch5_fight < 4)) {
  Once everything is ready, we see the usual white light covering us as our bodies begin to vibrate loudly, and then we find ourselves back in the teleporter room, next to Barry Thundercloud and Albert.
 
 "So, the captain's really dead?..." the teleporter guy asks immediately after he sees us, as if he still couldn't believe what he heard from Daren.
@@ -2366,7 +2366,7 @@ TEXT:
 He then turns invisible along with the goblin's corpse, as he presumably heads back towards the rebel base.
 
 }
-#if(v_b3_ch6_kelrim == 1 && v_b3_ch6_preparing == 1 || v_b3_ch6_kelrim == 1 && v_b3_ch5_fight < 4 || v_b3_ch6_plan == 3 && v_b3_ch6_preparing == 1 || v_b3_ch6_plan == 3 && v_b3_ch5_fight < 4) {
+#if((v_b3_ch6_kelrim == 1 || v_b3_ch6_plan == 3) && (v_b3_ch6_preparing == 1 || v_b3_ch5_fight < 4)) {
  Once everything is ready, we see the usual white light covering us as our bodies begin to vibrate loudly, and then we find ourselves back in the teleporter room, next to Barry Thundercloud and Albert.
 
 "So, the captain's really dead?..." the teleporter guy asks immediately after he sees us, as if he still couldn't believe what he heard from Daren.

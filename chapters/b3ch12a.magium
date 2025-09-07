@@ -207,7 +207,7 @@ Still, that went much better than I thought it would. After only a few adjustmen
 "Later," I say, simply, and then I pull out my notebook again, so I can get back to cataloguing my available spells.
 
 }
-#if(v_magical_sense == 4 && v_perception == 4 || v_magical_sense == 4 && v_perception < 4 || v_magical_sense < 4) {
+#if((v_magical_sense == 4 || v_magical_sense < 4) && (v_perception == 4 || v_magical_sense < 4 || v_perception < 4)) {
  About ten or so minutes later, Arraka finally calls me to her, so that she can give me my new task.
 
 "Alright, Barry-boy, let's see the fruits of your labor," Arraka says. "Go ahead and shoot a fire arrow at that tree over there."
@@ -295,7 +295,7 @@ Instead of dashing away again, Hadrik just stands there for a few moments and pl
 "Later," I say, simply, and then I pull out my notebook again, so I can get back to cataloguing my available spells.
 
 }
-#if(v_agility == 4 && v_reflexes == 4 || v_agility == 4 && v_reflexes < 4 || v_agility < 4) {
+#if((v_agility == 4 || v_agility < 4) && (v_reflexes == 4 || v_agility < 4 || v_reflexes < 4)) {
  About ten or so minutes later, Arraka finally calls me to her, so that she can give me my new task.
 
 "Alright, Barry-boy, let's see the fruits of your labor," Arraka says. "Go ahead and shoot a fire arrow at that tree over there."

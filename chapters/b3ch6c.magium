@@ -335,7 +335,7 @@ Not long after Daren leaves the room, we finally hear Peter's voice coming from 
 "Even if it's only half of them, this is still much more than we could have hoped for," Desmond says. "Until today, anyone who went through that door was considered to be a dead man. Now it's possible that we might not even need to send people into quarantine anymore. You should be proud of what you've accomplished here, healer. Maybe my brother won't make it, but many families will now get to see their loved ones again after they thought them to be dead. I should be the one apologizing for having misjudged you. We are all in your debt."
 
 }
-#if(v_ch11_saved_rose == 1 && v_b3_ch6_secret >= 1 || v_b3_ch6_secret == 0 && v_b3_ch6_sleep == 0 && v_ch11_saved_rose == 1 || v_b3_ch6_password == 3 || v_b3_ch6_labels >= 2) {
+#if((v_b3_ch6_password == 3 || v_ch11_saved_rose == 1 || v_b3_ch6_labels >= 2) && (v_b3_ch6_password == 3 || v_b3_ch6_secret == 0 || v_b3_ch6_labels >= 2 || v_b3_ch6_secret >= 1) && (v_b3_ch6_password == 3 || v_b3_ch6_sleep == 0 || v_b3_ch6_labels >= 2 || v_b3_ch6_secret >= 1)) {
  "Desmond, I wanted to tell you that your brother is no longer in any danger of dying from the disease," Daren says. "It will still take him a while to fully recover, because his condition was very severe, but if all goes well, you should be able to meet him again in a week or two."
 
 "Are you serious?..." Desmond asks Daren, looking as if he's still struggling to make sense of what he just heard. "No, it can't be! This has to be a mistake! My brother was way beyond saving at this point! How can you be so sure that it was really him and not somebody else?"

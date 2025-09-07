@@ -786,7 +786,7 @@ Bruce then pats me on the shoulder, and he goes back to where he was standing at
 He then turns to leave.
 
 }
-#if(v_b2_ch2_fist == 1 && v_b2_ch2_threatened == 0 || v_b2_ch2_fist == 1 && v_b2_ch2_threatened == 1 || v_b2_ch2_fist == 2 && v_b2_ch2_threatened == 0 || v_b2_ch2_fist == 2 && v_b2_ch2_threatened == 1) {
+#if((v_b2_ch2_fist == 1 || v_b2_ch2_fist == 2) && (v_b2_ch2_threatened == 0 || v_b2_ch2_threatened == 1)) {
  "That's nice," I tell him. "But I have a feeling that this isn't what you came here to talk to me about, is it?"
 
 "No, it isn't," Wilhelm says. "What I wanted to tell you is that from what I've heard, in a few hours from now, the ambassador and the arena's owner should be discussing important matters about the organization of the arena events. The guards from this place have a habit of overhearing these types of conversations and they usually like to discuss them amongst themselves. Make sure you pay close attention to what they're saying when they're outside your cell. I will do the same. "

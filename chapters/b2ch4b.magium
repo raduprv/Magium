@@ -380,7 +380,7 @@ TEXT:
 
 set(v_is_dead,0) if (v_b2_ch4_backpack == 2 && v_premonition >= 1 || v_b2_ch4_backpack == 2 && v_hearing >= 2 && v_reflexes >= 2 || v_b2_ch4_backpack == 1 || v_b2_ch4_backpack == 3)
 set(v_is_dead,1) if (v_b2_ch4_backpack == 2 && v_hearing < 2 && v_premonition < 1 || v_b2_ch4_backpack == 2 && v_premonition < 1 && v_reflexes < 2)
-#if(v_b2_ch4_backpack == 1 && v_premonition >= 1 || v_b2_ch4_backpack == 1 && v_reflexes >= 2 || v_b2_ch4_backpack == 1 && v_hearing < 2 || v_b2_ch4_backpack == 3 && v_premonition >= 1 || v_b2_ch4_backpack == 3 && v_reflexes >= 2 || v_b2_ch4_backpack == 3 && v_hearing < 2 || v_b2_ch4_backpack != 2) {
+#if((v_b2_ch4_backpack == 1 || v_b2_ch4_backpack == 3 || v_b2_ch4_backpack != 2) && (v_premonition >= 1 || v_reflexes >= 2 || v_hearing < 2 || v_b2_ch4_backpack != 2)) {
  No, wait... this isn't over, yet. 
 
 I look up, and I see that one of the manticores is now diving straight at me. I knew it! The manticore was waiting for me to kill something before attacking me. They were doing the same thing in Hadrik's fight, and in the one before.
@@ -720,7 +720,7 @@ We go around the marauders, and we head towards the arena wall which is closer t
 We go around the marauders, and we head towards the arena wall which is closer to us, while making sure to never take our eyes off the tramplers and the cobras. When we reach it, I take a spear off the wall, and I throw it at the manticore. My hit was right on target, and the spear pierced the manticore's chest, killing the beast in mid-flight and sending it falling to the ground.
 
 }
-#if(v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2 || v_combat_technique >= 1 || v_strength < 1) {
+#if((v_combat_technique >= 1 || v_strength < 1 || v_b2_ch2_fist != 1) && (v_combat_technique >= 1 || v_strength < 1 || v_b2_ch2_fist != 2)) {
  The crowds burst into cheers. Actually, I think they've been cheering for a while, now. It's just that I've been too focused on the battle to notice. 
 
 While we were dealing with the manticore, the tramplers have taken the opportunity to reposition themselves, and they are now getting ready to charge towards us at full speed. The cobras are heading our way as well. The scorpions seem to have given up on us, and they are heading towards the other members of our team.
@@ -1214,7 +1214,7 @@ I turn around and see, to my surprise, that Wilhelm is currently still helping t
 I signal the mage, and we start heading towards the other marauders.
 
 }
-#if(v_b2_ch2_cell == 1 && v_b2_ch2_threatened == 1 || v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened != 0 || v_b2_ch2_threatened == 1 && v_b2_ch2_threatened != 0 || v_b2_ch2_cell == 1 && v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 || v_b2_ch2_threatened == 1 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2 || v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2) {
+#if((v_b2_ch2_lessathi == 1 || v_b2_ch2_threatened == 1) && (v_b2_ch2_cell == 1 || v_b2_ch2_fist != 1 || v_b2_ch2_threatened != 0) && (v_b2_ch2_cell == 1 || v_b2_ch2_fist != 2 || v_b2_ch2_threatened != 0) && (v_b2_ch2_threatened == 1 || v_b2_ch2_threatened == 2 || v_b2_ch2_threatened != 0)) {
  Perfect! Two creatures are already down. But there's now a new problem that I need to deal with. Ever since we entered the arena, I've been keeping a close eye on Wilhelm, because my premonition did not tell me exactly when he would try to kill me. I tried to not let it show, but I've seen him getting closer to me ever since I jumped on that marauder. The fact that I can't see him now can only mean one thing.
 
 I quickly turn around, and I see Wilhelm standing right there, holding his orange hilted dagger with both hands, looking as if he'd been only seconds away from delivering a lethal blow. However, in this very moment, the man seems almost frozen. He keeps holding onto his dagger with both hands as if he were still about to attack me, but now that I'm facing him directly, all of his assassin instincts must be telling him to retreat, instead.
@@ -1266,7 +1266,7 @@ There's no time to think about that now. I'll figure this out after the battle. 
 "I don't know," I say. "But I don't want to waste time figuring that out now, in the middle of the battle. We're done here. Let's go help the others." 
 
 }
-#if(v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 || v_b2_ch2_threatened == 1) {
+#if((v_b2_ch2_lessathi == 1 || v_b2_ch2_threatened == 1) && (v_b2_ch2_threatened == 1 || v_b2_ch2_threatened == 2)) {
  Immediately after I stop talking, I use my right hand to hit him very hard in his left temple with the hilt of my dagger, in order to make sure that I knock him out without killing him. He loses his consciousness almost instantly, and then he falls to the ground, with his dagger beside him.
 
 "Idiot," I say to him, and then I begin heading towards the others.

@@ -140,7 +140,7 @@ We leave the king and Breynan behind, and we begin heading for the tunnel leadin
 "Hey, even I'm not that crazy!" I tell her.
 
 }
-#if(v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8 || v_b3_ch5_negotiations == 0 || v_b3_ch5_negotiations == 4) {
+#if((v_b3_ch5_negotiations == 0 || v_b3_ch5_negotiations == 4 || v_b3_ch4_billy != 7) && (v_b3_ch5_negotiations == 0 || v_b3_ch5_negotiations == 4 || v_b3_ch4_billy != 8)) {
  "My king, is there anything I can help you with?" Breynan says.
 
 "Well, you could begin by taking some of these reports off my hands," the king of the underground says, as he points at a man standing next to him who is holding a stack of papers. "Start with the ones at the bottom. Those should be easy enough for you to understand even without knowing the layout of the city by heart like I do. We need to evacuate as many people as we can by sunrise, so you'd better be ready for another sleepless night. We're going to be here for a while."

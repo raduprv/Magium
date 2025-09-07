@@ -13,7 +13,7 @@ I suddenly realize that I've been so lost in my own thoughts for the past minute
 "I was talking about Wilhelm," Bruce says. "We can't let him roam free throughout the arena after what he did last round. Who knows who he'll try to kill next? I say we tie him up, and leave him here. It's safer that way."
 
 }
-#if(v_b2_ch2_lessathi == 0 && v_b2_ch2_threatened == 2 || v_b2_ch2_deal == 3) {
+#if((v_b2_ch2_deal == 3 || v_b2_ch2_lessathi == 0) && (v_b2_ch2_deal == 3 || v_b2_ch2_threatened == 2)) {
  
 
 "Stillwater!" Bruce shouts. "Hey, stillwater, are you listening?"

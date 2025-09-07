@@ -840,7 +840,7 @@ After a few more moments, there is a loud noise coming from above and then the s
 "There's no use trying to mask your aura, royal guard," Melindra says. "I can sense you hiding in that room behind the counter. How about you come out slowly, with your hands where we can see them, and nobody will have to get hurt?"
 
 }
-#if(v_b3_ch6_password != 2 && v_b3_ch6_password != 3 || v_bluff < 4) {
+#if((v_bluff < 4 || v_b3_ch6_password != 2) && (v_bluff < 4 || v_b3_ch6_password != 3)) {
  "Hey, even if he refuses to sell them to you, you could always just take the herbs and leave him the money on the counter," Hadrik says. "Technically, it would be the same as buying the herbs, but without all the hassle."
 
 "That just sounds like stealing with extra steps," Daren says.
