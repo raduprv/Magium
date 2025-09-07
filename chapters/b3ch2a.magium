@@ -906,7 +906,7 @@ choice("Continue", B3-Ch02b-Weird, v_current_scene = B3-Ch02b-Weird)
 ID: B3-Ch02a-Insane
 TEXT:
 
-#if(v_b3_ch2_infiltration == 0 && v_b3_ch2_infiltration != 1 || v_b3_ch2_infiltration == 2 && v_b3_ch2_infiltration != 1) {
+#if(v_b3_ch2_infiltration == 0 || v_b3_ch2_infiltration == 2) {
  "Yeah, we reached him through the transceiver eventually, and he told us the password," I say. "It's 'gargoyle wings'. "
 
 "You're saying that the password is 'gargoyle wings'?" the guard says. "You sure about that?"
@@ -923,9 +923,9 @@ As soon as the guard turns around to lead us into the city, Hadrik looks at Dare
 
 "Hey, wait a second!" Daren says, as he puts his hand on the guard's shoulder. "I think there's still something that you might not have considered."
 
-}
-#if(v_b3_ch2_infiltration == 1) {
- "Not exactly," I say, as Hadrik runs right past the guard and towards one of the two big golems that were stationed about a dozen feet in front of the gates.
+ "Oh, yeah?" the guard says, as he turns to face Daren. "Like what?"
+
+Just as the guard is turning, Hadrik runs right past him and he heads towards one of the two big golems that were stationed about a dozen feet in front of the gates.
 
 As soon as he gets close enough, Hadrik jumps high up into the air and with one strong punch to the face, he knocks one of the golems off its feet and sends it flying into the large gates behind it. The doors could not withstand the impact of the crash and they got blown out of their hinges, but now the large golem that fell on top of them is struggling to get back up. Hadrik gives the golem no time to recover and he quickly jumps on its big head, battering it with a quick flurry of punches, until the giant metal construct stops moving completely.
 
@@ -938,10 +938,8 @@ He then raises his shield, and a semi-transparent magical barrier appears all ar
 "Brace yourselves," Daren says. "It's going to get hot."
 
 }
-#if(v_b3_ch2_infiltration == 0 || v_b3_ch2_infiltration == 2) {
- "Oh, yeah?" the guard says, as he turns to face Daren. "Like what?"
-
-Just as the guard is turning, Hadrik runs right past him and he heads towards one of the two big golems that were stationed about a dozen feet in front of the gates.
+#if(v_b3_ch2_infiltration == 1) {
+ "Not exactly," I say, as Hadrik runs right past the guard and towards one of the two big golems that were stationed about a dozen feet in front of the gates.
 
 As soon as he gets close enough, Hadrik jumps high up into the air and with one strong punch to the face, he knocks one of the golems off its feet and sends it flying into the large gates behind it. The doors could not withstand the impact of the crash and they got blown out of their hinges, but now the large golem that fell on top of them is struggling to get back up. Hadrik gives the golem no time to recover and he quickly jumps on its big head, battering it with a quick flurry of punches, until the giant metal construct stops moving completely.
 

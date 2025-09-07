@@ -535,7 +535,7 @@ set(v_b3_ch6_betrayed,3) if (v_b3_ch6_betrayed == 1 && v_bluff >= 4)
 "Mhm," I say. "Of course you will. Alright everyone, let's just ignore him and keep moving."
 
 }
-#if(v_b3_ch6_betrayed == 1 && v_bluff < 4 && v_b3_ch6_betrayed != 2 || v_b3_ch6_betrayed == 3 && v_bluff < 4 && v_b3_ch6_betrayed != 2) {
+#if(v_b3_ch6_betrayed == 1 && v_bluff < 4 || v_b3_ch6_betrayed == 3 && v_bluff < 4) {
  
 
 "Hey, you've got it all wrong! We never betrayed you! We were on your side all along!"
@@ -549,7 +549,7 @@ set(v_b3_ch6_betrayed,3) if (v_b3_ch6_betrayed == 1 && v_bluff >= 4)
 "Well, you have fun with that, then," I say. "Meanwhile, the rest of us will be on our way. Let's go, everyone!"
 
 }
-#if(v_b3_ch6_betrayed == 1 && v_bluff >= 4 && v_b3_ch6_betrayed != 2 || v_b3_ch6_betrayed == 3 && v_bluff >= 4 && v_b3_ch6_betrayed != 2) {
+#if(v_b3_ch6_betrayed == 1 && v_bluff >= 4 || v_b3_ch6_betrayed == 3 && v_bluff >= 4) {
  
 
 "Hey, you've got it all wrong! We never betrayed you! We were on your side all along!"

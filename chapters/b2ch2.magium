@@ -716,7 +716,7 @@ What am I supposed to do now? I can't say that I feel like talking with any of t
 As I stand there and think about going back to my cell,  Wilhelm suddenly moves away from the wall, and he starts to head towards me. When he stops in front of me, I see that he has an unusually determined look on his face.
 
 }
-#if(v_b2_ch2_fist == 1 && v_b2_ch2_threatened == 0 && v_b2_ch2_threatened == 2 || v_b2_ch2_fist == 2 && v_b2_ch2_threatened == 0 && v_b2_ch2_threatened == 2 || v_b2_ch2_fist == 1 && v_b2_ch2_threatened == 0 && v_b2_ch2_fist != 3 && v_b2_ch2_fist != 4 && v_b2_ch2_fist != 5 || v_b2_ch2_fist == 2 && v_b2_ch2_threatened == 0 && v_b2_ch2_fist != 3 && v_b2_ch2_fist != 4 && v_b2_ch2_fist != 5) {
+#if(v_b2_ch2_fist == 1 && v_b2_ch2_threatened == 0 || v_b2_ch2_fist == 2 && v_b2_ch2_threatened == 0) {
  "Yeah," Bruce says. "About Wilhelm. He might seem like an ordinary guy to you, but in reality he's a trained assassin. I can tell by the way he moves and speaks. These assassin types can never be trusted. They're not real warriors like you and me. The only way they know how to fight is by stabbing people in the back. You should be careful around him. Don't believe anything he says!"
 
 "Huh," I say. "That's good to know. I'll look out for him. Thanks!"
@@ -732,7 +732,7 @@ Bruce then pats me on the shoulder, and he goes back to where he was standing at
 "Yes," Wilhelm says. "You already saw the way he treated you yesterday. He is the kind of person who likes to act before he thinks, and these types of individuals are always dangerous. He might act friendly towards you now, but who knows what he'll do tomorrow. When you're up against unpredictable brutes that prefer to rely on their fists instead of their reason, you can never know when they'll turn against you."
 
 }
-#if(v_b2_ch2_fist == 1 && v_b2_ch2_threatened == 1 && v_b2_ch2_threatened == 2 || v_b2_ch2_fist == 2 && v_b2_ch2_threatened == 1 && v_b2_ch2_threatened == 2 || v_b2_ch2_fist == 1 && v_b2_ch2_threatened == 1 && v_b2_ch2_fist != 3 && v_b2_ch2_fist != 4 && v_b2_ch2_fist != 5 || v_b2_ch2_fist == 2 && v_b2_ch2_threatened == 1 && v_b2_ch2_fist != 3 && v_b2_ch2_fist != 4 && v_b2_ch2_fist != 5) {
+#if(v_b2_ch2_fist == 1 && v_b2_ch2_threatened == 1 || v_b2_ch2_fist == 2 && v_b2_ch2_threatened == 1) {
  "Yeah," Bruce says. "About Wilhelm. He might seem like an ordinary guy to you, but in reality he's a trained assassin. I can tell by the way he moves and speaks. These assassin types can never be trusted. They're not real warriors like you and me. The only way they know how to fight is by stabbing people in the back. You should be careful around him. Don't believe anything he says!"
 
 Oh, yeah," I say. "I figured that he was an assassin. Don't worry, I'll look out for him."

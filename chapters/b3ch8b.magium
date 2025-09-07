@@ -126,7 +126,7 @@ TEXT:
 "Umm, no... of course not!" Daren says. "It's your choice whether you want to be king or not. I was only making a suggestion, that's all..."
 
 }
-#if(v_b3_ch8_king == 0 && v_b3_ch8_king != 4 || v_b3_ch8_king == 3 && v_b3_ch8_king != 4) {
+#if(v_b3_ch8_king == 0 || v_b3_ch8_king == 3) {
  "I would like to nominate doctor Reidzek as a candidate," Daren says, as Leila's father turns his head towards him with a shocked look on his face.
 
 "An excellent choice!" the king of the underground tells Daren, after taking a quick glance towards Leila's father, to observe his reaction. "Doctor Reidzek has become a much respected member of our society in the short time that he's graced us with his presence, so I have no doubts that he would gather many votes, were he to agree to participate in our election. What do you say, doctor? Should I put your name on the candidate lists?"
@@ -510,7 +510,7 @@ The king of the underground nods, and then we all follow Daren outside of the wa
 "Okay, maybe Breynan's chances of success are really low," Hadrik says, "but the recording that we heard earlier made it seem like the king of the underground wouldn't even consider any other option than himself, and that he would be willing to straight up kill us if we were to suggest anything different. You'd have thought that he'd at least try to make an argument that he'd be the better pick, or something. I don't know... This seems a little fishy to me. Do you think the recording might have been fake after all? Maybe we should ask the king of the underground about it. And then Melindra, Arraka or Leila could read his aura to see if he's lying!"
 
 }
-#if(v_b3_ch8_king == 3 && v_b3_ch8_king != 5 || v_b3_ch8_king == 4 && v_b3_ch8_king != 5) {
+#if(v_b3_ch8_king == 3 || v_b3_ch8_king == 4) {
  "So, did anyone else find it surprising that the king of the underground didn't really pose much resistance to Daren nominating Leila's father as a king candidate?" Hadrik says. "I thought he'd be more... you know... hostile about it?"
 
 "It's clear that he was expecting doctor Reidzek to refuse the offer from the very beginning," Kate says. "He would not have been so enthusiastic about Daren's suggestion otherwise."
@@ -653,7 +653,7 @@ When we informed him that we did not want to follow his plan, the Overseer was c
 As soon as we were all on the same page regarding tomorrow's events and what needed to be done, Breynan went back to his own room, far away from us, and we also asked the Overseer nicely to no longer spy on us through the crystals so that we could go to sleep.
 
 }
-#if(v_b3_ch4_billy == 9 && v_b3_ch8_overseer2 == 1 && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8 || v_b3_ch8_overseer2 == 1 && v_b3_ch4_billy <= 6 && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8) {
+#if(v_b3_ch4_billy == 9 && v_b3_ch8_overseer2 == 1 || v_b3_ch8_overseer2 == 1 && v_b3_ch4_billy <= 6 && v_b3_ch4_billy != 7 && v_b3_ch4_billy != 8) {
  ...agree with the Overseer's plan of setting an ambush for the king of the underground.
 
 Once we decided what to say to him, all we had to do was go back to our sleeping quarters and call out the Overseer's name for him to immediately respond to us from one of the crystals, as if he'd been there this whole time, just waiting for our answer.

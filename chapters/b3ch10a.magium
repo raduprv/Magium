@@ -382,7 +382,7 @@ TEXT:
 "Yes," the Overseer says. "That is my intention."
 
 }
-#if(v_b3_ch9_enemies == 2) {
+#if(v_b3_ch9_enemies == 2 && v_b3_ch4_billy <= 9) {
  "No, but we already know that the king of the underground wanted to have us assassinated," I say. "What was to guarantee that he wouldn't try the same thing again if he got out of prison? And what about Leila and doctor Reidzek? How could we leave them in this city with that madman still running loose?"
 
 "You can't just decide things like this on a whim," Daren says. "We're talking about people's lives, here! You say that the king wanted us assassinated, but there's barely any proof that Peter was even involved in that plot. Why would you kill him too? Just because he was a witness?"
@@ -398,7 +398,7 @@ He pauses.
 "Hey, Overseer," Melindra says. "You mentioned earlier that you would only rule the city from the shadows. Who is going to be the official king, then?"
 
 }
-#if(v_b3_ch9_enemies == 3) {
+#if(v_b3_ch9_enemies == 3 && v_b3_ch4_billy <= 9) {
  "Barry, I can't believe what I'm hearing..." Daren says. "I know that the king of the underground was a jerk, but--"
 
 "He was more than just a jerk," I say. "He wanted to have us assassinated. What was to guarantee that he wouldn't try the same thing again if he got out of prison? And what about Leila and doctor Reidzek? How could we leave them in this city with that madman still running loose?"
@@ -633,7 +633,7 @@ At the moment, our group is standing somewhere in the back of the large room, so
 "It's very possible," Daren says. "But one can still hope."
 
 }
-#if(v_b3_ch8_king == 3 && v_b3_ch8_king != 5 || v_b3_ch8_king == 4 && v_b3_ch8_king != 5) {
+#if(v_b3_ch8_king == 3 || v_b3_ch8_king == 4) {
  There were three candidates in total: the king of the underground and two rebels whose names I never heard mentioned until now.
 
 Each of the candidates climbed on a makeshift podium and gave short speeches before the voting commenced, although the two no-name rebels seemed to have made very little impact on the crowd, because there was barely anyone cheering for them at the end. Something tells me that neither of them will be offering much competition to the king of the underground in this contest.
@@ -858,7 +858,7 @@ As Illuna turns around, the rest of us exchange a few looks, and then we all con
 "Hey, don't act like you're some kind of saint," I say. "Don't forget that we know you were planning to have us assassinated!"
 
 }
-#if(v_b3_ch8_king == 2 && v_b3_ch8_king != 5 || v_b3_ch8_king == 3 && v_b3_ch8_king != 5 || v_b3_ch8_king == 4 && v_b3_ch8_king != 5) {
+#if(v_b3_ch8_king == 2 || v_b3_ch8_king == 3 || v_b3_ch8_king == 4) {
  Not long afterwards, the vote counters announce the victor, and to nobody's surprise, the king of the underground was the one who won. As the king gets up on the podium to give his victory speech, Daren turns towards us again, with a visibly unhappy look on his face.
 
 "Well..." Daren says. "We can't say that we weren't expecting this, but that still doesn't make things any less disappointing."
@@ -870,6 +870,22 @@ As Illuna turns around, the rest of us exchange a few looks, and then we all con
 "To be fair, we've only been here for a few days," Hadrik says. "We barely know these people. Maybe it's better that we didn't involve ourselves too much in their election. We already interfered enough as it is."
 
 "Yeah..." Daren says. "Perhaps you're right."
+
+ The victory speech lasts for a short while longer, and it is followed by a round of applause, as well as several cheers coming from the people in front of us. Once the election is officially over, the crowd begins to slowly disperse, while we stay behind to see what the king of the underground is doing. When he notices us looking at him, the king of the underground nods at us from a distance, and then he walks over to our corner of the room, so that he can talk to us.
+
+"I was wondering if you would be joining us or not..." the king of the underground says, as soon as he stops next to us. "Tell me, did you enjoy the election?"
+
+"Obviously, not as much as you," Hadrik says.
+
+"Listen..." the king of the underground says. "I realize that I may not have been the ideal choice for you, but I assure you that things will turn out for the better, despite your misgivings."
+
+"Things will turn out for the better?" Hadrik asks. "Better for whom?"
+
+"For the people of Ollendor," the king of the underground says.
+
+"Mhm..." Hadrik says, skeptically. "I'm sure they will."
+
+"So, now that you've finally been elected king, can we stop looking over our shoulder all the time?" I say. "Or are you still planning to have us assassinated, just in case?"
 
 }
 #if(v_b3_ch8_king == 5) {
@@ -896,24 +912,6 @@ As Illuna turns around, the rest of us exchange a few looks, and then we all con
 "Well... yes, actually," Daren says. "Isn't that what you do around here?"
 
 "You thought I was going to have the goblin assassinated?!" the king of the underground says, looking genuinely shocked. "Dear gods, I always knew that you had a very low opinion of me, but I never imagined it would be this bad."
-
-}
-#if(v_b3_ch8_king == 2 || v_b3_ch8_king == 3 || v_b3_ch8_king == 4) {
- The victory speech lasts for a short while longer, and it is followed by a round of applause, as well as several cheers coming from the people in front of us. Once the election is officially over, the crowd begins to slowly disperse, while we stay behind to see what the king of the underground is doing. When he notices us looking at him, the king of the underground nods at us from a distance, and then he walks over to our corner of the room, so that he can talk to us.
-
-"I was wondering if you would be joining us or not..." the king of the underground says, as soon as he stops next to us. "Tell me, did you enjoy the election?"
-
-"Obviously, not as much as you," Hadrik says.
-
-"Listen..." the king of the underground says. "I realize that I may not have been the ideal choice for you, but I assure you that things will turn out for the better, despite your misgivings."
-
-"Things will turn out for the better?" Hadrik asks. "Better for whom?"
-
-"For the people of Ollendor," the king of the underground says.
-
-"Mhm..." Hadrik says, skeptically. "I'm sure they will."
-
-"So, now that you've finally been elected king, can we stop looking over our shoulder all the time?" I say. "Or are you still planning to have us assassinated, just in case?"
 
 }
 choice("Continue", B3-Ch10a-Morning, v_current_scene = B3-Ch10a-Morning)
@@ -976,7 +974,7 @@ TEXT:
 "I see..." Kate says.
 
 }
-#if(v_b3_ch8_king == 2 && v_b3_ch8_king != 5 || v_b3_ch8_king == 3 && v_b3_ch8_king != 5 || v_b3_ch8_king == 4 && v_b3_ch8_king != 5) {
+#if(v_b3_ch8_king == 2 || v_b3_ch8_king == 3 || v_b3_ch8_king == 4) {
  "I wanted him to ruin your reputations, of course," the king says. "Albert was to spread rumors of you secretly working with the Overseer, so that the people here would lose their trust in you and refuse to join your side in case you were planning to oppose the idea of the election. Of course, this plan was only to be enacted if you actively tried to delegitimize the election, which thankfully is not something that you chose to do."
 
 "What about the seredium towers?" Kate interjects. "What's going to happen to all those prisoners now?"

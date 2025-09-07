@@ -1672,7 +1672,7 @@ We all make our way towards the center of the arena, like all the divisions befo
 The crowd watches us in complete silence, as we make our way past all the animal carcasses, in order to reach our destination. It's clear that they do not recognize anyone from our division. They're probably already thinking that we're going to get butchered, like that first division from earlier. I hope we won't end up proving them right.
 
 }
-#if(v_b2_ch2_deal == 2 && v_b2_ch2_deal != 3 || v_b2_ch2_deal == 4 && v_b2_ch2_deal != 3) {
+#if(v_b2_ch2_deal == 2 || v_b2_ch2_deal == 4) {
  There is a very loud burst of cheering coming from the outside. It appears that Daren and the other surviving gladiators have finally defeated all of the creatures. The announcer is signaling them to leave the fighting area, so that the show can proceed. 
 
 Once Daren and the others leave the stage, the iron grating in front of us finally begins to get raised. We all make our way towards the center of the arena, like all the divisions before us. 

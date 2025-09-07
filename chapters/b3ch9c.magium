@@ -1078,7 +1078,7 @@ To my shock, it seems that one of the golems has finally decided that getting ri
  Unfortunately, the time it took me to switch back my focus to the earthen plane and to dash away was not enough for me to escape the beam, especially considering how unresponsive my currents are, and the flames burnt me to ashes in a matter of seconds.
 
 }
-#if(v_b3_ch9_currents == 0 && v_reflexes >= 2 || v_reflexes >= 2 && v_reflexes >= 4) {
+#if(v_b3_ch9_currents == 0 && v_reflexes >= 2 || v_reflexes >= 4) {
  I would've probably been dead if not for my quick reaction time, but I managed to switch my focus back to the earthen plane and to get out of the way just in time to see the golem behind me getting absolutely destroyed by the beam of its comrade-in-arms. The metal giant that attacked me seems to now be regretting its decision, because it is keeping its head down, without making any more movements, as if it were mourning its deceased partner.
 
 This momentary pause gives me the opportunity to go place the final pillar that was needed for the paralysis spell to function in the ethereal plane, and as soon as I'm done, I give the 'okay' signal to Peter so that we can commence our simultaneous casting.
@@ -1130,7 +1130,7 @@ To my shock, it seems that one of the two golems between which I've positioned m
  Unfortunately, the time it took me to switch back my focus to the earthen plane and to dash away was not enough for me to escape the beam, especially considering how unresponsive my currents are, and the flames burnt me to ashes in a matter of seconds.
 
 }
-#if(v_b3_ch9_currents == 0 && v_reflexes >= 2 || v_reflexes >= 2 && v_reflexes >= 4) {
+#if(v_b3_ch9_currents == 0 && v_reflexes >= 2 || v_reflexes >= 4) {
  I would've probably been dead if not for my quick reaction time, but I managed to switch my focus back to the earthen plane and to get out of the way just in time to see the golem behind me getting absolutely destroyed by the beam of its comrade-in-arms. The metal giant that attacked me seems to now be regretting its decision, because it is keeping its head down, without making any more movements, as if it were mourning its deceased partner.
 
 This momentary pause gives me the opportunity to go place the final pillar that was needed for the paralysis spell to function in the ethereal plane, and as soon as I'm done, I give the 'okay' signal to Peter so that we can commence our simultaneous casting.

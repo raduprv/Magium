@@ -143,7 +143,7 @@ choice("Continue", B2-Ch04b-Associates, v_current_scene = B2-Ch04b-Associates) i
 ID: B2-Ch04b-Wilhelm-lessathi
 TEXT:
 
-#if(v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened != 0 || v_b2_ch2_threatened == 1 && v_b2_ch2_threatened != 0) {
+#if(v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened != 0 || v_b2_ch2_threatened == 1) {
  I suddenly realize that Wilhelm is no longer by our side. Does that mean what I think it means?
 
 I quickly turn around, and I see Wilhelm, holding his orange hilted dagger in both hands, looking as if he'd been just seconds away from delivering a finishing blow.
@@ -461,7 +461,7 @@ Leila is just about to reach me, and she sends one of her blue texts ahead of he
 "Great!" I say, as she stops in front of me. "Let's try taking down that marauder over there, first."
 
 }
-#if(v_b2_ch2_lessathi == 1 && v_b2_ch4_charge == 1 && v_b2_ch2_threatened != 0 || v_b2_ch2_threatened == 1 && v_b2_ch4_charge == 1 && v_b2_ch2_threatened != 0) {
+#if(v_b2_ch2_threatened == 1 && v_b2_ch4_charge == 1 || v_b2_ch2_lessathi == 1 && v_b2_ch4_charge == 1 && v_b2_ch2_threatened != 0) {
  Perfect! Two creatures are already down. But what about Wilhelm? Is he trying to kill me, yet?
 
 I turn around, and I see Wilhelm standing right behind me, holding his orange hilted dagger with both hands, ready to strike.
@@ -479,7 +479,7 @@ As I prepare to engage him, Wilhelm suddenly gets knocked out from behind, and h
 "Let's start with that marauder over there," I say, as I point towards the marauder that's nearer to us.
 
 }
-#if(v_b2_ch2_lessathi == 1 && v_b2_ch4_charge == 2 && v_b2_ch2_threatened != 0 || v_b2_ch2_threatened == 1 && v_b2_ch4_charge == 2 && v_b2_ch2_threatened != 0) {
+#if(v_b2_ch2_threatened == 1 && v_b2_ch4_charge == 2 || v_b2_ch2_lessathi == 1 && v_b2_ch4_charge == 2 && v_b2_ch2_threatened != 0) {
  Perfect! Two creatures are already down. But what about Wilhelm? Is he trying to kill me, yet?
 
 I turn around, and I see Wilhelm standing right behind me, holding his orange hilted dagger with both hands, ready to strike.
@@ -1024,7 +1024,7 @@ TEXT:
 
 set(v_ac_b2_ch4_player,1) if (v_b2_ch2_fist == 1 && v_b2_ch2_heard == 0 || v_b2_ch2_fist == 2 && v_b2_ch2_heard == 0 || v_b2_ch2_fist == 1 && v_b2_ch4_inform2 == 0 && v_b2_ch4_inform3 == 0 || v_b2_ch2_fist == 2 && v_b2_ch4_inform2 == 0 && v_b2_ch4_inform3 == 0)
 achievement("Not a team player",v_ac_b2_ch4_player)
-#if(v_b2_ch2_heard == 1 && v_b2_ch4_inform2 == 1 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2 && v_b2_ch4_inform2 != 0 || v_b2_ch2_heard == 1 && v_b2_ch4_inform2 == 1 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2 && v_b2_ch4_inform3 != 0 || v_b2_ch2_heard == 1 && v_b2_ch4_inform3 == 1 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2 && v_b2_ch4_inform2 != 0 || v_b2_ch2_heard == 1 && v_b2_ch4_inform3 == 1 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2 && v_b2_ch4_inform3 != 0) {
+#if(v_b2_ch2_heard == 1 && v_b2_ch4_inform2 == 1 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2 || v_b2_ch2_heard == 1 && v_b2_ch4_inform3 == 1 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2) {
  As I look towards the other members of my team, I see that they are all still alive, surprisingly, and they've even managed to take down a marauder all by themselves. I signal Leila, and we head towards them. 
 
 Finishing off the last marauder was a piece of cake. We didn't even need to use its weaknesses. As we stand there, in the middle of all those corpses, we can hear the crowds cheering like never before. They were obviously not expecting us to win. Bruce is raising his arms, in victory, but the rest of us are just waiting for the announcer's signal that the round is over, so we can finally get a bit of rest.
@@ -1032,7 +1032,7 @@ Finishing off the last marauder was a piece of cake. We didn't even need to use 
 After a while, the announcer finally asks us to clear the fighting area, and we prepare to go back to our division room.
 
 }
-#if(v_b2_ch2_fist == 1 && v_b2_ch2_heard == 1 && v_b2_ch4_inform2 == 1 && v_b2_ch4_inform2 != 0 || v_b2_ch2_fist == 1 && v_b2_ch2_heard == 1 && v_b2_ch4_inform2 == 1 && v_b2_ch4_inform3 != 0 || v_b2_ch2_fist == 1 && v_b2_ch2_heard == 1 && v_b2_ch4_inform3 == 1 && v_b2_ch4_inform2 != 0 || v_b2_ch2_fist == 1 && v_b2_ch2_heard == 1 && v_b2_ch4_inform3 == 1 && v_b2_ch4_inform3 != 0 || v_b2_ch2_fist == 2 && v_b2_ch2_heard == 1 && v_b2_ch4_inform2 == 1 && v_b2_ch4_inform2 != 0 || v_b2_ch2_fist == 2 && v_b2_ch2_heard == 1 && v_b2_ch4_inform2 == 1 && v_b2_ch4_inform3 != 0 || v_b2_ch2_fist == 2 && v_b2_ch2_heard == 1 && v_b2_ch4_inform3 == 1 && v_b2_ch4_inform2 != 0 || v_b2_ch2_fist == 2 && v_b2_ch2_heard == 1 && v_b2_ch4_inform3 == 1 && v_b2_ch4_inform3 != 0) {
+#if(v_b2_ch2_fist == 1 && v_b2_ch2_heard == 1 && v_b2_ch4_inform2 == 1 || v_b2_ch2_fist == 1 && v_b2_ch2_heard == 1 && v_b2_ch4_inform3 == 1 || v_b2_ch2_fist == 2 && v_b2_ch2_heard == 1 && v_b2_ch4_inform2 == 1 || v_b2_ch2_fist == 2 && v_b2_ch2_heard == 1 && v_b2_ch4_inform3 == 1) {
  As I look towards the other members of my team, I see that they are all still alive, surprisingly, and they've even managed to take down a marauder all by themselves. I signal Leila and Bruce, and we head towards them. 
 
 Finishing off the last marauder was a piece of cake. We didn't even need to use its weaknesses. As we stand there, in the middle of all those corpses, we can hear the crowds cheering like never before. They were obviously not expecting us to win. Bruce is raising his arms, in victory, but the rest of us are just waiting for the announcer's signal that the round is over, so we can finally get a bit of rest.
@@ -1214,7 +1214,7 @@ I turn around and see, to my surprise, that Wilhelm is currently still helping t
 I signal the mage, and we start heading towards the other marauders.
 
 }
-#if(v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 || v_b2_ch2_threatened == 1) {
+#if(v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened != 0 || v_b2_ch2_cell == 1 && v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 || v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2 || v_b2_ch2_threatened == 1) {
  Perfect! Two creatures are already down. But there's now a new problem that I need to deal with. Ever since we entered the arena, I've been keeping a close eye on Wilhelm, because my premonition did not tell me exactly when he would try to kill me. I tried to not let it show, but I've seen him getting closer to me ever since I jumped on that marauder. The fact that I can't see him now can only mean one thing.
 
 I quickly turn around, and I see Wilhelm standing right there, holding his orange hilted dagger with both hands, looking as if he'd been only seconds away from delivering a lethal blow. However, in this very moment, the man seems almost frozen. He keeps holding onto his dagger with both hands as if he were still about to attack me, but now that I'm facing him directly, all of his assassin instincts must be telling him to retreat, instead.
@@ -1224,16 +1224,6 @@ I quickly turn around, and I see Wilhelm standing right there, holding his orang
 Wilhelm says nothing. He keeps staring at me, quietly, as a trickle of sweat runs down his forehead.
 
 "Wilhelm, are you alright, my friend?" I tell him, with a concerned tone, as I put my left hand on his shoulder. "You look rather tense!"
-
- Immediately after I stop talking, I use my right hand to hit him very hard in his left temple with the hilt of my dagger, in order to make sure that I knock him out without killing him. He loses his consciousness almost instantly, and then he falls to the ground, with his dagger beside him.
-
-"Idiot," I say to him, and then I begin heading towards the others.
-
-"So, uh..." I hear the mage's voice coming from behind me, as he catches up to me. "Do you have any idea why mister smiley over there would want you dead?"
-
-I completely forgot about this guy. I thought he already went to help the others, like the two thugs.
-
-"No idea," I say. "I'll figure it out later. Right now, we need to focus on killing the creatures."
 
 }
 #if(v_b2_ch2_threatened == 0 && v_b2_ch2_cell != 1 && v_b2_ch2_fist != 1 && v_b2_ch2_fist != 2) {
@@ -1274,6 +1264,18 @@ There's no time to think about that now. I'll figure this out after the battle. 
 "Do you have any idea why mister smiley over here would want you dead?" the mage says.
 
 "I don't know," I say. "But I don't want to waste time figuring that out now, in the middle of the battle. We're done here. Let's go help the others." 
+
+}
+#if(v_b2_ch2_lessathi == 1 && v_b2_ch2_threatened == 2 || v_b2_ch2_threatened == 1) {
+ Immediately after I stop talking, I use my right hand to hit him very hard in his left temple with the hilt of my dagger, in order to make sure that I knock him out without killing him. He loses his consciousness almost instantly, and then he falls to the ground, with his dagger beside him.
+
+"Idiot," I say to him, and then I begin heading towards the others.
+
+"So, uh..." I hear the mage's voice coming from behind me, as he catches up to me. "Do you have any idea why mister smiley over there would want you dead?"
+
+I completely forgot about this guy. I thought he already went to help the others, like the two thugs.
+
+"No idea," I say. "I'll figure it out later. Right now, we need to focus on killing the creatures."
 
 }
 choice("Continue", B2-Ch04b-Insane, v_current_scene = B2-Ch04b-Insane)

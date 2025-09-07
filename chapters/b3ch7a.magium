@@ -140,7 +140,7 @@ ID: B3-Ch07a-Massage
 TEXT:
 
 set(v_b3_ch7_massage,2) if (v_b3_ch7_massage == 1 && v_magical_sense >= 2)
-#if(v_b3_ch7_massage == 1 && v_b3_ch7_massage != 0 || v_magical_sense >= 2 && v_b3_ch7_massage != 0) {
+#if(v_magical_sense >= 2 && v_b3_ch7_massage != 0 || v_b3_ch7_massage == 1) {
  
 
 "Before we go, could you try teaching me that massage technique?" I say. "Maybe I can help you get rid of your headache."
@@ -575,7 +575,7 @@ I step out of the way just in time, but he immediately closes the distance betwe
 Thankfully, I manage to get away from him once more, but even with my speed stat maxed the giant is still able to keep up with me, which means that all I can do for now is to continue running around the cave, dodging every one of his attacks at the last second, while hoping to eventually give him the slip.
 
 }
-#if(v_b3_ch7_bet == 0 && v_is_dead == 0 && v_b3_ch7_bet != 3 || v_b3_ch7_bet == 1 && v_is_dead == 0 && v_b3_ch7_bet != 3) {
+#if(v_b3_ch7_bet == 0 && v_is_dead == 0 || v_b3_ch7_bet == 1 && v_is_dead == 0) {
  While I am distracting Gontrok, Leila is somehow able to position herself behind him, but instead of attacking him while his back his turned, she moves to his side so that she can try to stab him in the eyes again. This forces my opponent to stop chasing me for a few moments, so he can defend himself.
 
 As I am getting this brief moment of respite, I cannot help but notice that there is something strange going on with Gontrok's aura, although I can't tell exactly what's wrong with it from a simple glance. If I want to figure out what's going on, I would need to focus on his aura for at least a few seconds, leaving myself completely vulnerable in the process. Could this be worth the risk?
@@ -946,7 +946,7 @@ ID: B3-Ch07a-Loyrang
 TEXT:
 
 achievement("An honorable victory",v_ac_b3_ch7_honorable)
-#if(v_b3_ch7_bet == 1 && v_b3_ch7_bet != 5 && v_b3_ch7_bet != 7 || v_b3_ch7_bet == 2 && v_b3_ch7_bet != 5 && v_b3_ch7_bet != 7 || v_b3_ch7_bet == 6 && v_b3_ch7_bet != 5 && v_b3_ch7_bet != 7) {
+#if(v_b3_ch7_bet == 1 || v_b3_ch7_bet == 2 || v_b3_ch7_bet == 6) {
  "Oh, is the fight finally over?" we now hear the familiar voice of a certain dark-skinned mercenary, who has apparently only just stopped suppressing his aura and is now entering our corridor. "Thank the gods. I think I must have been only seconds away from dying of boredom."
 
 "What are you doing here, Loyrang?" the illusionist asks the dark-skinned royal guard, as he is still approaching us. "You were supposed to be helping the others with destroying the rebel base."

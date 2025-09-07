@@ -1343,7 +1343,7 @@ set(v_b3_ch12_sincere,2) if (v_b3_ch12_sincere == 1 && v_bluff == 0)
 "Any time!" I tell her.
 
 }
-#if(v_b3_ch12_sincere == 2 && v_b3_ch12_sincere != 0 || v_bluff == 0 && v_b3_ch12_sincere != 0) {
+#if(v_bluff == 0 && v_b3_ch12_sincere != 0 || v_b3_ch12_sincere == 2) {
  "Actually, I would never use such a technique even if I had it!"
 
 "Of course not," Hadrik says, jokingly. "You would have no need for it. You already have your bluff stat for that!"

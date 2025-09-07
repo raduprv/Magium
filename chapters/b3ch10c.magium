@@ -81,7 +81,7 @@ achievement("No man left behind",v_ac_b3_ch10_behind)
 "I see," Eiden says.
 
 }
-#if(v_b3_ch8_king == 2 && v_b3_ch8_overseer2 == 0 && v_b3_ch8_king != 5 || v_b3_ch8_king == 3 && v_b3_ch8_overseer2 == 0 && v_b3_ch8_king != 5 || v_b3_ch8_king == 4 && v_b3_ch8_overseer2 == 0 && v_b3_ch8_king != 5) {
+#if(v_b3_ch8_king == 2 && v_b3_ch8_overseer2 == 0 || v_b3_ch8_king == 3 && v_b3_ch8_overseer2 == 0 || v_b3_ch8_king == 4 && v_b3_ch8_overseer2 == 0) {
  "I think he will be a great leader."
 
 "The king of the underground?" Eiden says, while raising an eyebrow. "Is that your opinion of him?"

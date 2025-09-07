@@ -331,6 +331,8 @@ class Scene:
                 if var != "v_hearing":
                     new_paragraph.conditions = new_paragraph.conditions.subs(sp.symbols(var) <= 4,True)
             new_paragraph.conditions = sp.simplify_logic(new_paragraph.conditions, form= "dnf")
+            new_paragraph.conditions = sp.simplify(new_paragraph.conditions)
+            new_paragraph.conditions = sp.simplify_logic(new_paragraph.conditions, form= "dnf")
 
         paragraph_groups = {}
         for paragraph in new_paragraphs:
