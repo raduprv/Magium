@@ -482,7 +482,7 @@ class Parser:
 
 chapters = (
     [f"ch{num}" for num in list(range(1,11))+["11a","11b"]]
-    + [f"b2ch{num}" for num in [1,2,3,"4a","4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
+    + [f"b2ch{num}" for num in [1,2,3,"4b","5a","5b",6,7,8,"9a","9b","10a","10b","11a","11b","11c"]]
     + [f"b3ch{num}" for num in [1,"2a","2b","2c","3a","3b","4a","4b","5a","5b","6a","6b","6c","7a","8a","8b","9a","9b","9c","10a","10b","10c","11a","12a","12b"]]
 )
 # chapters = ["b3ch6c"]
